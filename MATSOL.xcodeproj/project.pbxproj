@@ -1,0 +1,707 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50020DD511D5769700C61974 /* mygaussj.c in Sources */ = {isa = PBXBuildFile; fileRef = 50020DD011D5769700C61974 /* mygaussj.c */; };
+		50020DD611D5769700C61974 /* myludcmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 50020DD211D5769700C61974 /* myludcmp.c */; };
+		50020DD711D5769700C61974 /* rescalc.c in Sources */ = {isa = PBXBuildFile; fileRef = 50020DD411D5769700C61974 /* rescalc.c */; };
+		50020DF311D576BC00C61974 /* MATSOLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DDE11D576BC00C61974 /* MATSOLAppDelegate.m */; };
+		50020DF411D576BC00C61974 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DE111D576BC00C61974 /* ScrollViewController.m */; };
+		50020DF511D576BC00C61974 /* SelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DE311D576BC00C61974 /* SelectionViewController.m */; };
+		50020DF611D576BC00C61974 /* InputResistorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DE511D576BC00C61974 /* InputResistorViewController.m */; };
+		50020DF711D576BC00C61974 /* MatrixSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DE711D576BC00C61974 /* MatrixSheetViewController.m */; };
+		50020DF811D576BC00C61974 /* DeterminantSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DE911D576BC00C61974 /* DeterminantSheetViewController.m */; };
+		50020DF911D576BC00C61974 /* SolutionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DEB11D576BC00C61974 /* SolutionsViewController.m */; };
+		50020DFA11D576BC00C61974 /* OutputResistorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DED11D576BC00C61974 /* OutputResistorViewController.m */; };
+		50020DFB11D576BC00C61974 /* SlaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DF011D576BC00C61974 /* SlaveViewController.m */; };
+		50020DFC11D576BC00C61974 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DF211D576BC00C61974 /* CreditsViewController.m */; };
+		50020E2011D576DA00C61974 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DFF11D576DA00C61974 /* main.m */; };
+		50020E2111D576DA00C61974 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0211D576DA00C61974 /* MainWindow.xib */; };
+		50020E2311D576DA00C61974 /* Scroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0411D576DA00C61974 /* Scroll.xib */; };
+		50020E2411D576DA00C61974 /* Selection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0511D576DA00C61974 /* Selection.xib */; };
+		50020E2511D576DA00C61974 /* InputResistor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0611D576DA00C61974 /* InputResistor.xib */; };
+		50020E2611D576DA00C61974 /* OutputResistor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0711D576DA00C61974 /* OutputResistor.xib */; };
+		50020E2711D576DA00C61974 /* MatrixSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0811D576DA00C61974 /* MatrixSheet.xib */; };
+		50020E2811D576DA00C61974 /* Solutions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0911D576DA00C61974 /* Solutions.xib */; };
+		50020E2911D576DA00C61974 /* Slave.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0A11D576DA00C61974 /* Slave.xib */; };
+		50020E2A11D576DA00C61974 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0B11D576DA00C61974 /* CreditsViewController.xib */; };
+		50020E2C11D576DA00C61974 /* ll.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0F11D576DA00C61974 /* ll.png */; };
+		50020E2D11D576DA00C61974 /* ur.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1011D576DA00C61974 /* ur.png */; };
+		50020E2E11D576DA00C61974 /* ul.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1111D576DA00C61974 /* ul.png */; };
+		50020E2F11D576DA00C61974 /* m.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1211D576DA00C61974 /* m.png */; };
+		50020E3011D576DA00C61974 /* lr.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1311D576DA00C61974 /* lr.png */; };
+		50020E3211D576DA00C61974 /* selectionLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1611D576DA00C61974 /* selectionLine.png */; };
+		50020E3311D576DA00C61974 /* enterresistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1711D576DA00C61974 /* enterresistor.png */; };
+		50020E3411D576DA00C61974 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1811D576DA00C61974 /* wood.png */; };
+		50020E3611D576DA00C61974 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1B11D576DA00C61974 /* button.png */; };
+		50020E3911D576DA00C61974 /* resistorcalculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1E11D576DA00C61974 /* resistorcalculator.png */; };
+		50020FD511D58FBB00C61974 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020FD411D58FBB00C61974 /* Default.png */; };
+		50020FF311D598BE00C61974 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020FF211D598BE00C61974 /* Icon.png */; };
+		50260BC612B4C9D700A1CF4D /* crossedBlackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50260BC412B4C9D700A1CF4D /* crossedBlackButton.png */; };
+		50260BC712B4C9D700A1CF4D /* crossedBlackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50260BC512B4C9D700A1CF4D /* crossedBlackButton@2x.png */; };
+		502EFE2211E0105F007BCA03 /* signW.png in Resources */ = {isa = PBXBuildFile; fileRef = 502EFE2111E0105F007BCA03 /* signW.png */; };
+		50386A3812B5D5210071A656 /* baseConverter.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A3612B5D5210071A656 /* baseConverter.png */; };
+		50386A3912B5D5210071A656 /* baseConverter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A3712B5D5210071A656 /* baseConverter@2x.png */; };
+		50386A4B12B5DA490071A656 /* deleteBlackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */; };
+		50386A4D12B5DA5B0071A656 /* deleteBlackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */; };
+		5049952011DED9F20058F950 /* sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 5049951F11DED9F20058F950 /* sign.png */; };
+		504C6FAD12BF4DCC00CC815E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */; };
+		50C7EFD211D70C42001EB7C9 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7EFD111D70C42001EB7C9 /* help.png */; };
+		50C7F04511D73B53001EB7C9 /* presistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04311D73B53001EB7C9 /* presistor.png */; };
+		50C7F04611D73B53001EB7C9 /* sresistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04411D73B53001EB7C9 /* sresistor.png */; };
+		50D0082311DC42AE006A076B /* wire.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D0082211DC42AE006A076B /* wire.png */; };
+		50D0087911DC698F006A076B /* targetResistorLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D0087811DC698F006A076B /* targetResistorLabel.png */; };
+		50D0087F11DC6A89006A076B /* equivalentResitorLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D0087E11DC6A89006A076B /* equivalentResitorLabel.png */; };
+		9C1CF818125E9F020060A1B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF817125E9F020060A1B2 /* UIKit.framework */; };
+		9C1CF81C125E9F120060A1B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF81B125E9F120060A1B2 /* Foundation.framework */; };
+		9C1CF820125E9F1E0060A1B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */; };
+		9C1CF857125EA1E50060A1B2 /* DecoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CF855125EA1E50060A1B2 /* DecoderViewController.m */; };
+		9C1CF858125EA1E50060A1B2 /* Decoder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CF856125EA1E50060A1B2 /* Decoder.xib */; };
+		9C1CF877125EA6A30060A1B2 /* decoder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CF876125EA6A30060A1B2 /* decoder.png */; };
+		9C442011126D1E9D00A2B27A /* determinant.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C442010126D1E9D00A2B27A /* determinant.png */; };
+		9C7D4E091277B5CC000EBAC0 /* BaseConverterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D4E071277B5CC000EBAC0 /* BaseConverterViewController.m */; };
+		9C7D4E0A1277B5CC000EBAC0 /* BaseConverter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D4E081277B5CC000EBAC0 /* BaseConverter.xib */; };
+		9C8135CA126D085100F68B8F /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8135C9126D085100F68B8F /* credits.png */; };
+		9C813600126D1B5300F68B8F /* linearequationsystem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8135FF126D1B5300F68B8F /* linearequationsystem.png */; };
+		9C8D1D7C127A62F9002A4916 /* BrushedMetal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D1D7A127A62F9002A4916 /* BrushedMetal.png */; };
+		9C8D1D7D127A62F9002A4916 /* BrushedMetal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D1D7B127A62F9002A4916 /* BrushedMetal@2x.png */; };
+		9C8FD2051279DF9E00A389B6 /* blackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8FD2031279DF9E00A389B6 /* blackButton@2x.png */; };
+		9C8FD2061279DF9E00A389B6 /* blackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8FD2041279DF9E00A389B6 /* blackButton.png */; };
+		9C8FD21E1279E1DF00A389B6 /* zeroButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8FD21C1279E1DF00A389B6 /* zeroButton@2x.png */; };
+		9C8FD21F1279E1DF00A389B6 /* zeroButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8FD21D1279E1DF00A389B6 /* zeroButton.png */; };
+		9C8FD2261279E38300A389B6 /* brownButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8FD2241279E38300A389B6 /* brownButton.png */; };
+		9C8FD2271279E38300A389B6 /* brownButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8FD2251279E38300A389B6 /* brownButton@2x.png */; };
+		9CB5F13F128C9351003117AD /* Conversor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5F13E128C9351003117AD /* Conversor.m */; };
+		9CE5551A126624EA00D09A21 /* Resistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE55519126624EA00D09A21 /* Resistor.png */; };
+		9CF125DE126F3BFF00CC1D45 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125CE126F3BFF00CC1D45 /* button@2x.png */; };
+		9CF125DF126F3BFF00CC1D45 /* credits@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125CF126F3BFF00CC1D45 /* credits@2x.png */; };
+		9CF125E0126F3BFF00CC1D45 /* resistorcalculator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D0126F3BFF00CC1D45 /* resistorcalculator@2x.png */; };
+		9CF125E1126F3BFF00CC1D45 /* decoder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D1126F3BFF00CC1D45 /* decoder@2x.png */; };
+		9CF125E2126F3BFF00CC1D45 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D2126F3BFF00CC1D45 /* Default@2x.png */; };
+		9CF125E3126F3BFF00CC1D45 /* determinant@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D3126F3BFF00CC1D45 /* determinant@2x.png */; };
+		9CF125E4126F3BFF00CC1D45 /* enterresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D4126F3BFF00CC1D45 /* enterresistor@2x.png */; };
+		9CF125E5126F3BFF00CC1D45 /* equivalentResitorLabel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D5126F3BFF00CC1D45 /* equivalentResitorLabel@2x.png */; };
+		9CF125E6126F3BFF00CC1D45 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */; };
+		9CF125E7126F3BFF00CC1D45 /* linearequationsystem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D7126F3BFF00CC1D45 /* linearequationsystem@2x.png */; };
+		9CF125E8126F3BFF00CC1D45 /* presistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */; };
+		9CF125E9126F3BFF00CC1D45 /* Resistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */; };
+		9CF125EA126F3BFF00CC1D45 /* selectionLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DA126F3BFF00CC1D45 /* selectionLine@2x.png */; };
+		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
+		9CF125EC126F3BFF00CC1D45 /* targetResistorLabel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DC126F3BFF00CC1D45 /* targetResistorLabel@2x.png */; };
+		9CF125ED126F3BFF00CC1D45 /* wood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DD126F3BFF00CC1D45 /* wood@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		50020DCF11D5769700C61974 /* mygaussj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mygaussj.h; sourceTree = "<group>"; };
+		50020DD011D5769700C61974 /* mygaussj.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mygaussj.c; sourceTree = "<group>"; };
+		50020DD111D5769700C61974 /* myludcmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myludcmp.h; sourceTree = "<group>"; };
+		50020DD211D5769700C61974 /* myludcmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = myludcmp.c; sourceTree = "<group>"; };
+		50020DD311D5769700C61974 /* rescalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rescalc.h; sourceTree = "<group>"; };
+		50020DD411D5769700C61974 /* rescalc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rescalc.c; sourceTree = "<group>"; };
+		50020DDC11D576BC00C61974 /* MATSOLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATSOLDefines.h; sourceTree = "<group>"; };
+		50020DDD11D576BC00C61974 /* MATSOLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATSOLAppDelegate.h; sourceTree = "<group>"; };
+		50020DDE11D576BC00C61974 /* MATSOLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATSOLAppDelegate.m; sourceTree = "<group>"; };
+		50020DE011D576BC00C61974 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		50020DE111D576BC00C61974 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		50020DE211D576BC00C61974 /* SelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionViewController.h; sourceTree = "<group>"; };
+		50020DE311D576BC00C61974 /* SelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionViewController.m; sourceTree = "<group>"; };
+		50020DE411D576BC00C61974 /* InputResistorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputResistorViewController.h; sourceTree = "<group>"; };
+		50020DE511D576BC00C61974 /* InputResistorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputResistorViewController.m; sourceTree = "<group>"; };
+		50020DE611D576BC00C61974 /* MatrixSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixSheetViewController.h; sourceTree = "<group>"; };
+		50020DE711D576BC00C61974 /* MatrixSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixSheetViewController.m; sourceTree = "<group>"; };
+		50020DE811D576BC00C61974 /* DeterminantSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeterminantSheetViewController.h; sourceTree = "<group>"; };
+		50020DE911D576BC00C61974 /* DeterminantSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeterminantSheetViewController.m; sourceTree = "<group>"; };
+		50020DEA11D576BC00C61974 /* SolutionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolutionsViewController.h; sourceTree = "<group>"; };
+		50020DEB11D576BC00C61974 /* SolutionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolutionsViewController.m; sourceTree = "<group>"; };
+		50020DEC11D576BC00C61974 /* OutputResistorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputResistorViewController.h; sourceTree = "<group>"; };
+		50020DED11D576BC00C61974 /* OutputResistorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputResistorViewController.m; sourceTree = "<group>"; };
+		50020DEF11D576BC00C61974 /* SlaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlaveViewController.h; sourceTree = "<group>"; };
+		50020DF011D576BC00C61974 /* SlaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlaveViewController.m; sourceTree = "<group>"; };
+		50020DF111D576BC00C61974 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
+		50020DF211D576BC00C61974 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
+		50020DFE11D576DA00C61974 /* MATSOL_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATSOL_Prefix.pch; sourceTree = "<group>"; };
+		50020DFF11D576DA00C61974 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		50020E0211D576DA00C61974 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		50020E0411D576DA00C61974 /* Scroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Scroll.xib; sourceTree = "<group>"; };
+		50020E0511D576DA00C61974 /* Selection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Selection.xib; sourceTree = "<group>"; };
+		50020E0611D576DA00C61974 /* InputResistor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputResistor.xib; sourceTree = "<group>"; };
+		50020E0711D576DA00C61974 /* OutputResistor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutputResistor.xib; sourceTree = "<group>"; };
+		50020E0811D576DA00C61974 /* MatrixSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatrixSheet.xib; sourceTree = "<group>"; };
+		50020E0911D576DA00C61974 /* Solutions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Solutions.xib; sourceTree = "<group>"; };
+		50020E0A11D576DA00C61974 /* Slave.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slave.xib; sourceTree = "<group>"; };
+		50020E0B11D576DA00C61974 /* CreditsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
+		50020E0F11D576DA00C61974 /* ll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ll.png; sourceTree = "<group>"; };
+		50020E1011D576DA00C61974 /* ur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ur.png; sourceTree = "<group>"; };
+		50020E1111D576DA00C61974 /* ul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ul.png; sourceTree = "<group>"; };
+		50020E1211D576DA00C61974 /* m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m.png; sourceTree = "<group>"; };
+		50020E1311D576DA00C61974 /* lr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lr.png; sourceTree = "<group>"; };
+		50020E1611D576DA00C61974 /* selectionLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectionLine.png; sourceTree = "<group>"; };
+		50020E1711D576DA00C61974 /* enterresistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enterresistor.png; sourceTree = "<group>"; };
+		50020E1811D576DA00C61974 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood.png; sourceTree = "<group>"; };
+		50020E1B11D576DA00C61974 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		50020E1E11D576DA00C61974 /* resistorcalculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resistorcalculator.png; sourceTree = "<group>"; };
+		50020E1F11D576DA00C61974 /* MATSOL-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MATSOL-Info.plist"; sourceTree = "<group>"; };
+		50020FD411D58FBB00C61974 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		50020FF211D598BE00C61974 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		50260BC412B4C9D700A1CF4D /* crossedBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crossedBlackButton.png; sourceTree = "<group>"; };
+		50260BC512B4C9D700A1CF4D /* crossedBlackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crossedBlackButton@2x.png"; sourceTree = "<group>"; };
+		502EFE2111E0105F007BCA03 /* signW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signW.png; sourceTree = "<group>"; };
+		50386A3612B5D5210071A656 /* baseConverter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baseConverter.png; sourceTree = "<group>"; };
+		50386A3712B5D5210071A656 /* baseConverter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baseConverter@2x.png"; sourceTree = "<group>"; };
+		50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteBlackButton@2x.png"; sourceTree = "<group>"; };
+		50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deleteBlackButton.png; sourceTree = "<group>"; };
+		5049951F11DED9F20058F950 /* sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign.png; sourceTree = "<group>"; };
+		504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		5068F7321230978300BAFDBF /* MATSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MATSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C7EFD111D70C42001EB7C9 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
+		50C7F04311D73B53001EB7C9 /* presistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presistor.png; sourceTree = "<group>"; };
+		50C7F04411D73B53001EB7C9 /* sresistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sresistor.png; sourceTree = "<group>"; };
+		50D0082211DC42AE006A076B /* wire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wire.png; sourceTree = "<group>"; };
+		50D0087811DC698F006A076B /* targetResistorLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targetResistorLabel.png; sourceTree = "<group>"; };
+		50D0087E11DC6A89006A076B /* equivalentResitorLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = equivalentResitorLabel.png; sourceTree = "<group>"; };
+		9C1CF817125E9F020060A1B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9C1CF81B125E9F120060A1B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9C1CF854125EA1E50060A1B2 /* DecoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecoderViewController.h; sourceTree = "<group>"; };
+		9C1CF855125EA1E50060A1B2 /* DecoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecoderViewController.m; sourceTree = "<group>"; };
+		9C1CF856125EA1E50060A1B2 /* Decoder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Decoder.xib; sourceTree = "<group>"; };
+		9C1CF876125EA6A30060A1B2 /* decoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decoder.png; sourceTree = "<group>"; };
+		9C442010126D1E9D00A2B27A /* determinant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = determinant.png; sourceTree = "<group>"; };
+		9C7D4E061277B5CC000EBAC0 /* BaseConverterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseConverterViewController.h; sourceTree = "<group>"; };
+		9C7D4E071277B5CC000EBAC0 /* BaseConverterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseConverterViewController.m; sourceTree = "<group>"; };
+		9C7D4E081277B5CC000EBAC0 /* BaseConverter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseConverter.xib; sourceTree = "<group>"; };
+		9C8135C9126D085100F68B8F /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits.png; sourceTree = "<group>"; };
+		9C8135FF126D1B5300F68B8F /* linearequationsystem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linearequationsystem.png; sourceTree = "<group>"; };
+		9C8D1D7A127A62F9002A4916 /* BrushedMetal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BrushedMetal.png; sourceTree = "<group>"; };
+		9C8D1D7B127A62F9002A4916 /* BrushedMetal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BrushedMetal@2x.png"; sourceTree = "<group>"; };
+		9C8FD2031279DF9E00A389B6 /* blackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackButton@2x.png"; sourceTree = "<group>"; };
+		9C8FD2041279DF9E00A389B6 /* blackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButton.png; sourceTree = "<group>"; };
+		9C8FD21C1279E1DF00A389B6 /* zeroButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zeroButton@2x.png"; sourceTree = "<group>"; };
+		9C8FD21D1279E1DF00A389B6 /* zeroButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zeroButton.png; sourceTree = "<group>"; };
+		9C8FD2241279E38300A389B6 /* brownButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brownButton.png; sourceTree = "<group>"; };
+		9C8FD2251279E38300A389B6 /* brownButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brownButton@2x.png"; sourceTree = "<group>"; };
+		9CB5F13D128C9351003117AD /* Conversor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversor.h; sourceTree = "<group>"; };
+		9CB5F13E128C9351003117AD /* Conversor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversor.m; sourceTree = "<group>"; };
+		9CE55519126624EA00D09A21 /* Resistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Resistor.png; sourceTree = "<group>"; };
+		9CF125CE126F3BFF00CC1D45 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		9CF125CF126F3BFF00CC1D45 /* credits@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credits@2x.png"; sourceTree = "<group>"; };
+		9CF125D0126F3BFF00CC1D45 /* resistorcalculator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resistorcalculator@2x.png"; sourceTree = "<group>"; };
+		9CF125D1126F3BFF00CC1D45 /* decoder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decoder@2x.png"; sourceTree = "<group>"; };
+		9CF125D2126F3BFF00CC1D45 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9CF125D3126F3BFF00CC1D45 /* determinant@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "determinant@2x.png"; sourceTree = "<group>"; };
+		9CF125D4126F3BFF00CC1D45 /* enterresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enterresistor@2x.png"; sourceTree = "<group>"; };
+		9CF125D5126F3BFF00CC1D45 /* equivalentResitorLabel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "equivalentResitorLabel@2x.png"; sourceTree = "<group>"; };
+		9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9CF125D7126F3BFF00CC1D45 /* linearequationsystem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linearequationsystem@2x.png"; sourceTree = "<group>"; };
+		9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presistor@2x.png"; sourceTree = "<group>"; };
+		9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resistor@2x.png"; sourceTree = "<group>"; };
+		9CF125DA126F3BFF00CC1D45 /* selectionLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectionLine@2x.png"; sourceTree = "<group>"; };
+		9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sresistor@2x.png"; sourceTree = "<group>"; };
+		9CF125DC126F3BFF00CC1D45 /* targetResistorLabel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "targetResistorLabel@2x.png"; sourceTree = "<group>"; };
+		9CF125DD126F3BFF00CC1D45 /* wood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1CF818125E9F020060A1B2 /* UIKit.framework in Frameworks */,
+				9C1CF81C125E9F120060A1B2 /* Foundation.framework in Frameworks */,
+				9C1CF820125E9F1E0060A1B2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5068F7321230978300BAFDBF /* MATSOL.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				50020DCE11D5769700C61974 /* Engine */,
+				50020DD811D576A700C61974 /* Classes */,
+				50020E0011D576DA00C61974 /* Resources */,
+				50020DFD11D576DA00C61974 /* Other Sources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CF817125E9F020060A1B2 /* UIKit.framework */,
+				9C1CF81B125E9F120060A1B2 /* Foundation.framework */,
+				9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50020DCE11D5769700C61974 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				50020DCF11D5769700C61974 /* mygaussj.h */,
+				50020DD011D5769700C61974 /* mygaussj.c */,
+				50020DD111D5769700C61974 /* myludcmp.h */,
+				50020DD211D5769700C61974 /* myludcmp.c */,
+				50020DD311D5769700C61974 /* rescalc.h */,
+				50020DD411D5769700C61974 /* rescalc.c */,
+				9CB5F13D128C9351003117AD /* Conversor.h */,
+				9CB5F13E128C9351003117AD /* Conversor.m */,
+			);
+			name = Engine;
+			sourceTree = "<group>";
+		};
+		50020DD811D576A700C61974 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				50020DDC11D576BC00C61974 /* MATSOLDefines.h */,
+				50020DDD11D576BC00C61974 /* MATSOLAppDelegate.h */,
+				50020DDE11D576BC00C61974 /* MATSOLAppDelegate.m */,
+				50020DDF11D576BC00C61974 /* MainViewControllers */,
+				50020DEE11D576BC00C61974 /* SecondaryViewControllers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		50020DDF11D576BC00C61974 /* MainViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				50020DE011D576BC00C61974 /* ScrollViewController.h */,
+				50020DE111D576BC00C61974 /* ScrollViewController.m */,
+				50020DE211D576BC00C61974 /* SelectionViewController.h */,
+				50020DE311D576BC00C61974 /* SelectionViewController.m */,
+				9C7D4E061277B5CC000EBAC0 /* BaseConverterViewController.h */,
+				9C7D4E071277B5CC000EBAC0 /* BaseConverterViewController.m */,
+				50020DE411D576BC00C61974 /* InputResistorViewController.h */,
+				50020DE511D576BC00C61974 /* InputResistorViewController.m */,
+				50020DE611D576BC00C61974 /* MatrixSheetViewController.h */,
+				50020DE711D576BC00C61974 /* MatrixSheetViewController.m */,
+				50020DE811D576BC00C61974 /* DeterminantSheetViewController.h */,
+				50020DE911D576BC00C61974 /* DeterminantSheetViewController.m */,
+				50020DEA11D576BC00C61974 /* SolutionsViewController.h */,
+				50020DEB11D576BC00C61974 /* SolutionsViewController.m */,
+				50020DEC11D576BC00C61974 /* OutputResistorViewController.h */,
+				50020DED11D576BC00C61974 /* OutputResistorViewController.m */,
+				9C1CF854125EA1E50060A1B2 /* DecoderViewController.h */,
+				9C1CF855125EA1E50060A1B2 /* DecoderViewController.m */,
+			);
+			name = MainViewControllers;
+			sourceTree = "<group>";
+		};
+		50020DEE11D576BC00C61974 /* SecondaryViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				50020DEF11D576BC00C61974 /* SlaveViewController.h */,
+				50020DF011D576BC00C61974 /* SlaveViewController.m */,
+				50020DF111D576BC00C61974 /* CreditsViewController.h */,
+				50020DF211D576BC00C61974 /* CreditsViewController.m */,
+			);
+			name = SecondaryViewControllers;
+			sourceTree = "<group>";
+		};
+		50020DFD11D576DA00C61974 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				50020DFE11D576DA00C61974 /* MATSOL_Prefix.pch */,
+				50020DFF11D576DA00C61974 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		50020E0011D576DA00C61974 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50020E0C11D576DA00C61974 /* Images */,
+				50020E0111D576DA00C61974 /* NIBs */,
+				50020E1F11D576DA00C61974 /* MATSOL-Info.plist */,
+				50020FD411D58FBB00C61974 /* Default.png */,
+				9CF125D2126F3BFF00CC1D45 /* Default@2x.png */,
+				50020FF211D598BE00C61974 /* Icon.png */,
+				9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */,
+				504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		50020E0111D576DA00C61974 /* NIBs */ = {
+			isa = PBXGroup;
+			children = (
+				50020E0211D576DA00C61974 /* MainWindow.xib */,
+				50020E0411D576DA00C61974 /* Scroll.xib */,
+				50020E0511D576DA00C61974 /* Selection.xib */,
+				50020E0611D576DA00C61974 /* InputResistor.xib */,
+				50020E0711D576DA00C61974 /* OutputResistor.xib */,
+				50020E0811D576DA00C61974 /* MatrixSheet.xib */,
+				50020E0911D576DA00C61974 /* Solutions.xib */,
+				9C1CF856125EA1E50060A1B2 /* Decoder.xib */,
+				9C7D4E081277B5CC000EBAC0 /* BaseConverter.xib */,
+				50020E0A11D576DA00C61974 /* Slave.xib */,
+				50020E0B11D576DA00C61974 /* CreditsViewController.xib */,
+			);
+			name = NIBs;
+			sourceTree = "<group>";
+		};
+		50020E0C11D576DA00C61974 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				50020E1A11D576DA00C61974 /* Buttons */,
+				50020E1411D576DA00C61974 /* Backgrounds */,
+				50020E0E11D576DA00C61974 /* Matrix */,
+				50D0075111DC2455006A076B /* Other */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		50020E0E11D576DA00C61974 /* Matrix */ = {
+			isa = PBXGroup;
+			children = (
+				50020E0F11D576DA00C61974 /* ll.png */,
+				50020E1011D576DA00C61974 /* ur.png */,
+				50020E1111D576DA00C61974 /* ul.png */,
+				50020E1211D576DA00C61974 /* m.png */,
+				50020E1311D576DA00C61974 /* lr.png */,
+			);
+			name = Matrix;
+			sourceTree = "<group>";
+		};
+		50020E1411D576DA00C61974 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				9C8D1D7A127A62F9002A4916 /* BrushedMetal.png */,
+				9C8D1D7B127A62F9002A4916 /* BrushedMetal@2x.png */,
+				9C8135C9126D085100F68B8F /* credits.png */,
+				9CF125CF126F3BFF00CC1D45 /* credits@2x.png */,
+				50020E1611D576DA00C61974 /* selectionLine.png */,
+				9CF125DA126F3BFF00CC1D45 /* selectionLine@2x.png */,
+				50020E1711D576DA00C61974 /* enterresistor.png */,
+				9CF125D4126F3BFF00CC1D45 /* enterresistor@2x.png */,
+				50020E1811D576DA00C61974 /* wood.png */,
+				9CF125DD126F3BFF00CC1D45 /* wood@2x.png */,
+			);
+			name = Backgrounds;
+			sourceTree = "<group>";
+		};
+		50020E1A11D576DA00C61974 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				50386A3612B5D5210071A656 /* baseConverter.png */,
+				50386A3712B5D5210071A656 /* baseConverter@2x.png */,
+				50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */,
+				50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */,
+				9C8FD2031279DF9E00A389B6 /* blackButton@2x.png */,
+				9C8FD2041279DF9E00A389B6 /* blackButton.png */,
+				9C8FD21C1279E1DF00A389B6 /* zeroButton@2x.png */,
+				9C8FD21D1279E1DF00A389B6 /* zeroButton.png */,
+				9C8FD2241279E38300A389B6 /* brownButton.png */,
+				9C8FD2251279E38300A389B6 /* brownButton@2x.png */,
+				50020E1B11D576DA00C61974 /* button.png */,
+				9CF125CE126F3BFF00CC1D45 /* button@2x.png */,
+				50260BC412B4C9D700A1CF4D /* crossedBlackButton.png */,
+				50260BC512B4C9D700A1CF4D /* crossedBlackButton@2x.png */,
+				9C442010126D1E9D00A2B27A /* determinant.png */,
+				9CF125D3126F3BFF00CC1D45 /* determinant@2x.png */,
+				9C8135FF126D1B5300F68B8F /* linearequationsystem.png */,
+				9CF125D7126F3BFF00CC1D45 /* linearequationsystem@2x.png */,
+				50020E1E11D576DA00C61974 /* resistorcalculator.png */,
+				9CF125D0126F3BFF00CC1D45 /* resistorcalculator@2x.png */,
+				9C1CF876125EA6A30060A1B2 /* decoder.png */,
+				9CF125D1126F3BFF00CC1D45 /* decoder@2x.png */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		50D0075111DC2455006A076B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9CE55519126624EA00D09A21 /* Resistor.png */,
+				9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */,
+				502EFE2111E0105F007BCA03 /* signW.png */,
+				5049951F11DED9F20058F950 /* sign.png */,
+				50D0087E11DC6A89006A076B /* equivalentResitorLabel.png */,
+				9CF125D5126F3BFF00CC1D45 /* equivalentResitorLabel@2x.png */,
+				50D0087811DC698F006A076B /* targetResistorLabel.png */,
+				9CF125DC126F3BFF00CC1D45 /* targetResistorLabel@2x.png */,
+				50C7F04311D73B53001EB7C9 /* presistor.png */,
+				9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */,
+				50C7F04411D73B53001EB7C9 /* sresistor.png */,
+				9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */,
+				50D0082211DC42AE006A076B /* wire.png */,
+				50C7EFD111D70C42001EB7C9 /* help.png */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* MATSOL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MATSOL" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MATSOL;
+			productName = MATSOL;
+			productReference = 5068F7321230978300BAFDBF /* MATSOL.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MATSOL" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* MATSOL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50020E2111D576DA00C61974 /* MainWindow.xib in Resources */,
+				50020E2311D576DA00C61974 /* Scroll.xib in Resources */,
+				50020E2411D576DA00C61974 /* Selection.xib in Resources */,
+				50020E2511D576DA00C61974 /* InputResistor.xib in Resources */,
+				50020E2611D576DA00C61974 /* OutputResistor.xib in Resources */,
+				50020E2711D576DA00C61974 /* MatrixSheet.xib in Resources */,
+				50020E2811D576DA00C61974 /* Solutions.xib in Resources */,
+				50020E2911D576DA00C61974 /* Slave.xib in Resources */,
+				50020E2A11D576DA00C61974 /* CreditsViewController.xib in Resources */,
+				50020E2C11D576DA00C61974 /* ll.png in Resources */,
+				50020E2D11D576DA00C61974 /* ur.png in Resources */,
+				50020E2E11D576DA00C61974 /* ul.png in Resources */,
+				50020E2F11D576DA00C61974 /* m.png in Resources */,
+				50020E3011D576DA00C61974 /* lr.png in Resources */,
+				50020E3211D576DA00C61974 /* selectionLine.png in Resources */,
+				50020E3311D576DA00C61974 /* enterresistor.png in Resources */,
+				50020E3411D576DA00C61974 /* wood.png in Resources */,
+				50020E3611D576DA00C61974 /* button.png in Resources */,
+				50020E3911D576DA00C61974 /* resistorcalculator.png in Resources */,
+				50020FD511D58FBB00C61974 /* Default.png in Resources */,
+				50020FF311D598BE00C61974 /* Icon.png in Resources */,
+				50C7EFD211D70C42001EB7C9 /* help.png in Resources */,
+				50C7F04511D73B53001EB7C9 /* presistor.png in Resources */,
+				50C7F04611D73B53001EB7C9 /* sresistor.png in Resources */,
+				50D0082311DC42AE006A076B /* wire.png in Resources */,
+				50D0087911DC698F006A076B /* targetResistorLabel.png in Resources */,
+				50D0087F11DC6A89006A076B /* equivalentResitorLabel.png in Resources */,
+				5049952011DED9F20058F950 /* sign.png in Resources */,
+				502EFE2211E0105F007BCA03 /* signW.png in Resources */,
+				9C1CF858125EA1E50060A1B2 /* Decoder.xib in Resources */,
+				9C1CF877125EA6A30060A1B2 /* decoder.png in Resources */,
+				9CE5551A126624EA00D09A21 /* Resistor.png in Resources */,
+				9C8135CA126D085100F68B8F /* credits.png in Resources */,
+				9C813600126D1B5300F68B8F /* linearequationsystem.png in Resources */,
+				9C442011126D1E9D00A2B27A /* determinant.png in Resources */,
+				9CF125DE126F3BFF00CC1D45 /* button@2x.png in Resources */,
+				9CF125DF126F3BFF00CC1D45 /* credits@2x.png in Resources */,
+				9CF125E0126F3BFF00CC1D45 /* resistorcalculator@2x.png in Resources */,
+				9CF125E1126F3BFF00CC1D45 /* decoder@2x.png in Resources */,
+				9CF125E2126F3BFF00CC1D45 /* Default@2x.png in Resources */,
+				9CF125E3126F3BFF00CC1D45 /* determinant@2x.png in Resources */,
+				9CF125E4126F3BFF00CC1D45 /* enterresistor@2x.png in Resources */,
+				9CF125E5126F3BFF00CC1D45 /* equivalentResitorLabel@2x.png in Resources */,
+				9CF125E6126F3BFF00CC1D45 /* Icon@2x.png in Resources */,
+				9CF125E7126F3BFF00CC1D45 /* linearequationsystem@2x.png in Resources */,
+				9CF125E8126F3BFF00CC1D45 /* presistor@2x.png in Resources */,
+				9CF125E9126F3BFF00CC1D45 /* Resistor@2x.png in Resources */,
+				9CF125EA126F3BFF00CC1D45 /* selectionLine@2x.png in Resources */,
+				9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */,
+				9CF125EC126F3BFF00CC1D45 /* targetResistorLabel@2x.png in Resources */,
+				9CF125ED126F3BFF00CC1D45 /* wood@2x.png in Resources */,
+				9C7D4E0A1277B5CC000EBAC0 /* BaseConverter.xib in Resources */,
+				9C8FD2051279DF9E00A389B6 /* blackButton@2x.png in Resources */,
+				9C8FD2061279DF9E00A389B6 /* blackButton.png in Resources */,
+				9C8FD21E1279E1DF00A389B6 /* zeroButton@2x.png in Resources */,
+				9C8FD21F1279E1DF00A389B6 /* zeroButton.png in Resources */,
+				9C8FD2261279E38300A389B6 /* brownButton.png in Resources */,
+				9C8FD2271279E38300A389B6 /* brownButton@2x.png in Resources */,
+				9C8D1D7C127A62F9002A4916 /* BrushedMetal.png in Resources */,
+				9C8D1D7D127A62F9002A4916 /* BrushedMetal@2x.png in Resources */,
+				50260BC612B4C9D700A1CF4D /* crossedBlackButton.png in Resources */,
+				50260BC712B4C9D700A1CF4D /* crossedBlackButton@2x.png in Resources */,
+				50386A3812B5D5210071A656 /* baseConverter.png in Resources */,
+				50386A3912B5D5210071A656 /* baseConverter@2x.png in Resources */,
+				50386A4B12B5DA490071A656 /* deleteBlackButton@2x.png in Resources */,
+				50386A4D12B5DA5B0071A656 /* deleteBlackButton.png in Resources */,
+				504C6FAD12BF4DCC00CC815E /* iTunesArtwork.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50020DD511D5769700C61974 /* mygaussj.c in Sources */,
+				50020DD611D5769700C61974 /* myludcmp.c in Sources */,
+				50020DD711D5769700C61974 /* rescalc.c in Sources */,
+				50020DF311D576BC00C61974 /* MATSOLAppDelegate.m in Sources */,
+				50020DF411D576BC00C61974 /* ScrollViewController.m in Sources */,
+				50020DF511D576BC00C61974 /* SelectionViewController.m in Sources */,
+				50020DF611D576BC00C61974 /* InputResistorViewController.m in Sources */,
+				50020DF711D576BC00C61974 /* MatrixSheetViewController.m in Sources */,
+				50020DF811D576BC00C61974 /* DeterminantSheetViewController.m in Sources */,
+				50020DF911D576BC00C61974 /* SolutionsViewController.m in Sources */,
+				50020DFA11D576BC00C61974 /* OutputResistorViewController.m in Sources */,
+				50020DFB11D576BC00C61974 /* SlaveViewController.m in Sources */,
+				50020DFC11D576BC00C61974 /* CreditsViewController.m in Sources */,
+				50020E2011D576DA00C61974 /* main.m in Sources */,
+				9C1CF857125EA1E50060A1B2 /* DecoderViewController.m in Sources */,
+				9C7D4E091277B5CC000EBAC0 /* BaseConverterViewController.m in Sources */,
+				9CB5F13F128C9351003117AD /* Conversor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yoshiki Vázquez (HEYKDF8EE4)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MATSOL_Prefix.pch;
+				INFOPLIST_FILE = "MATSOL-Info.plist";
+				PRODUCT_NAME = MATSOL;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E92350F9-DC6E-4540-98E1-4341136F38B3";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MATSOL_Prefix.pch;
+				INFOPLIST_FILE = "MATSOL-Info.plist";
+				PRODUCT_NAME = MATSOL;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9CF1259B126E8C6600CC1D45 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphonesimulator4.0;
+			};
+			name = Distribution;
+		};
+		9CF1259C126E8C6600CC1D45 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MATSOL_Prefix.pch;
+				INFOPLIST_FILE = "MATSOL-Info.plist";
+				PRODUCT_NAME = MATSOL;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphonesimulator4.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphonesimulator4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MATSOL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				9CF1259C126E8C6600CC1D45 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MATSOL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+				9CF1259B126E8C6600CC1D45 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
