@@ -235,14 +235,14 @@ int PaddingXRight(int size){
 		[determinantValue show];
 		[determinantValue release];
 	}
-	else if (wasSolved=DeterminantErrorEverythingOk) {
+	else if ((wasSolved=DeterminantErrorEverythingOk)) {
 		for(j=1;j<=matrixSize;j++) {
 			d *= a[j-1][j-1];
 		}
 		
 		#ifdef DEBUG
 		NSLog(@"The determinant value is %f\n",d);
-		#endif DEBUG
+		#endif //DEBUG
 		
 		UIAlertView *determinantValue=[[UIAlertView alloc] 
 									   initWithTitle:@"Done!" 
