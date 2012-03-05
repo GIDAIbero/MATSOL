@@ -132,12 +132,13 @@ int PaddingXRight(int size){
 			temp=[[myArray objectAtIndex:height] objectAtIndex:width];
 			
 			//Attributes for textfields that are not the solution column
-			temp.borderStyle=UITextBorderStyleRoundedRect;
-			temp.adjustsFontSizeToFitWidth=YES;
-			temp.font=[UIFont fontWithName:@"CourierNewPS-BoldMT" size:20];
-			temp.textColor=[UIColor blackColor];
-			temp.keyboardType=UIKeyboardTypeNumbersAndPunctuation;
-			temp.textAlignment=UITextAlignmentRight;
+			temp.borderStyle               = UITextBorderStyleRoundedRect;
+			temp.adjustsFontSizeToFitWidth = YES;
+			temp.font                      = [UIFont fontWithName:@"CourierNewPS-BoldMT" size:20];
+			temp.textColor                 = [UIColor blackColor];
+			temp.keyboardType              = UIKeyboardTypeDecimalPad;
+            temp.keyboardAppearance        = UIKeyboardAppearanceAlert;
+			temp.textAlignment             =UITextAlignmentRight;
 			//These three properties are important to later use the delegate methods
 			//and make input easier
 			temp.delegate=self;
