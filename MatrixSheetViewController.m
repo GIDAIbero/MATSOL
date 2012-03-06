@@ -281,8 +281,7 @@
 		theSolutions.size=matrixSize;
 		
 		//Push the viewController
-		[self.navigationController pushViewController:theSolutions animated:YES];
-		
+		[self.navigationController pushViewController:theSolutions animated:YES];		
 	}
 	else if(matrixState==UnsolvedMatrix){
 		#ifdef DEBUG
@@ -308,7 +307,6 @@
 	layoutView=nil;
 	solveButton=nil;
 }
-
 
 - (void)dealloc {
 	[myArray release];

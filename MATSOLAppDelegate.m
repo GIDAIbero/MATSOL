@@ -54,16 +54,18 @@
 
 -(void)creatingFont:(id)sender{
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+    #ifdef DEBUG
 	NSLog(@"This is another thread");
-	int conter=0;
-	for (conter=0; conter<0; conter++) {
-		NSLog(@"Lol %d",conter);
-	}
+    #endif
+    
     [self performSelectorOnMainThread:@selector(endFont) withObject:nil waitUntilDone:NO];
     [pool release];
 }
 -(void)endFont{
+    #ifdef DEBUG
 	NSLog(@"The font was loaded succesfully");
+    #endif
 }
 
 
