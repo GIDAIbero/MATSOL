@@ -156,6 +156,16 @@
 	firstDigit=[colorPickerView selectedRowInComponent:0];
 	secondDigit=[colorPickerView selectedRowInComponent:1];
 	power=[colorPickerView selectedRowInComponent:2];
+    switch (power) {
+        case 10:
+            power = -1;
+            break;
+        case 11:
+            power = -2;
+            break;
+        default:
+            break;
+    }
 	tolerance=[colorPickerView selectedRowInComponent:3];
 	
 	#ifdef DEBUG

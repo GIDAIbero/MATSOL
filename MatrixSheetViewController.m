@@ -133,7 +133,8 @@
 			temp.adjustsFontSizeToFitWidth=YES;
 			temp.font=[UIFont fontWithName:@"CourierNewPS-BoldMT" size:20];
 			temp.textColor=[UIColor blackColor];
-			temp.keyboardType=UIKeyboardTypeNumbersAndPunctuation;
+			temp.keyboardType=UIKeyboardTypeDecimalPad;
+            temp.keyboardAppearance        = UIKeyboardAppearanceAlert;
 			temp.textAlignment=UITextAlignmentRight;
 			temp.returnKeyType=UIReturnKeyNext;
 			temp.delegate=self;
