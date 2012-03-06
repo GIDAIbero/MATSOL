@@ -136,10 +136,15 @@ int PaddingXRight(int size){
             UIBarButtonItem *ubbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextSomething:)];
             UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissKeyboard:)];
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-            UIToolbar *kbtb = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)];
+            UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
             [kbtb setItems:[NSArray arrayWithObjects:space,ubbi,lesskey,nil]];
+            [ubbi release];
+            [lesskey release];
+            [space release];
+            
             temp.inputAccessoryView        = kbtb;
+            
 			temp.borderStyle               = UITextBorderStyleRoundedRect;
 			temp.adjustsFontSizeToFitWidth = YES;
 			temp.font                      = [UIFont fontWithName:@"CourierNewPS-BoldMT" size:20];

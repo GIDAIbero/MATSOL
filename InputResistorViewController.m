@@ -56,6 +56,10 @@
     [tolerance setKeyboardAppearance:UIKeyboardAppearanceAlert];
     
 	[targetResistance becomeFirstResponder];
+    [bbi release];
+    [spa release];
+    [tool release];
+    
 }
 
 #pragma mark MemoryManagement
