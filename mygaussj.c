@@ -16,7 +16,7 @@
 
 int gaussj(float *a[], int n, float *b){
 	int indxc[n+1],indxr[n+1],ipiv[n+1];
-	int i,icol,irow,j,k,l,ll;
+	int i,icol = 0,irow = 0,j,k,l,ll;
 	float big,dum,pivinv,temp;
 	
 	for (j=1;j<=n;j++) ipiv[j]=0;

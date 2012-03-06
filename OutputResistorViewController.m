@@ -414,7 +414,7 @@ static float kAnimationDuration=0.35;
 - (void)bandColorsForLabel:(NSString *)theValue{
 	NSString *medium=[theValue stringByReplacingOccurrencesOfString:@"Ω" withString:@""];
 	NSString *temp;
-	float numeric;
+	float numeric = 0;
 	const char *myString, *format;
 	//Initialized @ -1 to make the algorithm flow, cause you know arrays in C start @ 0
 	int counter=-1;

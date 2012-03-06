@@ -53,7 +53,7 @@ int PaddingXRight(int size){
 
 - (void)viewDidLoad{
 	#ifdef DEBUG
-	NSLog(@"Creating teh matrix");
+	NSLog(@"Creating the matrix");
 	#endif
 	
 	int i=0;
@@ -61,7 +61,7 @@ int PaddingXRight(int size){
 	
 	//As soon as the view has loaded make it visible
 	[self.view addSubview:_loadingMessageView];
-	[_loadingMessageView release];
+	//[_loadingMessageView release];
 	
 	//ScrollView initializations
 	layoutView.delegate=self;
@@ -113,7 +113,8 @@ int PaddingXRight(int size){
 #pragma mark Initialization_ThreadManagement
 
 -(void)beginTextFields{
-	[NSThread detachNewThreadSelector:@selector(creatingTextFields:) toTarget:self withObject:nil];
+	//[NSThread detachNewThreadSelector:@selector(creatingTextFields:) toTarget:self withObject:nil];
+    [self creatingTextFields:nil];
 }
 
 -(void)creatingTextFields:(id)sender{
@@ -121,16 +122,16 @@ int PaddingXRight(int size){
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	int height=0, width=0;
-	UITextField *temp;	
+	//UITextField *temp;	
 	
 	//Assign as many text fields as needed.
 	for (height=0; height<matrixSize; height++) {
-		[myArray insertObject:[[NSMutableArray alloc] init] atIndex:height];
-		
+		//[myArray insertObject:[[[NSMutableArray alloc] init] autorelease] atIndex:height];
+		NSMutableArray *ma = [NSMutableArray array];
 		for (width=0; width<matrixSize; width++) { 
-			[[myArray objectAtIndex:height] insertObject:[[UITextField alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)] atIndex:width];
-			temp=[[myArray objectAtIndex:height] objectAtIndex:width];
-			
+			//[[myArray objectAtIndex:height] insertObject:[[[UITextField alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)] autorelease] atIndex:width];
+			//UITextField *temp=[[myArray objectAtIndex:height] objectAtIndex:width];
+			UITextField *temp = [[UITextField alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)];
 			//Attributes for textfields that are not the solution column
 			temp.borderStyle               = UITextBorderStyleRoundedRect;
 			temp.adjustsFontSizeToFitWidth = YES;
@@ -146,12 +147,16 @@ int PaddingXRight(int size){
 			temp.returnKeyType=UIReturnKeyNext;
 			
 			//free the memory on the other thread
-			[self performSelectorOnMainThread:@selector(endTextFields:) withObject:temp waitUntilDone:NO];
+			//[self performSelectorOnMainThread:@selector(endTextFields:) withObject:temp waitUntilDone:NO];
+            [container addSubview:temp];
+            //[[myArray objectAtIndex:height] insertObject:temp atIndex:width];
+            [ma insertObject:temp atIndex:width];
 		}
+        [myArray insertObject:ma atIndex:height];
 	}	
 	//Is it done, well let's call it a thread and close this shit now!
-	[self performSelectorOnMainThread:@selector(makeFirstResponder:) withObject:nil waitUntilDone:NO];
-	
+	//[self performSelectorOnMainThread:@selector(makeFirstResponder:) withObject:nil waitUntilDone:NO];
+	[self makeFirstResponder:nil];
 	//Release the pool
     [pool release];
 }
@@ -179,8 +184,8 @@ int PaddingXRight(int size){
 	[layoutView addSubview:container];
 	[self.view addSubview:layoutView];
 	
-	[container release];
-	[layoutView release];
+	//[container release];
+	//[layoutView release];
 }
 
 
@@ -261,11 +266,11 @@ int PaddingXRight(int size){
 #pragma mark MemoryManagement 
 - (void)viewDidUnload {
     [super viewDidUnload];
-	myArray=nil;
+	/*myArray=nil;
 	container=nil;
 	layoutView=nil;
 	solveButton=nil;
-	_loadingMessageView=nil;
+	_loadingMessageView=nil;*/
 }
 
 - (void)dealloc {

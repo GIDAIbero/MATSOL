@@ -96,10 +96,10 @@
 	
 	//Assign as many text fields as needed.
 	for (height=0; height<size+1; height++) {
-		[labelsArray insertObject:[[NSMutableArray alloc] init] atIndex:height];
+		[labelsArray insertObject:[[[NSMutableArray alloc] init] autorelease] atIndex:height];
 		
 		for (width=0; width<size; width++) { 
-			[[labelsArray objectAtIndex:height] insertObject:[[UILabel alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)] atIndex:width];
+			[[labelsArray objectAtIndex:height] insertObject:[[[UILabel alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)] autorelease] atIndex:width];
 			temp=[[labelsArray objectAtIndex:height] objectAtIndex:width];
 			
 			//Attributes for textfields that are not the solution column
@@ -143,7 +143,7 @@
 			
 			//free the memory
 			[container addSubview:temp];
-			[temp release];
+			//[temp release];
 
 		}
 	}
@@ -154,7 +154,7 @@
     
 	//Add the scrollview to the view of the viewController
     [self.view addSubview:layoutView];
-	[layoutView release];
+	//[layoutView release];
 }
 
 #pragma mark MemoryManagement

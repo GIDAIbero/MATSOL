@@ -63,7 +63,7 @@
 			[matrixSize resignFirstResponder];
 			
 			//The size is valid? let's create a new viewController
-			MatrixSheetViewController *viewController=[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil];
+			MatrixSheetViewController *viewController=[[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil] autorelease];
 			viewController.matrixSize=[[matrixSize text] intValue];
 			//Push the viewController
 			[self.navigationController pushViewController:viewController animated:YES];			
@@ -73,7 +73,7 @@
 			[matrixSize resignFirstResponder];
 			
 			//The size is valid? let's create a new viewController
-			DeterminantSheetViewController *viewController=[[DeterminantSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil];
+			DeterminantSheetViewController *viewController=[[[DeterminantSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil] autorelease];
 			viewController.matrixSize=[[matrixSize text] intValue];
 			//Push the viewController
 			[self.navigationController pushViewController:viewController animated:YES];
@@ -153,7 +153,7 @@
 			[matrixSize resignFirstResponder];
 			
 			//The size is valid? let's create a new viewController
-			MatrixSheetViewController *viewController=[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil];
+			MatrixSheetViewController *viewController=[[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil] autorelease];
 			viewController.matrixSize=[[matrixSize text] intValue];
 			//Push the viewController
 			[self.navigationController pushViewController:viewController animated:YES];
@@ -164,7 +164,7 @@
 			[matrixSize resignFirstResponder];
 			
 			//The size is valid? let's create a new viewController
-			DeterminantSheetViewController *viewController=[[DeterminantSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil];
+			DeterminantSheetViewController *viewController=[[[DeterminantSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil] autorelease];
 			viewController.matrixSize=[[matrixSize text] intValue];
 			//Push the viewController
 			[self.navigationController pushViewController:viewController animated:YES];

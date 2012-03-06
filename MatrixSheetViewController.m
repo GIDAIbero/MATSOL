@@ -46,7 +46,7 @@
 		
 	//As soon as the view has loaded make it visible
 	[self.view addSubview:_loadingMessageView];
-	[_loadingMessageView release];
+	//[_loadingMessageView release];
 	
 	//ScrollView initializations
 	layoutView.delegate=self;
@@ -112,22 +112,23 @@
 	//A pool should always be created when using threads
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
-	UITextField *temp;
-	UILabel *dummies=nil;
+	//UITextField *temp;
+	//UILabel *dummies=nil;
 	CGPoint referencePoint;
 	float currentX=15.0, currentY=15.0;
 	int height=0, width=0;
 	
 	//Assign as many text fields as needed.
 	for (height=0; height<matrixSize+1; height++) {
-		[myArray insertObject:[[NSMutableArray alloc] init] atIndex:height];
+		//[myArray insertObject:[[NSMutableArray alloc] init] atIndex:height];
 		//One Column is done? then start the next one from the top
 		currentY=15;
-		
+		NSMutableArray *ma = [NSMutableArray array];
 		for (width=0; width<matrixSize; width++) {
-			[[myArray objectAtIndex:height] insertObject:[[UITextField alloc] initWithFrame:CGRectMake(currentX,currentY, 65, 30)] atIndex:width];
-			temp=[[myArray objectAtIndex:height] objectAtIndex:width];
-			
+			//[[myArray objectAtIndex:height] insertObject:[[UITextField alloc] initWithFrame:CGRectMake(currentX,currentY, 65, 30)] atIndex:width];
+            //[ma insertObject:[[UITextField alloc] initWithFrame:CGRectMake(currentX, currentY, 65, 30)] atIndex:width];
+			//temp=[[myArray objectAtIndex:height] objectAtIndex:width];
+			UITextField *temp = [[UITextField alloc] initWithFrame:CGRectMake(currentX, currentY, 65, 30)];
 			//Attributes for textfields that are not the solution column
 			temp.borderStyle=UITextBorderStyleRoundedRect;
 			temp.adjustsFontSizeToFitWidth=YES;
@@ -142,13 +143,20 @@
 			if (height<matrixSize) {
 				temp.placeholder=[NSString stringWithFormat:@"%c%d",height+97,width+1];
 				
-				dummies=[[UILabel alloc] initWithFrame:CGRectMake(currentX+75, currentY-5, 65, 45)];
-				[dummies setText:[NSString stringWithFormat:(matrixSize-1==height?@"%c  =":@"%c+"),height+97]];
+				UILabel *dummies=[[[UILabel alloc] initWithFrame:CGRectMake(currentX+75, currentY-5, 65, 45)] autorelease];
+                if ((matrixSize-1) == height) {
+                    [dummies setText:[NSString stringWithFormat:@"%c =",height+97]];
+                } else {
+                    [dummies setText:[NSString stringWithFormat:@"%c+",height+97]];
+                }
+				
 				[dummies setBackgroundColor:[UIColor clearColor]];
 				[dummies setTextColor:[UIColor yellowColor]];
 				[dummies setAdjustsFontSizeToFitWidth:YES];
 				[dummies setFont:[UIFont fontWithName:@"CourierNewPS-BoldMT" size:25]];
 				[dummies setTextAlignment:UITextAlignmentLeft];
+                [container addSubview:dummies];
+              //  [dummies release];
 			}
 			else {//Solution column
 				referencePoint=temp.center;
@@ -159,15 +167,17 @@
 				temp.placeholder=[NSString stringWithFormat:@"s.%c",width+97];
 				temp.textColor=[UIColor redColor];
 			}
-			
+			[ma insertObject:temp atIndex:width];
+            
+            [container addSubview:temp];
 			//Offset for every row
 			currentY=currentY+45;
 			
 			//free the memory on the other thread
-			[self performSelectorOnMainThread:@selector(endTextFields:) withObject:temp waitUntilDone:NO];
-			[self performSelectorOnMainThread:@selector(endLabels:) withObject:dummies waitUntilDone:NO];
+			//[self performSelectorOnMainThread:@selector(endTextFields:) withObject:temp waitUntilDone:NO];
+			//[self performSelectorOnMainThread:@selector(endLabels:) withObject:dummies waitUntilDone:NO];
 		}
-		
+		[myArray insertObject:ma atIndex:height];
 		//Add the offset to each column
 		currentX=currentX+120;
 	}	
@@ -206,8 +216,8 @@
 	[layoutView addSubview:container];
 	[self.view addSubview:layoutView];
 	
-	[container release];
-	[layoutView release];
+	//[container release];
+	//[layoutView release];
 }
 
 #pragma mark Engine
@@ -274,7 +284,7 @@
 		#endif
 		
 		//Time to push the next view
-		SolutionsViewController *theSolutions=[[SolutionsViewController alloc] initWithNibName:@"Solutions" bundle:nil];
+		SolutionsViewController *theSolutions=[[[SolutionsViewController alloc] initWithNibName:@"Solutions" bundle:nil] autorelease];
 		
 		//Set the attributes for the viewcontroller
 		theSolutions.a=a;
@@ -304,10 +314,10 @@
 #pragma mark MemoryManagement 
 - (void)viewDidUnload {
     [super viewDidUnload];
-	myArray=nil;
+/*	myArray=nil;
 	container=nil;
 	layoutView=nil;
-	solveButton=nil;
+	solveButton=nil; */
 }
 
 
@@ -412,7 +422,7 @@
 
 #pragma mark WaitingMethods
 + (UIView *)createWaitingView{
-	UIView *backgroundView=[[UIView alloc] initWithFrame:CGRectMake(30, 30, 260, 260)];
+	UIView *backgroundView=[[[UIView alloc] initWithFrame:CGRectMake(30, 30, 260, 260)] autorelease];
 	UIActivityIndicatorView *spinner=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	UILabel *message=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
 	

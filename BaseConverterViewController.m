@@ -101,7 +101,7 @@
 	
 	NSString *temp;
 
-	temp =[[NSString alloc] initWithString:fromLabel.text];
+	temp =fromLabel.text;
 	
   	if(whoAmI.tag == -3){
 		if ([temp length]>1) {

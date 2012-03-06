@@ -109,11 +109,11 @@
 	//To re-use the view first check if it is already a usable view if it is not
 	//make a re-usable view out of it
 	if (view==nil) {
-		view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 70, 45)];
+		view=[[[UIView alloc] initWithFrame:CGRectMake(0, 0, 70, 45)] autorelease];
 		[view setBackgroundColor:[UIColor clearColor]];
 		
 		//Add a subview to the main view and then make reference as the last subview
-		[view addSubview:[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 45)]];
+		[view addSubview:[[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 45)] autorelease]];
 		[[[view subviews] objectAtIndex:0] setBackgroundColor:[UIColor clearColor]];
 		[[[view subviews] objectAtIndex:0] setFont:[UIFont boldSystemFontOfSize:19]];
 		[[[view subviews] objectAtIndex:0] setTextAlignment:UITextAlignmentCenter];		

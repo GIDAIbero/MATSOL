@@ -98,7 +98,7 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	//INSERT THE CODE FOR THE NEW THREAD RIGHT HERE
-    id viewController;
+    id viewController = nil;
 	
 	UIButton *numb=(UIButton *)sender;
 	
@@ -106,34 +106,34 @@
 		#ifdef DEBUG
 		NSLog(@"LES");
 		#endif
-		viewController=[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil];
+		viewController=[[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil] autorelease];
 		[viewController setPushViewController:MViewControllerLinearEquationSystem];
 	}
 	if (numb.tag==MATSOLDeterminantButton) {
 		#ifdef DEBUG
 		NSLog(@"DET");
 		#endif
-		viewController=[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil];
+		viewController=[[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil] autorelease];
 		[viewController setPushViewController:MViewControllerDeterminant];
 	}
 	if (numb.tag==MATSOLResistorButton) {
 		#ifdef DEBUG
 		NSLog(@"RES");
 		#endif	
-		viewController=[[InputResistorViewController alloc] initWithNibName:@"InputResistor" bundle:nil];
+		viewController=[[[InputResistorViewController alloc] initWithNibName:@"InputResistor" bundle:nil] autorelease];
 	}
 	if (numb.tag==MATSOLDecoderButton) {
 		#ifdef DEBUG
 		NSLog(@"DEC");
 		#endif	
-		viewController=[[DecoderViewController alloc] initWithNibName:@"Decoder" bundle:nil];
+		viewController=[[[DecoderViewController alloc] initWithNibName:@"Decoder" bundle:nil] autorelease];
 	}
 	
 	if(numb.tag==MATSOLBaseConverterButton){
 		#ifdef DEBUG
 		NSLog(@"BC");
 		#endif
-		viewController=[[BaseConverterViewController alloc] initWithNibName:@"BaseConverter" bundle:nil];
+		viewController=[[[BaseConverterViewController alloc] initWithNibName:@"BaseConverter" bundle:nil] autorelease];
 	}
 	[self performSelectorOnMainThread:@selector(endUIViewController:) withObject:viewController waitUntilDone:NO];
     [pool release];
