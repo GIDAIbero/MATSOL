@@ -22,8 +22,8 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
+        [self setTitle:@"Base Converter"];
     }
-	[self setTitle:@"Base Converter"];
     return self;
 }
 
@@ -297,16 +297,16 @@
 	self.toIndicator=nil;
 }
 
-
-- (void)dealloc {
-    [super dealloc];
-	
+- (void)dealloc {	
 	[buttonsConverter release];
 	[mainConverter release];
 	[fromLabel release];
 	[toLabel release];
 	[fromIndicator release];
 	[toIndicator release];
+    [_basesArray release];
+    
+    [super dealloc];
 }
 
 
