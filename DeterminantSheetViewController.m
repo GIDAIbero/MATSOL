@@ -139,7 +139,8 @@ int PaddingXRight(int size){
 			temp.textColor                 = [UIColor blackColor];
 			temp.keyboardType              = UIKeyboardTypeDecimalPad;
             temp.keyboardAppearance        = UIKeyboardAppearanceAlert;
-			temp.textAlignment             =UITextAlignmentRight;
+            temp.returnKeyType             = UIReturnKeyNext;
+			temp.textAlignment             = UITextAlignmentRight;
 			//These three properties are important to later use the delegate methods
 			//and make input easier
 			temp.delegate=self;

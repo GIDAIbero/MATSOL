@@ -135,6 +135,13 @@
 			temp.font=[UIFont fontWithName:@"CourierNewPS-BoldMT" size:20];
 			temp.textColor=[UIColor blackColor];
 			temp.keyboardType=UIKeyboardTypeDecimalPad;
+            UIBarButtonItem *ubbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextSomething:)];
+            UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissKeyboard:)];
+            UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+            UIToolbar *kbtb = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)];
+            [kbtb setBarStyle:UIBarStyleBlackTranslucent];
+            [kbtb setItems:[NSArray arrayWithObjects:space,ubbi,lesskey,nil]];
+            temp.inputAccessoryView = kbtb;
             temp.keyboardAppearance        = UIKeyboardAppearanceAlert;
 			temp.textAlignment=UITextAlignmentRight;
 			temp.returnKeyType=UIReturnKeyNext;
@@ -186,6 +193,45 @@
 	//Release the pool
     [pool release];
 }
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+}
+
+-(void)nextSomething:(id)sender {
+    int i,j;
+    BOOL flag = FALSE;
+    for (i = 0;!flag && i< [myArray count]; i++) {
+        for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                //NSLog(@"Found first responder at %d\t%d",i,j);
+                [[[myArray objectAtIndex:i] objectAtIndex:j] resignFirstResponder];
+                //i = i+1;
+                if (j+1 == [[myArray objectAtIndex:i] count] && i+1 == [myArray count]) {
+                    i = -1;
+                    j = 0;
+                } else if (i+1 >= [myArray count]) {
+                    i = -1;
+                    j = j+1;
+                }
+                [[[myArray objectAtIndex:i+1] objectAtIndex:j] becomeFirstResponder];
+                flag = TRUE;
+            }
+        }
+    }
+}
+
+-(void)dismissKeyboard:(id)sender {
+    int i,j;
+    BOOL flag = FALSE;
+    for (i = 0;!flag && i< [myArray count]; i++) {
+        for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                //NSLog(@"Found first responder at %d\t%d",i,j);
+                [[[myArray objectAtIndex:i] objectAtIndex:j] resignFirstResponder];
+                flag = TRUE;
+            }
+        }
+    }
+}
 -(void)endTextFields:(id)sender{
 	//Evertime a new text field is created this method is called on the 
 	//main thread so it can add that text field to the container
@@ -203,7 +249,8 @@
 	//Make the first UITextField the first responder, then make the
 	//keyboard appear
 	[[[myArray objectAtIndex:0] objectAtIndex:0] becomeFirstResponder];
-	
+	firstResponder.fst = 0;
+    firstResponder.snd = 0;
 	//Hide the Waiting interface
 	[_loadingMessageView removeFromSuperview];
 	

@@ -11,16 +11,23 @@
 #import "mygaussj.h"
 #import "MATSOLDefines.h"
 
+struct FirstSecond {
+    int fst;
+    int snd;
+};
+typedef struct FirstSecond FSTSND;
+
 @interface MatrixSheetViewController : UIViewController <UIScrollViewDelegate, UITextFieldDelegate>{
 	NSMutableArray *myArray;
 	UIView *container;
 	UIScrollView *layoutView;
 	UIBarButtonItem *solveButton;
-	
 	UIView *_loadingMessageView;
-	
+	//struct FirstSecond firstResponder;
+    FSTSND firstResponder;
 	int matrixSize;
 }
+
 
 @property (retain, nonatomic) NSMutableArray *myArray;
 @property (retain, nonatomic) UIView *container;
