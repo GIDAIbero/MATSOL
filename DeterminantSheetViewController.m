@@ -278,7 +278,7 @@ int PaddingXRight(int size){
 	[container release];
 	[layoutView release];
 	[solveButton release];
-	[_loadingMessageView release];
+	//[_loadingMessageView release];
     [super dealloc];
 }
 
@@ -370,7 +370,7 @@ int PaddingXRight(int size){
 
 #pragma mark WaitingMethods
 + (UIView *)createWaitingView{
-	UIView *backgroundView=[[UIView alloc] initWithFrame:CGRectMake(30, 30, 260, 260)];
+	UIView *backgroundView=[[[UIView alloc] initWithFrame:CGRectMake(30, 30, 260, 260)] autorelease];
 	UIActivityIndicatorView *spinner=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	UILabel *message=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
 	
