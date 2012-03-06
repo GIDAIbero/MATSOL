@@ -42,6 +42,19 @@
 	[targetResistance setText:@"672"];
 	[tolerance setText:@"1"];
 	
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(goNext:)];
+    UIBarButtonItem *spa = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIToolbar *tool      = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width,30)];
+    [tool setItems:[NSArray arrayWithObjects:spa,bbi, nil]];
+    [tool setBarStyle:UIBarStyleBlackTranslucent];
+    [targetResistance setInputAccessoryView:tool];
+	[targetResistance setKeyboardType:UIKeyboardTypeDecimalPad];
+    [targetResistance setKeyboardAppearance:UIKeyboardAppearanceAlert];
+    
+    [tolerance setInputAccessoryView:tool];
+	[tolerance setKeyboardType:UIKeyboardTypeNumberPad];
+    [tolerance setKeyboardAppearance:UIKeyboardAppearanceAlert];
+    
 	[targetResistance becomeFirstResponder];
 }
 
@@ -101,15 +114,14 @@
 	//Just allow it
 	return YES;
 }
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-
+    
 	float resistorValue=[[targetResistance text] floatValue];
 	float toleranceValue=[[tolerance text] floatValue];
 	
-	#ifdef DEBUG
+#ifdef DEBUG
 	NSLog(@"Tolerance: [%d] & Target: [%.4f]",toleranceValue,resistorValue);
-	#endif
+#endif
 	
 	if (resistorValue<1.0) {
 		//Show an alert view the size is not valid : O
@@ -150,7 +162,6 @@
 		[sizeAlert release];
 		return NO;
 	}
-	
 	[targetResistance resignFirstResponder];
 	[tolerance resignFirstResponder];
 	
@@ -161,6 +172,66 @@
 	[viewController release];
 	
 	return YES;
+}
+
+- (void)goNext:(id)sender {
+
+	float resistorValue=[[targetResistance text] floatValue];
+	float toleranceValue=[[tolerance text] floatValue];
+	
+	#ifdef DEBUG
+	NSLog(@"Tolerance: [%d] & Target: [%.4f]",toleranceValue,resistorValue);
+	#endif
+	
+	if (resistorValue<1.0) {
+		//Show an alert view the size is not valid : O
+		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
+														  message:@"The resistor value should be greater or equal to 1."
+														 delegate:self 
+												cancelButtonTitle:@"Ok" 
+												otherButtonTitles:nil];
+		//Display the alert dialog
+		[sizeAlert show];
+		[sizeAlert release];
+		
+		return;
+	}
+	
+	if (resistorValue>=6800000.0) {
+		//Show an alert view the size is not valid : O
+		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
+														  message:@"The resistor value should be less than 6800000."
+														 delegate:self 
+												cancelButtonTitle:@"Ok" 
+												otherButtonTitles:nil];
+		//Display the alert dialog
+		[sizeAlert show];
+		[sizeAlert release];
+		
+		return;
+	}
+	
+	if (toleranceValue<=0 || toleranceValue>100) {
+		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
+														  message:@"The tolerance should be greater than 0 or less than 100."
+														 delegate:self 
+												cancelButtonTitle:@"Ok" 
+												otherButtonTitles:nil];
+		//Display the alert dialog
+		[sizeAlert show];
+		[sizeAlert release];
+		return;
+	}
+	[targetResistance resignFirstResponder];
+	[tolerance resignFirstResponder];
+	
+	OutputResistorViewController *viewController=[[OutputResistorViewController alloc] initWithNibName:@"OutputResistor" bundle:nil];
+	[viewController setTargetResistor:resistorValue];
+	[viewController setTolerance:toleranceValue];
+	[[self navigationController] pushViewController:viewController animated:YES];
+	[viewController release];
+	
+//	return YES;
 }
 
 @end
