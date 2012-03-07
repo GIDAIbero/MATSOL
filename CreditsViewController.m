@@ -9,8 +9,6 @@
 #import "CreditsViewController.h"
 #pragma mark -
 
-
-
 @implementation CreditsViewController
 
 @synthesize delegate;

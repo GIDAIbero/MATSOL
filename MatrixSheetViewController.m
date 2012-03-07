@@ -319,7 +319,8 @@
 	matrixState=gaussj(a,matrixSize,b);
 	 
 	if (matrixState==SolvedMatrix) {
-		//Display the Results
+        
+		//Display the results on the console
 		#ifdef DEBUG
 		for (i=0; i<matrixSize; i++) {
 			for (j=0; j<matrixSize; j++) {
@@ -336,13 +337,13 @@
 		//Time to push the next view
 		SolutionsViewController *theSolutions=[[[SolutionsViewController alloc] initWithNibName:@"Solutions" bundle:nil] autorelease];
 		
-		//Set the attributes for the viewcontroller
+		//Set the attributes for the viewcontroller, it will take charge of the memory management
 		theSolutions.a=a;
-		theSolutions.b=b;
-		theSolutions.size=matrixSize;
-		
+        theSolutions.b=b;
+        theSolutions.size=matrixSize;
+            
 		//Push the viewController
-		[self.navigationController pushViewController:theSolutions animated:YES];		
+		[[self navigationController] pushViewController:theSolutions animated:YES];
 	}
 	else if(matrixState==UnsolvedMatrix){
 		#ifdef DEBUG
