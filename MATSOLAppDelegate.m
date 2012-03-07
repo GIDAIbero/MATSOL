@@ -16,7 +16,6 @@
 
 #pragma mark Initialization
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	
 	//Create the main view controller, this view controller allows the
 	//iPhone-ish look, if more apps are to be added, go to SlaveViewController
 	ScrollViewController *firstViewController=[[ScrollViewController alloc] initWithNibName:@"Scroll" bundle:nil];

@@ -166,9 +166,9 @@
 				[dummies setFont:[UIFont fontWithName:@"CourierNewPS-BoldMT" size:25]];
 				[dummies setTextAlignment:UITextAlignmentLeft];
                 [container addSubview:dummies];
-              //  [dummies release];
 			}
-			else {//Solution column
+			else {
+                //Solution column
 				referencePoint=temp.center;
 				referencePoint.x=referencePoint.x+40;
 				temp.center=referencePoint;
@@ -264,10 +264,7 @@
 	layoutView.contentSize = container.frame.size;
 	
 	[layoutView addSubview:container];
-	[self.view addSubview:layoutView];
-	
-	//[container release];
-	//[layoutView release];
+	[[self view] addSubview:layoutView];
 }
 
 #pragma mark Engine
