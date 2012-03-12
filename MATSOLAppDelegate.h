@@ -20,9 +20,5 @@
 
 - (void)goToRootViewController:(id)sender;
 
--(void)beginFont;
--(void)creatingFont:(id)sender;
--(void)endFont;
-
 @end
 

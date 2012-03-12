@@ -31,7 +31,7 @@
 		layoutView=[[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
 		
-		//ScrollView initializations
+		//ScrollView
 		layoutView.delegate=self;
 		layoutView.bouncesZoom = NO;
 		layoutView.backgroundColor = [UIColor clearColor];
@@ -97,7 +97,6 @@
 	//Assign as many text fields as needed.
 	for (height=0; height<size+1; height++) {
 		[labelsArray insertObject:[[[NSMutableArray alloc] init] autorelease] atIndex:height];
-		
 		for (width=0; width<size; width++) { 
 			[[labelsArray objectAtIndex:height] insertObject:[[[UILabel alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)] autorelease] atIndex:width];
 			temp=[[labelsArray objectAtIndex:height] objectAtIndex:width];
@@ -143,8 +142,6 @@
 			
 			//free the memory
 			[container addSubview:temp];
-			//[temp release];
-
 		}
 	}
 	
@@ -153,8 +150,7 @@
 	layoutView.frame=CGRectMake(0, 0, 320, 386);
     
 	//Add the scrollview to the view of the viewController
-    [self.view addSubview:layoutView];
-	//[layoutView release];
+    [[self view] addSubview:layoutView];
 }
 
 #pragma mark MemoryManagement
@@ -170,7 +166,6 @@
 	free(b);
 	
 	[labelsArray release];
-    
 	[container release];
 	[layoutView release];
 	

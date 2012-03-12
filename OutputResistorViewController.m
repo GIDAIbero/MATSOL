@@ -385,17 +385,30 @@ static float kAnimationDuration=0.35;
 		//Make the view 10 times smaller
 		[sign setTransform:CGAffineTransformScale(sign.transform, .1, .1)];
 		
-		[UIView beginAnimations:@"Animated Sign showing" context:nil];
-		[UIView setAnimationDuration:kAnimationDuration];
-		
-		//Make it ten times bigger and add the offset to the 'y' coordinate
-		[sign setTransform:CGAffineTransformScale(sign.transform, 10, 10)];
-		[sign setCenter:CGPointMake(touched.center.x, touched.center.y+kSignOffsetY)];
-		
-		//Hide the label/button
-		[_backup setHidden:YES];
-		
-		[UIView commitAnimations];
+        //Anitmations for iOS 4
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] < 5) {
+            [UIView beginAnimations:@"Animated Sign showing" context:nil];
+            [UIView setAnimationDuration:kAnimationDuration];
+            
+            //Make it ten times bigger and add the offset to the 'y' coordinate
+            [sign setTransform:CGAffineTransformScale(sign.transform, 10, 10)];
+            [sign setCenter:CGPointMake(touched.center.x, touched.center.y+kSignOffsetY)];
+            
+            //Hide the label/button
+            [_backup setHidden:YES];
+            
+            [UIView commitAnimations];
+        }
+        else if([[[UIDevice currentDevice] systemVersion] floatValue] >= 5){
+            [UIView animateWithDuration:kAnimationDuration animations:^{
+                //Make it ten times bigger and add the offset to the 'y' coordinate
+                [sign setTransform:CGAffineTransformScale(sign.transform, 10, 10)];
+                [sign setCenter:CGPointMake(touched.center.x, touched.center.y+kSignOffsetY)];
+                
+                //Hide the label/button
+                [_backup setHidden:YES];
+            }];
+        }
 		
 		//Coloring the bands and setting the label
 		[self bandColorsForLabel:[[touched titleLabel] text]];

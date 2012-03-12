@@ -16,7 +16,6 @@
 
 #pragma mark Initialization
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	
 	//Create the main view controller, this view controller allows the
 	//iPhone-ish look, if more apps are to be added, go to SlaveViewController
 	ScrollViewController *firstViewController=[[ScrollViewController alloc] initWithNibName:@"Scroll" bundle:nil];
@@ -45,28 +44,6 @@
 - (void)goToRootViewController:(id)sender{
 	[navigationController popToRootViewControllerAnimated:YES];
 }
-
-#pragma mark FontLoading
--(void)beginFont{
-	[NSThread detachNewThreadSelector:@selector(creatingFont:) toTarget:self withObject:nil];
-}
-
--(void)creatingFont:(id)sender{
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
-    #ifdef DEBUG
-	NSLog(@"This is another thread");
-    #endif
-    
-    [self performSelectorOnMainThread:@selector(endFont) withObject:nil waitUntilDone:NO];
-    [pool release];
-}
--(void)endFont{
-    #ifdef DEBUG
-	NSLog(@"The font was loaded succesfully");
-    #endif
-}
-
 
 #pragma mark MemoryManagement
 - (void)dealloc {

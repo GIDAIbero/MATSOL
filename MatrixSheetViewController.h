@@ -23,11 +23,10 @@ typedef struct FirstSecond FSTSND;
 	UIScrollView *layoutView;
 	UIBarButtonItem *solveButton;
 	UIView *_loadingMessageView;
-	//struct FirstSecond firstResponder;
+
     FSTSND firstResponder;
 	int matrixSize;
 }
-
 
 @property (retain, nonatomic) NSMutableArray *myArray;
 @property (retain, nonatomic) UIView *container;
