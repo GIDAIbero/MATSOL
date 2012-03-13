@@ -27,7 +27,7 @@
 		#endif
 
 		myArray=[[NSMutableArray alloc] init];
-		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
+		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
 		solveButton=[[UIBarButtonItem alloc] initWithTitle:@"Solve" style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		
@@ -136,7 +136,8 @@
 			temp.textColor=[UIColor blackColor];
 			temp.keyboardType=UIKeyboardTypeDecimalPad;
             UIBarButtonItem *ubbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextSomething:)];
-            UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissKeyboard:)];
+            UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"DownIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard:)];
+            //UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissKeyboard:)];
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
             UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
@@ -197,6 +198,7 @@
     [pool release];
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+    layoutView.contentSize = container.frame.size;
 }
 
 -(void)nextSomething:(id)sender {
@@ -230,6 +232,7 @@
             if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
                 //NSLog(@"Found first responder at %d\t%d",i,j);
                 [[[myArray objectAtIndex:i] objectAtIndex:j] resignFirstResponder];
+                layoutView.contentSize = CGSizeMake(container.frame.size.width, container.frame.size.height - 240);
                 flag = TRUE;
             }
         }
@@ -260,7 +263,7 @@
 	//BE CAREFUL!
 	//The container size should be the last thing you set.
 	//You should only add the container and the layout by the end of your code.
-	container.frame = CGRectMake(0, 0, (120*(matrixSize+1))+35,(45*matrixSize)+20);
+	container.frame = CGRectMake(0, 0, (120*(matrixSize+1))+35,(45*matrixSize)+250);
 	layoutView.contentSize = container.frame.size;
 	
 	[layoutView addSubview:container];
