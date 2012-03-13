@@ -11,8 +11,10 @@
 #define NO_DEBUG_INTERFACE
 #define NO_VERBOSE
 
+#define MATSOL_VERSION @"1.05dev"
+
 //Number of pages in the scroll view controller
-#define NUMBER_OF_MENU_PAGES 1
+#define NUMBER_OF_MENU_PAGES 5
 
 //How should the navigation be from text field to text field
 #define MOVE_HORIZONTAL

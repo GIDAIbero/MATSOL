@@ -278,7 +278,7 @@
 		
 	//Dynamic memory assignment
 	a=(float **)malloc(sizeof(float *)*matrixSize);
-	
+
 	for (i=0; i<matrixSize; i++) {
 		a[i]=malloc(sizeof(float)*matrixSize);
 	}

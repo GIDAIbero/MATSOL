@@ -19,8 +19,11 @@ int gaussj(float *a[], int n, float *b){
 	int i,icol = 0,irow = 0,j,k,l,ll;
 	float big,dum,pivinv,temp;
 	
-	for (j=1;j<=n;j++) ipiv[j]=0;
-	for (i=1;i<=n;i++) {
+	for (j=1;j<=n;j++) {
+        ipiv[j]=0;
+    }
+    
+    for (i=1;i<=n;i++) {
 		big=0.0;
 		for (j=1;j<=n;j++)
 			if (ipiv[j] != 1)
