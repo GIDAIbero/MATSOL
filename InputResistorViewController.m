@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	[self setTitle:@"Custom Resistor"];
+	[self setTitle:NSLocalizedString(@"Custom Resistor", @"Custom resistor title for the view controller")];
 	
 	//Assign this objects to implement the delegate methods
 	[targetResistance setDelegate:self];
@@ -123,14 +123,14 @@
 	float resistorValue=[[targetResistance text] floatValue];
 	float toleranceValue=[[tolerance text] floatValue];
 	
-#ifdef DEBUG
+    #ifdef DEBUG
 	NSLog(@"Tolerance: [%d] & Target: [%.4f]",toleranceValue,resistorValue);
-#endif
+    #endif
 	
 	if (resistorValue<1.0) {
 		//Show an alert view the size is not valid : O
 		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
-														  message:@"The resistor value should be greater or equal to 1."
+														  message:NSLocalizedString(@"The resistor value should be greater or equal to 1.", @"Resistor label for error 1")
 														 delegate:self 
 												cancelButtonTitle:@"Ok" 
 												otherButtonTitles:nil];
@@ -143,8 +143,8 @@
 	
 	if (resistorValue>=6800000.0) {
 		//Show an alert view the size is not valid : O
-		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
-														  message:@"The resistor value should be less than 6800000."
+		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error"
+														  message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
 														 delegate:self 
 												cancelButtonTitle:@"Ok" 
 												otherButtonTitles:nil];
@@ -157,7 +157,7 @@
 	
 	if (toleranceValue<=0 || toleranceValue>100) {
 		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
-														  message:@"The tolerance should be greater than 0 or less than 100."
+														  message:NSLocalizedString(@"The tolerance should be greater than 0 or less than 100.", @"Error label for the tolerance")
 														 delegate:self 
 												cancelButtonTitle:@"Ok" 
 												otherButtonTitles:nil];
@@ -190,7 +190,7 @@
 	if (resistorValue<1.0) {
 		//Show an alert view the size is not valid : O
 		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
-														  message:@"The resistor value should be greater or equal to 1."
+														  message:NSLocalizedString(@"The resistor value should be greater or equal to 1.", @"Resistor label for error 1")
 														 delegate:self 
 												cancelButtonTitle:@"Ok" 
 												otherButtonTitles:nil];
@@ -204,7 +204,7 @@
 	if (resistorValue>=6800000.0) {
 		//Show an alert view the size is not valid : O
 		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
-														  message:@"The resistor value should be less than 6800000."
+														  message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
 														 delegate:self 
 												cancelButtonTitle:@"Ok" 
 												otherButtonTitles:nil];
@@ -217,7 +217,7 @@
 	
 	if (toleranceValue<=0 || toleranceValue>100) {
 		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
-														  message:@"The tolerance should be greater than 0 or less than 100."
+														  message:NSLocalizedString(@"The tolerance should be greater than 0 or less than 100.", @"Error label for the tolerance")
 														 delegate:self 
 												cancelButtonTitle:@"Ok" 
 												otherButtonTitles:nil];

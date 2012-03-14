@@ -29,7 +29,7 @@
 		myArray=[[NSMutableArray alloc] init];
 		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
-		solveButton=[[UIBarButtonItem alloc] initWithTitle:@"Solve" style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
+		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve title") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		
 		//This method returns a retained object
 		_loadingMessageView=[MatrixSheetViewController createWaitingView];	
@@ -350,7 +350,7 @@
 		NSLog(@"No solution for this matrix.");
 		#endif
 		UIAlertView *matrixAlert=[[UIAlertView alloc] initWithTitle:@"ERROR!" 
-															message:@"There's no solution for this matrix, try another one."
+															message:NSLocalizedString(@"There's no solution for this matrix, try another one.", @"No solution for this matrix label")
 														   delegate:self 
 												  cancelButtonTitle:@"ok" 
 												  otherButtonTitles:nil];
@@ -476,7 +476,7 @@
 	UILabel *message=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
 	
 	//Set the label attributes
-	[message setText:@"Loading ..."];
+	[message setText:NSLocalizedString(@"Loading ...", @"Loading label")];
 	[message setTextColor:[UIColor whiteColor]];
 	[message setBackgroundColor:[UIColor clearColor]];
 	[message setTextAlignment:UITextAlignmentCenter];

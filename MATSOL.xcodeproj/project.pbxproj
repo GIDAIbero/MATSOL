@@ -23,43 +23,40 @@
 		50020E2011D576DA00C61974 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DFF11D576DA00C61974 /* main.m */; };
 		50020E2111D576DA00C61974 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0211D576DA00C61974 /* MainWindow.xib */; };
 		50020E2311D576DA00C61974 /* Scroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0411D576DA00C61974 /* Scroll.xib */; };
-		50020E2411D576DA00C61974 /* Selection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0511D576DA00C61974 /* Selection.xib */; };
-		50020E2511D576DA00C61974 /* InputResistor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0611D576DA00C61974 /* InputResistor.xib */; };
-		50020E2611D576DA00C61974 /* OutputResistor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0711D576DA00C61974 /* OutputResistor.xib */; };
 		50020E2711D576DA00C61974 /* MatrixSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0811D576DA00C61974 /* MatrixSheet.xib */; };
 		50020E2811D576DA00C61974 /* Solutions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0911D576DA00C61974 /* Solutions.xib */; };
 		50020E2911D576DA00C61974 /* Slave.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0A11D576DA00C61974 /* Slave.xib */; };
-		50020E2A11D576DA00C61974 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0B11D576DA00C61974 /* CreditsViewController.xib */; };
 		50020E2C11D576DA00C61974 /* ll.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0F11D576DA00C61974 /* ll.png */; };
 		50020E2D11D576DA00C61974 /* ur.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1011D576DA00C61974 /* ur.png */; };
 		50020E2E11D576DA00C61974 /* ul.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1111D576DA00C61974 /* ul.png */; };
 		50020E2F11D576DA00C61974 /* m.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1211D576DA00C61974 /* m.png */; };
 		50020E3011D576DA00C61974 /* lr.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1311D576DA00C61974 /* lr.png */; };
-		50020E3211D576DA00C61974 /* selectionLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1611D576DA00C61974 /* selectionLine.png */; };
-		50020E3311D576DA00C61974 /* enterresistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1711D576DA00C61974 /* enterresistor.png */; };
-		50020E3411D576DA00C61974 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1811D576DA00C61974 /* wood.png */; };
 		50020E3611D576DA00C61974 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1B11D576DA00C61974 /* button.png */; };
 		50020E3911D576DA00C61974 /* resistorcalculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1E11D576DA00C61974 /* resistorcalculator.png */; };
 		50020FD511D58FBB00C61974 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020FD411D58FBB00C61974 /* Default.png */; };
 		50020FF311D598BE00C61974 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020FF211D598BE00C61974 /* Icon.png */; };
-		501F5413150D367000781875 /* testmetal.png in Resources */ = {isa = PBXBuildFile; fileRef = 501F5412150D367000781875 /* testmetal.png */; };
+		5024A37F151048C300274046 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5024A381151048C300274046 /* CreditsViewController.xib */; };
+		5024A3831510496300274046 /* OutputResistor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5024A3851510496300274046 /* OutputResistor.xib */; };
+		5024A387151049B000274046 /* InputResistor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5024A389151049B000274046 /* InputResistor.xib */; };
+		5024A38B151049D800274046 /* Selection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5024A38D151049D800274046 /* Selection.xib */; };
 		50260BC612B4C9D700A1CF4D /* crossedBlackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50260BC412B4C9D700A1CF4D /* crossedBlackButton.png */; };
 		50260BC712B4C9D700A1CF4D /* crossedBlackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50260BC512B4C9D700A1CF4D /* crossedBlackButton@2x.png */; };
 		502EFE2211E0105F007BCA03 /* signW.png in Resources */ = {isa = PBXBuildFile; fileRef = 502EFE2111E0105F007BCA03 /* signW.png */; };
-		50315945150F039300AF2AFF /* BrushedMetal.png in Resources */ = {isa = PBXBuildFile; fileRef = 50315943150F039200AF2AFF /* BrushedMetal.png */; };
-		50315946150F039300AF2AFF /* BrushedMetal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50315944150F039200AF2AFF /* BrushedMetal@2x.png */; };
+		50315952150F0BD200AF2AFF /* BrushedMetalBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 50315950150F0BD200AF2AFF /* BrushedMetalBackground.png */; };
+		50315953150F0BD200AF2AFF /* BrushedMetalBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50315951150F0BD200AF2AFF /* BrushedMetalBackground@2x.png */; };
+		50315956150F0C6400AF2AFF /* BaseConverterBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50315954150F0C6400AF2AFF /* BaseConverterBackground@2x.png */; };
+		50315957150F0C6400AF2AFF /* BaseConverterBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 50315955150F0C6400AF2AFF /* BaseConverterBackground.png */; };
 		50386A3812B5D5210071A656 /* baseConverter.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A3612B5D5210071A656 /* baseConverter.png */; };
 		50386A3912B5D5210071A656 /* baseConverter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A3712B5D5210071A656 /* baseConverter@2x.png */; };
 		50386A4B12B5DA490071A656 /* deleteBlackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */; };
 		50386A4D12B5DA5B0071A656 /* deleteBlackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */; };
-		5049952011DED9F20058F950 /* sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 5049951F11DED9F20058F950 /* sign.png */; };
 		504C6FAD12BF4DCC00CC815E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */; };
 		50C7EFD211D70C42001EB7C9 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7EFD111D70C42001EB7C9 /* help.png */; };
 		50C7F04511D73B53001EB7C9 /* presistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04311D73B53001EB7C9 /* presistor.png */; };
 		50C7F04611D73B53001EB7C9 /* sresistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04411D73B53001EB7C9 /* sresistor.png */; };
 		50D0082311DC42AE006A076B /* wire.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D0082211DC42AE006A076B /* wire.png */; };
-		50D0087911DC698F006A076B /* targetResistorLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D0087811DC698F006A076B /* targetResistorLabel.png */; };
-		50D0087F11DC6A89006A076B /* equivalentResitorLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D0087E11DC6A89006A076B /* equivalentResitorLabel.png */; };
+		50DF4C0F151050FE00F296A8 /* BaseConverter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DF4C11151050FE00F296A8 /* BaseConverter.xib */; };
+		50DF4C151510590500F296A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50DF4C171510590500F296A8 /* Localizable.strings */; };
 		9C1CF818125E9F020060A1B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF817125E9F020060A1B2 /* UIKit.framework */; };
 		9C1CF81C125E9F120060A1B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF81B125E9F120060A1B2 /* Foundation.framework */; };
 		9C1CF820125E9F1E0060A1B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */; };
@@ -68,11 +65,7 @@
 		9C1CF877125EA6A30060A1B2 /* decoder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CF876125EA6A30060A1B2 /* decoder.png */; };
 		9C442011126D1E9D00A2B27A /* determinant.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C442010126D1E9D00A2B27A /* determinant.png */; };
 		9C7D4E091277B5CC000EBAC0 /* BaseConverterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D4E071277B5CC000EBAC0 /* BaseConverterViewController.m */; };
-		9C7D4E0A1277B5CC000EBAC0 /* BaseConverter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D4E081277B5CC000EBAC0 /* BaseConverter.xib */; };
-		9C8135CA126D085100F68B8F /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8135C9126D085100F68B8F /* credits.png */; };
 		9C813600126D1B5300F68B8F /* linearequationsystem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8135FF126D1B5300F68B8F /* linearequationsystem.png */; };
-		9C8D1D7C127A62F9002A4916 /* ConverterBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D1D7A127A62F9002A4916 /* ConverterBackground.png */; };
-		9C8D1D7D127A62F9002A4916 /* ConverterBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D1D7B127A62F9002A4916 /* ConverterBackground@2x.png */; };
 		9C8FD2051279DF9E00A389B6 /* blackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8FD2031279DF9E00A389B6 /* blackButton@2x.png */; };
 		9C8FD2061279DF9E00A389B6 /* blackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8FD2041279DF9E00A389B6 /* blackButton.png */; };
 		9C8FD21E1279E1DF00A389B6 /* zeroButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8FD21C1279E1DF00A389B6 /* zeroButton@2x.png */; };
@@ -82,22 +75,15 @@
 		9CB5F13F128C9351003117AD /* Conversor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5F13E128C9351003117AD /* Conversor.m */; };
 		9CE5551A126624EA00D09A21 /* Resistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CE55519126624EA00D09A21 /* Resistor.png */; };
 		9CF125DE126F3BFF00CC1D45 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125CE126F3BFF00CC1D45 /* button@2x.png */; };
-		9CF125DF126F3BFF00CC1D45 /* credits@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125CF126F3BFF00CC1D45 /* credits@2x.png */; };
 		9CF125E0126F3BFF00CC1D45 /* resistorcalculator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D0126F3BFF00CC1D45 /* resistorcalculator@2x.png */; };
 		9CF125E1126F3BFF00CC1D45 /* decoder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D1126F3BFF00CC1D45 /* decoder@2x.png */; };
 		9CF125E2126F3BFF00CC1D45 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D2126F3BFF00CC1D45 /* Default@2x.png */; };
 		9CF125E3126F3BFF00CC1D45 /* determinant@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D3126F3BFF00CC1D45 /* determinant@2x.png */; };
-		9CF125E4126F3BFF00CC1D45 /* enterresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D4126F3BFF00CC1D45 /* enterresistor@2x.png */; };
-		9CF125E5126F3BFF00CC1D45 /* equivalentResitorLabel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D5126F3BFF00CC1D45 /* equivalentResitorLabel@2x.png */; };
 		9CF125E6126F3BFF00CC1D45 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */; };
 		9CF125E7126F3BFF00CC1D45 /* linearequationsystem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D7126F3BFF00CC1D45 /* linearequationsystem@2x.png */; };
 		9CF125E8126F3BFF00CC1D45 /* presistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */; };
 		9CF125E9126F3BFF00CC1D45 /* Resistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */; };
-		9CF125EA126F3BFF00CC1D45 /* selectionLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DA126F3BFF00CC1D45 /* selectionLine@2x.png */; };
 		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
-		9CF125EC126F3BFF00CC1D45 /* targetResistorLabel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DC126F3BFF00CC1D45 /* targetResistorLabel@2x.png */; };
-		9CF125ED126F3BFF00CC1D45 /* wood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DD126F3BFF00CC1D45 /* wood@2x.png */; };
-		BE7ECB13150E9CC3004F2457 /* DownIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7ECB12150E9CC3004F2457 /* DownIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,45 +118,48 @@
 		50020DFF11D576DA00C61974 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		50020E0211D576DA00C61974 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		50020E0411D576DA00C61974 /* Scroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Scroll.xib; sourceTree = "<group>"; };
-		50020E0511D576DA00C61974 /* Selection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Selection.xib; sourceTree = "<group>"; };
-		50020E0611D576DA00C61974 /* InputResistor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputResistor.xib; sourceTree = "<group>"; };
-		50020E0711D576DA00C61974 /* OutputResistor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutputResistor.xib; sourceTree = "<group>"; };
 		50020E0811D576DA00C61974 /* MatrixSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatrixSheet.xib; sourceTree = "<group>"; };
 		50020E0911D576DA00C61974 /* Solutions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Solutions.xib; sourceTree = "<group>"; };
 		50020E0A11D576DA00C61974 /* Slave.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slave.xib; sourceTree = "<group>"; };
-		50020E0B11D576DA00C61974 /* CreditsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
 		50020E0F11D576DA00C61974 /* ll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ll.png; sourceTree = "<group>"; };
 		50020E1011D576DA00C61974 /* ur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ur.png; sourceTree = "<group>"; };
 		50020E1111D576DA00C61974 /* ul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ul.png; sourceTree = "<group>"; };
 		50020E1211D576DA00C61974 /* m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m.png; sourceTree = "<group>"; };
 		50020E1311D576DA00C61974 /* lr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lr.png; sourceTree = "<group>"; };
-		50020E1611D576DA00C61974 /* selectionLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectionLine.png; sourceTree = "<group>"; };
-		50020E1711D576DA00C61974 /* enterresistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enterresistor.png; sourceTree = "<group>"; };
-		50020E1811D576DA00C61974 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood.png; sourceTree = "<group>"; };
 		50020E1B11D576DA00C61974 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		50020E1E11D576DA00C61974 /* resistorcalculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resistorcalculator.png; sourceTree = "<group>"; };
 		50020E1F11D576DA00C61974 /* MATSOL-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MATSOL-Info.plist"; sourceTree = "<group>"; };
 		50020FD411D58FBB00C61974 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		50020FF211D598BE00C61974 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		501F5412150D367000781875 /* testmetal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testmetal.png; sourceTree = "<group>"; };
+		5024A380151048C300274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
+		5024A382151048D300274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
+		5024A3841510496300274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OutputResistor.xib; sourceTree = "<group>"; };
+		5024A3861510497000274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/OutputResistor.xib; sourceTree = "<group>"; };
+		5024A388151049B000274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InputResistor.xib; sourceTree = "<group>"; };
+		5024A38A151049B700274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/InputResistor.xib; sourceTree = "<group>"; };
+		5024A38C151049D800274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Selection.xib; sourceTree = "<group>"; };
+		5024A38E151049E200274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/Selection.xib; sourceTree = "<group>"; };
 		50260BC412B4C9D700A1CF4D /* crossedBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crossedBlackButton.png; sourceTree = "<group>"; };
 		50260BC512B4C9D700A1CF4D /* crossedBlackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crossedBlackButton@2x.png"; sourceTree = "<group>"; };
 		502EFE2111E0105F007BCA03 /* signW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signW.png; sourceTree = "<group>"; };
-		50315943150F039200AF2AFF /* BrushedMetal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BrushedMetal.png; sourceTree = "<group>"; };
-		50315944150F039200AF2AFF /* BrushedMetal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BrushedMetal@2x.png"; sourceTree = "<group>"; };
+		50315950150F0BD200AF2AFF /* BrushedMetalBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BrushedMetalBackground.png; sourceTree = "<group>"; };
+		50315951150F0BD200AF2AFF /* BrushedMetalBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BrushedMetalBackground@2x.png"; sourceTree = "<group>"; };
+		50315954150F0C6400AF2AFF /* BaseConverterBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BaseConverterBackground@2x.png"; sourceTree = "<group>"; };
+		50315955150F0C6400AF2AFF /* BaseConverterBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaseConverterBackground.png; sourceTree = "<group>"; };
 		50386A3612B5D5210071A656 /* baseConverter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baseConverter.png; sourceTree = "<group>"; };
 		50386A3712B5D5210071A656 /* baseConverter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baseConverter@2x.png"; sourceTree = "<group>"; };
 		50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteBlackButton@2x.png"; sourceTree = "<group>"; };
 		50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deleteBlackButton.png; sourceTree = "<group>"; };
-		5049951F11DED9F20058F950 /* sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign.png; sourceTree = "<group>"; };
 		504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		5068F7321230978300BAFDBF /* MATSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MATSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C7EFD111D70C42001EB7C9 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
 		50C7F04311D73B53001EB7C9 /* presistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presistor.png; sourceTree = "<group>"; };
 		50C7F04411D73B53001EB7C9 /* sresistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sresistor.png; sourceTree = "<group>"; };
 		50D0082211DC42AE006A076B /* wire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wire.png; sourceTree = "<group>"; };
-		50D0087811DC698F006A076B /* targetResistorLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targetResistorLabel.png; sourceTree = "<group>"; };
-		50D0087E11DC6A89006A076B /* equivalentResitorLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = equivalentResitorLabel.png; sourceTree = "<group>"; };
+		50DF4C10151050FE00F296A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BaseConverter.xib; sourceTree = "<group>"; };
+		50DF4C121510510C00F296A8 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/BaseConverter.xib; sourceTree = "<group>"; };
+		50DF4C161510590500F296A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		50DF4C181510591300F296A8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C1CF817125E9F020060A1B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C1CF81B125E9F120060A1B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -181,11 +170,7 @@
 		9C442010126D1E9D00A2B27A /* determinant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = determinant.png; sourceTree = "<group>"; };
 		9C7D4E061277B5CC000EBAC0 /* BaseConverterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseConverterViewController.h; sourceTree = "<group>"; };
 		9C7D4E071277B5CC000EBAC0 /* BaseConverterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseConverterViewController.m; sourceTree = "<group>"; };
-		9C7D4E081277B5CC000EBAC0 /* BaseConverter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseConverter.xib; sourceTree = "<group>"; };
-		9C8135C9126D085100F68B8F /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits.png; sourceTree = "<group>"; };
 		9C8135FF126D1B5300F68B8F /* linearequationsystem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linearequationsystem.png; sourceTree = "<group>"; };
-		9C8D1D7A127A62F9002A4916 /* ConverterBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ConverterBackground.png; sourceTree = "<group>"; };
-		9C8D1D7B127A62F9002A4916 /* ConverterBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ConverterBackground@2x.png"; sourceTree = "<group>"; };
 		9C8FD2031279DF9E00A389B6 /* blackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackButton@2x.png"; sourceTree = "<group>"; };
 		9C8FD2041279DF9E00A389B6 /* blackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButton.png; sourceTree = "<group>"; };
 		9C8FD21C1279E1DF00A389B6 /* zeroButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zeroButton@2x.png"; sourceTree = "<group>"; };
@@ -196,21 +181,15 @@
 		9CB5F13E128C9351003117AD /* Conversor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversor.m; sourceTree = "<group>"; };
 		9CE55519126624EA00D09A21 /* Resistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Resistor.png; sourceTree = "<group>"; };
 		9CF125CE126F3BFF00CC1D45 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
-		9CF125CF126F3BFF00CC1D45 /* credits@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credits@2x.png"; sourceTree = "<group>"; };
 		9CF125D0126F3BFF00CC1D45 /* resistorcalculator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resistorcalculator@2x.png"; sourceTree = "<group>"; };
 		9CF125D1126F3BFF00CC1D45 /* decoder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decoder@2x.png"; sourceTree = "<group>"; };
 		9CF125D2126F3BFF00CC1D45 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9CF125D3126F3BFF00CC1D45 /* determinant@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "determinant@2x.png"; sourceTree = "<group>"; };
-		9CF125D4126F3BFF00CC1D45 /* enterresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enterresistor@2x.png"; sourceTree = "<group>"; };
-		9CF125D5126F3BFF00CC1D45 /* equivalentResitorLabel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "equivalentResitorLabel@2x.png"; sourceTree = "<group>"; };
 		9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		9CF125D7126F3BFF00CC1D45 /* linearequationsystem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linearequationsystem@2x.png"; sourceTree = "<group>"; };
 		9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presistor@2x.png"; sourceTree = "<group>"; };
 		9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resistor@2x.png"; sourceTree = "<group>"; };
-		9CF125DA126F3BFF00CC1D45 /* selectionLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectionLine@2x.png"; sourceTree = "<group>"; };
 		9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sresistor@2x.png"; sourceTree = "<group>"; };
-		9CF125DC126F3BFF00CC1D45 /* targetResistorLabel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "targetResistorLabel@2x.png"; sourceTree = "<group>"; };
-		9CF125DD126F3BFF00CC1D45 /* wood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood@2x.png"; sourceTree = "<group>"; };
 		BE7ECB12150E9CC3004F2457 /* DownIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -337,6 +316,7 @@
 				50020E0C11D576DA00C61974 /* Images */,
 				50020E0111D576DA00C61974 /* NIBs */,
 				50020E1F11D576DA00C61974 /* MATSOL-Info.plist */,
+				50DF4C171510590500F296A8 /* Localizable.strings */,
 				50020FD411D58FBB00C61974 /* Default.png */,
 				9CF125D2126F3BFF00CC1D45 /* Default@2x.png */,
 				50020FF211D598BE00C61974 /* Icon.png */,
@@ -351,15 +331,15 @@
 			children = (
 				50020E0211D576DA00C61974 /* MainWindow.xib */,
 				50020E0411D576DA00C61974 /* Scroll.xib */,
-				50020E0511D576DA00C61974 /* Selection.xib */,
-				50020E0611D576DA00C61974 /* InputResistor.xib */,
-				50020E0711D576DA00C61974 /* OutputResistor.xib */,
+				5024A38D151049D800274046 /* Selection.xib */,
+				5024A389151049B000274046 /* InputResistor.xib */,
+				5024A3851510496300274046 /* OutputResistor.xib */,
 				50020E0811D576DA00C61974 /* MatrixSheet.xib */,
 				50020E0911D576DA00C61974 /* Solutions.xib */,
 				9C1CF856125EA1E50060A1B2 /* Decoder.xib */,
-				9C7D4E081277B5CC000EBAC0 /* BaseConverter.xib */,
+				50DF4C11151050FE00F296A8 /* BaseConverter.xib */,
 				50020E0A11D576DA00C61974 /* Slave.xib */,
-				50020E0B11D576DA00C61974 /* CreditsViewController.xib */,
+				5024A381151048C300274046 /* CreditsViewController.xib */,
 			);
 			name = NIBs;
 			sourceTree = "<group>";
@@ -390,19 +370,10 @@
 		50020E1411D576DA00C61974 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				501F5412150D367000781875 /* testmetal.png */,
-				9C8D1D7A127A62F9002A4916 /* ConverterBackground.png */,
-				9C8D1D7B127A62F9002A4916 /* ConverterBackground@2x.png */,
-				50315943150F039200AF2AFF /* BrushedMetal.png */,
-				50315944150F039200AF2AFF /* BrushedMetal@2x.png */,
-				9C8135C9126D085100F68B8F /* credits.png */,
-				9CF125CF126F3BFF00CC1D45 /* credits@2x.png */,
-				50020E1611D576DA00C61974 /* selectionLine.png */,
-				9CF125DA126F3BFF00CC1D45 /* selectionLine@2x.png */,
-				50020E1711D576DA00C61974 /* enterresistor.png */,
-				9CF125D4126F3BFF00CC1D45 /* enterresistor@2x.png */,
-				50020E1811D576DA00C61974 /* wood.png */,
-				9CF125DD126F3BFF00CC1D45 /* wood@2x.png */,
+				50315954150F0C6400AF2AFF /* BaseConverterBackground@2x.png */,
+				50315955150F0C6400AF2AFF /* BaseConverterBackground.png */,
+				50315950150F0BD200AF2AFF /* BrushedMetalBackground.png */,
+				50315951150F0BD200AF2AFF /* BrushedMetalBackground@2x.png */,
 			);
 			name = Backgrounds;
 			sourceTree = "<group>";
@@ -443,11 +414,6 @@
 				9CE55519126624EA00D09A21 /* Resistor.png */,
 				9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */,
 				502EFE2111E0105F007BCA03 /* signW.png */,
-				5049951F11DED9F20058F950 /* sign.png */,
-				50D0087E11DC6A89006A076B /* equivalentResitorLabel.png */,
-				9CF125D5126F3BFF00CC1D45 /* equivalentResitorLabel@2x.png */,
-				50D0087811DC698F006A076B /* targetResistorLabel.png */,
-				9CF125DC126F3BFF00CC1D45 /* targetResistorLabel@2x.png */,
 				50C7F04311D73B53001EB7C9 /* presistor.png */,
 				9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */,
 				50C7F04411D73B53001EB7C9 /* sresistor.png */,
@@ -495,6 +461,7 @@
 				Japanese,
 				French,
 				German,
+				es,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -512,21 +479,18 @@
 			files = (
 				50020E2111D576DA00C61974 /* MainWindow.xib in Resources */,
 				50020E2311D576DA00C61974 /* Scroll.xib in Resources */,
-				50020E2411D576DA00C61974 /* Selection.xib in Resources */,
-				50020E2511D576DA00C61974 /* InputResistor.xib in Resources */,
-				50020E2611D576DA00C61974 /* OutputResistor.xib in Resources */,
+				5024A38B151049D800274046 /* Selection.xib in Resources */,
+				5024A387151049B000274046 /* InputResistor.xib in Resources */,
+				5024A3831510496300274046 /* OutputResistor.xib in Resources */,
 				50020E2711D576DA00C61974 /* MatrixSheet.xib in Resources */,
 				50020E2811D576DA00C61974 /* Solutions.xib in Resources */,
 				50020E2911D576DA00C61974 /* Slave.xib in Resources */,
-				50020E2A11D576DA00C61974 /* CreditsViewController.xib in Resources */,
+				5024A37F151048C300274046 /* CreditsViewController.xib in Resources */,
 				50020E2C11D576DA00C61974 /* ll.png in Resources */,
 				50020E2D11D576DA00C61974 /* ur.png in Resources */,
 				50020E2E11D576DA00C61974 /* ul.png in Resources */,
 				50020E2F11D576DA00C61974 /* m.png in Resources */,
 				50020E3011D576DA00C61974 /* lr.png in Resources */,
-				50020E3211D576DA00C61974 /* selectionLine.png in Resources */,
-				50020E3311D576DA00C61974 /* enterresistor.png in Resources */,
-				50020E3411D576DA00C61974 /* wood.png in Resources */,
 				50020E3611D576DA00C61974 /* button.png in Resources */,
 				50020E3911D576DA00C61974 /* resistorcalculator.png in Resources */,
 				50020FD511D58FBB00C61974 /* Default.png in Resources */,
@@ -535,41 +499,29 @@
 				50C7F04511D73B53001EB7C9 /* presistor.png in Resources */,
 				50C7F04611D73B53001EB7C9 /* sresistor.png in Resources */,
 				50D0082311DC42AE006A076B /* wire.png in Resources */,
-				50D0087911DC698F006A076B /* targetResistorLabel.png in Resources */,
-				50D0087F11DC6A89006A076B /* equivalentResitorLabel.png in Resources */,
-				5049952011DED9F20058F950 /* sign.png in Resources */,
 				502EFE2211E0105F007BCA03 /* signW.png in Resources */,
 				9C1CF858125EA1E50060A1B2 /* Decoder.xib in Resources */,
 				9C1CF877125EA6A30060A1B2 /* decoder.png in Resources */,
 				9CE5551A126624EA00D09A21 /* Resistor.png in Resources */,
-				9C8135CA126D085100F68B8F /* credits.png in Resources */,
 				9C813600126D1B5300F68B8F /* linearequationsystem.png in Resources */,
 				9C442011126D1E9D00A2B27A /* determinant.png in Resources */,
 				9CF125DE126F3BFF00CC1D45 /* button@2x.png in Resources */,
-				9CF125DF126F3BFF00CC1D45 /* credits@2x.png in Resources */,
 				9CF125E0126F3BFF00CC1D45 /* resistorcalculator@2x.png in Resources */,
 				9CF125E1126F3BFF00CC1D45 /* decoder@2x.png in Resources */,
 				9CF125E2126F3BFF00CC1D45 /* Default@2x.png in Resources */,
 				9CF125E3126F3BFF00CC1D45 /* determinant@2x.png in Resources */,
-				9CF125E4126F3BFF00CC1D45 /* enterresistor@2x.png in Resources */,
-				9CF125E5126F3BFF00CC1D45 /* equivalentResitorLabel@2x.png in Resources */,
 				9CF125E6126F3BFF00CC1D45 /* Icon@2x.png in Resources */,
 				9CF125E7126F3BFF00CC1D45 /* linearequationsystem@2x.png in Resources */,
 				9CF125E8126F3BFF00CC1D45 /* presistor@2x.png in Resources */,
 				9CF125E9126F3BFF00CC1D45 /* Resistor@2x.png in Resources */,
-				9CF125EA126F3BFF00CC1D45 /* selectionLine@2x.png in Resources */,
 				9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */,
-				9CF125EC126F3BFF00CC1D45 /* targetResistorLabel@2x.png in Resources */,
-				9CF125ED126F3BFF00CC1D45 /* wood@2x.png in Resources */,
-				9C7D4E0A1277B5CC000EBAC0 /* BaseConverter.xib in Resources */,
+				50DF4C0F151050FE00F296A8 /* BaseConverter.xib in Resources */,
 				9C8FD2051279DF9E00A389B6 /* blackButton@2x.png in Resources */,
 				9C8FD2061279DF9E00A389B6 /* blackButton.png in Resources */,
 				9C8FD21E1279E1DF00A389B6 /* zeroButton@2x.png in Resources */,
 				9C8FD21F1279E1DF00A389B6 /* zeroButton.png in Resources */,
 				9C8FD2261279E38300A389B6 /* brownButton.png in Resources */,
 				9C8FD2271279E38300A389B6 /* brownButton@2x.png in Resources */,
-				9C8D1D7C127A62F9002A4916 /* ConverterBackground.png in Resources */,
-				9C8D1D7D127A62F9002A4916 /* ConverterBackground@2x.png in Resources */,
 				50260BC612B4C9D700A1CF4D /* crossedBlackButton.png in Resources */,
 				50260BC712B4C9D700A1CF4D /* crossedBlackButton@2x.png in Resources */,
 				50386A3812B5D5210071A656 /* baseConverter.png in Resources */,
@@ -577,9 +529,11 @@
 				50386A4B12B5DA490071A656 /* deleteBlackButton@2x.png in Resources */,
 				50386A4D12B5DA5B0071A656 /* deleteBlackButton.png in Resources */,
 				504C6FAD12BF4DCC00CC815E /* iTunesArtwork.png in Resources */,
-				501F5413150D367000781875 /* testmetal.png in Resources */,
-				50315945150F039300AF2AFF /* BrushedMetal.png in Resources */,
-				50315946150F039300AF2AFF /* BrushedMetal@2x.png in Resources */,
+				50315952150F0BD200AF2AFF /* BrushedMetalBackground.png in Resources */,
+				50315953150F0BD200AF2AFF /* BrushedMetalBackground@2x.png in Resources */,
+				50315956150F0C6400AF2AFF /* BaseConverterBackground@2x.png in Resources */,
+				50315957150F0C6400AF2AFF /* BaseConverterBackground.png in Resources */,
+				50DF4C151510590500F296A8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +565,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5024A381151048C300274046 /* CreditsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5024A380151048C300274046 /* en */,
+				5024A382151048D300274046 /* es */,
+			);
+			name = CreditsViewController.xib;
+			sourceTree = "<group>";
+		};
+		5024A3851510496300274046 /* OutputResistor.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5024A3841510496300274046 /* en */,
+				5024A3861510497000274046 /* es */,
+			);
+			name = OutputResistor.xib;
+			sourceTree = "<group>";
+		};
+		5024A389151049B000274046 /* InputResistor.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5024A388151049B000274046 /* en */,
+				5024A38A151049B700274046 /* es */,
+			);
+			name = InputResistor.xib;
+			sourceTree = "<group>";
+		};
+		5024A38D151049D800274046 /* Selection.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5024A38C151049D800274046 /* en */,
+				5024A38E151049E200274046 /* es */,
+			);
+			name = Selection.xib;
+			sourceTree = "<group>";
+		};
+		50DF4C11151050FE00F296A8 /* BaseConverter.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50DF4C10151050FE00F296A8 /* en */,
+				50DF4C121510510C00F296A8 /* es */,
+			);
+			name = BaseConverter.xib;
+			sourceTree = "<group>";
+		};
+		50DF4C171510590500F296A8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50DF4C161510590500F296A8 /* en */,
+				50DF4C181510591300F296A8 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {

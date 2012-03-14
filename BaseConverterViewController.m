@@ -85,8 +85,8 @@
 	[mainConverter setNumber:0];
 	
 	//Set the UI indicators
-	[[self fromIndicator] setText:@"From: 10"];
-	[[self toIndicator] setText:@"To: 2"];
+	[[self fromIndicator] setText:NSLocalizedString(@"From: 10", @"From label")];
+	[[self toIndicator] setText:NSLocalizedString(@"To: 2", @"To label")];
 	
 	//Update the UI
 	[self lockButtons];
@@ -144,8 +144,11 @@
 	
 	//Initialize the bases array
 	if (_basesArray==nil) {
-		_basesArray=[[NSArray alloc] initWithObjects:@"Binary (2)",@"Ternary (3)",@"Quaternary (4)",@"Quinary (5)",@"Senary (6)",@"Sevenary (7)",
-					  @"Octal (8)",@"Nonary (9)",@"Decimal (10)",@"Undecimal (11)",@"Duodecimal (12)",@"Tridecimal (13)",@"Tetradecimal (14)",@"Pentadecimal (15)",@"Hexadecimal (16)",nil];
+		_basesArray=[[NSArray alloc] initWithObjects:NSLocalizedString(@"Binary (2)", @"Binary tag"), NSLocalizedString(@"Ternary (3)", @"Ternary tag"),
+                     NSLocalizedString(@"Quaternary (4)", @"Quaternary tag"), NSLocalizedString(@"Quinary (5)", @"Quinary tag"), NSLocalizedString(@"Senary (6)", @"Senary tag"), NSLocalizedString(@"Sevenary (7)", @"Sevenary tag"),
+                     NSLocalizedString(@"Ocatal (8)", @"Octal tag"), NSLocalizedString(@"Nonary (9)", @"Nonary tag"), NSLocalizedString(@"Decimal (10)", @"Decimal tag"),
+                     NSLocalizedString(@"Undecimal (11)", @"Undecimal tag"), NSLocalizedString(@"Duodecimal (12)", @"Duodecimal tag"), NSLocalizedString(@"Tridecimal (13)", @"Tridecimal tag"),
+                     NSLocalizedString(@"Tetradecimal (14)", @"Tetradecimal tag"), NSLocalizedString(@"Pentadecimal (15)", @"Pentadecimal tag"), NSLocalizedString(@"Hexadecimal (16)", @"Hexadecimal tag"),nil];
 	}	
 	
 	//Init the Action sheet
@@ -261,8 +264,7 @@
 	
 	if (_currentActionSheet == MBaseConverterButtonTo) {
 		[mainConverter setToBase:_pickedBase];
-		[toIndicator setText:[NSString stringWithFormat:@"To: %d",_pickedBase]];
-		
+		[toIndicator setText:[NSString stringWithFormat:@"%@: %d",NSLocalizedString(@"To", @"From tag"),_pickedBase]];
 		//Updating the "to base" then convert the base
 		[mainConverter setNumber:[fromLabel text]];
 		[toLabel setText:[NSString stringWithFormat:@"%@",[mainConverter number]]];
@@ -279,7 +281,7 @@
 		[mainConverter setFromBase:_pickedBase];
 		[mainConverter setToBase:oldToBase];
 		
-		[fromIndicator setText:[NSString stringWithFormat:@"From: %d",_pickedBase]];
+		[fromIndicator setText:[NSString stringWithFormat:@"%@: %d",NSLocalizedString(@"From", @"From tag"),_pickedBase]];
 		[self lockButtons];
 	}
 }

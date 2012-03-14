@@ -11,10 +11,11 @@
 #define NO_DEBUG_INTERFACE
 #define NO_VERBOSE
 
-#define MATSOL_VERSION @"1.05dev"
+#define MATSOL_VERSION  @"1.05dev"
+#define MATSOL_BUILD    @"(XXXX)"
 
 //Number of pages in the scroll view controller
-#define NUMBER_OF_MENU_PAGES 5
+#define NUMBER_OF_MENU_PAGES 1
 
 //How should the navigation be from text field to text field
 #define MOVE_HORIZONTAL
@@ -22,5 +23,5 @@
 //Testing the drawing algorithm for the resistor calculator
 #define NO_ALGORITHM_TEST
 
-//The color of the fonts to be used in the Color Decoder
+//The color of the fonts to be used in the Color Decoder other option WHITE_FONTS
 #define BLACK_FONTS

@@ -41,7 +41,7 @@ int PaddingXRight(int size){
 		myArray=[[NSMutableArray alloc] init];
 		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
-		solveButton=[[UIBarButtonItem alloc] initWithTitle:@"Solve" style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
+		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve title") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		
 		//This method returns a retained object
 		_loadingMessageView=[DeterminantSheetViewController createWaitingView];	
@@ -284,7 +284,7 @@ int PaddingXRight(int size){
 	if (wasSolved==DeterminantErrorCantSolve) {
 		UIAlertView *determinantValue=[[UIAlertView alloc] 
 									   initWithTitle:@"Error" 
-									   message:@"Can't solve this determinant, sorry." 
+									   message:NSLocalizedString(@"Can't solve this determinant, sorry.", @"Error cannot solve determinant label") 
 									   delegate:self 
 									   cancelButtonTitle:@"ok"
 									   otherButtonTitles:nil];
@@ -302,8 +302,8 @@ int PaddingXRight(int size){
 		#endif //DEBUG
 		
 		UIAlertView *determinantValue=[[UIAlertView alloc] 
-									   initWithTitle:@"Done!" 
-									   message:[NSString stringWithFormat:@"The value of the determinant for that matrix is: %.5f",d] 
+									   initWithTitle:NSLocalizedString(@"Done!", @"Computation done label") 
+									   message:[NSString stringWithFormat:@"%@: %.5f", NSLocalizedString(@"The value of the determinant for that matrix is", @"Determinant solved label"),d] 
 									   delegate:self 
 									   cancelButtonTitle:@"ok"
 									   otherButtonTitles:nil];
@@ -426,7 +426,7 @@ int PaddingXRight(int size){
 	UILabel *message=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
 	
 	//Set the label attributes
-	[message setText:@"Loading ..."];
+	[message setText:NSLocalizedString(@"Loading ...", @"Loading label")];
 	[message setTextColor:[UIColor whiteColor]];
 	[message setBackgroundColor:[UIColor clearColor]];
 	[message setTextAlignment:UITextAlignmentCenter];
