@@ -132,7 +132,6 @@
 		50020FD411D58FBB00C61974 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		50020FF211D598BE00C61974 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		5024A380151048C300274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
-		5024A382151048D300274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
 		5024A3841510496300274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OutputResistor.xib; sourceTree = "<group>"; };
 		5024A3861510497000274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/OutputResistor.xib; sourceTree = "<group>"; };
 		5024A388151049B000274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InputResistor.xib; sourceTree = "<group>"; };
@@ -571,7 +570,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				5024A380151048C300274046 /* en */,
-				5024A382151048D300274046 /* es */,
 			);
 			name = CreditsViewController.xib;
 			sourceTree = "<group>";
