@@ -39,7 +39,7 @@ int PaddingXRight(int size){
 		#endif
 		
 		myArray=[[NSMutableArray alloc] init];
-		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
+		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
 		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve title") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		
@@ -134,11 +134,12 @@ int PaddingXRight(int size){
 			UITextField *temp = [[UITextField alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)];
 			//Attributes for textfields that are not the solution column
             UIBarButtonItem *ubbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextSomething:)];
-            UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissKeyboard:)];
+            UIBarButtonItem *back = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(previousSomething:)] autorelease];
+            UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"DownIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard:)];
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
             UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
-            [kbtb setItems:[NSArray arrayWithObjects:space,ubbi,lesskey,nil]];
+            [kbtb setItems:[NSArray arrayWithObjects:space,back,ubbi,lesskey,nil]];
             [ubbi release];
             [lesskey release];
             [space release];
@@ -197,6 +198,31 @@ int PaddingXRight(int size){
     }
 }
 
+-(void)previousSomething:(id)sender {
+    int i,j;
+    BOOL flag = FALSE;
+    int maxi = [myArray count];
+    int maxj = [[myArray objectAtIndex:0] count];
+    for (i = 0;!flag && i< maxi; i++) {
+        for (j = 0;!flag && j< maxj; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                //NSLog(@"Found first responder at %d\t%d",i,j);
+                [[[myArray objectAtIndex:i] objectAtIndex:j] resignFirstResponder];
+                //i = i+1;
+                if (j == 0 && i == 0) {
+                    i = maxi;
+                    j = maxj-1;
+                } else if (i == 0) {
+                    i = maxi;
+                    j = j-1;
+                }
+                [[[myArray objectAtIndex:i-1] objectAtIndex:j] becomeFirstResponder];
+                flag = TRUE;
+            }
+        }
+    }
+}
+
 -(void)dismissKeyboard:(id)sender {
     int i,j;
     BOOL flag = FALSE;
@@ -205,6 +231,7 @@ int PaddingXRight(int size){
             if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
                 //NSLog(@"Found first responder at %d\t%d",i,j);
                 [[[myArray objectAtIndex:i] objectAtIndex:j] resignFirstResponder];
+                layoutView.contentSize = CGSizeMake(container.frame.size.width, container.frame.size.height-240);
                 flag = TRUE;
             }
         }
@@ -229,7 +256,7 @@ int PaddingXRight(int size){
 	//BE CAREFUL!
 	//The container size should be the last thing you set.
 	//You should only add the container and the layout by the end of your code.
-	container.frame = CGRectMake(0, 0, 75*matrixSize,(45*matrixSize)+20);
+	container.frame = CGRectMake(0, 0, 75*matrixSize,(45*matrixSize)+250);
 	layoutView.contentSize = container.frame.size;
 	
 	[layoutView addSubview:container];
@@ -280,8 +307,9 @@ int PaddingXRight(int size){
 	
 	//Send it to ludcmp & check if it's a valid matrix
 	wasSolved=ludcmp(a, matrixSize, &d);
-	
+	GIDASearchAlert *determinantValue = nil;
 	if (wasSolved==DeterminantErrorCantSolve) {
+<<<<<<< HEAD
 		UIAlertView *determinantValue=[[UIAlertView alloc] 
 									   initWithTitle:@"Error" 
 									   message:NSLocalizedString(@"Can't solve this determinant, sorry.", @"Error cannot solve determinant label") 
@@ -292,6 +320,12 @@ int PaddingXRight(int size){
 		[determinantValue show];
 		[determinantValue release];
 	}
+=======
+        determinantValue = [[GIDASearchAlert alloc] initWithTitle:@"Error" message:@"Can't solve this determinant, sorry." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+
+		
+    }
+>>>>>>> 9cb3ab0cd21a66c0e4ff592c5e50a3a81120b9a4
 	else if ((wasSolved=DeterminantErrorEverythingOk)) {
 		for(j=1;j<=matrixSize;j++) {
 			d *= a[j-1][j-1];
@@ -300,6 +334,7 @@ int PaddingXRight(int size){
 		#ifdef DEBUG
 		NSLog(@"The determinant value is %f\n",d);
 		#endif //DEBUG
+<<<<<<< HEAD
 		
 		UIAlertView *determinantValue=[[UIAlertView alloc] 
 									   initWithTitle:NSLocalizedString(@"Done!", @"Computation done label") 
@@ -310,8 +345,13 @@ int PaddingXRight(int size){
 		//Display the alert dialog
 		[determinantValue show];
 		[determinantValue release];
+=======
+		determinantValue = [[GIDASearchAlert alloc] initWithTitle:@"Done" message:[NSString stringWithFormat:@"The value of the determinant for that matrix is: %.5f",d] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+>>>>>>> 9cb3ab0cd21a66c0e4ff592c5e50a3a81120b9a4
 	}
-
+    //Display the alert dialog
+    [determinantValue show];
+    [determinantValue release];
 }
 
 #pragma mark MemoryManagement 
@@ -335,6 +375,10 @@ int PaddingXRight(int size){
 
 
 #pragma mark TextFieldDelegateMethods
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    layoutView.contentSize = container.frame.size;
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
 	
 	const char *cadena;

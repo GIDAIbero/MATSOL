@@ -84,6 +84,13 @@
 		9CF125E8126F3BFF00CC1D45 /* presistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */; };
 		9CF125E9126F3BFF00CC1D45 /* Resistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */; };
 		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
+<<<<<<< HEAD
+=======
+		9CF125EC126F3BFF00CC1D45 /* targetResistorLabel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DC126F3BFF00CC1D45 /* targetResistorLabel@2x.png */; };
+		9CF125ED126F3BFF00CC1D45 /* wood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DD126F3BFF00CC1D45 /* wood@2x.png */; };
+		BE7ECB13150E9CC3004F2457 /* DownIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7ECB12150E9CC3004F2457 /* DownIcon.png */; };
+		BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA189D81512393B00197347 /* GIDASearchAlert.m */; };
+>>>>>>> 9cb3ab0cd21a66c0e4ff592c5e50a3a81120b9a4
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +197,8 @@
 		9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resistor@2x.png"; sourceTree = "<group>"; };
 		9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sresistor@2x.png"; sourceTree = "<group>"; };
 		BE7ECB12150E9CC3004F2457 /* DownIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownIcon.png; sourceTree = "<group>"; };
+		BEA189D71512393B00197347 /* GIDASearchAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDASearchAlert.h; sourceTree = "<group>"; };
+		BEA189D81512393B00197347 /* GIDASearchAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDASearchAlert.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +226,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				BEA189CF1512380700197347 /* GIDA */,
 				50020DCE11D5769700C61974 /* Engine */,
 				50020DD811D576A700C61974 /* Classes */,
 				50020E0011D576DA00C61974 /* Resources */,
@@ -423,6 +433,15 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		BEA189CF1512380700197347 /* GIDA */ = {
+			isa = PBXGroup;
+			children = (
+				BEA189D71512393B00197347 /* GIDASearchAlert.h */,
+				BEA189D81512393B00197347 /* GIDASearchAlert.m */,
+			);
+			name = GIDA;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -560,6 +579,7 @@
 				9C1CF857125EA1E50060A1B2 /* DecoderViewController.m in Sources */,
 				9C7D4E091277B5CC000EBAC0 /* BaseConverterViewController.m in Sources */,
 				9CB5F13F128C9351003117AD /* Conversor.m in Sources */,
+				BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

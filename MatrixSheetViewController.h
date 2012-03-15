@@ -10,6 +10,7 @@
 #import "SolutionsViewController.h"
 #import "mygaussj.h"
 #import "MATSOLDefines.h"
+#import "GIDASearchAlert.h"
 
 struct FirstSecond {
     int fst;
