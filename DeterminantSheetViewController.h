@@ -9,6 +9,7 @@
 #import "SolutionsViewController.h"
 #import "myludcmp.h"
 #import "MATSOLDefines.h"
+#import "GIDASearchAlert.h"
 
 
 typedef enum{

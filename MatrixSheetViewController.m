@@ -109,26 +109,18 @@
 }
 
 -(void)creatingTextFields:(id)sender{
-	//A pool should always be created when using threads
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
-	//UITextField *temp;
-	//UILabel *dummies=nil;
 	CGPoint referencePoint;
 	float currentX=15.0, currentY=15.0;
 	int height=0, width=0;
 	
 	//Assign as many text fields as needed.
 	for (height=0; height<matrixSize+1; height++) {
-		//[myArray insertObject:[[NSMutableArray alloc] init] atIndex:height];
 		//One Column is done? then start the next one from the top
 		currentY=15;
 		NSMutableArray *ma = [NSMutableArray array];
 		for (width=0; width<matrixSize; width++) {
-			//[[myArray objectAtIndex:height] insertObject:[[UITextField alloc] initWithFrame:CGRectMake(currentX,currentY, 65, 30)] atIndex:width];
-            //[ma insertObject:[[UITextField alloc] initWithFrame:CGRectMake(currentX, currentY, 65, 30)] atIndex:width];
-			//temp=[[myArray objectAtIndex:height] objectAtIndex:width];
-			UITextField *temp = [[UITextField alloc] initWithFrame:CGRectMake(currentX, currentY, 65, 30)];
+
+			UITextField *temp = [[[UITextField alloc] initWithFrame:CGRectMake(currentX, currentY, 65, 30)] autorelease];
 			//Attributes for textfields that are not the solution column
 			temp.borderStyle=UITextBorderStyleRoundedRect;
 			temp.adjustsFontSizeToFitWidth=YES;
@@ -136,21 +128,24 @@
 			temp.textColor=[UIColor blackColor];
 			temp.keyboardType=UIKeyboardTypeDecimalPad;
             UIBarButtonItem *ubbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextSomething:)];
+            UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(previousSomething:)];
             UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"DownIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard:)];
-            //UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissKeyboard:)];
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
             UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
-            [kbtb setItems:[NSArray arrayWithObjects:space,ubbi,lesskey,nil]];
+            [kbtb setItems:[NSArray arrayWithObjects:space,back,ubbi,lesskey,nil]];
+            
+            [ubbi release];
+            [back release];
+            [lesskey release];
+            [space release];
+            
             temp.inputAccessoryView = kbtb;
             temp.keyboardAppearance        = UIKeyboardAppearanceAlert;
 			temp.textAlignment=UITextAlignmentRight;
 			temp.returnKeyType=UIReturnKeyNext;
 			temp.delegate=self;
-            
-			[ubbi release];
-            [lesskey release];
-            [space release];
+
 			if (height<matrixSize) {
 				temp.placeholder=[NSString stringWithFormat:@"%c%d",height+97,width+1];
 				
@@ -179,23 +174,15 @@
 				temp.textColor=[UIColor redColor];
 			}
 			[ma insertObject:temp atIndex:width];
-            
             [container addSubview:temp];
 			//Offset for every row
 			currentY=currentY+45;
-			
-			//free the memory on the other thread
-			//[self performSelectorOnMainThread:@selector(endTextFields:) withObject:temp waitUntilDone:NO];
-			//[self performSelectorOnMainThread:@selector(endLabels:) withObject:dummies waitUntilDone:NO];
 		}
 		[myArray insertObject:ma atIndex:height];
 		//Add the offset to each column
 		currentX=currentX+120;
 	}	
 	[self performSelectorOnMainThread:@selector(makeFirstResponder:) withObject:nil waitUntilDone:NO];
-
-	//Release the pool
-    [pool release];
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     layoutView.contentSize = container.frame.size;
@@ -218,6 +205,31 @@
                     j = j+1;
                 }
                 [[[myArray objectAtIndex:i+1] objectAtIndex:j] becomeFirstResponder];
+                flag = TRUE;
+            }
+        }
+    }
+}
+
+-(void)previousSomething:(id)sender {
+    int i,j;
+    BOOL flag = FALSE;
+    int maxi = [myArray count];
+    int maxj = [[myArray objectAtIndex:0] count];
+    for (i = 0;!flag && i< maxi; i++) {
+        for (j = 0;!flag && j< maxj; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                //NSLog(@"Found first responder at %d\t%d",i,j);
+                [[[myArray objectAtIndex:i] objectAtIndex:j] resignFirstResponder];
+                //i = i+1;
+                if (j == 0 && i == 0) {
+                    i = maxi;
+                    j = maxj-1;
+                } else if (i == 0) {
+                    i = maxi;
+                    j = j-1;
+                }
+                [[[myArray objectAtIndex:i-1] objectAtIndex:j] becomeFirstResponder];
                 flag = TRUE;
             }
         }
@@ -349,12 +361,7 @@
 		#ifdef DEBUG
 		NSLog(@"No solution for this matrix.");
 		#endif
-		UIAlertView *matrixAlert=[[UIAlertView alloc] initWithTitle:@"ERROR!" 
-															message:@"There's no solution for this matrix, try another one."
-														   delegate:self 
-												  cancelButtonTitle:@"ok" 
-												  otherButtonTitles:nil];
-		//Display the alert dialog
+        GIDASearchAlert *matrixAlert = [[GIDASearchAlert alloc] initWithTitle:@"Error" message:@"There's no solution for this matrix, try another one." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 		[matrixAlert show];
 		[matrixAlert release];
 	}
