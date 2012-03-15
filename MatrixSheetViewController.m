@@ -361,16 +361,8 @@
 		#ifdef DEBUG
 		NSLog(@"No solution for this matrix.");
 		#endif
-<<<<<<< HEAD
-		UIAlertView *matrixAlert=[[UIAlertView alloc] initWithTitle:@"ERROR!" 
-															message:NSLocalizedString(@"There's no solution for this matrix, try another one.", @"No solution for this matrix label")
-														   delegate:self 
-												  cancelButtonTitle:@"ok" 
-												  otherButtonTitles:nil];
-		//Display the alert dialog
-=======
         GIDASearchAlert *matrixAlert = [[GIDASearchAlert alloc] initWithTitle:@"Error" message:@"There's no solution for this matrix, try another one." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
->>>>>>> 9cb3ab0cd21a66c0e4ff592c5e50a3a81120b9a4
+
 		[matrixAlert show];
 		[matrixAlert release];
 	}

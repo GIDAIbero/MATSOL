@@ -309,23 +309,8 @@ int PaddingXRight(int size){
 	wasSolved=ludcmp(a, matrixSize, &d);
 	GIDASearchAlert *determinantValue = nil;
 	if (wasSolved==DeterminantErrorCantSolve) {
-<<<<<<< HEAD
-		UIAlertView *determinantValue=[[UIAlertView alloc] 
-									   initWithTitle:@"Error" 
-									   message:NSLocalizedString(@"Can't solve this determinant, sorry.", @"Error cannot solve determinant label") 
-									   delegate:self 
-									   cancelButtonTitle:@"ok"
-									   otherButtonTitles:nil];
-		//Display the alert dialog
-		[determinantValue show];
-		[determinantValue release];
-	}
-=======
         determinantValue = [[GIDASearchAlert alloc] initWithTitle:@"Error" message:@"Can't solve this determinant, sorry." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-
-		
     }
->>>>>>> 9cb3ab0cd21a66c0e4ff592c5e50a3a81120b9a4
 	else if ((wasSolved=DeterminantErrorEverythingOk)) {
 		for(j=1;j<=matrixSize;j++) {
 			d *= a[j-1][j-1];
@@ -334,20 +319,7 @@ int PaddingXRight(int size){
 		#ifdef DEBUG
 		NSLog(@"The determinant value is %f\n",d);
 		#endif //DEBUG
-<<<<<<< HEAD
-		
-		UIAlertView *determinantValue=[[UIAlertView alloc] 
-									   initWithTitle:NSLocalizedString(@"Done!", @"Computation done label") 
-									   message:[NSString stringWithFormat:@"%@: %.5f", NSLocalizedString(@"The value of the determinant for that matrix is", @"Determinant solved label"),d] 
-									   delegate:self 
-									   cancelButtonTitle:@"ok"
-									   otherButtonTitles:nil];
-		//Display the alert dialog
-		[determinantValue show];
-		[determinantValue release];
-=======
 		determinantValue = [[GIDASearchAlert alloc] initWithTitle:@"Done" message:[NSString stringWithFormat:@"The value of the determinant for that matrix is: %.5f",d] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
->>>>>>> 9cb3ab0cd21a66c0e4ff592c5e50a3a81120b9a4
 	}
     //Display the alert dialog
     [determinantValue show];
