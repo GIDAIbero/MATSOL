@@ -22,7 +22,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
-        [self setTitle:@"Base Converter"];
+        [self setTitle:NSLocalizedString(@"Base Converter", @"Base converter title")];
     }
     return self;
 }
@@ -152,7 +152,7 @@
 	}	
 	
 	//Init the Action sheet
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:titleString delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Select", nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:titleString delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Select", @"Select tag button"), nil];
 	[actionSheet showInView:self.view];
 	[actionSheet setDelegate:self];
 	

@@ -8,15 +8,17 @@
 
 #import "Conversor.h"
 
-@interface Conversor()
-@end
-
 @implementation Conversor
 @synthesize toBase;
 @synthesize fromBase;
 
 - (void)setNumber:(NSString *)num{
-	number = num;
+    if (num != nil) {
+        number=[NSString stringWithString:num];
+    }
+    else {
+        number=num;
+    }
 }
 
 - (NSString *)number{
@@ -70,7 +72,6 @@
 		}
 		regreso = arreglo;
 	}else {
-	//	NSLog(number);
 		unsigned long long x;
 		unsigned long long total=0;
 		for(i=0.0; i<[number length]; i++){
@@ -108,9 +109,9 @@
 	return regreso;
 }
 
-- (void)dealloc
-{
-	[number release];
+- (void)dealloc{
+    //Nothing to release, the only object 
+    //is usually an autoreleased object
 	[super dealloc];
 }
 
