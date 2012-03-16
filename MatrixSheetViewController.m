@@ -29,7 +29,7 @@
 		myArray=[[NSMutableArray alloc] init];
 		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
-		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve title") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
+		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		
 		//This method returns a retained object
 		_loadingMessageView=[MatrixSheetViewController createWaitingView];	
@@ -361,23 +361,18 @@
 		#ifdef DEBUG
 		NSLog(@"No solution for this matrix.");
 		#endif
-        GIDASearchAlert *matrixAlert = [[GIDASearchAlert alloc] initWithTitle:@"Error" message:@"There's no solution for this matrix, try another one." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        
+        GIDASearchAlert *matrixAlert = [[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
+                                                                      message:NSLocalizedString(@"Cannot solve this matrix, please try another one.", @"Can't solve matrix text") 
+                                                                     delegate:self 
+                                                            cancelButtonTitle:@"Ok" 
+                                                            otherButtonTitles:nil];
 
 		[matrixAlert show];
 		[matrixAlert release];
 	}
 	
 }
-
-#pragma mark MemoryManagement 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-/*	myArray=nil;
-	container=nil;
-	layoutView=nil;
-	solveButton=nil; */
-}
-
 - (void)dealloc {
 	[myArray release];
 	[container release];
@@ -385,7 +380,6 @@
 	[solveButton release];
     [super dealloc];
 }
-
 
 #pragma mark TextFieldDelegateMethods
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
@@ -484,7 +478,7 @@
 	UILabel *message=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
 	
 	//Set the label attributes
-	[message setText:NSLocalizedString(@"Loading ...", @"Loading label")];
+	[message setText:NSLocalizedString(@"Loading ...", @"Loading string")];
 	[message setTextColor:[UIColor whiteColor]];
 	[message setBackgroundColor:[UIColor clearColor]];
 	[message setTextAlignment:UITextAlignmentCenter];

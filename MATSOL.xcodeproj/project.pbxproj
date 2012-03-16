@@ -56,7 +56,6 @@
 		50C7F04611D73B53001EB7C9 /* sresistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04411D73B53001EB7C9 /* sresistor.png */; };
 		50D0082311DC42AE006A076B /* wire.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D0082211DC42AE006A076B /* wire.png */; };
 		50DF4C0F151050FE00F296A8 /* BaseConverter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DF4C11151050FE00F296A8 /* BaseConverter.xib */; };
-		50DF4C151510590500F296A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50DF4C171510590500F296A8 /* Localizable.strings */; };
 		9C1CF818125E9F020060A1B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF817125E9F020060A1B2 /* UIKit.framework */; };
 		9C1CF81C125E9F120060A1B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF81B125E9F120060A1B2 /* Foundation.framework */; };
 		9C1CF820125E9F1E0060A1B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */; };
@@ -84,9 +83,6 @@
 		9CF125E8126F3BFF00CC1D45 /* presistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */; };
 		9CF125E9126F3BFF00CC1D45 /* Resistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */; };
 		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
-		9CF125EC126F3BFF00CC1D45 /* targetResistorLabel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DC126F3BFF00CC1D45 /* targetResistorLabel@2x.png */; };
-		9CF125ED126F3BFF00CC1D45 /* wood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DD126F3BFF00CC1D45 /* wood@2x.png */; };
-		BE7ECB13150E9CC3004F2457 /* DownIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7ECB12150E9CC3004F2457 /* DownIcon.png */; };
 		BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA189D81512393B00197347 /* GIDASearchAlert.m */; };
 /* End PBXBuildFile section */
 
@@ -161,8 +157,6 @@
 		50D0082211DC42AE006A076B /* wire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wire.png; sourceTree = "<group>"; };
 		50DF4C10151050FE00F296A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BaseConverter.xib; sourceTree = "<group>"; };
 		50DF4C121510510C00F296A8 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/BaseConverter.xib; sourceTree = "<group>"; };
-		50DF4C161510590500F296A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		50DF4C181510591300F296A8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C1CF817125E9F020060A1B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C1CF81B125E9F120060A1B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -322,7 +316,6 @@
 				50020E0C11D576DA00C61974 /* Images */,
 				50020E0111D576DA00C61974 /* NIBs */,
 				50020E1F11D576DA00C61974 /* MATSOL-Info.plist */,
-				50DF4C171510590500F296A8 /* Localizable.strings */,
 				50020FD411D58FBB00C61974 /* Default.png */,
 				9CF125D2126F3BFF00CC1D45 /* Default@2x.png */,
 				50020FF211D598BE00C61974 /* Icon.png */,
@@ -548,7 +541,6 @@
 				50315953150F0BD200AF2AFF /* BrushedMetalBackground@2x.png in Resources */,
 				50315956150F0C6400AF2AFF /* BaseConverterBackground@2x.png in Resources */,
 				50315957150F0C6400AF2AFF /* BaseConverterBackground.png in Resources */,
-				50DF4C151510590500F296A8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,15 +617,6 @@
 				50DF4C121510510C00F296A8 /* es */,
 			);
 			name = BaseConverter.xib;
-			sourceTree = "<group>";
-		};
-		50DF4C171510590500F296A8 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50DF4C161510590500F296A8 /* en */,
-				50DF4C181510591300F296A8 /* es */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

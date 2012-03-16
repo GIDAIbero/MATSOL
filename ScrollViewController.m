@@ -34,7 +34,7 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
 		#ifdef	DEBUG_INTERFACE
 		[self setTitle:@"MATSOL_MENU"];
 		#endif
-		creditsButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"About", @"About title") style:UIBarButtonItemStyleBordered target:self action:@selector(credits)];
+		creditsButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"About", @"About string") style:UIBarButtonItemStyleBordered target:self action:@selector(credits)];
 		self.navigationItem.leftBarButtonItem=creditsButton;
     }
     return self;
@@ -79,7 +79,7 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
 #pragma mark CreditsViewControllerMethods
 -(void)credits{
 	CreditsViewController *creditsViewController=[[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
-	creditsViewController.title=NSLocalizedString(@"About", @"About title");
+	creditsViewController.title=NSLocalizedString(@"About", @"About string");
 	creditsViewController.delegate=self;
 	[self presentModalViewController:creditsViewController animated:YES];
 	[creditsViewController release];

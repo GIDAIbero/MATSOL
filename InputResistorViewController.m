@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	[self setTitle:NSLocalizedString(@"Custom Resistor", @"Custom resistor title for the view controller")];
+	[self setTitle:NSLocalizedString(@"Custom Resistor", @"Custom resistor view controller title")];
 	
 	//Assign this objects to implement the delegate methods
 	[targetResistance setDelegate:self];
@@ -118,6 +118,7 @@
 	//Just allow it
 	return YES;
 }
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
 	float resistorValue=[[targetResistance text] floatValue];
@@ -129,11 +130,11 @@
 	
 	if (resistorValue<1.0) {
 		//Show an alert view the size is not valid : O
-		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
-														  message:NSLocalizedString(@"The resistor value should be greater or equal to 1.", @"Resistor label for error 1")
-														 delegate:self 
-												cancelButtonTitle:@"Ok" 
-												otherButtonTitles:nil];
+		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
+                                                                  message:NSLocalizedString(@"The resistor value should be greater or equal to 1.", @"Resistor label for error 1")
+                                                                 delegate:self 
+                                                        cancelButtonTitle:@"Ok" 
+                                                        otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
 		[sizeAlert release];
@@ -143,11 +144,11 @@
 	
 	if (resistorValue>=6800000.0) {
 		//Show an alert view the size is not valid : O
-		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error"
-														  message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
-														 delegate:self 
-												cancelButtonTitle:@"Ok" 
-												otherButtonTitles:nil];
+		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string")
+                                                                  message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
+                                                                 delegate:self 
+                                                        cancelButtonTitle:@"Ok" 
+                                                        otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
 		[sizeAlert release];
@@ -156,7 +157,7 @@
 	}
 	
 	if (toleranceValue<=0 || toleranceValue>100) {
-		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
+		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
 														  message:NSLocalizedString(@"The tolerance should be greater than 0 or less than 100.", @"Error label for the tolerance")
 														 delegate:self 
 												cancelButtonTitle:@"Ok" 
@@ -189,11 +190,11 @@
 	
 	if (resistorValue<1.0) {
 		//Show an alert view the size is not valid : O
-		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
-														  message:NSLocalizedString(@"The resistor value should be greater or equal to 1.", @"Resistor label for error 1")
-														 delegate:self 
-												cancelButtonTitle:@"Ok" 
-												otherButtonTitles:nil];
+		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
+                                                                  message:NSLocalizedString(@"The resistor value should be greater or equal to 1.", @"Resistor label for error 1")
+                                                                 delegate:self 
+                                                        cancelButtonTitle:@"Ok" 
+                                                        otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
 		[sizeAlert release];
@@ -203,11 +204,11 @@
 	
 	if (resistorValue>=6800000.0) {
 		//Show an alert view the size is not valid : O
-		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
-														  message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
-														 delegate:self 
-												cancelButtonTitle:@"Ok" 
-												otherButtonTitles:nil];
+		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error String") 
+                                                                  message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
+                                                                 delegate:self 
+                                                        cancelButtonTitle:@"Ok" 
+                                                        otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
 		[sizeAlert release];
@@ -216,11 +217,11 @@
 	}
 	
 	if (toleranceValue<=0 || toleranceValue>100) {
-		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:@"Error" 
-														  message:NSLocalizedString(@"The tolerance should be greater than 0 or less than 100.", @"Error label for the tolerance")
-														 delegate:self 
-												cancelButtonTitle:@"Ok" 
-												otherButtonTitles:nil];
+		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
+                                                                  message:NSLocalizedString(@"The tolerance should be greater than 0 or less than 100.", @"Error label for the tolerance")
+                                                                 delegate:self 
+                                                        cancelButtonTitle:@"Ok" 
+                                                        otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
 		[sizeAlert release];
@@ -234,8 +235,6 @@
 	[viewController setTolerance:toleranceValue];
 	[[self navigationController] pushViewController:viewController animated:YES];
 	[viewController release];
-	
-//	return YES;
 }
 
 @end

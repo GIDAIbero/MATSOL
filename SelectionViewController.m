@@ -49,7 +49,7 @@
 	if (theSize>26 || theSize<1) {
         
 		//Show an alert view the size is not valid : O
-		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error Title") 
+		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
 														  message:NSLocalizedString(@"The size of your matrix must be either greater than 0 or less than 27", @"Error message for matrixes")
 														 delegate:self 
 												cancelButtonTitle:@"Ok" 
@@ -138,7 +138,7 @@
 	
 	if (theSize>26 || theSize<1) {
 		//Show an alert view the size is not valid : O
-		UIAlertView *sizeAlert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error Title")
+		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string")
 														  message:NSLocalizedString(@"The size of your matrix must be either greater than 0 or less than 27", @"Error message for matrixes")
 														 delegate:self 
 												cancelButtonTitle:@"Ok" 

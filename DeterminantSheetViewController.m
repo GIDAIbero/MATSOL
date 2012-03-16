@@ -41,7 +41,7 @@ int PaddingXRight(int size){
 		myArray=[[NSMutableArray alloc] init];
 		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
-		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve title") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
+		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		
 		//This method returns a retained object
 		_loadingMessageView=[DeterminantSheetViewController createWaitingView];	
@@ -261,9 +261,6 @@ int PaddingXRight(int size){
 	
 	[layoutView addSubview:container];
 	[self.view addSubview:layoutView];
-	
-	//[container release];
-	//[layoutView release];
 }
 
 
@@ -274,6 +271,7 @@ int PaddingXRight(int size){
 	float d=0;
 	float assign=0.0;
 	UITextField *temp;//Every textField will pass through this var
+    GIDASearchAlert *determinantValue = nil;
 	
 	//Dynamic memory assignment
 	a=(float **)malloc(sizeof(float *)*matrixSize);
@@ -307,9 +305,12 @@ int PaddingXRight(int size){
 	
 	//Send it to ludcmp & check if it's a valid matrix
 	wasSolved=ludcmp(a, matrixSize, &d);
-	GIDASearchAlert *determinantValue = nil;
+	
 	if (wasSolved==DeterminantErrorCantSolve) {
-        determinantValue = [[GIDASearchAlert alloc] initWithTitle:@"Error" message:@"Can't solve this determinant, sorry." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        determinantValue = [[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
+                                                          message:NSLocalizedString(@"Can't solve this determinant, sorry.", @"Can't solve this determinant text") 
+                                                         delegate:self cancelButtonTitle:@"Ok" 
+                                                otherButtonTitles:nil];
     }
 	else if ((wasSolved=DeterminantErrorEverythingOk)) {
 		for(j=1;j<=matrixSize;j++) {
@@ -318,8 +319,12 @@ int PaddingXRight(int size){
 		
 		#ifdef DEBUG
 		NSLog(@"The determinant value is %f\n",d);
-		#endif //DEBUG
-		determinantValue = [[GIDASearchAlert alloc] initWithTitle:@"Done" message:[NSString stringWithFormat:@"The value of the determinant for that matrix is: %.5f",d] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+		#endif
+		determinantValue = [[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Done!", @"Done string") 
+                                                          message:[NSString stringWithFormat:@"%@: %.5f", NSLocalizedString(@"The value of the determinant for that matrix is", @"Solution text determinant"),d] 
+                                                         delegate:self 
+                                                cancelButtonTitle:@"Ok" 
+                                                otherButtonTitles:nil];
 	}
     //Display the alert dialog
     [determinantValue show];
@@ -442,7 +447,7 @@ int PaddingXRight(int size){
 	UILabel *message=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
 	
 	//Set the label attributes
-	[message setText:NSLocalizedString(@"Loading ...", @"Loading label")];
+	[message setText:NSLocalizedString(@"Loading ...", @"Loading string")];
 	[message setTextColor:[UIColor whiteColor]];
 	[message setBackgroundColor:[UIColor clearColor]];
 	[message setTextAlignment:UITextAlignmentCenter];

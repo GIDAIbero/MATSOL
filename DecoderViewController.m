@@ -204,7 +204,11 @@
 #pragma mark Primitives
 + (id)stringOrColorForIndex:(int)index isStringOrColor:(MATSOLResistorColorOrString)type{
 	if (type == MATSOLResistorString) {
-		return [[NSArray arrayWithObjects:@"Black",@"Brown",@"Red",@"Orange",@"Yellow",@"Green",@"Blue",@"Violet",@"Gray",@"White",@"Gold",@"Silver",@"Gray",nil] objectAtIndex:index];
+		return [[NSArray arrayWithObjects:NSLocalizedString(@"Black", @"Black string"),NSLocalizedString(@"Brown", @"Brown string"),NSLocalizedString(@"Red", @"Red string")
+                 ,NSLocalizedString(@"Orange", @"Orange string"),NSLocalizedString("Yellow", @"Yellow string"),NSLocalizedString(@"Green", @"Green string")
+                 ,NSLocalizedString(@"Blue", @"Blue string"),NSLocalizedString(@"Violet", @"Violet string"),NSLocalizedString(@"Gray", @"Gray string")
+                 ,NSLocalizedString(@"White", @"White string"),NSLocalizedString(@"Gold", @"Gold string"),NSLocalizedString(@"Silver", @"Silver string")
+                 ,NSLocalizedString(@"Gray", @"Gray string"),nil] objectAtIndex:index];
 	}
 	if (type == MATSOLResistorColor) {
 		return [[NSArray arrayWithObjects:[UIColor blackColor],[UIColor brownColor],[UIColor redColor],[UIColor orangeColor],[UIColor yellowColor],

@@ -33,7 +33,7 @@ static float kAnimationDuration=0.35;
 		//if a object that points to nil calls a method everything is ok :)
 		_backup=nil;
 		
-		[self setTitle:NSLocalizedString(@"Results", @"Results label title")];
+		[self setTitle:NSLocalizedString(@"Results", @"Results string")];
 	}
     return self;
 }

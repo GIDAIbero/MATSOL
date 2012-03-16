@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MatrixSheetViewController.h"
 #import "DeterminantSheetViewController.h"
+#import "GIDASearchAlert.h"
 #import "MATSOLDefines.h"
 
 typedef enum{
