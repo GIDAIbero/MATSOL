@@ -20,7 +20,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
-		[self setTitle:@"Color Decoder"];
+		[self setTitle:NSLocalizedString(@"Color Decoder", @"Color Decoder view controller title")];
     }
     return self;
 }
@@ -137,12 +137,14 @@
 		}
 		#endif
 		[[[view subviews] objectAtIndex:0] setText:[DecoderViewController stringOrColorForIndex:row isStringOrColor:MATSOLResistorString]];
-		[view setBackgroundColor:[DecoderViewController stringOrColorForIndex:row isStringOrColor:MATSOLResistorColor]];
+		[[[view subviews] objectAtIndex:0] setAdjustsFontSizeToFitWidth:YES];
+        [view setBackgroundColor:[DecoderViewController stringOrColorForIndex:row isStringOrColor:MATSOLResistorColor]];
 	}
 	else {
 		//Add the name of the color 
 		[[[view subviews] objectAtIndex:0] setText:[DecoderViewController stringOrColorForIndex:row+10 isStringOrColor:MATSOLResistorString]];
-		[view setBackgroundColor:[DecoderViewController stringOrColorForIndex:row+10 isStringOrColor:MATSOLResistorColor]];	
+		[[[view subviews] objectAtIndex:0] setAdjustsFontSizeToFitWidth:YES];
+        [view setBackgroundColor:[DecoderViewController stringOrColorForIndex:row+10 isStringOrColor:MATSOLResistorColor]];	
 	}
 	
 	return view;
@@ -205,7 +207,7 @@
 + (id)stringOrColorForIndex:(int)index isStringOrColor:(MATSOLResistorColorOrString)type{
 	if (type == MATSOLResistorString) {
 		return [[NSArray arrayWithObjects:NSLocalizedString(@"Black", @"Black string"),NSLocalizedString(@"Brown", @"Brown string"),NSLocalizedString(@"Red", @"Red string")
-                 ,NSLocalizedString(@"Orange", @"Orange string"),NSLocalizedString("Yellow", @"Yellow string"),NSLocalizedString(@"Green", @"Green string")
+                 ,NSLocalizedString(@"Orange", @"Orange string"),NSLocalizedString(@"Yellow", @"Yellow string"),NSLocalizedString(@"Green", @"Green string")
                  ,NSLocalizedString(@"Blue", @"Blue string"),NSLocalizedString(@"Violet", @"Violet string"),NSLocalizedString(@"Gray", @"Gray string")
                  ,NSLocalizedString(@"White", @"White string"),NSLocalizedString(@"Gold", @"Gold string"),NSLocalizedString(@"Silver", @"Silver string")
                  ,NSLocalizedString(@"Gray", @"Gray string"),nil] objectAtIndex:index];

@@ -62,13 +62,13 @@
 	[[buttonsConverter objectAtIndex:16] setTitle:@"0" forState:UIControlStateNormal ];
 	
 	[[buttonsConverter objectAtIndex:18] setTag:MBaseConverterButtonFrom];
-    [[buttonsConverter objectAtIndex:18] setTitle:@"From" forState:UIControlStateNormal ];
+    [[buttonsConverter objectAtIndex:18] setTitle:NSLocalizedString(@"From", @"From string") forState:UIControlStateNormal ];
 	[[buttonsConverter objectAtIndex:18] setBackgroundImage:[UIImage imageNamed:@"brownButton.png"] forState:UIControlStateNormal];
 	[[buttonsConverter objectAtIndex:18] removeTarget:self action:@selector(typeStuff:) forControlEvents:UIControlEventTouchUpInside];
 	[[buttonsConverter objectAtIndex:18] addTarget:self action:@selector(fromOrTo:) forControlEvents:UIControlEventTouchUpInside];
 	
 	[[buttonsConverter objectAtIndex:19] setTag:MBaseConverterButtonTo];
-	[[buttonsConverter objectAtIndex:19] setTitle:@"To" forState:UIControlStateNormal ];
+	[[buttonsConverter objectAtIndex:19] setTitle:NSLocalizedString(@"To", @"To string") forState:UIControlStateNormal ];
 	[[buttonsConverter objectAtIndex:19] setBackgroundImage:[UIImage imageNamed:@"brownButton.png"] forState:UIControlStateNormal];
 	[[buttonsConverter objectAtIndex:19] removeTarget:self action:@selector(typeStuff:) forControlEvents:UIControlEventTouchUpInside];
 	[[buttonsConverter objectAtIndex:19] addTarget:self action:@selector(fromOrTo:) forControlEvents:UIControlEventTouchUpInside];
@@ -137,18 +137,18 @@
 	//Add a bunch of NewLines to the title to fit the base into the action sheet
 	NSString *stringOffset=@"\n\n\n\n\n\n\n\n\n\n\n\n";
 	NSString *titleString=[NSString stringWithFormat:@"%@%@", stringOffset, NSLocalizedString(@"Select a Base", @"")];
-	
+
 	#ifdef DEBUG
 	NSLog(@"Tag of the button pressed: %d",whoAmI.tag);
 	#endif
 	
 	//Initialize the bases array
 	if (_basesArray==nil) {
-		_basesArray=[[NSArray alloc] initWithObjects:NSLocalizedString(@"Binary (2)", @"Binary tag"), NSLocalizedString(@"Ternary (3)", @"Ternary tag"),
-                     NSLocalizedString(@"Quaternary (4)", @"Quaternary tag"), NSLocalizedString(@"Quinary (5)", @"Quinary tag"), NSLocalizedString(@"Senary (6)", @"Senary tag"), NSLocalizedString(@"Sevenary (7)", @"Sevenary tag"),
-                     NSLocalizedString(@"Ocatal (8)", @"Octal tag"), NSLocalizedString(@"Nonary (9)", @"Nonary tag"), NSLocalizedString(@"Decimal (10)", @"Decimal tag"),
-                     NSLocalizedString(@"Undecimal (11)", @"Undecimal tag"), NSLocalizedString(@"Duodecimal (12)", @"Duodecimal tag"), NSLocalizedString(@"Tridecimal (13)", @"Tridecimal tag"),
-                     NSLocalizedString(@"Tetradecimal (14)", @"Tetradecimal tag"), NSLocalizedString(@"Pentadecimal (15)", @"Pentadecimal tag"), NSLocalizedString(@"Hexadecimal (16)", @"Hexadecimal tag"),nil];
+		_basesArray=[[NSArray alloc] initWithObjects:NSLocalizedString(@"Binary (2)", @"Binary string"), NSLocalizedString(@"Ternary (3)", @"Ternary string"),
+                     NSLocalizedString(@"Quaternary (4)", @"Quaternary string"), NSLocalizedString(@"Quinary (5)", @"Quinary string"), NSLocalizedString(@"Senary (6)", @"Senary string"), NSLocalizedString(@"Sevenary (7)", @"Sevenary string"),
+                     NSLocalizedString(@"Ocatal (8)", @"Octal string"), NSLocalizedString(@"Nonary (9)", @"Nonary string"), NSLocalizedString(@"Decimal (10)", @"Decimal string"),
+                     NSLocalizedString(@"Undecimal (11)", @"Undecimal string"), NSLocalizedString(@"Duodecimal (12)", @"Duodecimal string"), NSLocalizedString(@"Tridecimal (13)", @"Tridecimal string"),
+                     NSLocalizedString(@"Tetradecimal (14)", @"Tetradecimal string"), NSLocalizedString(@"Pentadecimal (15)", @"Pentadecimal string"), NSLocalizedString(@"Hexadecimal (16)", @"Hexadecimal string"),nil];
 	}	
 	
 	//Init the Action sheet
@@ -264,7 +264,7 @@
 	
 	if (_currentActionSheet == MBaseConverterButtonTo) {
 		[mainConverter setToBase:_pickedBase];
-		[toIndicator setText:[NSString stringWithFormat:@"%@: %d",NSLocalizedString(@"To", @"From tag"),_pickedBase]];
+		[toIndicator setText:[NSString stringWithFormat:@"%@: %d",NSLocalizedString(@"To", @"To string"),_pickedBase]];
 		//Updating the "to base" then convert the base
 		[mainConverter setNumber:[fromLabel text]];
 		[toLabel setText:[NSString stringWithFormat:@"%@",[mainConverter number]]];
@@ -281,7 +281,7 @@
 		[mainConverter setFromBase:_pickedBase];
 		[mainConverter setToBase:oldToBase];
 		
-		[fromIndicator setText:[NSString stringWithFormat:@"%@: %d",NSLocalizedString(@"From", @"From tag"),_pickedBase]];
+		[fromIndicator setText:[NSString stringWithFormat:@"%@: %d",NSLocalizedString(@"From", @"From string"),_pickedBase]];
 		[self lockButtons];
 	}
 }

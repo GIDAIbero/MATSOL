@@ -204,7 +204,7 @@
 	
 	if (resistorValue>=6800000.0) {
 		//Show an alert view the size is not valid : O
-		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error String") 
+		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
                                                                   message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
                                                                  delegate:self 
                                                         cancelButtonTitle:@"Ok" 

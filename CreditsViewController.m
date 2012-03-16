@@ -11,9 +11,14 @@
 
 @implementation CreditsViewController
 
-@synthesize delegate;
+@synthesize delegate, versionLabel;
 
 #pragma mark Actions
+-(void)viewDidLoad{
+    [super viewDidLoad];    
+    [versionLabel setText:[NSString stringWithFormat:@"Ver. %@ (%@)",MATSOL_VERSION, MATSOL_BUILD]];
+}
+
 -(IBAction)presionaBotonOcultaCreditos:(id)sender{
 	if([self.delegate respondsToSelector:@selector(ocultaCreditos)]){
 		[self.delegate ocultaCreditos];
@@ -27,6 +32,7 @@
 }
 
 - (void)dealloc {
+    [versionLabel release];
     [super dealloc];
 }
 
