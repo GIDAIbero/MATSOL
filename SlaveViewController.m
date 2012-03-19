@@ -110,10 +110,9 @@
 //        GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithTitle:@"Select Matrix" message:@"Select Matrix" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
         GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithPrompt:@"Enter Matrix" delegate:self cancelButtonTitle:@"Cancel" acceptButtonTitle:@"Accept" andKeyBoardType:UIKeyboardTypeNumberPad];
         [gsa show];
-        
-        return ;
-		//viewController=[[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil] autorelease];
-		//[viewController setPushViewController:MViewControllerLinearEquationSystem];
+        //return ;
+        viewController=[[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil] autorelease];
+		[viewController setPushViewController:MViewControllerLinearEquationSystem];
 	}
 	if (numb.tag==MATSOLDeterminantButton) {
 		#ifdef DEBUG

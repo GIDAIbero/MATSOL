@@ -320,11 +320,13 @@ int PaddingXRight(int size){
 		#ifdef DEBUG
 		NSLog(@"The determinant value is %f\n",d);
 		#endif
-		determinantValue = [[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Done!", @"Done string") 
-                                                          message:[NSString stringWithFormat:@"%@: %.5f", NSLocalizedString(@"The value of the determinant for that matrix is", @"Solution text determinant"),d] 
-                                                         delegate:self 
-                                                cancelButtonTitle:@"Ok" 
-                                                otherButtonTitles:nil];
+		determinantValue = [[GIDASearchAlert alloc] 
+            initWithTitle:NSLocalizedString(@"Done!", @"Done string") 
+            message:[NSString stringWithFormat:@"%@: %.5f", 
+               NSLocalizedString(@"The value of the determinant for that matrix is", @"Solution text determinant"),d] 
+            delegate:self 
+            cancelButtonTitle:@"Ok" 
+            otherButtonTitles:nil];
 	}
     //Display the alert dialog
     [determinantValue show];
