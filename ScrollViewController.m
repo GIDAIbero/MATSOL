@@ -85,6 +85,7 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
 	[creditsViewController release];
 }
 
+//CREDITS -> HIDE CREDITS
 -(void)ocultaCreditos{
 	[self dismissModalViewControllerAnimated:YES];
 }

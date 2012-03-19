@@ -38,6 +38,34 @@
     return self;
 }
 
+- (id)initWithPrompt:(NSString *)prompt delegate:(id)delegate cancelButtonTitle:(NSString *)cancelTitle acceptButtonTitle:(NSString *)acceptTitle andKeyBoardType:(UIKeyboardType) uikt {
+    while ([prompt sizeWithFont:[UIFont systemFontOfSize:18.0]].width > 240.0) {
+        prompt = [NSString stringWithFormat:@"%@...", [prompt substringToIndex:[prompt length] - 4]];
+    }
+    if (self = [super initWithTitle:prompt message:@"\n" delegate:delegate cancelButtonTitle:cancelTitle otherButtonTitles:acceptTitle, nil]) {
+        UITextField *theTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 45.0, 260.0, 31.0)]; 
+        [theTextField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+        [theTextField setAutocorrectionType:UITextAutocorrectionTypeNo];
+        [theTextField setBorderStyle:UITextBorderStyleRoundedRect];
+        [theTextField setTextAlignment:UITextAlignmentCenter];
+        [theTextField setKeyboardAppearance:UIKeyboardAppearanceAlert];
+        [theTextField setKeyboardType:uikt];
+        [self addSubview:theTextField];
+        
+        self.textField = theTextField;
+        [theTextField release];
+        
+        // if not >= 4.0
+        NSString *sysVersion = [[UIDevice currentDevice] systemVersion];
+        if (![sysVersion compare:@"4.0" options:NSNumericSearch] == NSOrderedDescending) {
+            CGAffineTransform translate = CGAffineTransformMakeTranslation(0.0, 130.0); 
+            [self setTransform:translate];
+        }
+    }
+    return self;
+}
+
+
 
 - (id)initWithOutTextAreaPrompt:(NSString *)prompt delegate:(id)delegate cancelButtonTitle:(NSString *)cancelTitle acceptButtonTitle:(NSString *)acceptTitle andTextMessage:(NSString *)textMessage {
     while ([prompt sizeWithFont:[UIFont systemFontOfSize:18.0]].width > 240.0) {

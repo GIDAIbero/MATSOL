@@ -91,7 +91,8 @@
 	#ifdef DEBUG
 	NSLog(@"One button was pressed");
 	#endif
-	[NSThread detachNewThreadSelector:@selector(creatingUIViewController:) toTarget:self withObject:sender];
+//	[NSThread detachNewThreadSelector:@selector(creatingUIViewController:) toTarget:self withObject:sender];
+    [self performSelector:@selector(creatingUIViewController:) withObject:sender];
 }
 
 -(void)creatingUIViewController:(id)sender{
@@ -106,8 +107,13 @@
 		#ifdef DEBUG
 		NSLog(@"LES");
 		#endif
-		viewController=[[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil] autorelease];
-		[viewController setPushViewController:MViewControllerLinearEquationSystem];
+//        GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithTitle:@"Select Matrix" message:@"Select Matrix" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithPrompt:@"Enter Matrix" delegate:self cancelButtonTitle:@"Cancel" acceptButtonTitle:@"Accept" andKeyBoardType:UIKeyboardTypeNumberPad];
+        [gsa show];
+        
+        return ;
+		//viewController=[[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil] autorelease];
+		//[viewController setPushViewController:MViewControllerLinearEquationSystem];
 	}
 	if (numb.tag==MATSOLDeterminantButton) {
 		#ifdef DEBUG
@@ -135,7 +141,7 @@
 		#endif
 		viewController=[[[BaseConverterViewController alloc] initWithNibName:@"BaseConverter" bundle:nil] autorelease];
 	}
-	[self performSelectorOnMainThread:@selector(endUIViewController:) withObject:viewController waitUntilDone:NO];
+    [self performSelector:@selector(endUIViewController:) withObject:viewController];
     [pool release];
 }
 -(void)endUIViewController:(id)viewController{
