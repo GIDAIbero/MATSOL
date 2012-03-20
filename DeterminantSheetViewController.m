@@ -137,9 +137,10 @@ int PaddingXRight(int size){
             UIBarButtonItem *back = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(previousSomething:)] autorelease];
             UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"DownIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard:)];
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+            UIBarButtonItem *sign  = [[UIBarButtonItem alloc] initWithTitle:@"+/-" style:UIBarButtonItemStylePlain target:self action:@selector(signChange:)];
             UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
-            [kbtb setItems:[NSArray arrayWithObjects:space,back,ubbi,lesskey,nil]];
+            [kbtb setItems:[NSArray arrayWithObjects:space,sign,back,ubbi,lesskey,nil]];
             [ubbi release];
             [lesskey release];
             [space release];
@@ -174,6 +175,35 @@ int PaddingXRight(int size){
 	//Release the pool
     [pool release];
 }
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber * myNumber = [f numberFromString:[textField text]];
+    [f release];
+    [textField setText:[myNumber stringValue]];
+}
+
+-(void)signChange:(id)sender {
+    UITextField *text;
+    int i,j;
+    BOOL flag = FALSE;
+    for (i = 0;!flag && i< [myArray count]; i++) {
+        for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                text = [[myArray objectAtIndex:i] objectAtIndex:j];
+                NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+                [f setNumberStyle:NSNumberFormatterDecimalStyle];
+                NSNumber * myNumber = [f numberFromString:[text text]];
+                myNumber = [NSNumber numberWithFloat:([myNumber floatValue]*-1)];
+                [f release];
+                [text setText:[myNumber stringValue]];
+                flag = TRUE;
+            }
+        }
+    }
+}
+
 
 -(void)nextSomething:(id)sender {
     int i,j;

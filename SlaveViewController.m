@@ -148,8 +148,7 @@
         GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
         [gsa show];
         [gsa release];
-		//viewController=[[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil] autorelease];
-		//[viewController setPushViewController:MViewControllerDeterminant];
+		return;
 	}
 	if (numb.tag==MATSOLResistorButton) {
 		#ifdef DEBUG
