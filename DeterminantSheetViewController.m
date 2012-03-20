@@ -389,29 +389,22 @@ int PaddingXRight(int size){
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-	
-	const char *cadena;
-	int intValue=0;
-	
-	#ifdef DEBUG
-	NSLog(@"This is the new string %@",string);
-	#endif 
-	
-	//Get the C string to compare
-	cadena=[string cStringUsingEncoding:NSUTF16StringEncoding];
-	intValue=[string intValue];
-	
-	if (intValue==0) {
-		// 0 indicates the supr key
-		if ([string isEqual:@"-"] || [string isEqual:@"."] || [string isEqual:@"0"] || cadena[0]==0) {
-			return YES;
-		}
-		else {
-			return NO;
-		}
-	}
-	
-	return YES;
+    if (range.location == 0 && string.length == 0) {
+        return YES;
+    }
+    
+    NSMutableString *fullString = [[NSMutableString alloc] init];
+    
+    [fullString appendString:[textField.text substringWithRange:NSMakeRange(0, range.location)]];
+    [fullString appendString:string];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    NSNumber *replaceNumber = [formatter numberFromString:fullString];
+    
+    [fullString release];
+    [formatter release];
+    
+    return !(replaceNumber == nil);
 }
 
 //Let's switch from text field to text field
