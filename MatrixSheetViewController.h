@@ -11,7 +11,6 @@
 #import "mygaussj.h"
 #import "MATSOLDefines.h"
 #import "GIDASearchAlert.h"
-#import "GIDAAlertView.h"
 
 struct FirstSecond {
     int fst;
@@ -25,7 +24,6 @@ typedef struct FirstSecond FSTSND;
 	UIScrollView *layoutView;
 	UIBarButtonItem *solveButton;
 	UIView *_loadingMessageView;
-
     FSTSND firstResponder;
 	int matrixSize;
 }

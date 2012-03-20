@@ -87,7 +87,6 @@
 		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
 		BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA189D81512393B00197347 /* GIDASearchAlert.m */; };
 		BEDD23C61518A3EF004265C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEDD23C51518A3EF004265C2 /* QuartzCore.framework */; };
-		BEDD23D51518BD1D004265C2 /* GIDAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDD23D41518BD1D004265C2 /* GIDAAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -199,8 +198,6 @@
 		BEA189D71512393B00197347 /* GIDASearchAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDASearchAlert.h; sourceTree = "<group>"; };
 		BEA189D81512393B00197347 /* GIDASearchAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDASearchAlert.m; sourceTree = "<group>"; };
 		BEDD23C51518A3EF004265C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		BEDD23D31518BD1D004265C2 /* GIDAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDAAlertView.h; sourceTree = "<group>"; };
-		BEDD23D41518BD1D004265C2 /* GIDAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDAAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,8 +438,6 @@
 		BEA189CF1512380700197347 /* GIDA */ = {
 			isa = PBXGroup;
 			children = (
-				BEDD23D31518BD1D004265C2 /* GIDAAlertView.h */,
-				BEDD23D41518BD1D004265C2 /* GIDAAlertView.m */,
 				BEA189D71512393B00197347 /* GIDASearchAlert.h */,
 				BEA189D81512393B00197347 /* GIDASearchAlert.m */,
 			);
@@ -588,7 +583,6 @@
 				9C7D4E091277B5CC000EBAC0 /* BaseConverterViewController.m in Sources */,
 				9CB5F13F128C9351003117AD /* Conversor.m in Sources */,
 				BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */,
-				BEDD23D51518BD1D004265C2 /* GIDAAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

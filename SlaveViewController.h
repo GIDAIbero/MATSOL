@@ -11,7 +11,6 @@
 #import "InputResistorViewController.h"
 #import "DecoderViewController.h"
 #import "BaseConverterViewController.h"
-#import "GIDAAlertView.h"
 
 typedef enum{
 	MATSOLLinearEquationButton=1,
