@@ -47,10 +47,53 @@
 	CGPoint referencePoint;
 	
 	UIImageView *shape;
-	UIImageView *help=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"help.png"]];
-	
+	//UIImageView *help=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"help.png"]];
+	UIView  *help = [[UIView alloc] initWithFrame:CGRectMake(0, 386, 320, 30)];
+    UILabel *wlab = [[UILabel alloc] initWithFrame:CGRectMake(45, 0, 120, 30)];
+    UILabel *rlab = [[UILabel alloc] initWithFrame:CGRectMake(205, 0, 120, 30)];
+    UIView  *wcir = [[UIView alloc] initWithFrame:CGRectMake(10, 0, 25, 25)];
+    UIView  *rcir = [[UIView alloc] initWithFrame:CGRectMake(170, 0, 25, 25)];
+    
+    [wcir setBackgroundColor:[UIColor whiteColor]];
+    wcir.layer.cornerRadius = 12.5;
+    wcir.layer.shadowColor = [UIColor blackColor].CGColor;
+    wcir.layer.shadowOpacity = 0.7f;
+    wcir.layer.shadowOffset = CGSizeMake(5.0f, 5.0f);
+    wcir.layer.shadowRadius = 5.0f;
+    wcir.layer.masksToBounds = NO;
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:wcir.bounds];
+    wcir.layer.shadowPath = path.CGPath;
+    
+    [rcir setBackgroundColor:[UIColor redColor]];
+    rcir.layer.cornerRadius = 12.5;
+    rcir.layer.shadowColor = [UIColor blackColor].CGColor;
+    rcir.layer.shadowOpacity = 0.7f;
+    rcir.layer.shadowOffset = CGSizeMake(5.0f, 5.0f);
+    rcir.layer.shadowRadius = 5.0f;
+    rcir.layer.masksToBounds = NO;
+    rcir.layer.shadowPath = path.CGPath;
+    
+    [wlab setText:NSLocalizedString(@"Inverse Matrix",@"Inverse Matrix")];
+    [wlab setTextColor:[UIColor whiteColor]];
+    [wlab setBackgroundColor:[UIColor clearColor]];
+    [wlab setFont:[UIFont boldSystemFontOfSize:16]];
+    
+    [rlab setText:NSLocalizedString(@"Solutions",@"Solutions")];
+    [rlab setTextColor:[UIColor redColor]];
+    [rlab setBackgroundColor:[UIColor clearColor]];
+    [rlab setFont:[UIFont boldSystemFontOfSize:16]];
+    
+    [help addSubview:wcir];
+    [help addSubview:wlab];
+    [help addSubview:rcir];
+    [help addSubview:rlab];
+    
+    [wlab release];
+    [wcir release];
+    [rcir release];
+    [rlab release];
 	//Place the help right at the top of the view
-	help.frame=CGRectMake(0, 386, 320, 30);
+	
 	[self.view addSubview:help];
 	[help release];
 	

@@ -105,9 +105,11 @@
                 [gsaExtra show];
                 [gsaExtra release];
             } else {
-                MatrixSheetViewController *viewController = [[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil] autorelease];
-                viewController.matrixSize = matrixSize;
+                MatrixSheetViewController *viewController = [[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" matrizSize:matrixSize] autorelease];
+               // MatrixSheetViewController *viewController = [[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil] autorelease];
+              //  viewController.matrixSize = matrixSize;
                 [self performSelector:@selector(endUIViewController:) withObject:viewController];
+                //[self endUIViewController:viewController];
             }
         } else { 
             if (matrixSize > 26 || matrixSize <= 0 || [[[gsa textField] text] isEqualToString:@""]) {
@@ -174,7 +176,6 @@
 }
 -(void)endUIViewController:(id)viewController{
 	[fatherNavigationController pushViewController:viewController animated:YES];
-
 }
 
 #pragma mark MemoryManagement

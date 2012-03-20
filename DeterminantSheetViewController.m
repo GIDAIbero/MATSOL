@@ -144,6 +144,7 @@ int PaddingXRight(int size){
             [ubbi release];
             [lesskey release];
             [space release];
+            [sign release];
             
             temp.inputAccessoryView        = kbtb;
             

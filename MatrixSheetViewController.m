@@ -38,6 +38,28 @@
 	}
 	return self;
 }
+- (id)initWithNibName:(NSString *)nibNameOrNil matrizSize:(int)matrix{
+	if (self = [super initWithNibName:nibNameOrNil bundle:nil]) {
+        // Custom initialization
+		self.title=@"MATSOL";
+#ifdef	DEBUG_INTERFACE
+		self.title=@"MATSOL_LES";
+#endif
+        matrixSize = matrix;
+		myArray=[[NSMutableArray alloc] init];
+		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
+		container=[[UIView alloc] initWithFrame:CGRectZero];
+		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
+		
+		//This method returns a retained object
+		_loadingMessageView=[MatrixSheetViewController createWaitingView];	
+		
+		self.navigationItem.rightBarButtonItem=solveButton;
+        [self creatingTextFields:nil];
+	}
+	return self;
+}
+
 
 - (void)viewDidLoad{
 	#ifdef DEBUG
@@ -98,8 +120,8 @@
 	//		a method on the main thread will be called adding that UITextField to the container view
 	//	3.- After all the UITextFields are created makingFirstResponder: will be called and this will cause
 	//		for the "loadiing" view to dissapear & for all the UITextFields to appear.
-	[self beginTextFields];
-	
+//	[self beginTextFields];
+//	[self creatingTextFields:nil];
 }
 
 #pragma mark Initialization_ThreadManagement
@@ -141,6 +163,7 @@
             [back release];
             [lesskey release];
             [space release];
+            [sign release];
             
             temp.inputAccessoryView = kbtb;
             temp.keyboardAppearance = UIKeyboardAppearanceAlert;
@@ -184,6 +207,7 @@
 		//Add the offset to each column
 		currentX=currentX+120;
 	}	
+    
 	[self performSelectorOnMainThread:@selector(makeFirstResponder:) withObject:nil waitUntilDone:NO];
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "MATSOLDefines.h"
 
 @interface SolutionsViewController : UIViewController <UIScrollViewDelegate>{

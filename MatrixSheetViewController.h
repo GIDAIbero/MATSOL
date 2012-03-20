@@ -11,6 +11,7 @@
 #import "mygaussj.h"
 #import "MATSOLDefines.h"
 #import "GIDASearchAlert.h"
+#import "GIDAAlertView.h"
 
 struct FirstSecond {
     int fst;
@@ -48,5 +49,5 @@ typedef struct FirstSecond FSTSND;
 -(void)endTextFields:(id)sender;
 -(void)endLabels:(id)sender;
 -(void)makeFirstResponder:(id)sender;
-	
+-(id)initWithNibName:(NSString *)nibNameOrNil matrizSize:(int)matrixSize;	
 @end
