@@ -127,13 +127,15 @@
 			temp.font=[UIFont fontWithName:@"CourierNewPS-BoldMT" size:20];
 			temp.textColor=[UIColor blackColor];
 			temp.keyboardType=UIKeyboardTypeDecimalPad;
+            
             UIBarButtonItem *ubbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextSomething:)];
             UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(previousSomething:)];
             UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"DownIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard:)];
+            UIBarButtonItem *sign  = [[UIBarButtonItem alloc] initWithTitle:@"+/-" style:UIBarButtonItemStylePlain target:self action:@selector(signChange:)];
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
             UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
-            [kbtb setItems:[NSArray arrayWithObjects:space,back,ubbi,lesskey,nil]];
+            [kbtb setItems:[NSArray arrayWithObjects:space,sign,back,ubbi,lesskey,nil]];
             
             [ubbi release];
             [back release];
@@ -141,10 +143,10 @@
             [space release];
             
             temp.inputAccessoryView = kbtb;
-            temp.keyboardAppearance        = UIKeyboardAppearanceAlert;
-			temp.textAlignment=UITextAlignmentRight;
-			temp.returnKeyType=UIReturnKeyNext;
-			temp.delegate=self;
+            temp.keyboardAppearance = UIKeyboardAppearanceAlert;
+			temp.textAlignment      = UITextAlignmentRight;
+			temp.returnKeyType      = UIReturnKeyNext;
+			temp.delegate           = self;
 
 			if (height<matrixSize) {
 				temp.placeholder=[NSString stringWithFormat:@"%c%d",height+97,width+1];
@@ -157,7 +159,7 @@
                 }
 				
 				[dummies setBackgroundColor:[UIColor clearColor]];
-				[dummies setTextColor:[UIColor yellowColor]];
+				[dummies setTextColor:[UIColor whiteColor]];
 				[dummies setAdjustsFontSizeToFitWidth:YES];
 				[dummies setFont:[UIFont fontWithName:@"CourierNewPS-BoldMT" size:25]];
 				[dummies setTextAlignment:UITextAlignmentLeft];
@@ -187,7 +189,33 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     layoutView.contentSize = container.frame.size;
 }
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber * myNumber = [f numberFromString:[textField text]];
+    [f release];
+    [textField setText:[myNumber stringValue]];
+}
 
+-(void)signChange:(id)sender {
+    UITextField *text;
+    int i,j;
+    BOOL flag = FALSE;
+    for (i = 0;!flag && i< [myArray count]; i++) {
+        for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                text = [[myArray objectAtIndex:i] objectAtIndex:j];
+                NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+                [f setNumberStyle:NSNumberFormatterDecimalStyle];
+                NSNumber * myNumber = [f numberFromString:[text text]];
+                myNumber = [NSNumber numberWithFloat:([myNumber floatValue]*-1)];
+                [f release];
+                [text setText:[myNumber stringValue]];
+                flag = TRUE;
+            }
+        }
+    }
+}
 -(void)nextSomething:(id)sender {
     int i,j;
     BOOL flag = FALSE;
@@ -383,29 +411,22 @@
 
 #pragma mark TextFieldDelegateMethods
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-	
-	const char *cadena;
-	int intValue=0;
-	
-	#ifdef DEBUG
-	NSLog(@"This is the new string %@",string);
-	#endif 
-	
-	//Get the C string to compare
-	cadena=[string cStringUsingEncoding:NSUTF16StringEncoding];
-	intValue=[string intValue];
-	
-	if (intValue==0) {
-		// 0 indicates the supr key
-		if ([string isEqual:@"-"] || [string isEqual:@"."] || [string isEqual:@"0"] || cadena[0]==0) {
-			return YES;
-		}
-		else {
-			return NO;
-		}
-	}
-
-	return YES;
+    if (range.location == 0 && string.length == 0) {
+        return YES;
+    }
+    
+    NSMutableString *fullString = [[NSMutableString alloc] init];
+    
+    [fullString appendString:[textField.text substringWithRange:NSMakeRange(0, range.location)]];
+    [fullString appendString:string];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    NSNumber *replaceNumber = [formatter numberFromString:fullString];
+    
+    [fullString release];
+    [formatter release];
+    
+    return !(replaceNumber == nil);
 }
 
 //Let's switch from text field to text field

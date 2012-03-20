@@ -25,7 +25,7 @@ typedef enum{
 	SecondPage
 }MATSOLPageName;
 
-@interface SlaveViewController : UIViewController {
+@interface SlaveViewController : UIViewController <UIAlertViewDelegate> {
     int pageNumber;
 	int size;
 	UINavigationController *fatherNavigationController;

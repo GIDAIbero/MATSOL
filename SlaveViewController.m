@@ -95,6 +95,26 @@
     [self performSelector:@selector(creatingUIViewController:) withObject:sender];
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        GIDASearchAlert *gsa = (GIDASearchAlert *)alertView;
+        if ([[gsa title] isEqualToString:NSLocalizedString(@"LinearSize",@"Linear Equation Matrix Size")]) {
+            int matrixSize = [[[gsa textField] text] intValue];
+            if (matrixSize > 26 || matrixSize <= 0 || [[[gsa textField] text] isEqualToString:@""]) {
+                 GIDASearchAlert *gsaExtra = [[GIDASearchAlert alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
+                [gsaExtra show];
+                [gsaExtra release];
+            } else {
+                MatrixSheetViewController *viewController = [[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil] autorelease];
+                viewController.matrixSize = matrixSize;
+                [self performSelector:@selector(endUIViewController:) withObject:viewController];
+            }
+        } else { 
+            
+        }
+    }
+}
+
 -(void)creatingUIViewController:(id)sender{
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
@@ -107,12 +127,10 @@
 		#ifdef DEBUG
 		NSLog(@"LES");
 		#endif
-//        GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithTitle:@"Select Matrix" message:@"Select Matrix" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
-        GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithPrompt:@"Enter Matrix" delegate:self cancelButtonTitle:@"Cancel" acceptButtonTitle:@"Accept" andKeyBoardType:UIKeyboardTypeNumberPad];
+        GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
         [gsa show];
-        //return ;
-        viewController=[[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil] autorelease];
-		[viewController setPushViewController:MViewControllerLinearEquationSystem];
+        [gsa release];
+        return ;
 	}
 	if (numb.tag==MATSOLDeterminantButton) {
 		#ifdef DEBUG
