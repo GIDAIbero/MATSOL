@@ -98,8 +98,8 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         GIDASearchAlert *gsa = (GIDASearchAlert *)alertView;
+        int matrixSize = [[[gsa textField] text] intValue];
         if ([[gsa title] isEqualToString:NSLocalizedString(@"LinearSize",@"Linear Equation Matrix Size")]) {
-            int matrixSize = [[[gsa textField] text] intValue];
             if (matrixSize > 26 || matrixSize <= 0 || [[[gsa textField] text] isEqualToString:@""]) {
                  GIDASearchAlert *gsaExtra = [[GIDASearchAlert alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
                 [gsaExtra show];
@@ -110,7 +110,16 @@
                 [self performSelector:@selector(endUIViewController:) withObject:viewController];
             }
         } else { 
-            
+            if (matrixSize > 26 || matrixSize <= 0 || [[[gsa textField] text] isEqualToString:@""]) {
+                GIDASearchAlert *gsaExtra = [[GIDASearchAlert alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
+                [gsaExtra show];
+                [gsaExtra release];
+            } else {
+                DeterminantSheetViewController *viewController = [[[DeterminantSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil] autorelease];
+                viewController.matrixSize = matrixSize;
+                [self performSelector:@selector(endUIViewController:) withObject:viewController];
+            }
+
         }
     }
 }
@@ -136,8 +145,11 @@
 		#ifdef DEBUG
 		NSLog(@"DET");
 		#endif
-		viewController=[[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil] autorelease];
-		[viewController setPushViewController:MViewControllerDeterminant];
+        GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
+        [gsa show];
+        [gsa release];
+		//viewController=[[[SelectionViewController alloc] initWithNibName:@"Selection" bundle:nil] autorelease];
+		//[viewController setPushViewController:MViewControllerDeterminant];
 	}
 	if (numb.tag==MATSOLResistorButton) {
 		#ifdef DEBUG
