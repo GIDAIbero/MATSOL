@@ -107,9 +107,11 @@ int PaddingXRight(int size){
 		[shape release];
 	}
 	
-	[self beginTextFields];
+	
 }
-
+-(void)viewDidAppear:(BOOL)animated {
+    [self beginTextFields];
+}
 #pragma mark Initialization_ThreadManagement
 
 -(void)beginTextFields{
