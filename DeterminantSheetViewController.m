@@ -107,9 +107,11 @@ int PaddingXRight(int size){
 		[shape release];
 	}
 	
-	[self beginTextFields];
+	
 }
-
+-(void)viewDidAppear:(BOOL)animated {
+    [self beginTextFields];
+}
 #pragma mark Initialization_ThreadManagement
 
 -(void)beginTextFields{
@@ -282,7 +284,10 @@ int PaddingXRight(int size){
 	[[[myArray objectAtIndex:0] objectAtIndex:0] becomeFirstResponder];
 	
 	//Hide the Waiting interface
-	[_loadingMessageView removeFromSuperview];
+	if (_loadingMessageView != nil) {
+        [_loadingMessageView removeFromSuperview];
+        _loadingMessageView = nil;
+    }
 	
 	//BE CAREFUL!
 	//The container size should be the last thing you set.
@@ -468,7 +473,7 @@ int PaddingXRight(int size){
 
 #pragma mark WaitingMethods
 + (UIView *)createWaitingView{
-	UIView *backgroundView=[[[UIView alloc] initWithFrame:CGRectMake(30, 30, 260, 260)] autorelease];
+    UIView *backgroundView=[[[UIView alloc] initWithFrame:CGRectMake(60, 90, 200, 200)] autorelease];
 	UIActivityIndicatorView *spinner=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	UILabel *message=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
 	
@@ -480,22 +485,22 @@ int PaddingXRight(int size){
 	
 	//Set the background attributes
 	[backgroundView setBackgroundColor:[UIColor blackColor]];
-	[backgroundView setAlpha:0.8];
+	[backgroundView setAlpha:0.7];
+    backgroundView.layer.cornerRadius = 20;
 	
 	//Once the spinner is part of the view set it's center
 	[backgroundView addSubview:spinner];
-	[spinner setCenter:CGPointMake(130, 130)];
+	[spinner setCenter:CGPointMake(100, 80)];
 	[spinner startAnimating];
 	[spinner release];
 	
 	//Now add the message to the background view
 	[backgroundView addSubview:message];
-	[message setCenter:CGPointMake(130, 190)];
+	[message setCenter:CGPointMake(100, 140)];
 	[message release];
 	
 	//The view is returned as a retained object
-	return backgroundView;
-}
+	return backgroundView;}
 
 
 @end

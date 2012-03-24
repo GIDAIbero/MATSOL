@@ -85,6 +85,7 @@
 		9CF125E8126F3BFF00CC1D45 /* presistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */; };
 		9CF125E9126F3BFF00CC1D45 /* Resistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */; };
 		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
+		BE9431F01519CBED004E9A88 /* DownIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE9431EF1519CBED004E9A88 /* DownIcon.png */; };
 		BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA189D81512393B00197347 /* GIDASearchAlert.m */; };
 		BEDD23C61518A3EF004265C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEDD23C51518A3EF004265C2 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -193,7 +194,7 @@
 		9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presistor@2x.png"; sourceTree = "<group>"; };
 		9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resistor@2x.png"; sourceTree = "<group>"; };
 		9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sresistor@2x.png"; sourceTree = "<group>"; };
-		BE7ECB12150E9CC3004F2457 /* DownIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownIcon.png; sourceTree = "<group>"; };
+		BE9431EF1519CBED004E9A88 /* DownIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownIcon.png; sourceTree = "<group>"; };
 		BEA189D71512393B00197347 /* GIDASearchAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDASearchAlert.h; sourceTree = "<group>"; };
 		BEA189D81512393B00197347 /* GIDASearchAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDASearchAlert.m; sourceTree = "<group>"; };
 		BEDD23C51518A3EF004265C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -390,7 +391,7 @@
 		50020E1A11D576DA00C61974 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				BE7ECB12150E9CC3004F2457 /* DownIcon.png */,
+				BE9431EF1519CBED004E9A88 /* DownIcon.png */,
 				50386A3612B5D5210071A656 /* baseConverter.png */,
 				50386A3712B5D5210071A656 /* baseConverter@2x.png */,
 				50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */,
@@ -554,6 +555,7 @@
 				50315957150F0C6400AF2AFF /* BaseConverterBackground.png in Resources */,
 				507B26A21512F4FD000EB93F /* Localizable.strings in Resources */,
 				507B26AE15130804000EB93F /* MATSOLLogo.png in Resources */,
+				BE9431F01519CBED004E9A88 /* DownIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
