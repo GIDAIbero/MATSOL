@@ -67,7 +67,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUINavigationItem" id="599440798">
 								<reference key="IBUINavigationBar" ref="722012795"/>
-								<string key="IBUITitle">About</string>
+								<string key="IBUITitle">Acerca De</string>
 								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="801363863">
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<float key="IBUIWidth">50</float>
@@ -246,7 +246,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Contact</string>
+						<string key="IBUIText">Contacto</string>
 						<reference key="IBUITextColor" ref="331621039"/>
 						<reference key="IBUIHighlightedColor" ref="331621039"/>
 						<reference key="IBUIShadowColor" ref="331621039"/>
