@@ -157,7 +157,6 @@
 		507B26A51512F503000EB93F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		507B26AD15130804000EB93F /* MATSOLLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MATSOLLogo.png; sourceTree = "<group>"; };
 		507B26B015130AEB000EB93F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
-		507B26B215130AF1000EB93F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
 		50C7EFD111D70C42001EB7C9 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
 		50C7F04311D73B53001EB7C9 /* presistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presistor.png; sourceTree = "<group>"; };
 		50C7F04411D73B53001EB7C9 /* sresistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sresistor.png; sourceTree = "<group>"; };
@@ -629,7 +628,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				507B26B015130AEB000EB93F /* en */,
-				507B26B215130AF1000EB93F /* es */,
 			);
 			name = CreditsViewController.xib;
 			sourceTree = "<group>";
