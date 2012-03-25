@@ -60,6 +60,8 @@
 		50E4CA7B151D4EBC00B98AE5 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E4CA79151D4EBC00B98AE5 /* line.png */; };
 		50E4CA7C151D4EBC00B98AE5 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E4CA7A151D4EBC00B98AE5 /* line@2x.png */; };
 		50E4CA7D151D506400B98AE5 /* InputResistor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4CA7F151D506400B98AE5 /* InputResistor.xib */; };
+		50F8FD42151EE88F00EE3625 /* baseConverterBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F8FD40151EE88F00EE3625 /* baseConverterBlack.png */; };
+		50F8FD43151EE88F00EE3625 /* baseConverterBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F8FD41151EE88F00EE3625 /* baseConverterBlack@2x.png */; };
 		9C1CF818125E9F020060A1B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF817125E9F020060A1B2 /* UIKit.framework */; };
 		9C1CF81C125E9F120060A1B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF81B125E9F120060A1B2 /* Foundation.framework */; };
 		9C1CF820125E9F1E0060A1B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */; };
@@ -169,6 +171,8 @@
 		50E4CA7A151D4EBC00B98AE5 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
 		50E4CA7E151D506400B98AE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InputResistor.xib; sourceTree = "<group>"; };
 		50E4CA80151D506C00B98AE5 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/InputResistor.xib; sourceTree = "<group>"; };
+		50F8FD40151EE88F00EE3625 /* baseConverterBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baseConverterBlack.png; sourceTree = "<group>"; };
+		50F8FD41151EE88F00EE3625 /* baseConverterBlack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baseConverterBlack@2x.png"; sourceTree = "<group>"; };
 		9C1CF817125E9F020060A1B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C1CF81B125E9F120060A1B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -397,6 +401,8 @@
 			isa = PBXGroup;
 			children = (
 				BE9431EF1519CBED004E9A88 /* DownIcon.png */,
+				50F8FD40151EE88F00EE3625 /* baseConverterBlack.png */,
+				50F8FD41151EE88F00EE3625 /* baseConverterBlack@2x.png */,
 				50386A3612B5D5210071A656 /* baseConverter.png */,
 				50386A3712B5D5210071A656 /* baseConverter@2x.png */,
 				50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */,
@@ -565,6 +571,8 @@
 				BE9431F01519CBED004E9A88 /* DownIcon.png in Resources */,
 				50E4CA7B151D4EBC00B98AE5 /* line.png in Resources */,
 				50E4CA7C151D4EBC00B98AE5 /* line@2x.png in Resources */,
+				50F8FD42151EE88F00EE3625 /* baseConverterBlack.png in Resources */,
+				50F8FD43151EE88F00EE3625 /* baseConverterBlack@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
