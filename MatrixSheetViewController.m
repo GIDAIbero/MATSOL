@@ -221,9 +221,11 @@
     
     Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,0,currentX-80,currentY) rounded:YES];
     [container addSubview:par];
+    [container sendSubviewToBack:par];
     [par release];
     par = [[Parenthesis alloc] initWithFrame:CGRectMake(currentX-85, 0, 95, currentY) rounded:YES color:[UIColor redColor]];
     [container addSubview:par];
+    [container sendSubviewToBack:par];
     [par release];
     [self performSelector:@selector(makeFirstResponder:)];
 }

@@ -42,7 +42,7 @@
 }
 
 - (void)viewDidLoad{
-	int height=0, width=0, i=0;
+	int height=0, width=0;
 	UITextField *temp;
 	CGPoint referencePoint;
 	
@@ -102,9 +102,11 @@
     par = [[Parenthesis alloc] initWithFrame:CGRectMake((size*70)+20, 2, 125, (size*45)+16) rounded:YES color:[UIColor redColor]];
     [container addSubview:par];
     
+    
 	/*
 	//Add the pads to the matrix to make it fancy : P
 	//Left side corner (UPPER)
+    int i=0;
 	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ul.png"]];
 	shape.frame=CGRectMake(5, 2, 22, 51);
 	[container addSubview:shape];

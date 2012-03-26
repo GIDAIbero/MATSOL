@@ -174,6 +174,7 @@ int PaddingXRight(int size){
 
     Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,0,((matrixSize+1)*70)-45,container.frame.size.height-235)];
     [container addSubview:par];
+    [container sendSubviewToBack:par];
     [par release];
     
     [pool release];
