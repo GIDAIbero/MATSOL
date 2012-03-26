@@ -29,7 +29,8 @@
 	[homeButton addTarget:self action:@selector(goToRootViewController:)  forControlEvents:UIControlEventTouchUpInside];
 	
 	navigationController=[[UINavigationController alloc] initWithRootViewController:firstViewController];
-	navigationController.navigationBar.tintColor=[UIColor colorWithRed:.161 green:.161 blue:0.161 alpha:1.0];
+    [[navigationController navigationBar] setTintColor:[UIColor darkGrayMATSOL]];
+    
 	[firstViewController release];
 	//The homeButton must be added after the navigationController
 	//in order to make it work 

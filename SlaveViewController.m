@@ -70,7 +70,6 @@
 		[decoder setShowsTouchWhenHighlighted:YES];
 		[self.view addSubview:decoder];
 		
-		
 		UIButton *baseConversion=[UIButton buttonWithType:UIButtonTypeCustom];
 		[baseConversion setBackgroundColor:[UIColor clearColor]];
 		[baseConversion setBackgroundImage:[UIImage imageNamed:@"baseConverter.png"] forState:UIControlStateNormal];
@@ -105,11 +104,8 @@
                 [gsaExtra show];
                 [gsaExtra release];
             } else {
-                MatrixSheetViewController *viewController = [[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" matrizSize:matrixSize] autorelease];
-               // MatrixSheetViewController *viewController = [[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil] autorelease];
-              //  viewController.matrixSize = matrixSize;
+                MatrixSheetViewController *viewController = [[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" matrixSize:matrixSize] autorelease];
                 [self performSelector:@selector(endUIViewController:) withObject:viewController];
-                //[self endUIViewController:viewController];
             }
         } else { 
             if (matrixSize > 26 || matrixSize <= 0 || [[[gsa textField] text] isEqualToString:@""]) {

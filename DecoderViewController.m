@@ -2,8 +2,8 @@
 //  DecoderViewController.m
 //  MATSOL
 //
-//  Created by GIDA01 on 10/7/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Created by Yoshiki Vázquez Baeza on 10/7/10.
+//  Copyright 2010 Universidad Iberoamericana. All rights reserved.
 //
 
 #import "DecoderViewController.h"

@@ -31,11 +31,13 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
 		[self setTitle:@"MATSOL"];
-		#ifdef	DEBUG_INTERFACE
+		
+        #ifdef	DEBUG_INTERFACE
 		[self setTitle:@"MATSOL_MENU"];
 		#endif
-		creditsButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"About", @"About string") style:UIBarButtonItemStyleBordered target:self action:@selector(credits)];
-		self.navigationItem.leftBarButtonItem=creditsButton;
+		
+        creditsButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"About", @"About string") style:UIBarButtonItemStyleBordered target:self action:@selector(credits)];
+		[[self navigationItem] setLeftBarButtonItem:creditsButton];        
     }
     return self;
 }
@@ -58,21 +60,23 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
 	[controllers release];
 	
     // a page is the width of the scroll view
-    scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * kNumberOfPages, scrollView.frame.size.height);
-    scrollView.showsHorizontalScrollIndicator = NO;
-    scrollView.showsVerticalScrollIndicator = NO;
-    scrollView.scrollsToTop = NO;
-    scrollView.delegate = self;
-	
-    pageControl.numberOfPages = kNumberOfPages;
-    pageControl.currentPage = 0;
+    [scrollView setPagingEnabled:YES];
+    [scrollView setContentSize:CGSizeMake(scrollView.frame.size.width * kNumberOfPages, scrollView.frame.size.height)];
+    [scrollView setShowsHorizontalScrollIndicator:NO];
+    [scrollView setShowsVerticalScrollIndicator:NO];
+    [scrollView setScrollsToTop:NO];
+    [[self scrollView] setDelegate:self];
+    
+    [[self pageControl] setNumberOfPages:kNumberOfPages];
+    [[self pageControl] setCurrentPage:0];
+    [[self pageControl] setHidesForSinglePage:YES];
+
 
     // pages are created on demand
     // load the visible page
     // load the page on either side to avoid flashes when the user starts scrolling
     [self loadScrollViewWithPage:0];
-    [self loadScrollViewWithPage:1];
+    [self loadScrollViewWithPage:1];    
 }
 
 

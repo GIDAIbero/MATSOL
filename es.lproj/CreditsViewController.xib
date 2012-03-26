@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1179</string>
+			<string key="NS.object.0">1181</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -67,7 +67,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUINavigationItem" id="599440798">
 								<reference key="IBUINavigationBar" ref="722012795"/>
-								<string key="IBUITitle">Acerca de</string>
+								<string key="IBUITitle">Acerca De</string>
 								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="801363863">
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<float key="IBUIWidth">50</float>
@@ -618,6 +618,6 @@ ICAKcG9sYXJiZWFycy5kZXZ0ZWFtQGdtYWlsLmNvbQ</string>
 				<string>{512, 512}</string>
 			</object>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">1179</string>
+		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
 </archive>

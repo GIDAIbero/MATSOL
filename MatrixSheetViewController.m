@@ -38,13 +38,14 @@
 	}
 	return self;
 }
-- (id)initWithNibName:(NSString *)nibNameOrNil matrizSize:(int)matrix{
+- (id)initWithNibName:(NSString *)nibNameOrNil matrixSize:(int)matrix{
 	if (self = [super initWithNibName:nibNameOrNil bundle:nil]) {
         // Custom initialization
 		self.title=@"MATSOL";
-#ifdef	DEBUG_INTERFACE
+        #ifdef	DEBUG_INTERFACE
 		self.title=@"MATSOL_LES";
-#endif
+        #endif
+        
         matrixSize = matrix;
 		myArray=[[NSMutableArray alloc] init];
 		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];

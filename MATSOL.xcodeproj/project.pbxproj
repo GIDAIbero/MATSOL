@@ -22,7 +22,6 @@
 		50020DFC11D576BC00C61974 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DF211D576BC00C61974 /* CreditsViewController.m */; };
 		50020E2011D576DA00C61974 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DFF11D576DA00C61974 /* main.m */; };
 		50020E2111D576DA00C61974 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0211D576DA00C61974 /* MainWindow.xib */; };
-		50020E2311D576DA00C61974 /* Scroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0411D576DA00C61974 /* Scroll.xib */; };
 		50020E2711D576DA00C61974 /* MatrixSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0811D576DA00C61974 /* MatrixSheet.xib */; };
 		50020E2811D576DA00C61974 /* Solutions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0911D576DA00C61974 /* Solutions.xib */; };
 		50020E2911D576DA00C61974 /* Slave.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0A11D576DA00C61974 /* Slave.xib */; };
@@ -36,7 +35,6 @@
 		50020FD511D58FBB00C61974 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020FD411D58FBB00C61974 /* Default.png */; };
 		50020FF311D598BE00C61974 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020FF211D598BE00C61974 /* Icon.png */; };
 		5024A3831510496300274046 /* OutputResistor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5024A3851510496300274046 /* OutputResistor.xib */; };
-		5024A387151049B000274046 /* InputResistor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5024A389151049B000274046 /* InputResistor.xib */; };
 		5024A38B151049D800274046 /* Selection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5024A38D151049D800274046 /* Selection.xib */; };
 		50260BC612B4C9D700A1CF4D /* crossedBlackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50260BC412B4C9D700A1CF4D /* crossedBlackButton.png */; };
 		50260BC712B4C9D700A1CF4D /* crossedBlackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50260BC512B4C9D700A1CF4D /* crossedBlackButton@2x.png */; };
@@ -52,12 +50,16 @@
 		504C6FAD12BF4DCC00CC815E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */; };
 		507B26A21512F4FD000EB93F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507B26A41512F4FD000EB93F /* Localizable.strings */; };
 		507B26AE15130804000EB93F /* MATSOLLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 507B26AD15130804000EB93F /* MATSOLLogo.png */; };
-		507B26AF15130AEB000EB93F /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507B26B115130AEB000EB93F /* CreditsViewController.xib */; };
+		50B25D8C151FF764000CDBA9 /* Scroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B25D8E151FF764000CDBA9 /* Scroll.xib */; };
 		50C7EFD211D70C42001EB7C9 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7EFD111D70C42001EB7C9 /* help.png */; };
 		50C7F04511D73B53001EB7C9 /* presistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04311D73B53001EB7C9 /* presistor.png */; };
 		50C7F04611D73B53001EB7C9 /* sresistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04411D73B53001EB7C9 /* sresistor.png */; };
 		50D0082311DC42AE006A076B /* wire.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D0082211DC42AE006A076B /* wire.png */; };
 		50DF4C0F151050FE00F296A8 /* BaseConverter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DF4C11151050FE00F296A8 /* BaseConverter.xib */; };
+		50E4CA6F151D4AE400B98AE5 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4CA71151D4AE400B98AE5 /* CreditsViewController.xib */; };
+		50E4CA7B151D4EBC00B98AE5 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E4CA79151D4EBC00B98AE5 /* line.png */; };
+		50E4CA7C151D4EBC00B98AE5 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E4CA7A151D4EBC00B98AE5 /* line@2x.png */; };
+		50E4CA7D151D506400B98AE5 /* InputResistor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4CA7F151D506400B98AE5 /* InputResistor.xib */; };
 		9C1CF818125E9F020060A1B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF817125E9F020060A1B2 /* UIKit.framework */; };
 		9C1CF81C125E9F120060A1B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF81B125E9F120060A1B2 /* Foundation.framework */; };
 		9C1CF820125E9F1E0060A1B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */; };
@@ -122,7 +124,6 @@
 		50020DFE11D576DA00C61974 /* MATSOL_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATSOL_Prefix.pch; sourceTree = "<group>"; };
 		50020DFF11D576DA00C61974 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		50020E0211D576DA00C61974 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		50020E0411D576DA00C61974 /* Scroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Scroll.xib; sourceTree = "<group>"; };
 		50020E0811D576DA00C61974 /* MatrixSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatrixSheet.xib; sourceTree = "<group>"; };
 		50020E0911D576DA00C61974 /* Solutions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Solutions.xib; sourceTree = "<group>"; };
 		50020E0A11D576DA00C61974 /* Slave.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slave.xib; sourceTree = "<group>"; };
@@ -138,8 +139,6 @@
 		50020FF211D598BE00C61974 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		5024A3841510496300274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OutputResistor.xib; sourceTree = "<group>"; };
 		5024A3861510497000274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/OutputResistor.xib; sourceTree = "<group>"; };
-		5024A388151049B000274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InputResistor.xib; sourceTree = "<group>"; };
-		5024A38A151049B700274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/InputResistor.xib; sourceTree = "<group>"; };
 		5024A38C151049D800274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Selection.xib; sourceTree = "<group>"; };
 		5024A38E151049E200274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/Selection.xib; sourceTree = "<group>"; };
 		50260BC412B4C9D700A1CF4D /* crossedBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crossedBlackButton.png; sourceTree = "<group>"; };
@@ -158,14 +157,20 @@
 		507B26A31512F4FD000EB93F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		507B26A51512F503000EB93F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		507B26AD15130804000EB93F /* MATSOLLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MATSOLLogo.png; sourceTree = "<group>"; };
-		507B26B015130AEB000EB93F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
-		507B26B215130AF1000EB93F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
+		50B25D8D151FF764000CDBA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Scroll.xib; sourceTree = "<group>"; };
+		50B25D8F151FF76B000CDBA9 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/Scroll.xib; sourceTree = "<group>"; };
 		50C7EFD111D70C42001EB7C9 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
 		50C7F04311D73B53001EB7C9 /* presistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presistor.png; sourceTree = "<group>"; };
 		50C7F04411D73B53001EB7C9 /* sresistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sresistor.png; sourceTree = "<group>"; };
 		50D0082211DC42AE006A076B /* wire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wire.png; sourceTree = "<group>"; };
 		50DF4C10151050FE00F296A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BaseConverter.xib; sourceTree = "<group>"; };
 		50DF4C121510510C00F296A8 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/BaseConverter.xib; sourceTree = "<group>"; };
+		50E4CA70151D4AE400B98AE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
+		50E4CA72151D4AF600B98AE5 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
+		50E4CA79151D4EBC00B98AE5 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		50E4CA7A151D4EBC00B98AE5 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
+		50E4CA7E151D506400B98AE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InputResistor.xib; sourceTree = "<group>"; };
+		50E4CA80151D506C00B98AE5 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/InputResistor.xib; sourceTree = "<group>"; };
 		9C1CF817125E9F020060A1B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C1CF81B125E9F120060A1B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -346,16 +351,16 @@
 			isa = PBXGroup;
 			children = (
 				50020E0211D576DA00C61974 /* MainWindow.xib */,
-				50020E0411D576DA00C61974 /* Scroll.xib */,
+				50B25D8E151FF764000CDBA9 /* Scroll.xib */,
 				5024A38D151049D800274046 /* Selection.xib */,
-				5024A389151049B000274046 /* InputResistor.xib */,
+				50E4CA7F151D506400B98AE5 /* InputResistor.xib */,
 				5024A3851510496300274046 /* OutputResistor.xib */,
 				50020E0811D576DA00C61974 /* MatrixSheet.xib */,
 				50020E0911D576DA00C61974 /* Solutions.xib */,
 				9C1CF856125EA1E50060A1B2 /* Decoder.xib */,
 				50DF4C11151050FE00F296A8 /* BaseConverter.xib */,
 				50020E0A11D576DA00C61974 /* Slave.xib */,
-				507B26B115130AEB000EB93F /* CreditsViewController.xib */,
+				50E4CA71151D4AE400B98AE5 /* CreditsViewController.xib */,
 			);
 			name = NIBs;
 			sourceTree = "<group>";
@@ -427,6 +432,8 @@
 		50D0075111DC2455006A076B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				50E4CA79151D4EBC00B98AE5 /* line.png */,
+				50E4CA7A151D4EBC00B98AE5 /* line@2x.png */,
 				507B26AD15130804000EB93F /* MATSOLLogo.png */,
 				9CE55519126624EA00D09A21 /* Resistor.png */,
 				9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */,
@@ -504,14 +511,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				50020E2111D576DA00C61974 /* MainWindow.xib in Resources */,
-				50020E2311D576DA00C61974 /* Scroll.xib in Resources */,
+				50B25D8C151FF764000CDBA9 /* Scroll.xib in Resources */,
 				5024A38B151049D800274046 /* Selection.xib in Resources */,
-				5024A387151049B000274046 /* InputResistor.xib in Resources */,
+				50E4CA7D151D506400B98AE5 /* InputResistor.xib in Resources */,
 				5024A3831510496300274046 /* OutputResistor.xib in Resources */,
 				50020E2711D576DA00C61974 /* MatrixSheet.xib in Resources */,
 				50020E2811D576DA00C61974 /* Solutions.xib in Resources */,
 				50020E2911D576DA00C61974 /* Slave.xib in Resources */,
-				507B26AF15130AEB000EB93F /* CreditsViewController.xib in Resources */,
+				50E4CA6F151D4AE400B98AE5 /* CreditsViewController.xib in Resources */,
 				50020E2C11D576DA00C61974 /* ll.png in Resources */,
 				50020E2D11D576DA00C61974 /* ur.png in Resources */,
 				50020E2E11D576DA00C61974 /* ul.png in Resources */,
@@ -562,6 +569,8 @@
 				507B26A21512F4FD000EB93F /* Localizable.strings in Resources */,
 				507B26AE15130804000EB93F /* MATSOLLogo.png in Resources */,
 				BE9431F01519CBED004E9A88 /* DownIcon.png in Resources */,
+				50E4CA7B151D4EBC00B98AE5 /* line.png in Resources */,
+				50E4CA7C151D4EBC00B98AE5 /* line@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,15 +615,6 @@
 			name = OutputResistor.xib;
 			sourceTree = "<group>";
 		};
-		5024A389151049B000274046 /* InputResistor.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5024A388151049B000274046 /* en */,
-				5024A38A151049B700274046 /* es */,
-			);
-			name = InputResistor.xib;
-			sourceTree = "<group>";
-		};
 		5024A38D151049D800274046 /* Selection.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -633,13 +633,13 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		507B26B115130AEB000EB93F /* CreditsViewController.xib */ = {
+		50B25D8E151FF764000CDBA9 /* Scroll.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				507B26B015130AEB000EB93F /* en */,
-				507B26B215130AF1000EB93F /* es */,
+				50B25D8D151FF764000CDBA9 /* en */,
+				50B25D8F151FF76B000CDBA9 /* es */,
 			);
-			name = CreditsViewController.xib;
+			name = Scroll.xib;
 			sourceTree = "<group>";
 		};
 		50DF4C11151050FE00F296A8 /* BaseConverter.xib */ = {
@@ -649,6 +649,24 @@
 				50DF4C121510510C00F296A8 /* es */,
 			);
 			name = BaseConverter.xib;
+			sourceTree = "<group>";
+		};
+		50E4CA71151D4AE400B98AE5 /* CreditsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50E4CA70151D4AE400B98AE5 /* en */,
+				50E4CA72151D4AF600B98AE5 /* es */,
+			);
+			name = CreditsViewController.xib;
+			sourceTree = "<group>";
+		};
+		50E4CA7F151D506400B98AE5 /* InputResistor.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50E4CA7E151D506400B98AE5 /* en */,
+				50E4CA80151D506C00B98AE5 /* es */,
+			);
+			name = InputResistor.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
