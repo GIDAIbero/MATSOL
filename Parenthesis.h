@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Parenthesis : UIView
+@interface Parenthesis : UIView {
+    BOOL round;
+    UIColor *pColor;
+}
 
+-(id)initWithFrame:(CGRect)frame rounded:(BOOL)willBeRound ;
+-(id)initWithFrame:(CGRect)frame rounded:(BOOL)willBeRound color:(UIColor *)withColor;
 @end

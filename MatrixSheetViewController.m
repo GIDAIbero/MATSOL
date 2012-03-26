@@ -185,7 +185,7 @@
 			if (height<matrixSize) {
 				temp.placeholder=[NSString stringWithFormat:@"%c%d",height+97,width+1];
 				
-				UILabel *dummies=[[[UILabel alloc] initWithFrame:CGRectMake(currentX+75, currentY-5, 65, 45)] autorelease];
+		/*		UILabel *dummies=[[[UILabel alloc] initWithFrame:CGRectMake(currentX+75, currentY-5, 65, 45)] autorelease];
                 if ((matrixSize-1) == height) {
                     [dummies setText:[NSString stringWithFormat:@"%c =",height+97]];
                 } else {
@@ -197,12 +197,12 @@
 				[dummies setAdjustsFontSizeToFitWidth:YES];
 				[dummies setFont:[UIFont fontWithName:@"CourierNewPS-BoldMT" size:25]];
 				[dummies setTextAlignment:UITextAlignmentLeft];
-                [container addSubview:dummies];
+                [container addSubview:dummies];*/
 			}
 			else {
                 //Solution column
 				referencePoint=temp.center;
-				referencePoint.x=referencePoint.x+40;
+				referencePoint.x=referencePoint.x+10;
 				temp.center=referencePoint;
 				
 				//Data for the solution text fields
@@ -216,12 +216,15 @@
 		}
 		[myArray insertObject:ma atIndex:height];
 		//Add the offset to each column
-		currentX=currentX+120;
+		currentX=currentX+80;
 	}	
     
-    Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,0,currentX,currentY)];
+    Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,0,currentX-80,currentY) rounded:YES];
     [container addSubview:par];
-    
+    [par release];
+    par = [[Parenthesis alloc] initWithFrame:CGRectMake(currentX-85, 0, 95, currentY) rounded:YES color:[UIColor redColor]];
+    [container addSubview:par];
+    [par release];
     [self performSelector:@selector(makeFirstResponder:)];
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {

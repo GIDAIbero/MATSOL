@@ -46,7 +46,7 @@
 	UITextField *temp;
 	CGPoint referencePoint;
 	
-	UIImageView *shape;
+	//UIImageView *shape;
 	//UIImageView *help=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"help.png"]];
 	UIView  *help = [[UIView alloc] initWithFrame:CGRectMake(0, 386, 320, 30)];
     UILabel *wlab = [[UILabel alloc] initWithFrame:CGRectMake(45, 0, 120, 30)];
@@ -96,7 +96,13 @@
 	
 	[self.view addSubview:help];
 	[help release];
-	
+    Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0, 2, (size*70)+27, (size*45)+16) rounded:YES];
+    [container addSubview:par];
+    [par release];
+    par = [[Parenthesis alloc] initWithFrame:CGRectMake((size*70)+20, 2, 125, (size*45)+16) rounded:YES color:[UIColor redColor]];
+    [container addSubview:par];
+    
+	/*
 	//Add the pads to the matrix to make it fancy : P
 	//Left side corner (UPPER)
 	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ul.png"]];
@@ -136,7 +142,7 @@
 		[container addSubview:shape];
 		[shape release];
 	}
-	
+	*/
 	//Assign as many text fields as needed.
 	for (height=0; height<size+1; height++) {
 		[labelsArray insertObject:[[[NSMutableArray alloc] init] autorelease] atIndex:height];
