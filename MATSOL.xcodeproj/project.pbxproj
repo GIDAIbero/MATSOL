@@ -22,7 +22,6 @@
 		50020DFC11D576BC00C61974 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DF211D576BC00C61974 /* CreditsViewController.m */; };
 		50020E2011D576DA00C61974 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DFF11D576DA00C61974 /* main.m */; };
 		50020E2111D576DA00C61974 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0211D576DA00C61974 /* MainWindow.xib */; };
-		50020E2311D576DA00C61974 /* Scroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0411D576DA00C61974 /* Scroll.xib */; };
 		50020E2711D576DA00C61974 /* MatrixSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0811D576DA00C61974 /* MatrixSheet.xib */; };
 		50020E2811D576DA00C61974 /* Solutions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0911D576DA00C61974 /* Solutions.xib */; };
 		50020E2911D576DA00C61974 /* Slave.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0A11D576DA00C61974 /* Slave.xib */; };
@@ -51,6 +50,7 @@
 		504C6FAD12BF4DCC00CC815E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */; };
 		507B26A21512F4FD000EB93F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507B26A41512F4FD000EB93F /* Localizable.strings */; };
 		507B26AE15130804000EB93F /* MATSOLLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 507B26AD15130804000EB93F /* MATSOLLogo.png */; };
+		50B25D8C151FF764000CDBA9 /* Scroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B25D8E151FF764000CDBA9 /* Scroll.xib */; };
 		50C7EFD211D70C42001EB7C9 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7EFD111D70C42001EB7C9 /* help.png */; };
 		50C7F04511D73B53001EB7C9 /* presistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04311D73B53001EB7C9 /* presistor.png */; };
 		50C7F04611D73B53001EB7C9 /* sresistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04411D73B53001EB7C9 /* sresistor.png */; };
@@ -123,7 +123,6 @@
 		50020DFE11D576DA00C61974 /* MATSOL_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATSOL_Prefix.pch; sourceTree = "<group>"; };
 		50020DFF11D576DA00C61974 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		50020E0211D576DA00C61974 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		50020E0411D576DA00C61974 /* Scroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Scroll.xib; sourceTree = "<group>"; };
 		50020E0811D576DA00C61974 /* MatrixSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatrixSheet.xib; sourceTree = "<group>"; };
 		50020E0911D576DA00C61974 /* Solutions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Solutions.xib; sourceTree = "<group>"; };
 		50020E0A11D576DA00C61974 /* Slave.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slave.xib; sourceTree = "<group>"; };
@@ -157,6 +156,8 @@
 		507B26A31512F4FD000EB93F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		507B26A51512F503000EB93F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		507B26AD15130804000EB93F /* MATSOLLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MATSOLLogo.png; sourceTree = "<group>"; };
+		50B25D8D151FF764000CDBA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Scroll.xib; sourceTree = "<group>"; };
+		50B25D8F151FF76B000CDBA9 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/Scroll.xib; sourceTree = "<group>"; };
 		50C7EFD111D70C42001EB7C9 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
 		50C7F04311D73B53001EB7C9 /* presistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presistor.png; sourceTree = "<group>"; };
 		50C7F04411D73B53001EB7C9 /* sresistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sresistor.png; sourceTree = "<group>"; };
@@ -345,7 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				50020E0211D576DA00C61974 /* MainWindow.xib */,
-				50020E0411D576DA00C61974 /* Scroll.xib */,
+				50B25D8E151FF764000CDBA9 /* Scroll.xib */,
 				5024A38D151049D800274046 /* Selection.xib */,
 				50E4CA7F151D506400B98AE5 /* InputResistor.xib */,
 				5024A3851510496300274046 /* OutputResistor.xib */,
@@ -505,7 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50020E2111D576DA00C61974 /* MainWindow.xib in Resources */,
-				50020E2311D576DA00C61974 /* Scroll.xib in Resources */,
+				50B25D8C151FF764000CDBA9 /* Scroll.xib in Resources */,
 				5024A38B151049D800274046 /* Selection.xib in Resources */,
 				50E4CA7D151D506400B98AE5 /* InputResistor.xib in Resources */,
 				5024A3831510496300274046 /* OutputResistor.xib in Resources */,
@@ -624,6 +625,15 @@
 				507B26A51512F503000EB93F /* es */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		50B25D8E151FF764000CDBA9 /* Scroll.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50B25D8D151FF764000CDBA9 /* en */,
+				50B25D8F151FF76B000CDBA9 /* es */,
+			);
+			name = Scroll.xib;
 			sourceTree = "<group>";
 		};
 		50DF4C11151050FE00F296A8 /* BaseConverter.xib */ = {
