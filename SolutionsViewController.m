@@ -101,6 +101,7 @@
     [par release];
     par = [[Parenthesis alloc] initWithFrame:CGRectMake((size*70)+20, 2, 125, (size*45)+16) rounded:YES color:[UIColor redColor]];
     [container addSubview:par];
+    [par release];
     
     
 	/*
