@@ -47,5 +47,5 @@ typedef struct FirstSecond FSTSND;
 -(void)endTextFields:(id)sender;
 -(void)endLabels:(id)sender;
 -(void)makeFirstResponder:(id)sender;
--(id)initWithNibName:(NSString *)nibNameOrNil matrizSize:(int)matrixSize;	
+-(id)initWithNibName:(NSString *)nibNameOrNil matrixSize:(int)matrixSize;	
 @end

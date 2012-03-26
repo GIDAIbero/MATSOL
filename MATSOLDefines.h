@@ -11,11 +11,12 @@
 #define NO_DEBUG_INTERFACE
 #define NO_VERBOSE
 
-#define MATSOL_VERSION  @"1.05dev"
-#define MATSOL_BUILD    @"388cc4b"
+#define MATSOL_VERSION  @"1.1dev"
+#define MATSOL_BUILD    @"7087bb3"
 //git log --pretty=format:'%h' -n 1
 
-//Number of pages in the scroll view controller
+//Number of pages in the scroll view controller, when just a single
+//page is requested, the page controller won't appear at the bottom
 #define NUMBER_OF_MENU_PAGES 1
 
 //How should the navigation be from text field to text field
@@ -26,3 +27,6 @@
 
 //The color of the fonts to be used in the Color Decoder other option WHITE_FONTS
 #define BLACK_FONTS
+
+//The only custom color of the application
+#define darkGrayMATSOL  colorWithRed:.161 green:.161 blue:0.161 alpha:1.0
