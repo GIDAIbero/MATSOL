@@ -55,10 +55,10 @@ int PaddingXRight(int size){
 	#ifdef DEBUG
 	NSLog(@"Creating the matrix");
 	#endif
-	
+	/*
 	int i=0;
 	UIImageView *shape;
-	
+	*/
 	//As soon as the view has loaded make it visible
 	[self.view addSubview:_loadingMessageView];
 	//[_loadingMessageView release];
@@ -69,7 +69,7 @@ int PaddingXRight(int size){
 	layoutView.backgroundColor = [UIColor clearColor];	
 	
 	//Add the pads to the matrix to make it fancy : P
-	
+	/*
 	//LEFT SIDE
 	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ul.png"]];
 	shape.frame=CGRectMake(kPaddingXLeft, kPaddingYLeft, kPaddingCornerWidth, kPaddingCornerHeight);
@@ -106,7 +106,7 @@ int PaddingXRight(int size){
 		[container addSubview:shape];
 		[shape release];
 	}
-	
+	*/
 	
 }
 -(void)viewDidAppear:(BOOL)animated {
@@ -122,18 +122,13 @@ int PaddingXRight(int size){
 -(void)creatingTextFields:(id)sender{
 	//A pool should always be created when using threads
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
+
 	int height=0, width=0;
-	//UITextField *temp;	
-	
-	//Assign as many text fields as needed.
 	for (height=0; height<matrixSize; height++) {
-		//[myArray insertObject:[[[NSMutableArray alloc] init] autorelease] atIndex:height];
 		NSMutableArray *ma = [NSMutableArray array];
 		for (width=0; width<matrixSize; width++) { 
-			//[[myArray objectAtIndex:height] insertObject:[[[UITextField alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)] autorelease] atIndex:width];
-			//UITextField *temp=[[myArray objectAtIndex:height] objectAtIndex:width];
 			UITextField *temp = [[UITextField alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)];
+            
 			//Attributes for textfields that are not the solution column
             UIBarButtonItem *ubbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextSomething:)];
             UIBarButtonItem *back = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(previousSomething:)] autorelease];
@@ -176,7 +171,13 @@ int PaddingXRight(int size){
 	//[self performSelectorOnMainThread:@selector(makeFirstResponder:) withObject:nil waitUntilDone:NO];
 	[self makeFirstResponder:nil];
 	//Release the pool
+
+    Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,0,((matrixSize+1)*70)-45,container.frame.size.height-235)];
+    [container addSubview:par];
+    [par release];
+    
     [pool release];
+    
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -292,9 +293,9 @@ int PaddingXRight(int size){
 	//BE CAREFUL!
 	//The container size should be the last thing you set.
 	//You should only add the container and the layout by the end of your code.
-	container.frame = CGRectMake(0, 0, 75*matrixSize,(45*matrixSize)+250);
+	container.frame = CGRectMake(0, 0, (75*matrixSize)+3,(45*matrixSize)+250);
+    NSLog(@"Container: Height %f\tWidth %f", container.frame.size.height,container.frame.size.width);
 	layoutView.contentSize = container.frame.size;
-	
 	[layoutView addSubview:container];
 	[self.view addSubview:layoutView];
 }

@@ -87,6 +87,7 @@
 		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
 		BE9431F01519CBED004E9A88 /* DownIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE9431EF1519CBED004E9A88 /* DownIcon.png */; };
 		BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA189D81512393B00197347 /* GIDASearchAlert.m */; };
+		BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */; };
 		BEDD23C61518A3EF004265C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEDD23C51518A3EF004265C2 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +199,8 @@
 		BE9431EF1519CBED004E9A88 /* DownIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownIcon.png; sourceTree = "<group>"; };
 		BEA189D71512393B00197347 /* GIDASearchAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDASearchAlert.h; sourceTree = "<group>"; };
 		BEA189D81512393B00197347 /* GIDASearchAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDASearchAlert.m; sourceTree = "<group>"; };
+		BEA18BFD151A7C7300B48EB7 /* Parenthesis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parenthesis.h; sourceTree = "<group>"; };
+		BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parenthesis.m; sourceTree = "<group>"; };
 		BEDD23C51518A3EF004265C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -297,6 +300,8 @@
 				50020DED11D576BC00C61974 /* OutputResistorViewController.m */,
 				9C1CF854125EA1E50060A1B2 /* DecoderViewController.h */,
 				9C1CF855125EA1E50060A1B2 /* DecoderViewController.m */,
+				BEA18BFD151A7C7300B48EB7 /* Parenthesis.h */,
+				BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */,
 			);
 			name = MainViewControllers;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 				9C7D4E091277B5CC000EBAC0 /* BaseConverterViewController.m in Sources */,
 				9CB5F13F128C9351003117AD /* Conversor.m in Sources */,
 				BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */,
+				BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

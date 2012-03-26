@@ -75,7 +75,7 @@
 	layoutView.delegate=self;
 	layoutView.bouncesZoom = NO;
 	layoutView.backgroundColor = [UIColor clearColor];
-	
+	/*
 	int i=0;
 	UIImageView *shape;
 	
@@ -114,6 +114,7 @@
 		[container addSubview:shape];
 		[shape release];
 	}
+     */
 	
 	//Make the call to the methods that involve threads, here's a brief explanation
 	//	1.- Calling beginTextFields: will detach a selector into another thread calling creatingTextFields:
@@ -134,7 +135,7 @@
 #pragma mark Initialization_ThreadManagement
 
 -(void)beginTextFields{
-	[NSThread detachNewThreadSelector:@selector(creatingTextFields:) toTarget:self withObject:nil];
+	//[NSThread detachNewThreadSelector:@selector(creatingTextFields:) toTarget:self withObject:nil];
 }
 
 -(void)creatingTextFields:(id)sender{
@@ -142,6 +143,8 @@
 	float currentX=15.0, currentY=15.0;
 	int height=0, width=0;
 	
+    
+    
 	//Assign as many text fields as needed.
 	for (height=0; height<matrixSize+1; height++) {
 		//One Column is done? then start the next one from the top
@@ -215,7 +218,10 @@
 		currentX=currentX+120;
 	}	
     
-	[self performSelectorOnMainThread:@selector(makeFirstResponder:) withObject:nil waitUntilDone:NO];
+    Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,0,currentX,currentY)];
+    [container addSubview:par];
+    
+    [self performSelector:@selector(makeFirstResponder:)];
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     layoutView.contentSize = container.frame.size;
@@ -333,6 +339,7 @@
         [_loadingMessageView removeFromSuperview];
         _loadingMessageView = nil;
     }
+    
 	//BE CAREFUL!
 	//The container size should be the last thing you set.
 	//You should only add the container and the layout by the end of your code.
