@@ -12,7 +12,7 @@
 #define NO_VERBOSE
 
 #define MATSOL_VERSION  @"1.1dev"
-#define MATSOL_BUILD    @"a8c03a5"
+#define MATSOL_BUILD    @"a5f4a9e"
 //git log --pretty=format:'%h' -n 1
 
 //Number of pages in the scroll view controller, when just a single
