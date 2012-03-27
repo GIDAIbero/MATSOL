@@ -30,7 +30,7 @@
 		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
 		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
-		
+		loaded = 0;
 		//This method returns a retained object
 	//	_loadingMessageView=[MatrixSheetViewController createWaitingView];	
 		
@@ -51,7 +51,7 @@
 		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
 		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
-		
+		loaded = 0;
 		//This method returns a retained object
 		_loadingMessageView=[MatrixSheetViewController createWaitingView];	
 		
@@ -94,8 +94,10 @@
     #ifdef DEBUG   
     NSLog(@"APPEAR");
     #endif
-    
-    [self creatingTextFields:nil];
+    if (loaded == 0) {
+        loaded = 1;
+        [self creatingTextFields:nil];
+    }
 }
 #pragma mark Initialization_ThreadManagement
 

@@ -27,6 +27,7 @@ typedef struct FirstSecond FSTSND;
 	UIView *_loadingMessageView;
     FSTSND firstResponder;
 	int matrixSize;
+    int loaded;
 }
 
 @property (retain, nonatomic) NSMutableArray *myArray;
