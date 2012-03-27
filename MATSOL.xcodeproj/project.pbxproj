@@ -42,6 +42,8 @@
 		50386A3912B5D5210071A656 /* baseConverter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A3712B5D5210071A656 /* baseConverter@2x.png */; };
 		50386A4B12B5DA490071A656 /* deleteBlackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */; };
 		50386A4D12B5DA5B0071A656 /* deleteBlackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */; };
+		503EE8D9152177BF00ED5513 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 503EE8D7152177BF00ED5513 /* left.png */; };
+		503EE8DA152177BF00ED5513 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 503EE8D8152177BF00ED5513 /* right.png */; };
 		504C6FAD12BF4DCC00CC815E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */; };
 		507B26A21512F4FD000EB93F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507B26A41512F4FD000EB93F /* Localizable.strings */; };
 		507B26AE15130804000EB93F /* MATSOLLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 507B26AD15130804000EB93F /* MATSOLLogo.png */; };
@@ -141,6 +143,8 @@
 		50386A3712B5D5210071A656 /* baseConverter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baseConverter@2x.png"; sourceTree = "<group>"; };
 		50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteBlackButton@2x.png"; sourceTree = "<group>"; };
 		50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deleteBlackButton.png; sourceTree = "<group>"; };
+		503EE8D7152177BF00ED5513 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
+		503EE8D8152177BF00ED5513 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		5068F7321230978300BAFDBF /* MATSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MATSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507B26A31512F4FD000EB93F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				BE9431EF1519CBED004E9A88 /* DownIcon.png */,
+				503EE8D7152177BF00ED5513 /* left.png */,
+				503EE8D8152177BF00ED5513 /* right.png */,
 				50386A3612B5D5210071A656 /* baseConverter.png */,
 				50386A3712B5D5210071A656 /* baseConverter@2x.png */,
 				50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */,
@@ -539,6 +545,8 @@
 				BE9431F01519CBED004E9A88 /* DownIcon.png in Resources */,
 				50E4CA7B151D4EBC00B98AE5 /* line.png in Resources */,
 				50E4CA7C151D4EBC00B98AE5 /* line@2x.png in Resources */,
+				503EE8D9152177BF00ED5513 /* left.png in Resources */,
+				503EE8DA152177BF00ED5513 /* right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +688,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -710,6 +719,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -725,6 +735,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

@@ -76,46 +76,6 @@
 	layoutView.delegate=self;
 	layoutView.bouncesZoom = NO;
 	layoutView.backgroundColor = [UIColor clearColor];
-	/*
-	int i=0;
-	UIImageView *shape;
-	
-	//Add the pads to the matrix to make it fancy : P
-	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ul.png"]];
-	shape.frame=CGRectMake(5, 2, 22, 51);
-	[container addSubview:shape];
-	[shape release];
-	
-	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ll.png"]];
-	shape.frame=CGRectMake(5, ((matrixSize)*45)-35, 22, 51);
-	[container addSubview:shape];
-	[shape release];
-	
-	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ur.png"]];
-	shape.frame=CGRectMake(((matrixSize+1)*120), 2, 22, 51);
-	[container addSubview:shape];
-	[shape release];
-	
-	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lr.png"]];
-	shape.frame=CGRectMake(((matrixSize+1)*120), ((matrixSize)*45)-35, 22, 51);
-	[container addSubview:shape];
-	[shape release];
-	
-	//Add the enclosing lines in the matrix : P
-	for (i=1; i<matrixSize; i++) {
-		//Leftside enclosing lines
-		shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"m.png"]];
-		shape.frame=CGRectMake(5, (i*45)-35, 12, 66);
-		[container addSubview:shape];
-		[shape release];
-		
-		//Rightside enclosing lines
-		shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"m.png"]];
-		shape.frame=CGRectMake(((matrixSize+1)*120)+12, (i*45)-35, 12, 66);
-		[container addSubview:shape];
-		[shape release];
-	}
-     */
 	
 	//Make the call to the methods that involve threads, here's a brief explanation
 	//	1.- Calling beginTextFields: will detach a selector into another thread calling creatingTextFields:
@@ -124,13 +84,17 @@
 	//	3.- After all the UITextFields are created makingFirstResponder: will be called and this will cause
 	//		for the "loadiing" view to dissapear & for all the UITextFields to appear.
     //  [self beginTextFields];
-//	
+
+    #ifdef DEBUG
     NSLog(@"LOAD");
-    
+    #endif
 
 }
 -(void)viewDidAppear:(BOOL)animated {
+    #ifdef DEBUG   
     NSLog(@"APPEAR");
+    #endif
+    
     [self creatingTextFields:nil];
 }
 #pragma mark Initialization_ThreadManagement
@@ -161,20 +125,27 @@
 			temp.textColor=[UIColor blackColor];
 			temp.keyboardType=UIKeyboardTypeDecimalPad;
             
-            UIBarButtonItem *ubbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(nextSomething:)];
-            UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(previousSomething:)];
+			//Attributes for textfields that are not the solution column
+            UIBarButtonItem *ubbi = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"right.png"] style:UIBarButtonItemStylePlain target:self action:@selector(nextSomething:)];
+            UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"left.png"] style:UIBarButtonItemStylePlain target:self action:@selector(previousSomething:)];
             UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"DownIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard:)];
-            UIBarButtonItem *sign  = [[UIBarButtonItem alloc] initWithTitle:@"+/-" style:UIBarButtonItemStylePlain target:self action:@selector(signChange:)];
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+            UIBarButtonItem *sign  = [[UIBarButtonItem alloc] initWithTitle:@"+/-" style:UIBarButtonItemStylePlain target:self action:@selector(signChange:)];
+            UIBarButtonItem *betweenArrowsSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+            [betweenArrowsSpace setWidth:18];
+            UIBarButtonItem *betweenSignAndArrowSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+            [betweenSignAndArrowSpace setWidth:25];
+            
             UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
-            [kbtb setItems:[NSArray arrayWithObjects:space,sign,back,ubbi,lesskey,nil]];
+            [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, betweenSignAndArrowSpace,back, betweenArrowsSpace,ubbi,nil]];
             
             [ubbi release];
-            [back release];
             [lesskey release];
             [space release];
             [sign release];
+            [betweenArrowsSpace release];
+            [betweenSignAndArrowSpace release];
             
             temp.inputAccessoryView = kbtb;
             temp.keyboardAppearance = UIKeyboardAppearanceAlert;
@@ -184,20 +155,6 @@
 
 			if (height<matrixSize) {
 				temp.placeholder=[NSString stringWithFormat:@"%c%d",height+97,width+1];
-				
-		/*		UILabel *dummies=[[[UILabel alloc] initWithFrame:CGRectMake(currentX+75, currentY-5, 65, 45)] autorelease];
-                if ((matrixSize-1) == height) {
-                    [dummies setText:[NSString stringWithFormat:@"%c =",height+97]];
-                } else {
-                    [dummies setText:[NSString stringWithFormat:@"%c+",height+97]];
-                }
-				
-				[dummies setBackgroundColor:[UIColor clearColor]];
-				[dummies setTextColor:[UIColor whiteColor]];
-				[dummies setAdjustsFontSizeToFitWidth:YES];
-				[dummies setFont:[UIFont fontWithName:@"CourierNewPS-BoldMT" size:25]];
-				[dummies setTextAlignment:UITextAlignmentLeft];
-                [container addSubview:dummies];*/
 			}
 			else {
                 //Solution column
@@ -349,7 +306,7 @@
 	//BE CAREFUL!
 	//The container size should be the last thing you set.
 	//You should only add the container and the layout by the end of your code.
-	container.frame = CGRectMake(0, 0, (120*(matrixSize+1))+35,(45*matrixSize)+250);
+	container.frame = CGRectMake(0, 0, (80*(matrixSize+1))+35,(45*matrixSize)+250);
 	layoutView.contentSize = container.frame.size;
 	
 	[layoutView addSubview:container];

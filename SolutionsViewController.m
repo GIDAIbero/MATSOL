@@ -103,49 +103,6 @@
     [container addSubview:par];
     [par release];
     
-    
-	/*
-	//Add the pads to the matrix to make it fancy : P
-	//Left side corner (UPPER)
-    int i=0;
-	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ul.png"]];
-	shape.frame=CGRectMake(5, 2, 22, 51);
-	[container addSubview:shape];
-	[shape release];
-	
-	//Left side corner (LOWER)
-	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ll.png"]];
-	shape.frame=CGRectMake(5, ((size)*45)-35, 22, 51);
-	[container addSubview:shape];
-	[shape release];
-	
-	//Right side corner (UPPER)
-	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ur.png"]];
-	shape.frame=CGRectMake(((size)*70), 2, 22, 51);
-	[container addSubview:shape];
-	[shape release];
-	
-	//Right side corner (LOWER)
-	shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lr.png"]];
-	shape.frame=CGRectMake(((size)*70),((size)*45)-35, 22, 51);
-	[container addSubview:shape];
-	[shape release];
-	
-	//Add the enclosing lines in the matrix : P
-	for (i=1; i<size; i++) {
-		//Leftside enclosing lines
-		shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"m.png"]];
-		shape.frame=CGRectMake(5, (i*45)-35, 12, 66);
-		[container addSubview:shape];
-		[shape release];
-		
-		//Rightside enclosing lines
-		shape=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"m.png"]];
-		shape.frame=CGRectMake(((size+1)*70)-58, (i*45)-35, 12, 66);
-		[container addSubview:shape];
-		[shape release];
-	}
-	*/
 	//Assign as many text fields as needed.
 	for (height=0; height<size+1; height++) {
 		[labelsArray insertObject:[[[NSMutableArray alloc] init] autorelease] atIndex:height];
