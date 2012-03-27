@@ -25,11 +25,6 @@
 		50020E2711D576DA00C61974 /* MatrixSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0811D576DA00C61974 /* MatrixSheet.xib */; };
 		50020E2811D576DA00C61974 /* Solutions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0911D576DA00C61974 /* Solutions.xib */; };
 		50020E2911D576DA00C61974 /* Slave.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0A11D576DA00C61974 /* Slave.xib */; };
-		50020E2C11D576DA00C61974 /* ll.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E0F11D576DA00C61974 /* ll.png */; };
-		50020E2D11D576DA00C61974 /* ur.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1011D576DA00C61974 /* ur.png */; };
-		50020E2E11D576DA00C61974 /* ul.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1111D576DA00C61974 /* ul.png */; };
-		50020E2F11D576DA00C61974 /* m.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1211D576DA00C61974 /* m.png */; };
-		50020E3011D576DA00C61974 /* lr.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1311D576DA00C61974 /* lr.png */; };
 		50020E3611D576DA00C61974 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1B11D576DA00C61974 /* button.png */; };
 		50020E3911D576DA00C61974 /* resistorcalculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020E1E11D576DA00C61974 /* resistorcalculator.png */; };
 		50020FD511D58FBB00C61974 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50020FD411D58FBB00C61974 /* Default.png */; };
@@ -51,7 +46,6 @@
 		507B26A21512F4FD000EB93F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507B26A41512F4FD000EB93F /* Localizable.strings */; };
 		507B26AE15130804000EB93F /* MATSOLLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 507B26AD15130804000EB93F /* MATSOLLogo.png */; };
 		50B25D8C151FF764000CDBA9 /* Scroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B25D8E151FF764000CDBA9 /* Scroll.xib */; };
-		50C7EFD211D70C42001EB7C9 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7EFD111D70C42001EB7C9 /* help.png */; };
 		50C7F04511D73B53001EB7C9 /* presistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04311D73B53001EB7C9 /* presistor.png */; };
 		50C7F04611D73B53001EB7C9 /* sresistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04411D73B53001EB7C9 /* sresistor.png */; };
 		50D0082311DC42AE006A076B /* wire.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D0082211DC42AE006A076B /* wire.png */; };
@@ -127,11 +121,6 @@
 		50020E0811D576DA00C61974 /* MatrixSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatrixSheet.xib; sourceTree = "<group>"; };
 		50020E0911D576DA00C61974 /* Solutions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Solutions.xib; sourceTree = "<group>"; };
 		50020E0A11D576DA00C61974 /* Slave.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slave.xib; sourceTree = "<group>"; };
-		50020E0F11D576DA00C61974 /* ll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ll.png; sourceTree = "<group>"; };
-		50020E1011D576DA00C61974 /* ur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ur.png; sourceTree = "<group>"; };
-		50020E1111D576DA00C61974 /* ul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ul.png; sourceTree = "<group>"; };
-		50020E1211D576DA00C61974 /* m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m.png; sourceTree = "<group>"; };
-		50020E1311D576DA00C61974 /* lr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lr.png; sourceTree = "<group>"; };
 		50020E1B11D576DA00C61974 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		50020E1E11D576DA00C61974 /* resistorcalculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resistorcalculator.png; sourceTree = "<group>"; };
 		50020E1F11D576DA00C61974 /* MATSOL-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MATSOL-Info.plist"; sourceTree = "<group>"; };
@@ -159,7 +148,6 @@
 		507B26AD15130804000EB93F /* MATSOLLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MATSOLLogo.png; sourceTree = "<group>"; };
 		50B25D8D151FF764000CDBA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Scroll.xib; sourceTree = "<group>"; };
 		50B25D8F151FF76B000CDBA9 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/Scroll.xib; sourceTree = "<group>"; };
-		50C7EFD111D70C42001EB7C9 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
 		50C7F04311D73B53001EB7C9 /* presistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presistor.png; sourceTree = "<group>"; };
 		50C7F04411D73B53001EB7C9 /* sresistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sresistor.png; sourceTree = "<group>"; };
 		50D0082211DC42AE006A076B /* wire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wire.png; sourceTree = "<group>"; };
@@ -370,22 +358,9 @@
 			children = (
 				50020E1A11D576DA00C61974 /* Buttons */,
 				50020E1411D576DA00C61974 /* Backgrounds */,
-				50020E0E11D576DA00C61974 /* Matrix */,
 				50D0075111DC2455006A076B /* Other */,
 			);
 			name = Images;
-			sourceTree = "<group>";
-		};
-		50020E0E11D576DA00C61974 /* Matrix */ = {
-			isa = PBXGroup;
-			children = (
-				50020E0F11D576DA00C61974 /* ll.png */,
-				50020E1011D576DA00C61974 /* ur.png */,
-				50020E1111D576DA00C61974 /* ul.png */,
-				50020E1211D576DA00C61974 /* m.png */,
-				50020E1311D576DA00C61974 /* lr.png */,
-			);
-			name = Matrix;
 			sourceTree = "<group>";
 		};
 		50020E1411D576DA00C61974 /* Backgrounds */ = {
@@ -443,7 +418,6 @@
 				50C7F04411D73B53001EB7C9 /* sresistor.png */,
 				9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */,
 				50D0082211DC42AE006A076B /* wire.png */,
-				50C7EFD111D70C42001EB7C9 /* help.png */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -519,16 +493,10 @@
 				50020E2811D576DA00C61974 /* Solutions.xib in Resources */,
 				50020E2911D576DA00C61974 /* Slave.xib in Resources */,
 				50E4CA6F151D4AE400B98AE5 /* CreditsViewController.xib in Resources */,
-				50020E2C11D576DA00C61974 /* ll.png in Resources */,
-				50020E2D11D576DA00C61974 /* ur.png in Resources */,
-				50020E2E11D576DA00C61974 /* ul.png in Resources */,
-				50020E2F11D576DA00C61974 /* m.png in Resources */,
-				50020E3011D576DA00C61974 /* lr.png in Resources */,
 				50020E3611D576DA00C61974 /* button.png in Resources */,
 				50020E3911D576DA00C61974 /* resistorcalculator.png in Resources */,
 				50020FD511D58FBB00C61974 /* Default.png in Resources */,
 				50020FF311D598BE00C61974 /* Icon.png in Resources */,
-				50C7EFD211D70C42001EB7C9 /* help.png in Resources */,
 				50C7F04511D73B53001EB7C9 /* presistor.png in Resources */,
 				50C7F04611D73B53001EB7C9 /* sresistor.png in Resources */,
 				50D0082311DC42AE006A076B /* wire.png in Resources */,

@@ -37,7 +37,7 @@
 		UIButton *matrixSolution=[UIButton buttonWithType:UIButtonTypeCustom];
 		[matrixSolution setBackgroundColor:[UIColor clearColor]];
 		[matrixSolution setBackgroundImage:[UIImage imageNamed:@"linearequationsystem.png"] forState:UIControlStateNormal];
-		[matrixSolution setFrame:CGRectMake(20, 20, 80, 80)];
+		[matrixSolution setFrame:CGRectMake(10, 20, 80, 80)];
 		[matrixSolution addTarget:self action:@selector(beginUIViewController:)  forControlEvents:UIControlEventTouchUpInside];
 		[matrixSolution setTag:MATSOLLinearEquationButton];
 		[matrixSolution setShowsTouchWhenHighlighted:YES];
@@ -55,7 +55,7 @@
 		UIButton *resistorCalculator=[UIButton buttonWithType:UIButtonTypeCustom];
 		[resistorCalculator setBackgroundColor:[UIColor clearColor]];
 		[resistorCalculator setBackgroundImage:[UIImage imageNamed:@"resistorcalculator.png"] forState:UIControlStateNormal];
-		[resistorCalculator setFrame:CGRectMake(220, 20, 80, 80)];
+		[resistorCalculator setFrame:CGRectMake(230, 20, 80, 80)];
 		[resistorCalculator addTarget:self action:@selector(beginUIViewController:)  forControlEvents:UIControlEventTouchUpInside];
 		[resistorCalculator setTag:MATSOLResistorButton];
 		[resistorCalculator setShowsTouchWhenHighlighted:YES];
@@ -64,7 +64,7 @@
 		UIButton *decoder=[UIButton buttonWithType:UIButtonTypeCustom];
 		[decoder setBackgroundColor:[UIColor clearColor]];
 		[decoder setBackgroundImage:[UIImage imageNamed:@"decoder.png"] forState:UIControlStateNormal];
-		[decoder setFrame:CGRectMake(20, 120, 80, 80)];
+		[decoder setFrame:CGRectMake(10, 120, 80, 80)];
 		[decoder addTarget:self action:@selector(beginUIViewController:)  forControlEvents:UIControlEventTouchUpInside];
 		[decoder setTag:MATSOLDecoderButton];
 		[decoder setShowsTouchWhenHighlighted:YES];
