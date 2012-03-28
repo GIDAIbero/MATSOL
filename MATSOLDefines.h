@@ -11,7 +11,7 @@
 #define NO_DEBUG_INTERFACE
 #define NO_VERBOSE
 
-#define MATSOL_VERSION  @"1.1"
+#define MATSOL_VERSION  @"1.10"
 #define MATSOL_BUILD    @"d5546b0"
 //git log --pretty=format:'%h' -n 1
 
