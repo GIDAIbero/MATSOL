@@ -146,6 +146,8 @@
             [lesskey release];
             [space release];
             [sign release];
+            [back release];
+            
             [betweenArrowsSpace release];
             [betweenSignAndArrowSpace release];
             

@@ -148,6 +148,8 @@ int PaddingXRight(int size){
             [lesskey release];
             [space release];
             [sign release];
+            [back release];
+            
             [betweenArrowsSpace release];
             [betweenSignAndArrowSpace release];            
             temp.inputAccessoryView        = kbtb;
