@@ -35,10 +35,10 @@
 	[valueLabel setDelegate:self];
 	
 	//Init the color picker view
-	colorPickerView=[[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 216)];
-	[colorPickerView setDelegate:self];
-	[colorPickerView setShowsSelectionIndicator:YES];
-	[self.view addSubview:colorPickerView];
+	//colorPickerView=[[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 216)];
+     [colorPickerView setDelegate:self];
+     [colorPickerView setShowsSelectionIndicator:YES];
+	//[self.view addSubview:colorPickerView];
 	
 	
 	colorViewsArray=[[NSMutableArray alloc] init];

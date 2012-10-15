@@ -36,7 +36,6 @@
 	//in order to make it work 
 	[window addSubview:navigationController.view];
 	[window addSubview:homeButton];
-	
 	[window makeKeyAndVisible];
 	return YES;
 }

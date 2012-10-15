@@ -89,7 +89,9 @@
 		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
 		BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA189D81512393B00197347 /* GIDASearchAlert.m */; };
 		BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */; };
+		BEC85C1A1629C77D0024528C /* BaseConverterBackground-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */; };
 		BEDD23C61518A3EF004265C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEDD23C51518A3EF004265C2 /* QuartzCore.framework */; };
+		BEEB47C1162967F2001A3973 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEEB47C0162967F2001A3973 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -204,7 +206,9 @@
 		BEA189D81512393B00197347 /* GIDASearchAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDASearchAlert.m; sourceTree = "<group>"; };
 		BEA18BFD151A7C7300B48EB7 /* Parenthesis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parenthesis.h; sourceTree = "<group>"; };
 		BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parenthesis.m; sourceTree = "<group>"; };
+		BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BaseConverterBackground-568h@2x.png"; sourceTree = "<group>"; };
 		BEDD23C51518A3EF004265C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BEEB47C0162967F2001A3973 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +342,7 @@
 				507B26A41512F4FD000EB93F /* Localizable.strings */,
 				50020FD411D58FBB00C61974 /* Default.png */,
 				9CF125D2126F3BFF00CC1D45 /* Default@2x.png */,
+				BEEB47C0162967F2001A3973 /* Default-568h@2x.png */,
 				50020FF211D598BE00C61974 /* Icon.png */,
 				9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */,
 				504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */,
@@ -376,6 +381,7 @@
 		50020E1411D576DA00C61974 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */,
 				50315954150F0C6400AF2AFF /* BaseConverterBackground@2x.png */,
 				50315955150F0C6400AF2AFF /* BaseConverterBackground.png */,
 				50315950150F0BD200AF2AFF /* BrushedMetalBackground.png */,
@@ -559,6 +565,8 @@
 				50EFEB311522C0A500DF55F9 /* LeftIcon.png in Resources */,
 				50EFEB321522C0A500DF55F9 /* DwonIcon.png in Resources */,
 				50EFEB331522C0A500DF55F9 /* DownIcon@2x.png in Resources */,
+				BEEB47C1162967F2001A3973 /* Default-568h@2x.png in Resources */,
+				BEC85C1A1629C77D0024528C /* BaseConverterBackground-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,6 +31,7 @@ typedef enum{
 	int _pickedBase;
 }
 
+@property (retain, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (nonatomic, retain) IBOutlet UILabel *fromLabel;
 @property (nonatomic, retain) IBOutlet UILabel *toLabel;
 @property (nonatomic, retain) IBOutlet UILabel *fromIndicator;

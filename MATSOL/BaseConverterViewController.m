@@ -16,6 +16,7 @@
 @synthesize toIndicator;
 @synthesize buttonsConverter;
 @synthesize mainConverter;
+@synthesize backgroundImage;
 
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -23,6 +24,7 @@
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
         [self setTitle:NSLocalizedString(@"Base Converter", @"Base converter title")];
+        
     }
     return self;
 }
@@ -33,6 +35,17 @@
 
     [super viewDidLoad];
 	
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        if (([UIScreen mainScreen].bounds.size.height * [UIScreen mainScreen].scale) >=1136)
+        {
+            NSLog(@"iPhone 5");
+            [backgroundImage setImage:[UIImage imageNamed:@"BaseConverterBackground-568h@2x.png"]];
+        } else {
+            [backgroundImage setImage:[UIImage imageNamed:@"BaseConverterBackground.png"]];
+        }
+    }
+    
 	buttonsConverter=[[NSMutableArray alloc] init];
 	
 	//Button interface is placed trough the view
@@ -290,6 +303,7 @@
 #pragma mark Memory Management
 
 - (void)viewDidUnload {
+    [self setBackgroundImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -308,6 +322,7 @@
 	[toIndicator release];
     [_basesArray release];
     
+    [backgroundImage release];
     [super dealloc];
 }
 
