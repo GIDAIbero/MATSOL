@@ -135,6 +135,7 @@ int PaddingXRight(int size){
             UIBarButtonItem *lesskey = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"DownIcon.png"] style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard:)];
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
             UIBarButtonItem *sign  = [[UIBarButtonItem alloc] initWithTitle:@"+/-" style:UIBarButtonItemStylePlain target:self action:@selector(signChange:)];
+            UIBarButtonItem *fraction  = [[UIBarButtonItem alloc] initWithTitle:@"/" style:UIBarButtonItemStylePlain target:self action:@selector(fraction:)];
             UIBarButtonItem *betweenArrowsSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
             [betweenArrowsSpace setWidth:18];
             UIBarButtonItem *betweenSignAndArrowSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -142,7 +143,7 @@ int PaddingXRight(int size){
             
             UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
-            [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, betweenSignAndArrowSpace,back, betweenArrowsSpace,ubbi,nil]];
+            [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, fraction, betweenSignAndArrowSpace,back, betweenArrowsSpace,ubbi,nil]];
             
             [ubbi release];
             [lesskey release];
@@ -190,12 +191,59 @@ int PaddingXRight(int size){
     
 }
 
+-(void)fraction:(id)sender {
+    NSString *frac;
+    UITextField *text;
+    int i,j;
+    BOOL flag = FALSE;
+    for (i = 0;!flag && i< [myArray count]; i++) {
+        for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                
+                frac = [[[myArray objectAtIndex:i] objectAtIndex:j] text];
+                if ([frac length] != 0) {
+                    frac = [frac stringByAppendingString:@"/"];
+                }
+                text = [[myArray objectAtIndex:i] objectAtIndex:j];
+                [text setText:frac];
+            }
+        }
+    }
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-    [f setNumberStyle:NSNumberFormatterDecimalStyle];
-    NSNumber * myNumber = [f numberFromString:[textField text]];
-    [f release];
-    [textField setText:[myNumber stringValue]];
+    float resultValue = 0;
+    NSArray *fractions = [[textField text] componentsSeparatedByString:@"/"];
+    NSNumber *result = nil;
+    for (int i = 0; i < [fractions count]; i++) {
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber * myNumber = [f numberFromString:[fractions objectAtIndex:i]];
+        [f release];
+        if (i == 0) {
+            if ([myNumber floatValue]) {
+                resultValue = [myNumber floatValue];
+                result = myNumber;
+            } else {
+                result = nil;
+                i = [fractions count];
+            }
+        } else {
+            if ([myNumber floatValue]) {
+                if ([myNumber floatValue] == 0.0) {
+                    result = nil;
+                    i = [fractions count];
+                } else {
+                    resultValue = resultValue  / [myNumber floatValue];
+                    result = [NSNumber numberWithFloat:resultValue];
+                }
+            } else {
+                result = nil;
+                i = [fractions count];
+            }
+        }
+    }
+    [textField setText:[result stringValue]];
 }
 
 -(void)signChange:(id)sender {
@@ -206,12 +254,19 @@ int PaddingXRight(int size){
         for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
             if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
                 text = [[myArray objectAtIndex:i] objectAtIndex:j];
+                NSString *textString = [text text];
+                NSMutableArray *arrayFraction = [[textString componentsSeparatedByString:@"/"] mutableCopy];
+                
                 NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
                 [f setNumberStyle:NSNumberFormatterDecimalStyle];
-                NSNumber * myNumber = [f numberFromString:[text text]];
+                NSNumber * myNumber = [f numberFromString:[arrayFraction objectAtIndex:0]];
                 myNumber = [NSNumber numberWithFloat:([myNumber floatValue]*-1)];
+                [arrayFraction removeObjectAtIndex:0];
+                [arrayFraction insertObject:[myNumber stringValue] atIndex:0];
+                textString = [arrayFraction componentsJoinedByString:@"/"];
                 [f release];
-                [text setText:[myNumber stringValue]];
+                [text setText:textString];
+                [arrayFraction release];
                 flag = TRUE;
             }
         }
@@ -313,6 +368,7 @@ int PaddingXRight(int size){
 
 #pragma mark Engine
 - (void)solveMatrix{
+    [self nextSomething:nil];
 	int i=0, j=0, wasSolved=-11;
 	float **a;
 	float d=0;
@@ -409,21 +465,25 @@ int PaddingXRight(int size){
     if (range.location == 0 && string.length == 0) {
         return YES;
     }
-    
+    BOOL success = YES;
     NSMutableString *fullString = [[NSMutableString alloc] init];
-    
+    NSArray *arrayOfFractions = nil;
     [fullString appendString:[textField.text substringWithRange:NSMakeRange(0, range.location)]];
     [fullString appendString:string];
-    
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    NSNumber *replaceNumber = [formatter numberFromString:fullString];
-    
+    arrayOfFractions = [fullString componentsSeparatedByString:@"/"];
     [fullString release];
-    [formatter release];
+    for (NSString *frac in arrayOfFractions) {
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        NSNumber *replaceNumber = [formatter numberFromString:frac];
+        if (!replaceNumber) {
+            success = NO;
+        }
+        [formatter release];
+    }
     
-    return !(replaceNumber == nil);
+    //return !(replaceNumber == nil);
+    return success;
 }
-
 //Let's switch from text field to text field
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
 	//It's easier to manipulate it as a simple C string
