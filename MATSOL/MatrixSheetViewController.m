@@ -141,7 +141,7 @@
             
             UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
-            [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, fraction, betweenSignAndArrowSpace,back, betweenArrowsSpace,ubbi,nil]];
+            [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, space, fraction, space,back, betweenSignAndArrowSpace,ubbi,nil]];
             
             [ubbi release];
             [lesskey release];
@@ -260,13 +260,19 @@
     UITextField *text;
     int i,j;
     BOOL flag = FALSE;
+    
     for (i = 0;!flag && i< [myArray count]; i++) {
         for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
             if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
                 
                 frac = [[[myArray objectAtIndex:i] objectAtIndex:j] text];
                 if ([frac length] != 0) {
-                    frac = [frac stringByAppendingString:@"/"];
+                    NSRange range = [frac rangeOfString:@"/"];
+                    NSArray *aa = [frac componentsSeparatedByString:@"/"];
+                    int oo = [aa count];
+                    if (range.length < oo && [[aa lastObject] length] > 0){
+                        frac = [frac stringByAppendingString:@"/"];
+                    }
                 }
                 text = [[myArray objectAtIndex:i] objectAtIndex:j];
                 [text setText:frac];
