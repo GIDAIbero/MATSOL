@@ -20,19 +20,19 @@
 #pragma mark Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-	// Custom initialization
+        // Custom initialization
 		self.title=@"MATSOL";
-		#ifdef	DEBUG_INTERFACE
+#ifdef	DEBUG_INTERFACE
 		self.title=@"MATSOL_LES";
-		#endif
-
+#endif
+        
 		myArray=[[NSMutableArray alloc] init];
 		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
 		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		loaded = 0;
 		//This method returns a retained object
-	//	_loadingMessageView=[MatrixSheetViewController createWaitingView];	
+        //	_loadingMessageView=[MatrixSheetViewController createWaitingView];
 		
 		self.navigationItem.rightBarButtonItem=solveButton;
 	}
@@ -42,9 +42,9 @@
 	if (self = [super initWithNibName:nibNameOrNil bundle:nil]) {
         // Custom initialization
 		self.title=@"MATSOL";
-        #ifdef	DEBUG_INTERFACE
+#ifdef	DEBUG_INTERFACE
 		self.title=@"MATSOL_LES";
-        #endif
+#endif
         
         matrixSize = matrix;
 		myArray=[[NSMutableArray alloc] init];
@@ -53,7 +53,7 @@
 		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		loaded = 0;
 		//This method returns a retained object
-		_loadingMessageView=[MatrixSheetViewController createWaitingView];	
+		_loadingMessageView=[MatrixSheetViewController createWaitingView];
 		
         self.navigationItem.rightBarButtonItem=solveButton;
         //[self creatingTextFields:nil];
@@ -64,10 +64,10 @@
 
 
 - (void)viewDidLoad{
-	#ifdef DEBUG
+#ifdef DEBUG
 	NSLog(@"Creating the matrix");
-	#endif
-		
+#endif
+    
 	//As soon as the view has loaded make it visible
 	[self.view addSubview:_loadingMessageView];
 	//[_loadingMessageView release];
@@ -84,16 +84,16 @@
 	//	3.- After all the UITextFields are created makingFirstResponder: will be called and this will cause
 	//		for the "loadiing" view to dissapear & for all the UITextFields to appear.
     //  [self beginTextFields];
-
-    #ifdef DEBUG
+    
+#ifdef DEBUG
     NSLog(@"LOAD");
-    #endif
-
+#endif
+    
 }
 -(void)viewDidAppear:(BOOL)animated {
-    #ifdef DEBUG   
+#ifdef DEBUG
     NSLog(@"APPEAR");
-    #endif
+#endif
     if (loaded == 0) {
         loaded = 1;
         [self creatingTextFields:nil];
@@ -118,7 +118,7 @@
 		currentY=15;
 		NSMutableArray *ma = [NSMutableArray array];
 		for (width=0; width<matrixSize; width++) {
-
+            
 			UITextField *temp = [[[UITextField alloc] initWithFrame:CGRectMake(currentX, currentY, 65, 30)] autorelease];
 			//Attributes for textfields that are not the solution column
 			temp.borderStyle=UITextBorderStyleRoundedRect;
@@ -134,6 +134,8 @@
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
             UIBarButtonItem *sign  = [[UIBarButtonItem alloc] initWithTitle:@"+/-" style:UIBarButtonItemStylePlain target:self action:@selector(signChange:)];
             UIBarButtonItem *fraction  = [[UIBarButtonItem alloc] initWithTitle:@"/" style:UIBarButtonItemStylePlain target:self action:@selector(fraction:)];
+            UIBarButtonItem *openPar  = [[UIBarButtonItem alloc] initWithTitle:@"(" style:UIBarButtonItemStylePlain target:self action:@selector(parentheses:)];
+            UIBarButtonItem *closePar  = [[UIBarButtonItem alloc] initWithTitle:@")" style:UIBarButtonItemStylePlain target:self action:@selector(parentheses:)];
             UIBarButtonItem *betweenArrowsSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
             [betweenArrowsSpace setWidth:18];
             UIBarButtonItem *betweenSignAndArrowSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -141,7 +143,7 @@
             
             UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
-            [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, space, fraction, space,back, betweenSignAndArrowSpace,ubbi,nil]];
+            [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, space, fraction, space, openPar, space, closePar, space, back, betweenSignAndArrowSpace,ubbi,nil]];
             
             [ubbi release];
             [lesskey release];
@@ -157,7 +159,7 @@
 			temp.textAlignment      = UITextAlignmentRight;
 			temp.returnKeyType      = UIReturnKeyNext;
 			temp.delegate           = self;
-
+            
 			if (height<matrixSize) {
 				temp.placeholder=[NSString stringWithFormat:@"%c%d",height+97,width+1];
 			}
@@ -179,7 +181,7 @@
 		[myArray insertObject:ma atIndex:height];
 		//Add the offset to each column
 		currentX=currentX+80;
-	}	
+	}
     
     Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,0,currentX-80,currentY) rounded:YES];
     [container addSubview:par];
@@ -195,40 +197,177 @@
     layoutView.contentSize = container.frame.size;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    float resultValue = 0;
-    NSArray *fractions = [[textField text] componentsSeparatedByString:@"/"];
     NSNumber *result = nil;
-    for (int i = 0; i < [fractions count]; i++) {
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        NSNumber * myNumber = [f numberFromString:[fractions objectAtIndex:i]];
-        [f release];
-        if (i == 0) {
-            if ([myNumber floatValue]) {
-                resultValue = [myNumber floatValue];
-                result = myNumber;
+    NSMutableArray *parArray = nil;
+    int par = [self howManyPartenthesesInString:[textField text]];
+    if (par > 0) {
+        parArray = [[self parenthesesNumberArrayOfString:[textField text] withParentheses:open] mutableCopy];
+        for (int i = 0; i < [parArray count]; i++) {
+            if (i == 0 && [[parArray objectAtIndex:i] isEqualToString:@""]) {
+                
             } else {
-                result = nil;
-                i = [fractions count];
-            }
-        } else {
-            if ([myNumber floatValue]) {
-                if ([myNumber floatValue] == 0.0) {
-                    result = nil;
-                    i = [fractions count];
+                if ([[parArray objectAtIndex:i] isEqualToString:@""]) {
+                    [parArray setObject:@"*" atIndexedSubscript:i];
                 } else {
-                    resultValue = resultValue  / [myNumber floatValue];
-                    result = [NSNumber numberWithFloat:resultValue];
+                    result = [self solveFractionsWithString:[parArray objectAtIndex:i]];
+                    if (result) {
+                        [parArray setObject:[result stringValue] atIndexedSubscript:i];
+                    }
                 }
-            } else {
-                result = nil;
-                i = [fractions count];
             }
         }
+    } else {
+        parArray = [NSMutableArray arrayWithObject:[textField text]];
     }
+    NSLog(@"%@",[parArray componentsJoinedByString:@""]);
+    result = [self solveFractionsWithString:[parArray componentsJoinedByString:@""]];
     [textField setText:[result stringValue]];
 }
 
+-(int)howManyPartenthesesInString:(NSString *)string {
+    int par = 0;
+    for (int i = 0; i < [string length]; i++) {
+        switch ([string characterAtIndex:i]) {
+            case '(':
+                par += 2;
+                break;
+            case ')':
+                par --;
+                break;
+            default:
+                break;
+        }
+    }
+    if (par >= 0) {
+        
+    } else {
+        NSLog(@"ERROR");
+    }
+    return par;
+}
+-(NSNumber *)solveFractionsWithString:(NSString *)string {
+    float resultValue = 0;
+    NSNumber *result = nil;
+    
+    NSArray *fractions = [string componentsSeparatedByString:@"/"];
+    
+    for (int i = 0; i < [fractions count]; i++) {
+        NSArray *mult = [[fractions objectAtIndex:i] componentsSeparatedByString:@"*"];
+     //   NSLog(@"%d\n%@",[mult count], mult);
+        if ([mult count] > 1) {
+            float tot = 1;
+            for (NSString *m in mult) {
+                tot *= [m floatValue];
+            }
+            result = [NSNumber numberWithFloat:tot];
+        } else {
+            NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+            [f setNumberStyle:NSNumberFormatterDecimalStyle];
+            NSNumber * myNumber = [f numberFromString:[fractions objectAtIndex:i]];
+            [f release];
+            if (i == 0) {
+                if ([myNumber floatValue]) {
+                    resultValue = [myNumber floatValue];
+                    result = myNumber;
+                } else {
+                    result = nil;
+                    i = [fractions count];
+                }
+            } else {
+                if ([myNumber floatValue]) {
+                    if ([myNumber floatValue] == 0.0) {
+                        result = nil;
+                        i = [fractions count];
+                    } else {
+                        resultValue = resultValue  / [myNumber floatValue];
+                        result = [NSNumber numberWithFloat:resultValue];
+                    }
+                } else {
+                    result = nil;
+                    i = [fractions count];
+                }
+            }
+        }
+    }
+    return result;
+}
+-(NSArray *)parenthesesNumberArrayOfString:(NSString *)string withParentheses:(int)par {
+    NSMutableArray *nma = [NSMutableArray array];
+    BOOL addTimes = NO;
+    if (par > 0 && string) {
+        int i = 0;
+        for (i = 0; i < [string length]; i++) {
+            if ([string characterAtIndex:i] == '(') {
+                break;
+            }
+        }
+        if (i != 0) {
+            if ([string characterAtIndex:i-1] != ')' && [string characterAtIndex:i-1] != '/') {
+                addTimes = YES;
+            }
+        }
+        [nma addObject:[string substringToIndex:i]];
+        if (addTimes) {
+            [nma addObject:@""];
+        }
+        string = [string substringFromIndex:i+1];
+        int j = 0;
+        for (i = 0; i < [string length]; i++) {
+            if ([string characterAtIndex:i] == '(') {
+                j++;
+            } else {
+                if ([string characterAtIndex:i] == ')') {
+                    if (j > 0) {
+                        j--;
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+        if (par == 1){
+            [nma addObject:[string substringToIndex:i]];
+            [nma addObject:[string substringFromIndex:i+1]];
+        } else {
+            [nma addObjectsFromArray:[self parenthesesNumberArrayOfString:[string substringToIndex:i] withParentheses:[self howManyPartenthesesInString:[string substringToIndex:i]]]];
+            [nma addObjectsFromArray:[self parenthesesNumberArrayOfString:[string substringFromIndex:i+1] withParentheses:[self howManyPartenthesesInString:[string substringFromIndex:i+1]]]];
+        }
+        if ([[nma lastObject] isEqualToString:@""]) {
+            [nma removeLastObject];
+        }
+    } else {
+        [nma addObject:string];
+    }
+    
+    return nma;
+}
+-(void)parentheses:(id)sender {
+    NSString *frac;
+    UITextField *text;
+    int i,j;
+    BOOL flag = FALSE;
+    
+    for (i = 0;!flag && i< [myArray count]; i++) {
+        for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                
+                frac = [[[myArray objectAtIndex:i] objectAtIndex:j] text];
+                
+                if ([[sender title] isEqualToString:@"("]) {
+                    frac = [frac stringByAppendingString:@"("];
+                } else {
+                    if (![frac hasSuffix:@"("] && ![frac hasSuffix:@"/"]) {
+                        frac = [frac stringByAppendingString:@")"];
+                    }
+                }
+                
+                text = [[myArray objectAtIndex:i] objectAtIndex:j];
+                [text setText:frac];
+            }
+        }
+    }
+    
+}
 -(void)signChange:(id)sender {
     UITextField *text;
     int i,j;
@@ -344,14 +483,14 @@
     }
 }
 -(void)endTextFields:(id)sender{
-	//Evertime a new text field is created this method is called on the 
+	//Evertime a new text field is created this method is called on the
 	//main thread so it can add that text field to the container
 	[container addSubview:sender];
 	[sender release];
 }
 
 -(void)endLabels:(id)sender{
-	//Evertime a new text field is created this method is called on the 
+	//Evertime a new text field is created this method is called on the
 	//main thread so it can add that text field to the container
 	[container addSubview:sender];
 }
@@ -387,10 +526,10 @@
 	float assign=0.0;
 	int matrixState=0;
 	UITextField *temp;//Every textField will pass through this var
-		
+    
 	//Dynamic memory assignment
 	a=(float **)malloc(sizeof(float *)*matrixSize);
-
+    
 	for (i=0; i<matrixSize; i++) {
 		a[i]=malloc(sizeof(float)*matrixSize);
 	}
@@ -409,9 +548,9 @@
 	for (i=0; i<matrixSize+1; i++) {
 		for (j=0; j<matrixSize; j++) {
 			temp=[[myArray objectAtIndex:i] objectAtIndex:j];
-			#ifdef DEBUG
+#ifdef DEBUG
 			NSLog(@"In the position [%d][%d] the value is %f",j,i,[[temp text] floatValue]);
-			#endif
+#endif
 			
 			assign=[[temp text] floatValue];
 			//Pass it to the matrix
@@ -420,17 +559,17 @@
 			}
 			else {
 				b[j]=assign;
-			}			
+			}
 		}
 	}
 	
 	//Send it to gaussj & check if it's a valid matrix
 	matrixState=gaussj(a,matrixSize,b);
-	 
+    
 	if (matrixState==SolvedMatrix) {
         
 		//Display the results on the console
-		#ifdef DEBUG
+#ifdef DEBUG
 		for (i=0; i<matrixSize; i++) {
 			for (j=0; j<matrixSize; j++) {
 				NSLog(@"This is the output INVERSE matrix @ [%d][%d] = %.3f\n",i,j,a[i][j]);
@@ -441,7 +580,7 @@
 		for (i=0; i<matrixSize; i++) {
 			NSLog(@"This is the output SOLUTION matrix @ [%d] = %.3f\n",i,b[i]);
 		}
-		#endif
+#endif
 		
 		//Time to push the next view
 		SolutionsViewController *theSolutions=[[[SolutionsViewController alloc] initWithNibName:@"Solutions" bundle:nil] autorelease];
@@ -450,21 +589,21 @@
 		theSolutions.a=a;
         theSolutions.b=b;
         theSolutions.size=matrixSize;
-            
+        
 		//Push the viewController
 		[[self navigationController] pushViewController:theSolutions animated:YES];
 	}
 	else if(matrixState==UnsolvedMatrix){
-		#ifdef DEBUG
+#ifdef DEBUG
 		NSLog(@"No solution for this matrix.");
-		#endif
+#endif
         
-        GIDASearchAlert *matrixAlert = [[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
-                                                                      message:NSLocalizedString(@"Cannot solve this matrix, please try another one.", @"Can't solve matrix text") 
-                                                                     delegate:self 
-                                                            cancelButtonTitle:@"Ok" 
+        GIDASearchAlert *matrixAlert = [[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string")
+                                                                      message:NSLocalizedString(@"Cannot solve this matrix, please try another one.", @"Can't solve matrix text")
+                                                                     delegate:self
+                                                            cancelButtonTitle:@"Ok"
                                                             otherButtonTitles:nil];
-
+        
 		[matrixAlert show];
 		[matrixAlert release];
 	}
@@ -486,21 +625,33 @@
     BOOL success = YES;
     NSMutableString *fullString = [[NSMutableString alloc] init];
     NSArray *arrayOfFractions = nil;
-    [fullString appendString:[textField.text substringWithRange:NSMakeRange(0, range.location)]];
-    [fullString appendString:string];
-    arrayOfFractions = [fullString componentsSeparatedByString:@"/"];
-    [fullString release];
-    for (NSString *frac in arrayOfFractions) {
+    NSNumber *replaceNumber = nil;
+    if ([textField.text hasSuffix:@"/"] || [textField.text hasSuffix:@"("]) {
+        // textField.text = [textField.text stringByAppendingString:string];
+    } else {
+        [fullString appendString:[textField.text substringWithRange:NSMakeRange(0, range.location)]];
+        [fullString appendString:string];
+        arrayOfFractions = [fullString componentsSeparatedByString:@"("];
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        NSNumber *replaceNumber = [formatter numberFromString:frac];
-        if (!replaceNumber) {
-            success = NO;
+        
+        if ([arrayOfFractions lastObject]) {
+            replaceNumber = [formatter numberFromString:[arrayOfFractions lastObject]];
+            if (!replaceNumber) {
+                
+                arrayOfFractions = [fullString componentsSeparatedByString:@"/"];
+                if ([arrayOfFractions lastObject]) {
+                    replaceNumber = [formatter numberFromString:[arrayOfFractions lastObject]];
+                    if (!replaceNumber) {
+                        success = NO;
+                    }
+                }
+            }
         }
+        
         [formatter release];
+        
     }
-    
-    
-    
+    [fullString release];
     //return !(replaceNumber == nil);
     return success;
 }
@@ -512,10 +663,10 @@
 	const char *placeholder=[[textField placeholder] cStringUsingEncoding:NSASCIIStringEncoding];
 	char  temp[3];
 	int x=0, y=0;
-	#ifdef DEBUG
+#ifdef DEBUG
 	NSLog(@"The current placeholder is: [%s] & the NSSring value is: [%@]",placeholder,[textField placeholder]);
 	NSLog(@"The int values are placeholder[0]: %d placeholder[1]: %d with a length of: %d",placeholder[0],placeholder[1],strlen(placeholder));
-	#endif
+#endif
 	
 	x=placeholder[0]-97;
 	
@@ -538,8 +689,8 @@
 			y=atoi(temp)-1;
 		}
 	}
-
-	#ifdef MOVE_VERTICAL
+    
+#ifdef MOVE_VERTICAL
 	y=y+1;
 	if (y==matrixSize) {
 		y=0;
@@ -547,10 +698,10 @@
 		if (x>matrixSize) {
 			x=0;
 		}
-	}	
-	#endif
+	}
+#endif
 	
-	#ifdef MOVE_HORIZONTAL
+#ifdef MOVE_HORIZONTAL
 	x=x+1;
 	if (x>matrixSize) {
 		x=0;
@@ -558,8 +709,8 @@
 		if (y==matrixSize) {
 			y=0;
 		}
-	}	
-	#endif
+	}
+#endif
 	
 	//In this case since this is the determinant ViewController navigation can be done
 	//easily just with 2 coordinates
