@@ -136,6 +136,8 @@ int PaddingXRight(int size){
             UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
             UIBarButtonItem *sign  = [[UIBarButtonItem alloc] initWithTitle:@"+/-" style:UIBarButtonItemStylePlain target:self action:@selector(signChange:)];
             UIBarButtonItem *fraction  = [[UIBarButtonItem alloc] initWithTitle:@"/" style:UIBarButtonItemStylePlain target:self action:@selector(fraction:)];
+            UIBarButtonItem *openPar  = [[UIBarButtonItem alloc] initWithTitle:@"(" style:UIBarButtonItemStylePlain target:self action:@selector(parentheses:)];
+            UIBarButtonItem *closePar  = [[UIBarButtonItem alloc] initWithTitle:@")" style:UIBarButtonItemStylePlain target:self action:@selector(parentheses:)];
             UIBarButtonItem *betweenArrowsSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
             [betweenArrowsSpace setWidth:18];
             UIBarButtonItem *betweenSignAndArrowSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -143,13 +145,15 @@ int PaddingXRight(int size){
             
             UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)] autorelease];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
-            [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, fraction, betweenSignAndArrowSpace,back, betweenArrowsSpace,ubbi,nil]];
+            [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, space, fraction, space, openPar, space, closePar, space, back, betweenSignAndArrowSpace,ubbi,nil]];
             
             [ubbi release];
             [lesskey release];
             [space release];
             [sign release];
             [back release];
+            [openPar release];
+            [closePar release];
             
             [betweenArrowsSpace release];
             [betweenSignAndArrowSpace release];            
@@ -191,61 +195,213 @@ int PaddingXRight(int size){
     
 }
 
--(void)fraction:(id)sender {
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSNumber *result = nil;
+    NSString *solutionString = nil;
+    int par = [self howManyPartenthesesInString:[textField text]];
+    if (par > 0) {
+        NSMutableArray *parArray = [self parenthesesNumberArrayOfString:[textField text] withParentheses:par];
+        solutionString = [self solveArray:parArray];
+    } else {
+        solutionString = [textField text];
+    }
+    result = [self solveFractionsWithString:solutionString];
+    [textField setText:[result stringValue]];
+}
+
+-(NSString *)solveArray:(NSMutableArray *)parArray {
+    for (int i = 0; i < [parArray count]; i++) {
+        if ([[parArray objectAtIndex:i] isKindOfClass:[NSMutableArray class]]) {
+            NSString *toSolve = [self solveArray:[parArray objectAtIndex:i]];
+            toSolve = [[self solveFractionsWithString:toSolve] stringValue];
+            [parArray setObject:toSolve atIndexedSubscript:i];
+        } else {
+            if (i != 0 && [[parArray objectAtIndex:i] isEqualToString:@""]) {
+                [parArray setObject:@"*" atIndexedSubscript:i];
+            }
+        }
+    }
+    return [parArray componentsJoinedByString:@""];
+}
+
+-(int)howManyPartenthesesInString:(NSString *)string {
+    int par = 0;
+    int open = 0;
+    int close = 0;
+    for (int i = 0; i < [string length]; i++) {
+        switch ([string characterAtIndex:i]) {
+            case '(':
+                open ++;
+                break;
+            case ')':
+                close ++;
+                break;
+            default:
+                break;
+        }
+    }
+    if (open == close)
+        par = open;
+    else
+        par = -1;
+    return par;
+}
+-(NSNumber *)solveFractionsWithString:(NSString *)string {
+    float resultValue = 0;
+    NSNumber *result = nil;
+    NSArray *fractions = [string componentsSeparatedByString:@"/"];
+    
+    for (int i = 0; i < [fractions count]; i++) {
+        NSArray *mult = [[fractions objectAtIndex:i] componentsSeparatedByString:@"*"];
+        if ([mult count] > 1) {
+            float tot = 1;
+            for (NSString *m in mult) {
+                tot *= [m floatValue];
+            }
+            if (i == 0) {
+                resultValue = tot;
+                result = [NSNumber numberWithFloat:tot];
+            } else {
+                if (tot != 0) {
+                    resultValue = resultValue / tot;
+                    result = [NSNumber numberWithFloat:resultValue];
+                } else {
+                    result = nil;
+                    i = [fractions count];
+                }
+            }
+        } else {
+            NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+            [f setNumberStyle:NSNumberFormatterDecimalStyle];
+            NSNumber * myNumber = [f numberFromString:[fractions objectAtIndex:i]];
+            [f release];
+            if (i == 0) {
+                if ([myNumber floatValue]) {
+                    resultValue = [myNumber floatValue];
+                    result = myNumber;
+                } else {
+                    result = nil;
+                    i = [fractions count];
+                }
+            } else {
+                if ([myNumber floatValue]) {
+                    if ([myNumber floatValue] == 0.0) {
+                        result = nil;
+                        i = [fractions count];
+                    } else {
+                        resultValue = resultValue  / [myNumber floatValue];
+                        result = [NSNumber numberWithFloat:resultValue];
+                    }
+                } else {
+                    result = nil;
+                    i = [fractions count];
+                }
+            }
+        }
+    }
+    return result;
+}
+-(NSMutableArray *)parenthesesNumberArrayOfString:(NSString *)string withParentheses:(int)par {
+    NSMutableArray *nma = [NSMutableArray array];
+    BOOL addTimes = NO;
+    if (par > 0 && string) {
+        if ([string characterAtIndex:0] == '-' && [string characterAtIndex:1] == '(') {
+            //string = [@"(-1)" stringByAppendingString:[string substringFromIndex:1]];
+            string = [string substringFromIndex:1];
+            [nma addObject:@"-1"];
+            //par++;
+        }
+        int i = 0;
+        for (i = 0; i < [string length]; i++) {
+            if ([string characterAtIndex:i] == '(') {
+                break;
+            }
+        }
+        if (i != 0) {
+            if ([string characterAtIndex:i-1] != ')' && [string characterAtIndex:i-1] != '/') {
+                addTimes = YES;
+            }
+        }
+        [nma addObject:[string substringToIndex:i]];
+        if (addTimes) {
+            [nma addObject:@""];
+            addTimes = NO;
+        }
+        string = [string substringFromIndex:i+1];
+        int j = 0;
+        for (i = 0; i < [string length]; i++) {
+            if ([string characterAtIndex:i] == '(') {
+                j++;
+            } else {
+                if ([string characterAtIndex:i] == ')') {
+                    if (j > 0) {
+                        j--;
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+        if (i != 0 && i!= [string length]) {
+            if ([string characterAtIndex:i+1] != '(' && [string characterAtIndex:i+1] != '/') {
+                addTimes = YES;
+            }
+        }
+        if (par == 1){
+            [nma addObject:[[self solveFractionsWithString:[string substringToIndex:i]] stringValue]];
+            if (addTimes) {
+                [nma addObject:@""];
+            }
+            [nma addObject:[string substringFromIndex:i+1]];
+        } else {
+            [nma addObject:[self parenthesesNumberArrayOfString:[string substringToIndex:i] withParentheses:[self howManyPartenthesesInString:[string substringToIndex:i]]]];
+            if ([string length] > i+1 && [[string substringFromIndex:i+1] characterAtIndex:0] != '(' &&  [[string substringFromIndex:i+1] characterAtIndex:0] != '/') {
+                [nma addObject:@""];
+            }
+            [nma addObject:[self parenthesesNumberArrayOfString:[string substringFromIndex:i+1] withParentheses:[self howManyPartenthesesInString:[string substringFromIndex:i+1]]]];
+        }
+        if ([[nma lastObject] isKindOfClass:[NSString class]]) {
+            if ([[nma lastObject] isEqualToString:@""]) {
+                [nma removeLastObject];
+            }
+        } else {
+            if ([[[nma lastObject] lastObject] isEqualToString:@""]) {
+                [nma removeLastObject];
+            }
+        }
+    } else {
+        [nma addObject:string];
+    }
+    NSLog(@"%@",nma);
+    return nma;
+}
+-(void)parentheses:(id)sender {
     NSString *frac;
     UITextField *text;
     int i,j;
     BOOL flag = FALSE;
+    
     for (i = 0;!flag && i< [myArray count]; i++) {
         for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
             if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
                 
                 frac = [[[myArray objectAtIndex:i] objectAtIndex:j] text];
-                if ([frac length] != 0) {
-                    frac = [frac stringByAppendingString:@"/"];
+                
+                if ([[sender title] isEqualToString:@"("]) {
+                    frac = [frac stringByAppendingString:@"("];
+                } else {
+                    if (![frac hasSuffix:@"("] && ![frac hasSuffix:@"/"]) {
+                        frac = [frac stringByAppendingString:@")"];
+                    }
                 }
+                
                 text = [[myArray objectAtIndex:i] objectAtIndex:j];
                 [text setText:frac];
             }
         }
     }
+    
 }
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    float resultValue = 0;
-    NSArray *fractions = [[textField text] componentsSeparatedByString:@"/"];
-    NSNumber *result = nil;
-    for (int i = 0; i < [fractions count]; i++) {
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        NSNumber * myNumber = [f numberFromString:[fractions objectAtIndex:i]];
-        [f release];
-        if (i == 0) {
-            if ([myNumber floatValue]) {
-                resultValue = [myNumber floatValue];
-                result = myNumber;
-            } else {
-                result = nil;
-                i = [fractions count];
-            }
-        } else {
-            if ([myNumber floatValue]) {
-                if ([myNumber floatValue] == 0.0) {
-                    result = nil;
-                    i = [fractions count];
-                } else {
-                    resultValue = resultValue  / [myNumber floatValue];
-                    result = [NSNumber numberWithFloat:resultValue];
-                }
-            } else {
-                result = nil;
-                i = [fractions count];
-            }
-        }
-    }
-    [textField setText:[result stringValue]];
-}
-
 -(void)signChange:(id)sender {
     UITextField *text;
     int i,j;
@@ -253,26 +409,51 @@ int PaddingXRight(int size){
     for (i = 0;!flag && i< [myArray count]; i++) {
         for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
             if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                
                 text = [[myArray objectAtIndex:i] objectAtIndex:j];
                 NSString *textString = [text text];
-                NSMutableArray *arrayFraction = [[textString componentsSeparatedByString:@"/"] mutableCopy];
-                
-                NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-                [f setNumberStyle:NSNumberFormatterDecimalStyle];
-                NSNumber * myNumber = [f numberFromString:[arrayFraction objectAtIndex:0]];
-                myNumber = [NSNumber numberWithFloat:([myNumber floatValue]*-1)];
-                [arrayFraction removeObjectAtIndex:0];
-                [arrayFraction insertObject:[myNumber stringValue] atIndex:0];
-                textString = [arrayFraction componentsJoinedByString:@"/"];
-                [f release];
+                if ([textString length] > 0) {
+                    if ([textString characterAtIndex:0] != '-') {
+                        textString = [@"-" stringByAppendingString:textString];
+                    } else {
+                        textString = [textString substringFromIndex:1];
+                    }
+                }
                 [text setText:textString];
-                [arrayFraction release];
                 flag = TRUE;
             }
         }
     }
 }
 
+-(void)fraction:(id)sender {
+    NSString *frac;
+    UITextField *text;
+    int i,j;
+    BOOL flag = FALSE;
+    
+    for (i = 0;!flag && i< [myArray count]; i++) {
+        for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                frac = [[[myArray objectAtIndex:i] objectAtIndex:j] text];
+                int last = [frac length] - 1;
+                switch ([frac characterAtIndex:last]) {
+                    case '(':
+                        break;
+                    case '/':
+                        break;
+                    case '.':
+                        break;
+                    default:
+                        frac = [frac stringByAppendingString:@"/"];
+                        break;
+                }
+                text = [[myArray objectAtIndex:i] objectAtIndex:j];
+                [text setText:frac];
+            }
+        }
+    }
+}
 
 -(void)nextSomething:(id)sender {
     int i,j;
@@ -466,24 +647,32 @@ int PaddingXRight(int size){
         return YES;
     }
     BOOL success = YES;
-    NSMutableString *fullString = [[NSMutableString alloc] init];
-    NSArray *arrayOfFractions = nil;
-    [fullString appendString:[textField.text substringWithRange:NSMakeRange(0, range.location)]];
-    [fullString appendString:string];
-    arrayOfFractions = [fullString componentsSeparatedByString:@"/"];
-    [fullString release];
-    for (NSString *frac in arrayOfFractions) {
-        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        NSNumber *replaceNumber = [formatter numberFromString:frac];
-        if (!replaceNumber) {
-            success = NO;
+    
+    if ([string isEqualToString:@"."]) {
+        for (int i = [[textField text] length] - 1; i >= 0; i--) {
+            switch ([[textField text] characterAtIndex:i]) {
+                case '.':
+                    success = NO;
+                    i = -1;
+                    break;
+                case '(':
+                    i = -1;
+                    break;
+                case ')':
+                    i = -1;
+                    break;
+                case '/':
+                    i = -1;
+                    break;
+                default:
+                    break;
+            }
         }
-        [formatter release];
     }
     
-    //return !(replaceNumber == nil);
     return success;
 }
+
 //Let's switch from text field to text field
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
 	//It's easier to manipulate it as a simple C string
