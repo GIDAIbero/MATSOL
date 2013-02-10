@@ -342,7 +342,7 @@ int PaddingXRight(int size){
                 }
             }
         }
-        if (i != 0 && i!= [string length]) {
+        if (i != 0 && i+1!= [string length]) {
             if ([string characterAtIndex:i+1] != '(' && [string characterAtIndex:i+1] != '/') {
                 addTimes = YES;
             }
@@ -372,7 +372,6 @@ int PaddingXRight(int size){
     } else {
         [nma addObject:string];
     }
-    NSLog(@"%@",nma);
     return nma;
 }
 -(void)parentheses:(id)sender {
