@@ -25,6 +25,7 @@ int ludcmp(float **a, int n, float *d){
 			#ifdef DEBUG	
 			printf("Singular matrix in routine ludcmp");
 			#endif
+            free(vv);
 			return DeterminantErrorCantSolve;
 		}
 		vv[i]=1.0/big;
