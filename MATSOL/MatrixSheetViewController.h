@@ -12,6 +12,7 @@
 #import "MATSOLDefines.h"
 #import "GIDASearchAlert.h"
 #import "Parenthesis.h"
+#import "GIDACalculateString.h"
 
 struct FirstSecond {
     int fst;
