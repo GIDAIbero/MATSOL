@@ -11,7 +11,7 @@
 #import "MATSOLDefines.h"
 #import "GIDASearchAlert.h"
 #import "Parenthesis.h"
-
+#import "GIDACalculateString.h"
 
 typedef enum{
 	kPaddingXLeft		=	5,

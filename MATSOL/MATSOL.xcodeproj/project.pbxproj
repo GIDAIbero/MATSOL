@@ -90,6 +90,7 @@
 		BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA189D81512393B00197347 /* GIDASearchAlert.m */; };
 		BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */; };
 		BEC85C1A1629C77D0024528C /* BaseConverterBackground-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */; };
+		BEC8D1BE16CE968D00D7C442 /* GIDACalculateString.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC8D1BD16CE968D00D7C442 /* GIDACalculateString.m */; };
 		BEDD23C61518A3EF004265C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEDD23C51518A3EF004265C2 /* QuartzCore.framework */; };
 		BEEB47C1162967F2001A3973 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEEB47C0162967F2001A3973 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
@@ -207,6 +208,8 @@
 		BEA18BFD151A7C7300B48EB7 /* Parenthesis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parenthesis.h; sourceTree = "<group>"; };
 		BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parenthesis.m; sourceTree = "<group>"; };
 		BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BaseConverterBackground-568h@2x.png"; sourceTree = "<group>"; };
+		BEC8D1BC16CE968D00D7C442 /* GIDACalculateString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDACalculateString.h; sourceTree = "<group>"; };
+		BEC8D1BD16CE968D00D7C442 /* GIDACalculateString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDACalculateString.m; sourceTree = "<group>"; };
 		BEDD23C51518A3EF004265C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BEEB47C0162967F2001A3973 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -446,6 +449,8 @@
 		BEA189CF1512380700197347 /* GIDA */ = {
 			isa = PBXGroup;
 			children = (
+				BEC8D1BC16CE968D00D7C442 /* GIDACalculateString.h */,
+				BEC8D1BD16CE968D00D7C442 /* GIDACalculateString.m */,
 				BEA189D71512393B00197347 /* GIDASearchAlert.h */,
 				BEA189D81512393B00197347 /* GIDASearchAlert.m */,
 			);
@@ -596,6 +601,7 @@
 				9CB5F13F128C9351003117AD /* Conversor.m in Sources */,
 				BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */,
 				BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */,
+				BEC8D1BE16CE968D00D7C442 /* GIDACalculateString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
