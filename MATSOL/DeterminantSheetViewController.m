@@ -39,7 +39,17 @@ int PaddingXRight(int size){
 		#endif
 		
 		myArray=[[NSMutableArray alloc] init];
-		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
+        UIScreen *mainScreen = [UIScreen mainScreen];
+        CGFloat scale = ([mainScreen respondsToSelector:@selector(scale)] ? mainScreen.scale : 1.0f);
+        CGFloat pixelHeight = (CGRectGetHeight(mainScreen.bounds) * scale);
+        
+        if (scale == 2.0f && pixelHeight == 1136.0f) {
+            ip5 = YES;
+            layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 592)];
+        } else {
+            ip5 = NO;
+            layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
+        }
 		container=[[UIView alloc] initWithFrame:CGRectZero];
 		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		
@@ -122,11 +132,10 @@ int PaddingXRight(int size){
 -(void)creatingTextFields:(id)sender{
 	//A pool should always be created when using threads
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
 	int height=0, width=0;
 	for (height=0; height<matrixSize; height++) {
 		NSMutableArray *ma = [NSMutableArray array];
-		for (width=0; width<matrixSize; width++) { 
+		for (width=0; width<matrixSize; width++) {
 			UITextField *temp = [[UITextField alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)];
             
 			//Attributes for textfields that are not the solution column
@@ -186,7 +195,7 @@ int PaddingXRight(int size){
 	[self makeFirstResponder:nil];
 	//Release the pool
 
-    Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,0,((matrixSize+1)*70)-45,container.frame.size.height-235)];
+    Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,0,((matrixSize+1)*70)-45,((matrixSize+1)*45)-30)];
     [container addSubview:par];
     [container sendSubviewToBack:par];
     [par release];
@@ -200,6 +209,35 @@ int PaddingXRight(int size){
     
     result = [GIDACalculateString solveString:[textField text]];
     [textField setText:[result stringValue]];
+}
+
+-(void)moveTextField:(UITextField *)text toX:(int)x andY:(int)y {
+    CGPoint point = layoutView.contentOffset;
+    
+    if (x <= 2) {
+        point.x = 0;
+    }else {
+        if (x == [myArray count] - 1) {
+            point.x = [text frame].origin.x-220;
+        } else {
+            point.x = (x-2)*70;
+        }
+    }
+    
+    if (ip5) {
+        if  (y >= 5){
+            point.y = (y-4)*45;
+        } else {
+            point.y = 0;
+        }
+    } else {
+        
+        if  (y >= 3){
+            point.y = (y-2)*45;
+        }
+    }
+    
+    layoutView.contentOffset = point;
 }
 
 
@@ -260,7 +298,9 @@ int PaddingXRight(int size){
                     i = -1;
                     j = j+1;
                 }
-                [[[myArray objectAtIndex:i+1] objectAtIndex:j] becomeFirstResponder];
+                i++;
+                [self moveTextField:[[myArray objectAtIndex:i] objectAtIndex:j] toX:i andY:j];
+                [[[myArray objectAtIndex:i] objectAtIndex:j] becomeFirstResponder];
                 flag = TRUE;
             }
         }
@@ -285,7 +325,9 @@ int PaddingXRight(int size){
                     i = maxi;
                     j = j-1;
                 }
-                [[[myArray objectAtIndex:i-1] objectAtIndex:j] becomeFirstResponder];
+                i--;
+                [self moveTextField:[[myArray objectAtIndex:i] objectAtIndex:j] toX:i andY:j];
+                [[[myArray objectAtIndex:i] objectAtIndex:j] becomeFirstResponder];
                 flag = TRUE;
             }
         }
@@ -300,7 +342,11 @@ int PaddingXRight(int size){
             if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
                 //NSLog(@"Found first responder at %d\t%d",i,j);
                 [[[myArray objectAtIndex:i] objectAtIndex:j] resignFirstResponder];
-                layoutView.contentSize = CGSizeMake(container.frame.size.width, container.frame.size.height-240);
+                if (ip5) {
+                    layoutView.contentSize = CGSizeMake(container.frame.size.width, container.frame.size.height - 250);
+                } else {
+                    layoutView.contentSize = CGSizeMake(container.frame.size.width, container.frame.size.height - 240);
+                }
                 flag = TRUE;
             }
         }
@@ -328,7 +374,11 @@ int PaddingXRight(int size){
 	//BE CAREFUL!
 	//The container size should be the last thing you set.
 	//You should only add the container and the layout by the end of your code.
-	container.frame = CGRectMake(0, 0, (75*matrixSize)+3,(45*matrixSize)+250);
+	if (ip5) {
+        container.frame = CGRectMake(0, 0, (80*(matrixSize+1))+35,(45*matrixSize)+350);
+    } else {
+        container.frame = CGRectMake(0, 0, (80*(matrixSize+1))+35,(45*matrixSize)+250);
+    }
     NSLog(@"Container: Height %f\tWidth %f", container.frame.size.height,container.frame.size.width);
 	layoutView.contentSize = container.frame.size;
 	[layoutView addSubview:container];
@@ -428,7 +478,16 @@ int PaddingXRight(int size){
 
 #pragma mark TextFieldDelegateMethods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    layoutView.contentSize = container.frame.size;
+    int i,j;
+    BOOL flag = FALSE;
+    for (i = 0;!flag && i< [myArray count]; i++) {
+        for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                [self moveTextField:[[myArray objectAtIndex:i] objectAtIndex:j] toX:i andY:j];
+                flag = TRUE;
+            }
+        }
+    }
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{

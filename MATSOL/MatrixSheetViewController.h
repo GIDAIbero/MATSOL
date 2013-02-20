@@ -29,6 +29,7 @@ typedef struct FirstSecond FSTSND;
     FSTSND firstResponder;
 	int matrixSize;
     int loaded;
+    BOOL ip5;
 }
 
 @property (retain, nonatomic) NSMutableArray *myArray;

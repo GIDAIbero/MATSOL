@@ -27,6 +27,16 @@
 		self.title=@"MATSOL_SOLNS";
 		#endif
 		
+        UIScreen *mainScreen = [UIScreen mainScreen];
+        CGFloat scale = ([mainScreen respondsToSelector:@selector(scale)] ? mainScreen.scale : 1.0f);
+        CGFloat pixelHeight = (CGRectGetHeight(mainScreen.bounds) * scale);
+        
+        if (scale == 2.0f && pixelHeight == 1136.0f) {
+            ip5 = YES;
+        } else {
+            ip5 = NO;
+        }
+        
 		labelsArray=[[NSMutableArray alloc] init];
 		layoutView=[[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
 		container=[[UIView alloc] initWithFrame:CGRectZero];
@@ -48,7 +58,13 @@
 	
 	//UIImageView *shape;
 	//UIImageView *help=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"help.png"]];
-	UIView  *help = [[UIView alloc] initWithFrame:CGRectMake(0, 386, 320, 30)];
+    UIView  *help = nil;
+    if (ip5) {
+        help = [[UIView alloc] initWithFrame:CGRectMake(0, 474, 320, 30)];
+    } else {
+        help = [[UIView alloc] initWithFrame:CGRectMake(0, 386, 320, 30)];
+    }
+	
     UILabel *wlab = [[UILabel alloc] initWithFrame:CGRectMake(45, 0, 120, 30)];
     UILabel *rlab = [[UILabel alloc] initWithFrame:CGRectMake(205, 0, 120, 30)];
     UIView  *wcir = [[UIView alloc] initWithFrame:CGRectMake(10, 0, 25, 25)];
@@ -156,7 +172,11 @@
 	
 	container.frame=CGRectMake(0, 0, (75*(size+1))+50,(55*size)+15);
     layoutView.contentSize = container.frame.size;
-	layoutView.frame=CGRectMake(0, 0, 320, 386);
+    if (ip5) {
+        layoutView.frame=CGRectMake(0, 0, 320, 474);
+    } else {
+        layoutView.frame=CGRectMake(0, 0, 320, 386);
+    }
     
 	//Add the scrollview to the view of the viewController
     [[self view] addSubview:layoutView];
