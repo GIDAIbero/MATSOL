@@ -35,11 +35,13 @@
 
     [super viewDidLoad];
 	
+    ip5 = NO;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
     {
         if (([UIScreen mainScreen].bounds.size.height * [UIScreen mainScreen].scale) >=1136)
         {
             NSLog(@"iPhone 5");
+            ip5 = YES;
             [backgroundImage setImage:[UIImage imageNamed:@"BaseConverterBackground-568h@2x.png"]];
         } else {
             [backgroundImage setImage:[UIImage imageNamed:@"BaseConverterBackground.png"]];
@@ -50,46 +52,64 @@
 	
 	//Button interface is placed trough the view
 	//Look carefully for each state and it's properties
-	for (j=0; j<=4; j++) {
+    int max = 4;
+    int offset = 0;
+    if (ip5) {
+        max = 5;
+        offset = 15;
+    }
+	for (j=0; j<=max; j++) {
 		for(i=0;i<4;i++){
-			k = -(-i+(j*4)-13);
+            if (ip5) {
+                k = -(-i+(j*4)-17);
+            } else {
+                k = -(-i+(j*4)-13);
+            }
 			[buttonsConverter insertObject:[UIButton  buttonWithType:UIButtonTypeCustom] atIndex:(j*4)+i];
-			[[buttonsConverter objectAtIndex:i+(j*4)] setFrame:CGRectMake(i*75+12,j*55+130,70,50)];
+            [[buttonsConverter objectAtIndex:i+(j*4)] setFrame:CGRectMake(i*75+12,j*55+130+offset,70,50)];
 			[[buttonsConverter objectAtIndex:i+(j*4)] setShowsTouchWhenHighlighted:NO];
-			[[buttonsConverter objectAtIndex:i+(4*j)] setTag:k]; //tag is set for debugging issues
+			[[buttonsConverter objectAtIndex:i+(j*4)] setTag:k]; //tag is set for debugging issues
 			[[buttonsConverter objectAtIndex:i+(j*4)] addTarget:self action:@selector(typeStuff:) forControlEvents:UIControlEventTouchUpInside];
-			
-			[[buttonsConverter objectAtIndex:i+(j*4)] setTitle:[NSString stringWithFormat:@"%X",k] forState:UIControlStateNormal];
+			if (k >= 10) {
+                [[buttonsConverter objectAtIndex:i+(j*4)] setTitle:[NSString stringWithFormat:@"%c",'A'+k-10] forState:UIControlStateNormal];
+            } else {
+                [[buttonsConverter objectAtIndex:i+(j*4)] setTitle:[NSString stringWithFormat:@"%X",k] forState:UIControlStateNormal];
+            }
 			[[buttonsConverter objectAtIndex:i+(j*4)] setBackgroundImage:[UIImage imageNamed:@"blackButton.png"] forState:UIControlStateNormal];
 
 			[[buttonsConverter objectAtIndex:i+(j*4)] setBackgroundImage:[UIImage imageNamed:@"crossedBlackButton.png"] forState:UIControlStateDisabled];
 			[[buttonsConverter objectAtIndex:i+(j*4)] setTitle:@"" forState:UIControlStateDisabled];
 			[self.view addSubview:[buttonsConverter objectAtIndex:i+(j*4)]];
-			}
+        }
 	}
-	
+    i = max * 4;
+    
 	//definitions for specific buttons!
-	[[buttonsConverter objectAtIndex:16] setFrame:CGRectMake(12,350,145,50)];
-	[[buttonsConverter objectAtIndex:16] setBackgroundImage:[UIImage imageNamed:@"zeroButton.png"] forState:UIControlStateNormal];
-	[[buttonsConverter objectAtIndex:16] setTag:0];
-	[[buttonsConverter objectAtIndex:16] setTitle:@"0" forState:UIControlStateNormal ];
+    if (ip5) {
+        [[buttonsConverter objectAtIndex:i] setFrame:CGRectMake(12,405+offset,145,50)];
+    } else {
+        [[buttonsConverter objectAtIndex:i] setFrame:CGRectMake(12,350+offset,145,50)];
+    }
+	[[buttonsConverter objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:@"zeroButton.png"] forState:UIControlStateNormal];
+	[[buttonsConverter objectAtIndex:i] setTag:0];
+	[[buttonsConverter objectAtIndex:i] setTitle:@"0" forState:UIControlStateNormal ];
 	
-	[[buttonsConverter objectAtIndex:18] setTag:MBaseConverterButtonFrom];
-    [[buttonsConverter objectAtIndex:18] setTitle:NSLocalizedString(@"From", @"From string") forState:UIControlStateNormal ];
-	[[buttonsConverter objectAtIndex:18] setBackgroundImage:[UIImage imageNamed:@"brownButton.png"] forState:UIControlStateNormal];
-	[[buttonsConverter objectAtIndex:18] removeTarget:self action:@selector(typeStuff:) forControlEvents:UIControlEventTouchUpInside];
-	[[buttonsConverter objectAtIndex:18] addTarget:self action:@selector(fromOrTo:) forControlEvents:UIControlEventTouchUpInside];
+	[[buttonsConverter objectAtIndex:i+2] setTag:MBaseConverterButtonFrom];
+    [[buttonsConverter objectAtIndex:i+2] setTitle:NSLocalizedString(@"From", @"From string") forState:UIControlStateNormal ];
+	[[buttonsConverter objectAtIndex:i+2] setBackgroundImage:[UIImage imageNamed:@"brownButton.png"] forState:UIControlStateNormal];
+	[[buttonsConverter objectAtIndex:i+2] removeTarget:self action:@selector(typeStuff:) forControlEvents:UIControlEventTouchUpInside];
+	[[buttonsConverter objectAtIndex:i+2] addTarget:self action:@selector(fromOrTo:) forControlEvents:UIControlEventTouchUpInside];
 	
-	[[buttonsConverter objectAtIndex:19] setTag:MBaseConverterButtonTo];
-	[[buttonsConverter objectAtIndex:19] setTitle:NSLocalizedString(@"To", @"To string") forState:UIControlStateNormal ];
-	[[buttonsConverter objectAtIndex:19] setBackgroundImage:[UIImage imageNamed:@"brownButton.png"] forState:UIControlStateNormal];
-	[[buttonsConverter objectAtIndex:19] removeTarget:self action:@selector(typeStuff:) forControlEvents:UIControlEventTouchUpInside];
-	[[buttonsConverter objectAtIndex:19] addTarget:self action:@selector(fromOrTo:) forControlEvents:UIControlEventTouchUpInside];
+	[[buttonsConverter objectAtIndex:i+3] setTag:MBaseConverterButtonTo];
+	[[buttonsConverter objectAtIndex:i+3] setTitle:NSLocalizedString(@"To", @"To string") forState:UIControlStateNormal ];
+	[[buttonsConverter objectAtIndex:i+3] setBackgroundImage:[UIImage imageNamed:@"brownButton.png"] forState:UIControlStateNormal];
+	[[buttonsConverter objectAtIndex:i+3] removeTarget:self action:@selector(typeStuff:) forControlEvents:UIControlEventTouchUpInside];
+	[[buttonsConverter objectAtIndex:i+3] addTarget:self action:@selector(fromOrTo:) forControlEvents:UIControlEventTouchUpInside];
 	
 	[[buttonsConverter objectAtIndex:3] setTag:MBaseConverterButtonDelete];
 	[[buttonsConverter objectAtIndex:3] setTitle:@" " forState:UIControlStateNormal];
 	[[buttonsConverter objectAtIndex:3] setBackgroundImage:[UIImage imageNamed:@"deleteBlackButton.png"] forState:UIControlStateNormal];
-	[[buttonsConverter objectAtIndex:17] removeFromSuperview]; //destroying an unnecesary button
+	[[buttonsConverter objectAtIndex:i+1] removeFromSuperview]; //destroying an unnecesary button
 	
 	//Initialize the main indicators, to change from base 10 to base 2
 	mainConverter=[[Conversor alloc] init];
@@ -157,12 +177,36 @@
 	
 	//Initialize the bases array
 	if (_basesArray==nil) {
-		_basesArray=[[NSArray alloc] initWithObjects:NSLocalizedString(@"Binary (2)", @"Binary string"), NSLocalizedString(@"Ternary (3)", @"Ternary string"),
+        if (ip5) {
+            _basesArray=[[NSArray alloc] initWithObjects:
+                         NSLocalizedString(@"Binary (2)", @"Binary string"),
+                         NSLocalizedString(@"Ternary (3)", @"Ternary string"),
+                         NSLocalizedString(@"Quaternary (4)", @"Quaternary string"),
+                         NSLocalizedString(@"Quinary (5)", @"Quinary string"),
+                         NSLocalizedString(@"Senary (6)", @"Senary string"),
+                         NSLocalizedString(@"Septenary (7)", @"Septenary string"),
+                         NSLocalizedString(@"Ocatal (8)", @"Octal string"),
+                         NSLocalizedString(@"Nonary (9)", @"Nonary string"),
+                         NSLocalizedString(@"Decimal (10)", @"Decimal string"),
+                         NSLocalizedString(@"Undecimal (11)", @"Undecimal string"),
+                         NSLocalizedString(@"Duodecimal (12)", @"Duodecimal string"),
+                         NSLocalizedString(@"Tridecimal (13)", @"Tridecimal string"),
+                         NSLocalizedString(@"Tetradecimal (14)", @"Tetradecimal string"),
+                         NSLocalizedString(@"Pentadecimal (15)", @"Pentadecimal string"),
+                         NSLocalizedString(@"Hexadecimal (16)", @"Hexadecimal string"),
+                         @"Septendecimal (17)",
+                         @"Decennoctal (18)",
+                         @"Decennoval (19)",
+                         @"Vigesimal (20)",
+                         nil];
+        } else {
+            _basesArray=[[NSArray alloc] initWithObjects:NSLocalizedString(@"Binary (2)", @"Binary string"), NSLocalizedString(@"Ternary (3)", @"Ternary string"),
                      NSLocalizedString(@"Quaternary (4)", @"Quaternary string"), NSLocalizedString(@"Quinary (5)", @"Quinary string"), NSLocalizedString(@"Senary (6)", @"Senary string"), NSLocalizedString(@"Sevenary (7)", @"Sevenary string"),
                      NSLocalizedString(@"Ocatal (8)", @"Octal string"), NSLocalizedString(@"Nonary (9)", @"Nonary string"), NSLocalizedString(@"Decimal (10)", @"Decimal string"),
                      NSLocalizedString(@"Undecimal (11)", @"Undecimal string"), NSLocalizedString(@"Duodecimal (12)", @"Duodecimal string"), NSLocalizedString(@"Tridecimal (13)", @"Tridecimal string"),
                      NSLocalizedString(@"Tetradecimal (14)", @"Tetradecimal string"), NSLocalizedString(@"Pentadecimal (15)", @"Pentadecimal string"), NSLocalizedString(@"Hexadecimal (16)", @"Hexadecimal string"),nil];
-	}	
+        }
+	}
 	
 	//Init the Action sheet
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:titleString delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Select", @"Select tag button"), nil];
@@ -205,8 +249,12 @@
 -(void)lockButtons{
 	int i=0;
 	UIButton *temp;
-	
-	for (i=0; i<16; i++) {
+    int max = 16;
+	if (ip5) {
+        max = 20;
+    }
+    
+	for (i=0; i<max; i++) {
 		//Disable these buttons
 		if (i>=[mainConverter fromBase]) {
 			temp=(UIButton *)[[self view] viewWithTag:i];

@@ -29,6 +29,7 @@ typedef enum{
 	
 	int _currentActionSheet;
 	int _pickedBase;
+    BOOL ip5;
 }
 
 @property (retain, nonatomic) IBOutlet UIImageView *backgroundImage;
