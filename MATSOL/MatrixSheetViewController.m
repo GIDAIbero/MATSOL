@@ -27,7 +27,17 @@
 #endif
         
 		myArray=[[NSMutableArray alloc] init];
-		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
+        UIScreen *mainScreen = [UIScreen mainScreen];
+        CGFloat scale = ([mainScreen respondsToSelector:@selector(scale)] ? mainScreen.scale : 1.0f);
+        CGFloat pixelHeight = (CGRectGetHeight(mainScreen.bounds) * scale);
+        
+        if (scale == 2.0f && pixelHeight == 1136.0f) {
+            ip5 = YES;
+            layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 504)];
+        } else {
+            ip5 = NO;
+            layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
+        }
 		container=[[UIView alloc] initWithFrame:CGRectZero];
 		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		loaded = 0;
@@ -48,8 +58,18 @@
         
         matrixSize = matrix;
 		myArray=[[NSMutableArray alloc] init];
-		layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
-		container=[[UIView alloc] initWithFrame:CGRectZero];
+		UIScreen *mainScreen = [UIScreen mainScreen];
+        CGFloat scale = ([mainScreen respondsToSelector:@selector(scale)] ? mainScreen.scale : 1.0f);
+        CGFloat pixelHeight = (CGRectGetHeight(mainScreen.bounds) * scale);
+        
+        if (scale == 2.0f && pixelHeight == 1136.0f) {
+            ip5 = YES;
+            layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 504)];
+        } else {
+            ip5 = NO;
+            layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
+        }
+        container=[[UIView alloc] initWithFrame:CGRectZero];
 		solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
 		loaded = 0;
 		//This method returns a retained object
@@ -110,8 +130,6 @@
 	float currentX=15.0, currentY=15.0;
 	int height=0, width=0;
 	
-    
-    
 	//Assign as many text fields as needed.
 	for (height=0; height<matrixSize+1; height++) {
 		//One Column is done? then start the next one from the top
@@ -195,8 +213,21 @@
     [par release];
     [self performSelector:@selector(makeFirstResponder:)];
 }
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  //  NSLog(@"SCROLL");
+}
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    layoutView.contentSize = container.frame.size;
+    int i,j;
+    BOOL flag = FALSE;
+    for (i = 0;!flag && i< [myArray count]; i++) {
+        for (j = 0;!flag && j< [[myArray objectAtIndex:i] count]; j++) {
+            if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
+                [self moveTextField:[[myArray objectAtIndex:i] objectAtIndex:j] toX:i andY:j];
+                flag = TRUE;
+            }
+        }
+    }
+    //layoutView.contentSize = container.frame.size;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSNumber *result = nil;
@@ -246,6 +277,35 @@
     }
 }
 
+-(void)moveTextField:(UITextField *)text toX:(int)x andY:(int)y {
+    CGPoint point = layoutView.contentOffset;
+    
+    if (x <= 2) {
+        point.x = 0;
+    }else {
+        if (x == [myArray count] - 1) {
+            point.x = [text frame].origin.x-220;
+        } else {
+            point.x = (x-2)*85;
+        }
+    }
+    
+    if (ip5) {
+        if  (y >= 5){
+            point.y = (y-4)*45;
+        } else {
+            point.y = 0;
+        }
+    } else {
+       
+        if  (y >= 3){
+            point.y = (y-2)*45;
+        }
+    }
+    
+    layoutView.contentOffset = point;
+}
+
 -(void)nextSomething:(id)sender {
     int i,j;
     BOOL flag = FALSE;
@@ -262,7 +322,9 @@
                     i = -1;
                     j = j+1;
                 }
-                [[[myArray objectAtIndex:i+1] objectAtIndex:j] becomeFirstResponder];
+                i++;
+                [self moveTextField:[[myArray objectAtIndex:i] objectAtIndex:j] toX:i andY:j];
+                [[[myArray objectAtIndex:i] objectAtIndex:j] becomeFirstResponder];
                 flag = TRUE;
             }
         }
@@ -287,7 +349,10 @@
                     i = maxi;
                     j = j-1;
                 }
-                [[[myArray objectAtIndex:i-1] objectAtIndex:j] becomeFirstResponder];
+                i--;
+                
+                [self moveTextField:[[myArray objectAtIndex:i] objectAtIndex:j] toX:i andY:j];
+                [[[myArray objectAtIndex:i] objectAtIndex:j] becomeFirstResponder];
                 flag = TRUE;
             }
         }
@@ -302,7 +367,11 @@
             if ([[[myArray objectAtIndex:i] objectAtIndex:j] isFirstResponder]) {
                 //NSLog(@"Found first responder at %d\t%d",i,j);
                 [[[myArray objectAtIndex:i] objectAtIndex:j] resignFirstResponder];
-                layoutView.contentSize = CGSizeMake(container.frame.size.width, container.frame.size.height - 240);
+                if (ip5) {
+                    layoutView.contentSize = CGSizeMake(container.frame.size.width, container.frame.size.height - 328);
+                } else {
+                    layoutView.contentSize = CGSizeMake(container.frame.size.width, container.frame.size.height - 240);
+                }
                 flag = TRUE;
             }
         }
@@ -336,7 +405,11 @@
 	//BE CAREFUL!
 	//The container size should be the last thing you set.
 	//You should only add the container and the layout by the end of your code.
-	container.frame = CGRectMake(0, 0, (80*(matrixSize+1))+35,(45*matrixSize)+250);
+    if (ip5) {
+        container.frame = CGRectMake(0, 0, (80*(matrixSize+1))+35,(45*matrixSize)+338);
+    } else {
+        container.frame = CGRectMake(0, 0, (80*(matrixSize+1))+35,(45*matrixSize)+250);
+    }
 	layoutView.contentSize = container.frame.size;
 	
 	[layoutView addSubview:container];

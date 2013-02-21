@@ -45,28 +45,10 @@
 		NSString *x;
 		for(i=max; i>=0; i--)
 		{
-			switch ([[[num objectAtIndex:i] description] intValue]) {
-				case 10:
-					x = @"A";
-					break;
-				case 11:
-					x = @"B";
-					break;
-				case 12:
-					x = @"C";
-					break;
-				case 13:
-					x = @"D";
-					break;
-				case 14:
-					x = @"E";
-					break;
-				case 15:
-					x = @"F";
-					break;
-				default:
-					x = [[num objectAtIndex:i] description];
-					break;
+            if ([[[num objectAtIndex:i] description] intValue] >= 10) {
+                x = [NSString stringWithFormat:@"%c", 'A'+ [[[num objectAtIndex:i] description] intValue] - 10];
+            } else {
+                x = [[num objectAtIndex:i] description];
 			}
 			[arreglo appendString:x];
 		}

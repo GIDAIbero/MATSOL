@@ -31,6 +31,7 @@ typedef enum{
 	UIView *_loadingMessageView;
 	
 	int matrixSize;
+    BOOL ip5;
 }
 
 @property (retain, nonatomic) NSMutableArray *myArray;

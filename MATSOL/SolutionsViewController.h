@@ -19,7 +19,7 @@
 	NSMutableArray *labelsArray;
 	UIScrollView *layoutView;
 	UIView *container;
-
+    BOOL ip5;
 }
 
 @property (readwrite) float **a;
