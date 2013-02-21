@@ -96,122 +96,122 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50020DCF11D5769700C61974 /* mygaussj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mygaussj.h; sourceTree = "<group>"; };
-		50020DD011D5769700C61974 /* mygaussj.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mygaussj.c; sourceTree = "<group>"; };
-		50020DD111D5769700C61974 /* myludcmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myludcmp.h; sourceTree = "<group>"; };
-		50020DD211D5769700C61974 /* myludcmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = myludcmp.c; sourceTree = "<group>"; };
-		50020DD311D5769700C61974 /* rescalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rescalc.h; sourceTree = "<group>"; };
-		50020DD411D5769700C61974 /* rescalc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rescalc.c; sourceTree = "<group>"; };
+		50020DCF11D5769700C61974 /* mygaussj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mygaussj.h; path = Utilities/mygaussj.h; sourceTree = "<group>"; };
+		50020DD011D5769700C61974 /* mygaussj.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mygaussj.c; path = Utilities/mygaussj.c; sourceTree = "<group>"; };
+		50020DD111D5769700C61974 /* myludcmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myludcmp.h; path = Utilities/myludcmp.h; sourceTree = "<group>"; };
+		50020DD211D5769700C61974 /* myludcmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = myludcmp.c; path = Utilities/myludcmp.c; sourceTree = "<group>"; };
+		50020DD311D5769700C61974 /* rescalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rescalc.h; path = Utilities/rescalc.h; sourceTree = "<group>"; };
+		50020DD411D5769700C61974 /* rescalc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rescalc.c; path = Utilities/rescalc.c; sourceTree = "<group>"; };
 		50020DDC11D576BC00C61974 /* MATSOLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATSOLDefines.h; sourceTree = "<group>"; };
-		50020DDD11D576BC00C61974 /* MATSOLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATSOLAppDelegate.h; sourceTree = "<group>"; };
-		50020DDE11D576BC00C61974 /* MATSOLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATSOLAppDelegate.m; sourceTree = "<group>"; };
-		50020DE011D576BC00C61974 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
-		50020DE111D576BC00C61974 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
-		50020DE211D576BC00C61974 /* SelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionViewController.h; sourceTree = "<group>"; };
-		50020DE311D576BC00C61974 /* SelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionViewController.m; sourceTree = "<group>"; };
-		50020DE411D576BC00C61974 /* InputResistorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputResistorViewController.h; sourceTree = "<group>"; };
-		50020DE511D576BC00C61974 /* InputResistorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputResistorViewController.m; sourceTree = "<group>"; };
-		50020DE611D576BC00C61974 /* MatrixSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixSheetViewController.h; sourceTree = "<group>"; };
-		50020DE711D576BC00C61974 /* MatrixSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixSheetViewController.m; sourceTree = "<group>"; };
-		50020DE811D576BC00C61974 /* DeterminantSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeterminantSheetViewController.h; sourceTree = "<group>"; };
-		50020DE911D576BC00C61974 /* DeterminantSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeterminantSheetViewController.m; sourceTree = "<group>"; };
-		50020DEA11D576BC00C61974 /* SolutionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolutionsViewController.h; sourceTree = "<group>"; };
-		50020DEB11D576BC00C61974 /* SolutionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolutionsViewController.m; sourceTree = "<group>"; };
-		50020DEC11D576BC00C61974 /* OutputResistorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputResistorViewController.h; sourceTree = "<group>"; };
-		50020DED11D576BC00C61974 /* OutputResistorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputResistorViewController.m; sourceTree = "<group>"; };
-		50020DEF11D576BC00C61974 /* SlaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlaveViewController.h; sourceTree = "<group>"; };
-		50020DF011D576BC00C61974 /* SlaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlaveViewController.m; sourceTree = "<group>"; };
-		50020DF111D576BC00C61974 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
-		50020DF211D576BC00C61974 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
+		50020DDD11D576BC00C61974 /* MATSOLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MATSOLAppDelegate.h; path = Classes/MATSOLAppDelegate.h; sourceTree = "<group>"; };
+		50020DDE11D576BC00C61974 /* MATSOLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MATSOLAppDelegate.m; path = Classes/MATSOLAppDelegate.m; sourceTree = "<group>"; };
+		50020DE011D576BC00C61974 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollViewController.h; path = Classes/ScrollViewController.h; sourceTree = "<group>"; };
+		50020DE111D576BC00C61974 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollViewController.m; path = Classes/ScrollViewController.m; sourceTree = "<group>"; };
+		50020DE211D576BC00C61974 /* SelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectionViewController.h; path = Classes/SelectionViewController.h; sourceTree = "<group>"; };
+		50020DE311D576BC00C61974 /* SelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectionViewController.m; path = Classes/SelectionViewController.m; sourceTree = "<group>"; };
+		50020DE411D576BC00C61974 /* InputResistorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputResistorViewController.h; path = Classes/InputResistorViewController.h; sourceTree = "<group>"; };
+		50020DE511D576BC00C61974 /* InputResistorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputResistorViewController.m; path = Classes/InputResistorViewController.m; sourceTree = "<group>"; };
+		50020DE611D576BC00C61974 /* MatrixSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatrixSheetViewController.h; path = Classes/MatrixSheetViewController.h; sourceTree = "<group>"; };
+		50020DE711D576BC00C61974 /* MatrixSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatrixSheetViewController.m; path = Classes/MatrixSheetViewController.m; sourceTree = "<group>"; };
+		50020DE811D576BC00C61974 /* DeterminantSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeterminantSheetViewController.h; path = Classes/DeterminantSheetViewController.h; sourceTree = "<group>"; };
+		50020DE911D576BC00C61974 /* DeterminantSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeterminantSheetViewController.m; path = Classes/DeterminantSheetViewController.m; sourceTree = "<group>"; };
+		50020DEA11D576BC00C61974 /* SolutionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SolutionsViewController.h; path = Classes/SolutionsViewController.h; sourceTree = "<group>"; };
+		50020DEB11D576BC00C61974 /* SolutionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SolutionsViewController.m; path = Classes/SolutionsViewController.m; sourceTree = "<group>"; };
+		50020DEC11D576BC00C61974 /* OutputResistorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutputResistorViewController.h; path = Classes/OutputResistorViewController.h; sourceTree = "<group>"; };
+		50020DED11D576BC00C61974 /* OutputResistorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutputResistorViewController.m; path = Classes/OutputResistorViewController.m; sourceTree = "<group>"; };
+		50020DEF11D576BC00C61974 /* SlaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlaveViewController.h; path = Classes/SlaveViewController.h; sourceTree = "<group>"; };
+		50020DF011D576BC00C61974 /* SlaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlaveViewController.m; path = Classes/SlaveViewController.m; sourceTree = "<group>"; };
+		50020DF111D576BC00C61974 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsViewController.h; path = Classes/CreditsViewController.h; sourceTree = "<group>"; };
+		50020DF211D576BC00C61974 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsViewController.m; path = Classes/CreditsViewController.m; sourceTree = "<group>"; };
 		50020DFE11D576DA00C61974 /* MATSOL_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATSOL_Prefix.pch; sourceTree = "<group>"; };
 		50020DFF11D576DA00C61974 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		50020E0211D576DA00C61974 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		50020E0811D576DA00C61974 /* MatrixSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatrixSheet.xib; sourceTree = "<group>"; };
-		50020E0911D576DA00C61974 /* Solutions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Solutions.xib; sourceTree = "<group>"; };
-		50020E0A11D576DA00C61974 /* Slave.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slave.xib; sourceTree = "<group>"; };
-		50020E1B11D576DA00C61974 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
-		50020E1E11D576DA00C61974 /* resistorcalculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resistorcalculator.png; sourceTree = "<group>"; };
+		50020E0211D576DA00C61974 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = NIBs/MainWindow.xib; sourceTree = "<group>"; };
+		50020E0811D576DA00C61974 /* MatrixSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MatrixSheet.xib; path = NIBs/MatrixSheet.xib; sourceTree = "<group>"; };
+		50020E0911D576DA00C61974 /* Solutions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Solutions.xib; path = NIBs/Solutions.xib; sourceTree = "<group>"; };
+		50020E0A11D576DA00C61974 /* Slave.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Slave.xib; path = NIBs/Slave.xib; sourceTree = "<group>"; };
+		50020E1B11D576DA00C61974 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = Images/button.png; sourceTree = "<group>"; };
+		50020E1E11D576DA00C61974 /* resistorcalculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resistorcalculator.png; path = Images/resistorcalculator.png; sourceTree = "<group>"; };
 		50020E1F11D576DA00C61974 /* MATSOL-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MATSOL-Info.plist"; sourceTree = "<group>"; };
-		50020FD411D58FBB00C61974 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		50020FF211D598BE00C61974 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		50020FD411D58FBB00C61974 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
+		50020FF211D598BE00C61974 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = "<group>"; };
 		5024A3841510496300274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OutputResistor.xib; sourceTree = "<group>"; };
 		5024A3861510497000274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/OutputResistor.xib; sourceTree = "<group>"; };
 		5024A38C151049D800274046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Selection.xib; sourceTree = "<group>"; };
 		5024A38E151049E200274046 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/Selection.xib; sourceTree = "<group>"; };
-		50260BC412B4C9D700A1CF4D /* crossedBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crossedBlackButton.png; sourceTree = "<group>"; };
-		50260BC512B4C9D700A1CF4D /* crossedBlackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crossedBlackButton@2x.png"; sourceTree = "<group>"; };
-		502EFE2111E0105F007BCA03 /* signW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signW.png; sourceTree = "<group>"; };
-		50315950150F0BD200AF2AFF /* BrushedMetalBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BrushedMetalBackground.png; sourceTree = "<group>"; };
-		50315951150F0BD200AF2AFF /* BrushedMetalBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BrushedMetalBackground@2x.png"; sourceTree = "<group>"; };
-		50315954150F0C6400AF2AFF /* BaseConverterBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BaseConverterBackground@2x.png"; sourceTree = "<group>"; };
-		50315955150F0C6400AF2AFF /* BaseConverterBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaseConverterBackground.png; sourceTree = "<group>"; };
-		50386A3612B5D5210071A656 /* baseConverter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baseConverter.png; sourceTree = "<group>"; };
-		50386A3712B5D5210071A656 /* baseConverter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baseConverter@2x.png"; sourceTree = "<group>"; };
-		50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteBlackButton@2x.png"; sourceTree = "<group>"; };
-		50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deleteBlackButton.png; sourceTree = "<group>"; };
-		504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		50260BC412B4C9D700A1CF4D /* crossedBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crossedBlackButton.png; path = Images/crossedBlackButton.png; sourceTree = "<group>"; };
+		50260BC512B4C9D700A1CF4D /* crossedBlackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "crossedBlackButton@2x.png"; path = "Images/crossedBlackButton@2x.png"; sourceTree = "<group>"; };
+		502EFE2111E0105F007BCA03 /* signW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signW.png; path = Images/signW.png; sourceTree = "<group>"; };
+		50315950150F0BD200AF2AFF /* BrushedMetalBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BrushedMetalBackground.png; path = Images/BrushedMetalBackground.png; sourceTree = "<group>"; };
+		50315951150F0BD200AF2AFF /* BrushedMetalBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BrushedMetalBackground@2x.png"; path = "Images/BrushedMetalBackground@2x.png"; sourceTree = "<group>"; };
+		50315954150F0C6400AF2AFF /* BaseConverterBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BaseConverterBackground@2x.png"; path = "Images/BaseConverterBackground@2x.png"; sourceTree = "<group>"; };
+		50315955150F0C6400AF2AFF /* BaseConverterBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BaseConverterBackground.png; path = Images/BaseConverterBackground.png; sourceTree = "<group>"; };
+		50386A3612B5D5210071A656 /* baseConverter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baseConverter.png; path = Images/baseConverter.png; sourceTree = "<group>"; };
+		50386A3712B5D5210071A656 /* baseConverter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "baseConverter@2x.png"; path = "Images/baseConverter@2x.png"; sourceTree = "<group>"; };
+		50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "deleteBlackButton@2x.png"; path = "Images/deleteBlackButton@2x.png"; sourceTree = "<group>"; };
+		50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = deleteBlackButton.png; path = Images/deleteBlackButton.png; sourceTree = "<group>"; };
+		504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Images/iTunesArtwork.png; sourceTree = "<group>"; };
 		5068F7321230978300BAFDBF /* MATSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MATSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507B26A31512F4FD000EB93F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		507B26A51512F503000EB93F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		507B26AD15130804000EB93F /* MATSOLLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MATSOLLogo.png; sourceTree = "<group>"; };
+		507B26AD15130804000EB93F /* MATSOLLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MATSOLLogo.png; path = Images/MATSOLLogo.png; sourceTree = "<group>"; };
 		50B25D8D151FF764000CDBA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Scroll.xib; sourceTree = "<group>"; };
 		50B25D8F151FF76B000CDBA9 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/Scroll.xib; sourceTree = "<group>"; };
-		50C7F04311D73B53001EB7C9 /* presistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presistor.png; sourceTree = "<group>"; };
-		50C7F04411D73B53001EB7C9 /* sresistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sresistor.png; sourceTree = "<group>"; };
-		50D0082211DC42AE006A076B /* wire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wire.png; sourceTree = "<group>"; };
+		50C7F04311D73B53001EB7C9 /* presistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = presistor.png; path = Images/presistor.png; sourceTree = "<group>"; };
+		50C7F04411D73B53001EB7C9 /* sresistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sresistor.png; path = Images/sresistor.png; sourceTree = "<group>"; };
+		50D0082211DC42AE006A076B /* wire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wire.png; path = Images/wire.png; sourceTree = "<group>"; };
 		50DF4C10151050FE00F296A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BaseConverter.xib; sourceTree = "<group>"; };
 		50DF4C121510510C00F296A8 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/BaseConverter.xib; sourceTree = "<group>"; };
 		50E4CA70151D4AE400B98AE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
 		50E4CA72151D4AF600B98AE5 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
-		50E4CA79151D4EBC00B98AE5 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
-		50E4CA7A151D4EBC00B98AE5 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
+		50E4CA79151D4EBC00B98AE5 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = line.png; path = Images/line.png; sourceTree = "<group>"; };
+		50E4CA7A151D4EBC00B98AE5 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "line@2x.png"; path = "Images/line@2x.png"; sourceTree = "<group>"; };
 		50E4CA7E151D506400B98AE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InputResistor.xib; sourceTree = "<group>"; };
 		50E4CA80151D506C00B98AE5 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/InputResistor.xib; sourceTree = "<group>"; };
-		50EFEB281522C0A500DF55F9 /* RightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightIcon.png; sourceTree = "<group>"; };
-		50EFEB291522C0A500DF55F9 /* RightIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RightIcon@2x.png"; sourceTree = "<group>"; };
-		50EFEB2A1522C0A500DF55F9 /* LeftIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LeftIcon@2x.png"; sourceTree = "<group>"; };
-		50EFEB2B1522C0A500DF55F9 /* LeftIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftIcon.png; sourceTree = "<group>"; };
-		50EFEB2C1522C0A500DF55F9 /* DwonIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DwonIcon.png; sourceTree = "<group>"; };
-		50EFEB2D1522C0A500DF55F9 /* DownIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DownIcon@2x.png"; sourceTree = "<group>"; };
+		50EFEB281522C0A500DF55F9 /* RightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RightIcon.png; path = Images/RightIcon.png; sourceTree = "<group>"; };
+		50EFEB291522C0A500DF55F9 /* RightIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RightIcon@2x.png"; path = "Images/RightIcon@2x.png"; sourceTree = "<group>"; };
+		50EFEB2A1522C0A500DF55F9 /* LeftIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LeftIcon@2x.png"; path = "Images/LeftIcon@2x.png"; sourceTree = "<group>"; };
+		50EFEB2B1522C0A500DF55F9 /* LeftIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LeftIcon.png; path = Images/LeftIcon.png; sourceTree = "<group>"; };
+		50EFEB2C1522C0A500DF55F9 /* DwonIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DwonIcon.png; path = Images/DwonIcon.png; sourceTree = "<group>"; };
+		50EFEB2D1522C0A500DF55F9 /* DownIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DownIcon@2x.png"; path = "Images/DownIcon@2x.png"; sourceTree = "<group>"; };
 		9C1CF817125E9F020060A1B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C1CF81B125E9F120060A1B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9C1CF81F125E9F1E0060A1B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9C1CF854125EA1E50060A1B2 /* DecoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecoderViewController.h; sourceTree = "<group>"; };
-		9C1CF855125EA1E50060A1B2 /* DecoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecoderViewController.m; sourceTree = "<group>"; };
-		9C1CF856125EA1E50060A1B2 /* Decoder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Decoder.xib; sourceTree = "<group>"; };
-		9C1CF876125EA6A30060A1B2 /* decoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decoder.png; sourceTree = "<group>"; };
-		9C442010126D1E9D00A2B27A /* determinant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = determinant.png; sourceTree = "<group>"; };
-		9C7D4E061277B5CC000EBAC0 /* BaseConverterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseConverterViewController.h; sourceTree = "<group>"; };
-		9C7D4E071277B5CC000EBAC0 /* BaseConverterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseConverterViewController.m; sourceTree = "<group>"; };
-		9C8135FF126D1B5300F68B8F /* linearequationsystem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linearequationsystem.png; sourceTree = "<group>"; };
-		9C8FD2031279DF9E00A389B6 /* blackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackButton@2x.png"; sourceTree = "<group>"; };
-		9C8FD2041279DF9E00A389B6 /* blackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButton.png; sourceTree = "<group>"; };
-		9C8FD21C1279E1DF00A389B6 /* zeroButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zeroButton@2x.png"; sourceTree = "<group>"; };
-		9C8FD21D1279E1DF00A389B6 /* zeroButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zeroButton.png; sourceTree = "<group>"; };
-		9C8FD2241279E38300A389B6 /* brownButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brownButton.png; sourceTree = "<group>"; };
-		9C8FD2251279E38300A389B6 /* brownButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brownButton@2x.png"; sourceTree = "<group>"; };
-		9CB5F13D128C9351003117AD /* Conversor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversor.h; sourceTree = "<group>"; };
-		9CB5F13E128C9351003117AD /* Conversor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversor.m; sourceTree = "<group>"; };
-		9CE55519126624EA00D09A21 /* Resistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Resistor.png; sourceTree = "<group>"; };
-		9CF125CE126F3BFF00CC1D45 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
-		9CF125D0126F3BFF00CC1D45 /* resistorcalculator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resistorcalculator@2x.png"; sourceTree = "<group>"; };
-		9CF125D1126F3BFF00CC1D45 /* decoder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decoder@2x.png"; sourceTree = "<group>"; };
-		9CF125D2126F3BFF00CC1D45 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		9CF125D3126F3BFF00CC1D45 /* determinant@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "determinant@2x.png"; sourceTree = "<group>"; };
-		9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		9CF125D7126F3BFF00CC1D45 /* linearequationsystem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linearequationsystem@2x.png"; sourceTree = "<group>"; };
-		9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presistor@2x.png"; sourceTree = "<group>"; };
-		9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resistor@2x.png"; sourceTree = "<group>"; };
-		9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sresistor@2x.png"; sourceTree = "<group>"; };
-		BEA189D71512393B00197347 /* GIDASearchAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDASearchAlert.h; sourceTree = "<group>"; };
-		BEA189D81512393B00197347 /* GIDASearchAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDASearchAlert.m; sourceTree = "<group>"; };
-		BEA18BFD151A7C7300B48EB7 /* Parenthesis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parenthesis.h; sourceTree = "<group>"; };
-		BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parenthesis.m; sourceTree = "<group>"; };
-		BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BaseConverterBackground-568h@2x.png"; sourceTree = "<group>"; };
-		BEC8D1BC16CE968D00D7C442 /* GIDACalculateString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDACalculateString.h; sourceTree = "<group>"; };
-		BEC8D1BD16CE968D00D7C442 /* GIDACalculateString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDACalculateString.m; sourceTree = "<group>"; };
+		9C1CF854125EA1E50060A1B2 /* DecoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DecoderViewController.h; path = Classes/DecoderViewController.h; sourceTree = "<group>"; };
+		9C1CF855125EA1E50060A1B2 /* DecoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DecoderViewController.m; path = Classes/DecoderViewController.m; sourceTree = "<group>"; };
+		9C1CF856125EA1E50060A1B2 /* Decoder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Decoder.xib; path = NIBs/Decoder.xib; sourceTree = "<group>"; };
+		9C1CF876125EA6A30060A1B2 /* decoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = decoder.png; path = Images/decoder.png; sourceTree = "<group>"; };
+		9C442010126D1E9D00A2B27A /* determinant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = determinant.png; path = Images/determinant.png; sourceTree = "<group>"; };
+		9C7D4E061277B5CC000EBAC0 /* BaseConverterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseConverterViewController.h; path = Classes/BaseConverterViewController.h; sourceTree = "<group>"; };
+		9C7D4E071277B5CC000EBAC0 /* BaseConverterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseConverterViewController.m; path = Classes/BaseConverterViewController.m; sourceTree = "<group>"; };
+		9C8135FF126D1B5300F68B8F /* linearequationsystem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linearequationsystem.png; path = Images/linearequationsystem.png; sourceTree = "<group>"; };
+		9C8FD2031279DF9E00A389B6 /* blackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blackButton@2x.png"; path = "Images/blackButton@2x.png"; sourceTree = "<group>"; };
+		9C8FD2041279DF9E00A389B6 /* blackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackButton.png; path = Images/blackButton.png; sourceTree = "<group>"; };
+		9C8FD21C1279E1DF00A389B6 /* zeroButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zeroButton@2x.png"; path = "Images/zeroButton@2x.png"; sourceTree = "<group>"; };
+		9C8FD21D1279E1DF00A389B6 /* zeroButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zeroButton.png; path = Images/zeroButton.png; sourceTree = "<group>"; };
+		9C8FD2241279E38300A389B6 /* brownButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brownButton.png; path = Images/brownButton.png; sourceTree = "<group>"; };
+		9C8FD2251279E38300A389B6 /* brownButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brownButton@2x.png"; path = "Images/brownButton@2x.png"; sourceTree = "<group>"; };
+		9CB5F13D128C9351003117AD /* Conversor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Conversor.h; path = Utilities/Conversor.h; sourceTree = "<group>"; };
+		9CB5F13E128C9351003117AD /* Conversor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Conversor.m; path = Utilities/Conversor.m; sourceTree = "<group>"; };
+		9CE55519126624EA00D09A21 /* Resistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Resistor.png; path = Images/Resistor.png; sourceTree = "<group>"; };
+		9CF125CE126F3BFF00CC1D45 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button@2x.png"; path = "Images/button@2x.png"; sourceTree = "<group>"; };
+		9CF125D0126F3BFF00CC1D45 /* resistorcalculator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "resistorcalculator@2x.png"; path = "Images/resistorcalculator@2x.png"; sourceTree = "<group>"; };
+		9CF125D1126F3BFF00CC1D45 /* decoder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "decoder@2x.png"; path = "Images/decoder@2x.png"; sourceTree = "<group>"; };
+		9CF125D2126F3BFF00CC1D45 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Images/Default@2x.png"; sourceTree = "<group>"; };
+		9CF125D3126F3BFF00CC1D45 /* determinant@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "determinant@2x.png"; path = "Images/determinant@2x.png"; sourceTree = "<group>"; };
+		9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icon@2x.png"; sourceTree = "<group>"; };
+		9CF125D7126F3BFF00CC1D45 /* linearequationsystem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "linearequationsystem@2x.png"; path = "Images/linearequationsystem@2x.png"; sourceTree = "<group>"; };
+		9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "presistor@2x.png"; path = "Images/presistor@2x.png"; sourceTree = "<group>"; };
+		9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Resistor@2x.png"; path = "Images/Resistor@2x.png"; sourceTree = "<group>"; };
+		9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sresistor@2x.png"; path = "Images/sresistor@2x.png"; sourceTree = "<group>"; };
+		BEA189D71512393B00197347 /* GIDASearchAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDASearchAlert.h; path = GIDAUtilities/GIDASearchAlert.h; sourceTree = "<group>"; };
+		BEA189D81512393B00197347 /* GIDASearchAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDASearchAlert.m; path = GIDAUtilities/GIDASearchAlert.m; sourceTree = "<group>"; };
+		BEA18BFD151A7C7300B48EB7 /* Parenthesis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Parenthesis.h; path = Classes/Parenthesis.h; sourceTree = "<group>"; };
+		BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Parenthesis.m; path = Classes/Parenthesis.m; sourceTree = "<group>"; };
+		BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BaseConverterBackground-568h@2x.png"; path = "Images/BaseConverterBackground-568h@2x.png"; sourceTree = "<group>"; };
+		BEC8D1BC16CE968D00D7C442 /* GIDACalculateString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDACalculateString.h; path = GIDAUtilities/GIDACalculateString.h; sourceTree = "<group>"; };
+		BEC8D1BD16CE968D00D7C442 /* GIDACalculateString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDACalculateString.m; path = GIDAUtilities/GIDACalculateString.m; sourceTree = "<group>"; };
 		BEDD23C51518A3EF004265C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		BEEB47C0162967F2001A3973 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BEEB47C0162967F2001A3973 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Images/Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,12 +343,6 @@
 				50020E0111D576DA00C61974 /* NIBs */,
 				50020E1F11D576DA00C61974 /* MATSOL-Info.plist */,
 				507B26A41512F4FD000EB93F /* Localizable.strings */,
-				50020FD411D58FBB00C61974 /* Default.png */,
-				9CF125D2126F3BFF00CC1D45 /* Default@2x.png */,
-				BEEB47C0162967F2001A3973 /* Default-568h@2x.png */,
-				50020FF211D598BE00C61974 /* Icon.png */,
-				9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */,
-				504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -374,6 +368,12 @@
 		50020E0C11D576DA00C61974 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				50020FD411D58FBB00C61974 /* Default.png */,
+				9CF125D2126F3BFF00CC1D45 /* Default@2x.png */,
+				BEEB47C0162967F2001A3973 /* Default-568h@2x.png */,
+				50020FF211D598BE00C61974 /* Icon.png */,
+				9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */,
+				504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */,
 				50020E1A11D576DA00C61974 /* Buttons */,
 				50020E1411D576DA00C61974 /* Backgrounds */,
 				50D0075111DC2455006A076B /* Other */,
@@ -615,6 +615,7 @@
 				5024A3861510497000274046 /* es */,
 			);
 			name = OutputResistor.xib;
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		5024A38D151049D800274046 /* Selection.xib */ = {
@@ -624,6 +625,7 @@
 				5024A38E151049E200274046 /* es */,
 			);
 			name = Selection.xib;
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		507B26A41512F4FD000EB93F /* Localizable.strings */ = {
@@ -633,6 +635,7 @@
 				507B26A51512F503000EB93F /* es */,
 			);
 			name = Localizable.strings;
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		50B25D8E151FF764000CDBA9 /* Scroll.xib */ = {
@@ -642,6 +645,7 @@
 				50B25D8F151FF76B000CDBA9 /* es */,
 			);
 			name = Scroll.xib;
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		50DF4C11151050FE00F296A8 /* BaseConverter.xib */ = {
@@ -651,6 +655,7 @@
 				50DF4C121510510C00F296A8 /* es */,
 			);
 			name = BaseConverter.xib;
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		50E4CA71151D4AE400B98AE5 /* CreditsViewController.xib */ = {
@@ -660,6 +665,7 @@
 				50E4CA72151D4AF600B98AE5 /* es */,
 			);
 			name = CreditsViewController.xib;
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		50E4CA7F151D506400B98AE5 /* InputResistor.xib */ = {
@@ -669,6 +675,7 @@
 				50E4CA80151D506C00B98AE5 /* es */,
 			);
 			name = InputResistor.xib;
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
