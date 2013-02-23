@@ -11,8 +11,8 @@
 #define NO_DEBUG_INTERFACE
 #define NO_VERBOSE
 
-#define MATSOL_VERSION  @"1.10"
-#define MATSOL_BUILD    @"d5546b0"
+#define MATSOL_VERSION  @"1.11"
+#define MATSOL_BUILD    @"2369c44"
 //git log --pretty=format:'%h' -n 1
 
 //Number of pages in the scroll view controller, when just a single
