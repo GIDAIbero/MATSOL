@@ -64,7 +64,7 @@
 					</object>
 					<object class="IBUIScrollView" id="586944119">
 						<reference key="NSNextResponder" ref="232523296"/>
-						<int key="NSvFlags">268</int>
+						<int key="NSvFlags">292</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUILabel" id="701341473">
