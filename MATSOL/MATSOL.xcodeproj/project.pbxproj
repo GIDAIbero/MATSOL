@@ -467,6 +467,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				507B072716E0734F003F17E1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -576,6 +577,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		507B072716E0734F003F17E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Retrieve the current SHA of the repository and write it to the plist file\n# Author: Yoshiki Vazquez Baeza\n\n# PROJECT_DIR points to the location of the .xcodeproj file; given\n# the current structure of the project it has to bethis way\nPROJECT_DIR=\"${PROJECT_DIR}/../.git\"\nPLIST_PATH=\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Info\"\n\n# first seven chars of the git SHA\nGIT_SHA=$(git --git-dir \"${PROJECT_DIR}\" rev-parse --short HEAD)\n\n# current status\nGIT_STATUS=$(git --git-dir \"${PROJECT_DIR}\" diff --shortstat | wc -l)\n\n# current branch\nGIT_BRANCH=$(git --git-dir \"${PROJECT_DIR}\" rev-parse --abbrev-ref HEAD)\n\n# debug in case something goes wrong\necho \"The current git SHA is ${GIT_SHA}\"\necho \"The repository has unstaged changes: ${GIT_STATUS}\"\necho \"The current working branch is ${GIT_BRANCH}\"\n\n# write the info into the plist file\ndefaults write ${PLIST_PATH} GitSHA ${GIT_SHA}\n\n# write a 1 to represent unstaged changes and 0 to represent a clean repo\ndefaults write ${PLIST_PATH} GitStatus ${GIT_STATUS}\n\n# write the current branch\ndefaults write ${PLIST_PATH} GitBranch ${GIT_BRANCH}";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
