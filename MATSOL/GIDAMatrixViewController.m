@@ -83,6 +83,8 @@
     [_matrixPlaceHolder release];
     [_matrix removeAllObjects];
     [_matrix release];
+    [_scroll release];
+    [_table release];
     [super dealloc];
 }
 - (void)viewDidLoad
