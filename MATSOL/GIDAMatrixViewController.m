@@ -14,10 +14,10 @@
     GIDASolver solver;
     BOOL ip5;
 }
-@property (strong) NSMutableArray *matrixPlaceHolder;
-@property (strong) NSMutableArray *matrix;
-@property (strong) UITableView *table;
-@property (strong) UIScrollView *scroll;
+@property (retain, nonatomic) NSMutableArray *matrixPlaceHolder;
+@property (retain, nonatomic) NSMutableArray *matrix;
+@property (retain, nonatomic) UITableView *table;
+@property (retain, nonatomic) UIScrollView *scroll;
 
 - (void)createArray;
 @end
