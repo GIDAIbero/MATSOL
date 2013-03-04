@@ -104,7 +104,7 @@
                 [gsaExtra show];
                 [gsaExtra release];
             } else {
-                MatrixSheetViewController *viewController = [[[MatrixSheetViewController alloc] initWithNibName:@"MatrixSheet" matrixSize:matrixSize] autorelease];
+                GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDALinearEquations];
                 [self performSelector:@selector(endUIViewController:) withObject:viewController];
             }
         } else { 
@@ -113,8 +113,7 @@
                 [gsaExtra show];
                 [gsaExtra release];
             } else {
-                DeterminantSheetViewController *viewController = [[[DeterminantSheetViewController alloc] initWithNibName:@"MatrixSheet" bundle:nil] autorelease];
-                viewController.matrixSize = matrixSize;
+                GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDADeterminant];
                 [self performSelector:@selector(endUIViewController:) withObject:viewController];
             }
 

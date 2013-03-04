@@ -12,10 +12,7 @@
 		50020DD711D5769700C61974 /* rescalc.c in Sources */ = {isa = PBXBuildFile; fileRef = 50020DD411D5769700C61974 /* rescalc.c */; };
 		50020DF311D576BC00C61974 /* MATSOLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DDE11D576BC00C61974 /* MATSOLAppDelegate.m */; };
 		50020DF411D576BC00C61974 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DE111D576BC00C61974 /* ScrollViewController.m */; };
-		50020DF511D576BC00C61974 /* SelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DE311D576BC00C61974 /* SelectionViewController.m */; };
 		50020DF611D576BC00C61974 /* InputResistorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DE511D576BC00C61974 /* InputResistorViewController.m */; };
-		50020DF711D576BC00C61974 /* MatrixSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DE711D576BC00C61974 /* MatrixSheetViewController.m */; };
-		50020DF811D576BC00C61974 /* DeterminantSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DE911D576BC00C61974 /* DeterminantSheetViewController.m */; };
 		50020DF911D576BC00C61974 /* SolutionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DEB11D576BC00C61974 /* SolutionsViewController.m */; };
 		50020DFA11D576BC00C61974 /* OutputResistorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DED11D576BC00C61974 /* OutputResistorViewController.m */; };
 		50020DFB11D576BC00C61974 /* SlaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50020DF011D576BC00C61974 /* SlaveViewController.m */; };
@@ -87,6 +84,8 @@
 		9CF125E8126F3BFF00CC1D45 /* presistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */; };
 		9CF125E9126F3BFF00CC1D45 /* Resistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */; };
 		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
+		BE743A7B16E526E200C00ACF /* GIDAMatrixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */; };
+		BE743A7E16E526F600C00ACF /* GIDAMatrixCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */; };
 		BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA189D81512393B00197347 /* GIDASearchAlert.m */; };
 		BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */; };
 		BEC85C1A1629C77D0024528C /* BaseConverterBackground-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */; };
@@ -107,14 +106,8 @@
 		50020DDE11D576BC00C61974 /* MATSOLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MATSOLAppDelegate.m; path = Classes/MATSOLAppDelegate.m; sourceTree = "<group>"; };
 		50020DE011D576BC00C61974 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollViewController.h; path = Classes/ScrollViewController.h; sourceTree = "<group>"; };
 		50020DE111D576BC00C61974 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollViewController.m; path = Classes/ScrollViewController.m; sourceTree = "<group>"; };
-		50020DE211D576BC00C61974 /* SelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectionViewController.h; path = Classes/SelectionViewController.h; sourceTree = "<group>"; };
-		50020DE311D576BC00C61974 /* SelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectionViewController.m; path = Classes/SelectionViewController.m; sourceTree = "<group>"; };
 		50020DE411D576BC00C61974 /* InputResistorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputResistorViewController.h; path = Classes/InputResistorViewController.h; sourceTree = "<group>"; };
 		50020DE511D576BC00C61974 /* InputResistorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputResistorViewController.m; path = Classes/InputResistorViewController.m; sourceTree = "<group>"; };
-		50020DE611D576BC00C61974 /* MatrixSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatrixSheetViewController.h; path = Classes/MatrixSheetViewController.h; sourceTree = "<group>"; };
-		50020DE711D576BC00C61974 /* MatrixSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatrixSheetViewController.m; path = Classes/MatrixSheetViewController.m; sourceTree = "<group>"; };
-		50020DE811D576BC00C61974 /* DeterminantSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeterminantSheetViewController.h; path = Classes/DeterminantSheetViewController.h; sourceTree = "<group>"; };
-		50020DE911D576BC00C61974 /* DeterminantSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeterminantSheetViewController.m; path = Classes/DeterminantSheetViewController.m; sourceTree = "<group>"; };
 		50020DEA11D576BC00C61974 /* SolutionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SolutionsViewController.h; path = Classes/SolutionsViewController.h; sourceTree = "<group>"; };
 		50020DEB11D576BC00C61974 /* SolutionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SolutionsViewController.m; path = Classes/SolutionsViewController.m; sourceTree = "<group>"; };
 		50020DEC11D576BC00C61974 /* OutputResistorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutputResistorViewController.h; path = Classes/OutputResistorViewController.h; sourceTree = "<group>"; };
@@ -203,6 +196,10 @@
 		9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "presistor@2x.png"; path = "Images/presistor@2x.png"; sourceTree = "<group>"; };
 		9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Resistor@2x.png"; path = "Images/Resistor@2x.png"; sourceTree = "<group>"; };
 		9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sresistor@2x.png"; path = "Images/sresistor@2x.png"; sourceTree = "<group>"; };
+		BE743A7916E526E200C00ACF /* GIDAMatrixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDAMatrixViewController.h; sourceTree = "<group>"; };
+		BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDAMatrixViewController.m; sourceTree = "<group>"; };
+		BE743A7C16E526F600C00ACF /* GIDAMatrixCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDAMatrixCell.h; sourceTree = "<group>"; };
+		BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDAMatrixCell.m; sourceTree = "<group>"; };
 		BEA189D71512393B00197347 /* GIDASearchAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDASearchAlert.h; path = GIDAUtilities/GIDASearchAlert.h; sourceTree = "<group>"; };
 		BEA189D81512393B00197347 /* GIDASearchAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDASearchAlert.m; path = GIDAUtilities/GIDASearchAlert.m; sourceTree = "<group>"; };
 		BEA18BFD151A7C7300B48EB7 /* Parenthesis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Parenthesis.h; path = Classes/Parenthesis.h; sourceTree = "<group>"; };
@@ -292,18 +289,16 @@
 		50020DDF11D576BC00C61974 /* MainViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE743A7C16E526F600C00ACF /* GIDAMatrixCell.h */,
+				BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */,
+				BE743A7916E526E200C00ACF /* GIDAMatrixViewController.h */,
+				BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */,
 				50020DE011D576BC00C61974 /* ScrollViewController.h */,
 				50020DE111D576BC00C61974 /* ScrollViewController.m */,
-				50020DE211D576BC00C61974 /* SelectionViewController.h */,
-				50020DE311D576BC00C61974 /* SelectionViewController.m */,
 				9C7D4E061277B5CC000EBAC0 /* BaseConverterViewController.h */,
 				9C7D4E071277B5CC000EBAC0 /* BaseConverterViewController.m */,
 				50020DE411D576BC00C61974 /* InputResistorViewController.h */,
 				50020DE511D576BC00C61974 /* InputResistorViewController.m */,
-				50020DE611D576BC00C61974 /* MatrixSheetViewController.h */,
-				50020DE711D576BC00C61974 /* MatrixSheetViewController.m */,
-				50020DE811D576BC00C61974 /* DeterminantSheetViewController.h */,
-				50020DE911D576BC00C61974 /* DeterminantSheetViewController.m */,
 				50020DEA11D576BC00C61974 /* SolutionsViewController.h */,
 				50020DEB11D576BC00C61974 /* SolutionsViewController.m */,
 				50020DEC11D576BC00C61974 /* OutputResistorViewController.h */,
@@ -587,10 +582,7 @@
 				50020DD711D5769700C61974 /* rescalc.c in Sources */,
 				50020DF311D576BC00C61974 /* MATSOLAppDelegate.m in Sources */,
 				50020DF411D576BC00C61974 /* ScrollViewController.m in Sources */,
-				50020DF511D576BC00C61974 /* SelectionViewController.m in Sources */,
 				50020DF611D576BC00C61974 /* InputResistorViewController.m in Sources */,
-				50020DF711D576BC00C61974 /* MatrixSheetViewController.m in Sources */,
-				50020DF811D576BC00C61974 /* DeterminantSheetViewController.m in Sources */,
 				50020DF911D576BC00C61974 /* SolutionsViewController.m in Sources */,
 				50020DFA11D576BC00C61974 /* OutputResistorViewController.m in Sources */,
 				50020DFB11D576BC00C61974 /* SlaveViewController.m in Sources */,
@@ -602,6 +594,8 @@
 				BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */,
 				BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */,
 				BEC8D1BE16CE968D00D7C442 /* GIDACalculateString.m in Sources */,
+				BE743A7B16E526E200C00ACF /* GIDAMatrixViewController.m in Sources */,
+				BE743A7E16E526F600C00ACF /* GIDAMatrixCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
