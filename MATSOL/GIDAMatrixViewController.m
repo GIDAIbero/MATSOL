@@ -110,7 +110,7 @@
     
     _scroll = [[UIScrollView alloc] init];
     [_scroll setPagingEnabled:YES];
-    [_scroll setBackgroundColor:[UIColor grayColor]];
+    [_scroll setBackgroundColor:[UIColor clearColor]];
     [_scroll setFrame:CGRectMake(0, 0, 320, height)];
     [_scroll setContentSize:CGSizeMake(width + 65, height)];
     _table = [[UITableView alloc] init];
@@ -121,6 +121,7 @@
     [_table setBackgroundColor:[UIColor clearColor]];
     [_scroll addSubview:_table];
     
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BrushedMetalBackground.png"]]];
     if (solver == GIDALinearEquations) {
         width = width - 70;
         Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:YES];
