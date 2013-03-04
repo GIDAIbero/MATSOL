@@ -157,7 +157,7 @@
         tag = matrixSize + (row+1)*100;
     }
     [_table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-    [_scroll setContentOffset:CGPointMake((tag - (row+1)*100)*50, 0)];
+    [_scroll setContentOffset:CGPointMake((tag - (row+1)*100)*60, 0)];
     [[[(GIDAMatrixCell *)[_table cellForRowAtIndexPath:indexPath] contentView] viewWithTag:tag] becomeFirstResponder];
 }
 
@@ -177,7 +177,7 @@
     }
     
     [_table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-    [_scroll setContentOffset:CGPointMake((tag - (row+1)*100)*50, 0)];
+    [_scroll setContentOffset:CGPointMake((tag - (row+1)*100)*60, 0)];
     [[[(GIDAMatrixCell *)[_table cellForRowAtIndexPath:indexPath] contentView] viewWithTag:tag] becomeFirstResponder];
 }
 
