@@ -8,66 +8,88 @@
 
 #import "GIDAMatrixViewController.h"
 
+//Private variables
 @interface GIDAMatrixViewController () {
+    //Matrix size. Max size is 26x26 (26x27 in case of Linear equations, due to the solution column)
     NSInteger matrixSize;
+    
+    //The tag of the textfield in use, useful to dismiss the keyboard
     NSInteger textFieldTag;
+    
+    //Matrix solver type
     GIDASolver solver;
+    
+    //Variable used for >=iPhone 5 Layout
     BOOL ip5;
 }
+
+//Matrix of place holder for the UITextFields (a1, a2, ..., b1, b2, ..., s.a, s.b, ...). Never changes
 @property (retain, nonatomic) NSMutableArray *matrixPlaceHolder;
+//Matrix values, user input values to process. Changes when user makes a change to the matrix
 @property (retain, nonatomic) NSMutableArray *matrix;
+//The UITableView to display all the UITextField rows. Also to scroll vertically.
 @property (retain, nonatomic) UITableView *table;
+//The UIScrollView to scroll horizontally
 @property (retain, nonatomic) UIScrollView *scroll;
 
-- (void)createArray;
+//Method to initialize the arrays (_matrixPlaceHolder, _matrix)
+- (void)initializeArrays;
 @end
 
 @implementation GIDAMatrixViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (id)initWithMatrixSize:(NSInteger)size andSolver:(GIDASolver)gidasolver {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
+        
+        //Set the type of Matrix Solver the user wants to use
         solver = gidasolver;
+        
+        //Set the size of the matrix the user wants
         matrixSize = size;
+        
+        //Define if using a 4in or a 3.5in iPhone
         UIScreen *mainScreen = [UIScreen mainScreen];
         CGFloat scale = ([mainScreen respondsToSelector:@selector(scale)] ? mainScreen.scale : 1.0f);
         CGFloat pixelHeight = (CGRectGetHeight(mainScreen.bounds) * scale);
         
         if (scale == 2.0f && pixelHeight == 1136.0f) {
             ip5 = YES;
-          //  layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 504)];
         } else {
             ip5 = NO;
-          //  layoutView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
         }
+        
+        //Put the 'solve' button on the navigation bar and make its action 'solveMatrix'
 		UIBarButtonItem *solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
-	
-			
 		self.navigationItem.rightBarButtonItem=solveButton;
-        [self createArray];
+        
+        [self initializeArrays];
     }
     return self;
 }
 
-- (void)createArray {
+
+//Initialize the arrays with their basic values.
+//Empty string for _matrix
+//a1, a2, ..., b1, b2, ... for the _matrixPlaceHolder
+- (void)initializeArrays {
+    //Allocate the arrays with the matrix size as capacity
     _matrixPlaceHolder = [[NSMutableArray alloc] initWithCapacity:matrixSize];
     _matrix = [[NSMutableArray alloc] initWithCapacity:matrixSize];
+    
+    //Variable to determine the width of the matrix.
+    //If the user wants linear equations then it should have 1 more column for the solutions
     NSInteger jMax = matrixSize;
     if (solver == GIDALinearEquations) {
         jMax = matrixSize+1;
     }
+    
+    //Go through each row and put a new array with max capacity of jMax
     for (int i = 0; i < matrixSize; i++) {
         [_matrix insertObject:[[[NSMutableArray alloc] initWithCapacity:jMax] autorelease] atIndex:i];
         [_matrixPlaceHolder insertObject:[[[NSMutableArray alloc] initWithCapacity:jMax] autorelease] atIndex:i];
+        
+        //Place the initial value of the array.
         for (int j = 0; j < jMax; j++) {
             [[_matrix objectAtIndex:i] setObject:@"" atIndex:j];
             if (j < matrixSize)
@@ -328,32 +350,36 @@
     
     return matrixSize;
 }
+
 -(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *kCellID = @"GIDABookCell";
+    static NSString *kCellID = @"GIDAMatrixCell";
     
-    //Ask for the book at the begining then just reference this pointer
+    //Ask for the cell at the begining then just reference this pointer
     GIDAMatrixCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellID];
     
     //There's not a cell in the queue of reusable cells, create one
     if (cell == nil){
 		cell = [[[GIDAMatrixCell alloc] initWithRowFields:[_matrixPlaceHolder objectAtIndex:indexPath.row] reuseIdentifier:kCellID andDelegate:self andRowTag:indexPath.row+1 andMatrixSize:matrixSize] autorelease];
 	} else {
+        //If there is a cell we can use, we must update the place holders.
         [cell setPlaceholders:[_matrixPlaceHolder objectAtIndex:indexPath.row] andRowTag:indexPath.row+1];
-//
     }
+    
+    //Always update the matrix values as we don't know if the reused cell has any previous values
     [cell setMatrixRow:[_matrix objectAtIndex:indexPath.row] andRowTag:indexPath.row+1];
+    
+    //Do not let the user select the cell
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    //  [[cell textLabel] setText:[[_matrix objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
-    // NSLog(@"%@",[[_matrix objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]);
     return cell;
 }
 
 
 #pragma mark Engine
+//When `solve` button is clicked choose the appropiate matrix solver to use.
 - (void)solveMatrix{
     switch (solver) {
         case GIDALinearEquations:
@@ -366,12 +392,13 @@
             break;
     }
 }
+
 -(void)solveDeterminant {[self nextSomething:nil];
 	int i=0, j=0, wasSolved=-11;
 	float **a;
 	float d=0;
 	float assign=0.0;
-	NSString *temp;//Every textField will pass through this var
+	NSString *temp; //Every value will pass through this var
     GIDASearchAlert *determinantValue = nil;
 	
 	//Dynamic memory assignment
