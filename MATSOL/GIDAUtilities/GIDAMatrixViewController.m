@@ -230,16 +230,22 @@
 }
 
 - (void)scrollToPosition {
-    NSInteger tag = textFieldTag;
-    NSInteger row = ((int)(textFieldTag/100));
-    NSInteger pos = (tag - (row)*100);
-    if(pos == 0){
-        [_scroll setContentOffset:CGPointMake(0, 0)];
-    } else {
-        if (pos == matrixSize || pos == matrixSize - 1) {
-            [_scroll setContentOffset:CGPointMake((pos-2)*70 + 15, 0)];
+    NSInteger max = matrixSize;
+    if (solver == GIDALinearEquations) {
+        max += 2;
+    }
+    if (max > 4) {
+        NSInteger tag = textFieldTag;
+        NSInteger row = ((int)(textFieldTag/100));
+        NSInteger pos = (tag - (row)*100);
+        if(pos == 0){
+            [_scroll setContentOffset:CGPointMake(0, 0)];
         } else {
-            [_scroll setContentOffset:CGPointMake((pos-1)*70 + 15, 0)];
+            if (pos == matrixSize || pos == matrixSize - 1) {
+                [_scroll setContentOffset:CGPointMake((pos-2)*70 + 15, 0)];
+            } else {
+                [_scroll setContentOffset:CGPointMake((pos-1)*70 + 15, 0)];
+            }
         }
     }
 }
@@ -277,8 +283,11 @@
     NSInteger tag = textFieldTag+1;
     NSInteger row = ((int)(tag/100))-1;
     NSInteger dif = tag - ((row+1)*100);
-    
-    if (dif > matrixSize) {
+    NSInteger max = matrixSize;
+    if (solver == GIDADeterminant) {
+        max --;
+    }
+    if (dif > max) {
         row ++;
         if (row >= matrixSize) {
             row = 0;
