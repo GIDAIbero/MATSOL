@@ -21,6 +21,7 @@
     
     //Variable used for >=iPhone 5 Layout
     BOOL ip5;
+    BOOL flag;
 }
 
 //Matrix of place holder for the UITextFields (a1, a2, ..., b1, b2, ..., s.a, s.b, ...). Never changes
@@ -48,7 +49,7 @@
             
             //Set the type of Matrix Solver the user wants to use
             solver = gidasolver;
-            
+            flag = YES;
             //Set the size of the matrix the user wants
             matrixSize = size;
             
@@ -128,10 +129,10 @@
     [super dealloc];
 }
 
+//View has appeared, load the table and scroll, when they are added remove the waiting view
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"1");
     [self addViews];
-    BOOL flag = YES;
+    
     while (flag) {
         for (id view in [self.view subviews]) {
             if ([view isKindOfClass:[UIScrollView class]]) {
@@ -141,6 +142,8 @@
         }
     }
 }
+
+//Load the background and waiting view
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -227,7 +230,6 @@
 }
 
 - (void)scrollToPosition {
-    NSLog(@"%d",textFieldTag);
     NSInteger tag = textFieldTag;
     NSInteger row = ((int)(textFieldTag/100));
     NSInteger pos = (tag - (row)*100);
@@ -260,7 +262,6 @@
     }
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-    NSLog(@"%d\t%@",tag,indexPath);
     [_table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     
     double delayInSeconds = 0.3;
@@ -424,7 +425,13 @@
     }
 }
 
--(void)solveDeterminant {[self nextSomething:nil];
+-(void)solveDeterminant {
+    NSInteger tag = textFieldTag;
+    NSInteger row = ((int)(tag/100))-1;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    
+    [(UITextField *)[(GIDAMatrixCell *)[_table cellForRowAtIndexPath:indexPath] viewWithTag:tag] resignFirstResponder];
+    
 	int i=0, j=0, wasSolved=-11;
 	float **a;
 	float d=0;
@@ -493,8 +500,13 @@
 }
 
 - (void)solveLinear {
-    [self nextSomething:nil];
-	int i=0, j=0;
+    NSInteger tag = textFieldTag;
+    NSInteger row = ((int)(tag/100))-1;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    
+    [(UITextField *)[(GIDAMatrixCell *)[_table cellForRowAtIndexPath:indexPath] viewWithTag:tag] resignFirstResponder];
+    
+    int i=0, j=0;
 	float **a;
 	float *b;
 	float assign=0.0;

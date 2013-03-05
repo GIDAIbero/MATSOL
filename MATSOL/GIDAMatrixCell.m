@@ -102,7 +102,6 @@
     }
 }
 
-
 -(void)setPlaceholders:(NSArray *)array andRowTag:(NSInteger)rowTag {
     for (id view in [[self contentView] subviews]) {
         if ([view isKindOfClass:[UITextField class]]) {
@@ -114,7 +113,7 @@
 }
 
 - (void)dismissKeyboardWithTag:(NSInteger)tag {
-    NSLog(@"%d",tag);
+
     [[[self contentView] viewWithTag:tag] resignFirstResponder];
     
  //   [((UIBarButtonItem *)sender).target resignFirstResponder];
@@ -127,7 +126,6 @@
     }
 }
 - (void)makeNextFirstResponder {
-    NSLog(@"%d",tfTag);
     tfTag ++;
     [[[self contentView] viewWithTag:tfTag] becomeFirstResponder];
 }
