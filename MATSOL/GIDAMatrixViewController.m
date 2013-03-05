@@ -39,33 +39,37 @@
 @implementation GIDAMatrixViewController
 
 - (id)initWithMatrixSize:(NSInteger)size andSolver:(GIDASolver)gidasolver {
-    self = [super initWithNibName:nil bundle:nil];
-    if (self) {
-        
-        //Set the type of Matrix Solver the user wants to use
-        solver = gidasolver;
-        
-        //Set the size of the matrix the user wants
-        matrixSize = size;
-        
-        //Define if using a 4in or a 3.5in iPhone
-        UIScreen *mainScreen = [UIScreen mainScreen];
-        CGFloat scale = ([mainScreen respondsToSelector:@selector(scale)] ? mainScreen.scale : 1.0f);
-        CGFloat pixelHeight = (CGRectGetHeight(mainScreen.bounds) * scale);
-        
-        if (scale == 2.0f && pixelHeight == 1136.0f) {
-            ip5 = YES;
-        } else {
-            ip5 = NO;
+    if (gidasolver == GIDADeterminant || gidasolver == GIDALinearEquations) {
+        self = [super initWithNibName:nil bundle:nil];
+        if (self) {
+            
+            //Set the type of Matrix Solver the user wants to use
+            solver = gidasolver;
+            
+            //Set the size of the matrix the user wants
+            matrixSize = size;
+            
+            //Define if using a 4in or a 3.5in iPhone
+            UIScreen *mainScreen = [UIScreen mainScreen];
+            CGFloat scale = ([mainScreen respondsToSelector:@selector(scale)] ? mainScreen.scale : 1.0f);
+            CGFloat pixelHeight = (CGRectGetHeight(mainScreen.bounds) * scale);
+            
+            if (scale == 2.0f && pixelHeight == 1136.0f) {
+                ip5 = YES;
+            } else {
+                ip5 = NO;
+            }
+            
+            //Put the 'solve' button on the navigation bar and make its action 'solveMatrix'
+            UIBarButtonItem *solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
+            self.navigationItem.rightBarButtonItem=solveButton;
+            
+            [self initializeArrays];
         }
-        
-        //Put the 'solve' button on the navigation bar and make its action 'solveMatrix'
-		UIBarButtonItem *solveButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Solve", @"Solve string") style:UIBarButtonItemStylePlain target:self action:@selector(solveMatrix)];
-		self.navigationItem.rightBarButtonItem=solveButton;
-        
-        [self initializeArrays];
+        return self;
+    } else {
+        return nil;
     }
-    return self;
 }
 
 
@@ -172,7 +176,7 @@
         } else {
             width = width*(matrixSize);
         }
-
+        
         [_scroll setFrame:CGRectMake(0, 0, 320, height)];
         [_scroll setContentSize:CGSizeMake(width + 65, height)];
         [_table setFrame:CGRectMake(15, 0, width + 45, height)];
