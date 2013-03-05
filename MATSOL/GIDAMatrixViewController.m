@@ -100,43 +100,36 @@
     }
 }
 
+
+//Release all objects
 - (void)dealloc {
     [_matrixPlaceHolder removeAllObjects];
     [_matrixPlaceHolder release];
     [_matrix removeAllObjects];
     [_matrix release];
+    
+    for (id view in [_scroll subviews]) {
+        if ([view isKindOfClass:[Parenthesis class]]) {
+            [view removeFromSuperview];
+            [view release];
+        }
+    }
+    
     [_scroll release];
     [_table release];
+    
     [super dealloc];
 }
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-     NSInteger height = (matrixSize * 45);
-    if (height >= 416) {
-        height = 416;
-        if (ip5) {
-            height += 88;
-        }
-
-    }
-   
-    NSInteger width = 70;
-    
-    if (solver == GIDALinearEquations){
-        width = width*(matrixSize+1);
-    } else {
-        width = width*(matrixSize);
-    }
     
     _scroll = [[UIScrollView alloc] init];
     [_scroll setPagingEnabled:YES];
     [_scroll setBackgroundColor:[UIColor clearColor]];
-    [_scroll setFrame:CGRectMake(0, 0, 320, height)];
-    [_scroll setContentSize:CGSizeMake(width + 65, height)];
     _table = [[UITableView alloc] init];
-    [_table setFrame:CGRectMake(15, 0, width + 45, height)];
     [_table setDataSource:self];
     [_table setDelegate:self];
     [_table setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -144,31 +137,76 @@
     [_scroll addSubview:_table];
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BrushedMetalBackground.png"]]];
-    if (solver == GIDALinearEquations) {
-        width = width - 70;
-        Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:YES];
-        [_scroll addSubview:par];
-        [_scroll sendSubviewToBack:par];
-        [par release];
-        par = [[Parenthesis alloc] initWithFrame:CGRectMake(width+28.5, -5, 110, height+10) rounded:YES color:[UIColor redColor]];
-        [_scroll addSubview:par];
-        [_scroll sendSubviewToBack:par];
-        [par release];
-    } else {
-        Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:NO];
-        [_scroll addSubview:par];
-        [_scroll sendSubviewToBack:par];
-        [par release];
-    }
+    
+    [self setViewsDimensionsFullScreen:YES];
+    
     [self.view addSubview:_scroll];
     
 }
+
+- (void)setViewsDimensionsFullScreen:(BOOL)fullScreen {
+    NSInteger height = (matrixSize * 45);
+    if (fullScreen) {
+        if (ip5) {
+            if (height >= 504)
+                height = 504;
+        } else {
+            if (height >= 416) {
+                height = 416;
+            }
+        }
+    } else {
+        if (ip5) {
+            if (height >= 258)
+                height = 258;
+        } else {
+            if (height >= 170) {
+                height = 170;
+            }
+        }
+    }
+    if (_scroll.frame.size.height != height) {
+        NSInteger width = 70;
+        if (solver == GIDALinearEquations){
+            width = width*(matrixSize+1);
+        } else {
+            width = width*(matrixSize);
+        }
+
+        [_scroll setFrame:CGRectMake(0, 0, 320, height)];
+        [_scroll setContentSize:CGSizeMake(width + 65, height)];
+        [_table setFrame:CGRectMake(15, 0, width + 45, height)];
+        
+        for (id view in [_scroll subviews]) {
+            if ([view isKindOfClass:[Parenthesis class]]) {
+                [view removeFromSuperview];
+            }
+        }
+        
+        if (solver == GIDALinearEquations) {
+            width = width - 70;
+            Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:YES];
+            [_scroll addSubview:par];
+            [_scroll sendSubviewToBack:par];
+            [par release];
+            par = [[Parenthesis alloc] initWithFrame:CGRectMake(width+28.5, -5, 110, height+10) rounded:YES color:[UIColor redColor]];
+            [_scroll addSubview:par];
+            [_scroll sendSubviewToBack:par];
+            [par release];
+        } else {
+            Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:NO];
+            [_scroll addSubview:par];
+            [_scroll sendSubviewToBack:par];
+            [par release];
+        }
+    }
+}
+
 - (void)previousSomething:(id)sender {
     NSInteger tag = textFieldTag-1;
     NSInteger row = ((int)(textFieldTag/100))-1;
     NSInteger dif = tag - ((row+1)*100);
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-   // NSIndexPath *indexPath = [NSIndexPath indexPathForItem:row inSection:0];
     if (dif < 0) {
         if (row == 0) {
             row = matrixSize-1;
@@ -188,7 +226,6 @@
     NSInteger row = ((int)(tag/100))-1;
     NSInteger dif = tag - ((row+1)*100);
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-  //  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:row inSection:0];
     if (dif > matrixSize) {
         row ++;
         if (row >= matrixSize) {
@@ -211,7 +248,6 @@
         NSInteger tag = textFieldTag;
         NSInteger row = ((int)(tag/100))-1;
         [[_matrix objectAtIndex:row] setObject:[result stringValue] atIndex:(tag - (row+1)*100)];
-  //      NSLog(@"%@",_matrix);
     }
 }
 
@@ -246,46 +282,15 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    textFieldTag = [textField tag];
-    NSInteger height = (matrixSize * 45);
-    if (height >= 170) {
-        height = 170;
-        if (ip5) {
-            height += 88;
-        }
-        
-    }
-       NSInteger width = 70;
-    if (solver == GIDALinearEquations){
-        width = width*(matrixSize+1);
-    } else {
-        width = width*(matrixSize);
-    }
     
-    [_scroll setFrame:CGRectMake(0, 0, 320, height)];
-    [_scroll setContentSize:CGSizeMake(width + 65, height)];
-    [_table setFrame:CGRectMake(15, 0, width + 45, height)];
-    for (id view in [_scroll subviews]) {
-        if ([view isKindOfClass:[Parenthesis class]]) {
-            [view removeFromSuperview];
-        }
-    }
-    if (solver == GIDALinearEquations) {
-        width = width - 70;
-        Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:YES];
-        [_scroll addSubview:par];
-        [_scroll sendSubviewToBack:par];
-        [par release];
-        par = [[Parenthesis alloc] initWithFrame:CGRectMake(width+28.5, -5, 110, height+10) rounded:YES color:[UIColor redColor]];
-        [_scroll addSubview:par];
-        [_scroll sendSubviewToBack:par];
-        [par release];
-    } else {
-        Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:NO];
-        [_scroll addSubview:par];
-        [_scroll sendSubviewToBack:par];
-        [par release];
-    }
+    [self setViewsDimensionsFullScreen:NO];
+    textFieldTag = [textField tag];
+    NSInteger tag = textFieldTag;
+    NSInteger row = ((int)(tag/100))-1;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    
+    [_table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    [self setViewsDimensionsFullScreen:NO];
 }
 - (void)dismissKeyboard:(id)sender {
     NSInteger tag = textFieldTag;
@@ -293,52 +298,21 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
     //NSIndexPath *indexPath = [NSIndexPath indexPathForItem:row inSection:0];
     [(GIDAMatrixCell *)[_table cellForRowAtIndexPath:indexPath] dismissKeyboardWithTag:textFieldTag];
-    NSInteger height = (matrixSize * 45);
-    if (height >= 416) {
-        height = 416;
-        if (ip5) {
-            height += 88;
-        }
-        
-    }
-    NSInteger width = 70;
-    if (solver == GIDALinearEquations){
-        width = width*(matrixSize+1);
-    } else {
-        width = width*(matrixSize);
-    }
-    
-    [_scroll setFrame:CGRectMake(0, 0, 320, height)];
-    [_scroll setContentSize:CGSizeMake(width + 65, height)];
-    [_table setFrame:CGRectMake(15, 0, width + 45, height)];
-    for (id view in [_scroll subviews]) {
-        if ([view isKindOfClass:[Parenthesis class]]) {
-            [view removeFromSuperview];
-        }
-    }
-    if (solver == GIDALinearEquations) {
-        width = width - 70;
-        Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:YES];
-        [_scroll addSubview:par];
-        [_scroll sendSubviewToBack:par];
-        [par release];
-        par = [[Parenthesis alloc] initWithFrame:CGRectMake(width+28.5, -5, 110, height+10) rounded:YES color:[UIColor redColor]];
-    [_scroll addSubview:par];
-    [_scroll sendSubviewToBack:par];
-    [par release];
-    } else {
-        Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:NO];
-        [_scroll addSubview:par];
-        [_scroll sendSubviewToBack:par];
-        [par release];
-    }
+    [self setViewsDimensionsFullScreen:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    for (id view in [_scroll subviews]) {
+        if ([view isKindOfClass:[Parenthesis class]]) {
+            [view removeFromSuperview];
+            [view release];
+        }
+    }
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 45.0;
 }
