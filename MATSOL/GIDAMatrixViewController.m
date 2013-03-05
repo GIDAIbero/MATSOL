@@ -31,9 +31,11 @@
 @property (retain, nonatomic) UITableView *table;
 //The UIScrollView to scroll horizontally
 @property (retain, nonatomic) UIScrollView *scroll;
+@property (retain, nonatomic) UIView *waitingView;
 
 //Method to initialize the arrays (_matrixPlaceHolder, _matrix)
 - (void)initializeArrays;
++ (UIView *)createWaitingView ;
 @end
 
 @implementation GIDAMatrixViewController
@@ -42,6 +44,7 @@
     if (gidasolver == GIDADeterminant || gidasolver == GIDALinearEquations) {
         self = [super initWithNibName:nil bundle:nil];
         if (self) {
+            self.title=@"MATSOL";
             
             //Set the type of Matrix Solver the user wants to use
             solver = gidasolver;
@@ -125,12 +128,30 @@
     [super dealloc];
 }
 
-
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"1");
+    [self addViews];
+    BOOL flag = YES;
+    while (flag) {
+        for (id view in [self.view subviews]) {
+            if ([view isKindOfClass:[UIScrollView class]]) {
+                [_waitingView removeFromSuperview];
+                flag = NO;
+            }
+        }
+    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BrushedMetalBackground.png"]]];
+    _waitingView = [GIDAMatrixViewController createWaitingView];
+    [self.view addSubview:_waitingView];
+    
+}
+
+- (void)addViews {
     
     _scroll = [[UIScrollView alloc] init];
     [_scroll setPagingEnabled:YES];
@@ -146,9 +167,7 @@
     [self setViewsDimensionsFullScreen:YES];
     
     [self.view addSubview:_scroll];
-    
 }
-
 - (void)setViewsDimensionsFullScreen:(BOOL)fullScreen {
     NSInteger height = (matrixSize * 45);
     if (fullScreen) {
@@ -226,7 +245,7 @@
     NSInteger tag = textFieldTag-1;
     NSInteger row = ((int)(textFieldTag/100))-1;
     NSInteger dif = tag - ((row+1)*100);
-   
+    
     if (dif < 0) {
         if (row == 0) {
             row = matrixSize-1;
@@ -234,13 +253,13 @@
         } else {
             row--;
         }
-              tag = matrixSize + (row+1)*100;
+        tag = matrixSize + (row+1)*100;
         if (solver == GIDADeterminant) {
             tag--;
         }
     }
     
-     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
     NSLog(@"%d\t%@",tag,indexPath);
     [_table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     
@@ -268,14 +287,14 @@
     }
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
     [_table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-
+    
     double delayInSeconds = 0.3;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [[[(GIDAMatrixCell *)[_table cellForRowAtIndexPath:indexPath] contentView] viewWithTag:tag] becomeFirstResponder];
         [self scrollToPosition];
     });
-
+    
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -411,7 +430,7 @@
 	float d=0;
 	float assign=0.0;
 	NSString *temp; //Every value will pass through this var
-    GIDASearchAlert *determinantValue = nil;
+    GIDAAlertView *determinantValue = nil;
 	
 	//Dynamic memory assignment
 	a=(float **)malloc(sizeof(float *)*matrixSize);
@@ -447,10 +466,10 @@
 	wasSolved=ludcmp(a, matrixSize, &d);
 	
 	if (wasSolved==DeterminantErrorCantSolve) {
-        determinantValue = [[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string")
-                                                          message:NSLocalizedString(@"Can't solve this determinant, sorry.", @"Can't solve this determinant text")
-                                                         delegate:self cancelButtonTitle:@"Ok"
-                                                otherButtonTitles:nil];
+        determinantValue = [[GIDAAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string")
+                                                        message:NSLocalizedString(@"Can't solve this determinant, sorry.", @"Can't solve this determinant text")
+                                                       delegate:self cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
     }
 	else if ((wasSolved=DeterminantErrorEverythingOk)) {
 		for(j=1;j<=matrixSize;j++) {
@@ -460,7 +479,7 @@
 #ifdef DEBUG
 		NSLog(@"The determinant value is %f\n",d);
 #endif
-		determinantValue = [[GIDASearchAlert alloc]
+		determinantValue = [[GIDAAlertView alloc]
                             initWithTitle:NSLocalizedString(@"Done!", @"Done string")
                             message:[NSString stringWithFormat:@"%@: %.5f",
                                      NSLocalizedString(@"The value of the determinant for that matrix is", @"Solution text determinant"),d]
@@ -553,14 +572,46 @@
 		NSLog(@"No solution for this matrix.");
 #endif
         
-        GIDASearchAlert *matrixAlert = [[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string")
-                                                                      message:NSLocalizedString(@"Cannot solve this matrix, please try another one.", @"Can't solve matrix text")
-                                                                     delegate:self
-                                                            cancelButtonTitle:@"Ok"
-                                                            otherButtonTitles:nil];
+        GIDAAlertView *matrixAlert = [[GIDAAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string")
+                                                                  message:NSLocalizedString(@"Cannot solve this matrix, please try another one.", @"Can't solve matrix text")
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Ok"
+                                                        otherButtonTitles:nil];
         
 		[matrixAlert show];
 		[matrixAlert release];
 	}
 }
+
++ (UIView *)createWaitingView {
+	UIView *backgroundView=[[[UIView alloc] initWithFrame:CGRectMake(60, 90, 200, 200)] autorelease];
+	UIActivityIndicatorView *spinner=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+	UILabel *message=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    
+	//Set the label attributes
+	[message setText:NSLocalizedString(@"Loading ...", @"Loading string")];
+	[message setTextColor:[UIColor whiteColor]];
+	[message setBackgroundColor:[UIColor clearColor]];
+	[message setTextAlignment:UITextAlignmentCenter];
+    
+	//Set the background attributes
+	[backgroundView setBackgroundColor:[UIColor blackColor]];
+	[backgroundView setAlpha:0.7];
+    backgroundView.layer.cornerRadius = 20;
+    
+	//Once the spinner is part of the view set it's center
+	[backgroundView addSubview:spinner];
+	[spinner setCenter:CGPointMake(100, 80)];
+	[spinner startAnimating];
+	[spinner release];
+    
+	//Now add the message to the background view
+	[backgroundView addSubview:message];
+	[message setCenter:CGPointMake(100, 140)];
+	[message release];
+    
+	//The view is returned as a retained object
+	return backgroundView;
+}
+
 @end

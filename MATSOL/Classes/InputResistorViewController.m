@@ -130,7 +130,7 @@
 	
 	if (resistorValue<1.0) {
 		//Show an alert view the size is not valid : O
-		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
+		GIDAAlertView *sizeAlert=[[GIDAAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
                                                                   message:NSLocalizedString(@"The resistor value should be greater or equal to 1.", @"Resistor label for error 1")
                                                                  delegate:self 
                                                         cancelButtonTitle:@"Ok" 
@@ -144,7 +144,7 @@
 	
 	if (resistorValue>=6800000.0) {
 		//Show an alert view the size is not valid : O
-		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string")
+		GIDAAlertView *sizeAlert=[[GIDAAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string")
                                                                   message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
                                                                  delegate:self 
                                                         cancelButtonTitle:@"Ok" 
@@ -157,7 +157,7 @@
 	}
 	
 	if (toleranceValue<=0 || toleranceValue>100) {
-		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
+		GIDAAlertView *sizeAlert=[[GIDAAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
 														  message:NSLocalizedString(@"The tolerance should be greater than 0 or less than 100.", @"Error label for the tolerance")
 														 delegate:self 
 												cancelButtonTitle:@"Ok" 
@@ -190,7 +190,7 @@
 	
 	if (resistorValue<1.0) {
 		//Show an alert view the size is not valid : O
-		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
+		GIDAAlertView *sizeAlert=[[GIDAAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
                                                                   message:NSLocalizedString(@"The resistor value should be greater or equal to 1.", @"Resistor label for error 1")
                                                                  delegate:self 
                                                         cancelButtonTitle:@"Ok" 
@@ -204,7 +204,7 @@
 	
 	if (resistorValue>=6800000.0) {
 		//Show an alert view the size is not valid : O
-		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
+		GIDAAlertView *sizeAlert=[[GIDAAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
                                                                   message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
                                                                  delegate:self 
                                                         cancelButtonTitle:@"Ok" 
@@ -217,7 +217,7 @@
 	}
 	
 	if (toleranceValue<=0 || toleranceValue>100) {
-		GIDASearchAlert *sizeAlert=[[GIDASearchAlert alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
+		GIDAAlertView *sizeAlert=[[GIDAAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string") 
                                                                   message:NSLocalizedString(@"The tolerance should be greater than 0 or less than 100.", @"Error label for the tolerance")
                                                                  delegate:self 
                                                         cancelButtonTitle:@"Ok" 

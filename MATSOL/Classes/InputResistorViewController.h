@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MATSOLDefines.h"
 #import "OutputResistorViewController.h"
-#import "GIDASearchAlert.h"
+#import "GIDAAlertView.h"
 
 typedef enum{
 	MTargetResistanceTextField=0,

@@ -11,7 +11,7 @@
 #import "SolutionsViewController.h"
 #import "mygaussj.h"
 #import "MATSOLDefines.h"
-#import "GIDASearchAlert.h"
+#import "GIDAAlertView.h"
 #import "Parenthesis.h"
 #import "GIDACalculateString.h"
 #import "myludcmp.h"
