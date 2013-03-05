@@ -78,7 +78,7 @@
 		[baseConversion setTag:MATSOLBaseConverterButton];
 		[baseConversion setShowsTouchWhenHighlighted:YES];
 		[self.view addSubview:baseConversion];
-
+        
 	}
 	if (index==SecondPage) {
 		
@@ -87,36 +87,40 @@
 
 #pragma mark Threads
 -(void)beginUIViewController:(id)sender{
-	#ifdef DEBUG
+#ifdef DEBUG
 	NSLog(@"One button was pressed");
-	#endif
-//	[NSThread detachNewThreadSelector:@selector(creatingUIViewController:) toTarget:self withObject:sender];
+#endif
+    //	[NSThread detachNewThreadSelector:@selector(creatingUIViewController:) toTarget:self withObject:sender];
     [self performSelector:@selector(creatingUIViewController:) withObject:sender];
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
-        GIDASearchAlert *gsa = (GIDASearchAlert *)alertView;
-        int matrixSize = [[[gsa textField] text] intValue];
+        
+        GIDAAlertView *gsa = (GIDAAlertView *)alertView;
+        int matrixSize = [[gsa enteredText] intValue];
         if ([[gsa title] isEqualToString:NSLocalizedString(@"LinearSize",@"Linear Equation Matrix Size")]) {
-            if (matrixSize > 26 || matrixSize <= 0 || [[[gsa textField] text] isEqualToString:@""]) {
-                 GIDASearchAlert *gsaExtra = [[GIDASearchAlert alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
+            if (matrixSize > 26 || matrixSize <= 0 || [[gsa enteredText] isEqualToString:@""]) {
+                GIDAAlertView *gsaExtra = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
                 [gsaExtra show];
                 [gsaExtra release];
             } else {
                 GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDALinearEquations];
-                [self performSelector:@selector(endUIViewController:) withObject:viewController];
+                [self endUIViewController:viewController];
+                [viewController release];
             }
-        } else { 
-            if (matrixSize > 26 || matrixSize <= 0 || [[[gsa textField] text] isEqualToString:@""]) {
-                GIDASearchAlert *gsaExtra = [[GIDASearchAlert alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
+        } else {
+            if (matrixSize > 26 || matrixSize <= 0 || [[gsa enteredText] isEqualToString:@""]) {
+                GIDAAlertView *gsaExtra = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
                 [gsaExtra show];
                 [gsaExtra release];
             } else {
                 GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDADeterminant];
-                [self performSelector:@selector(endUIViewController:) withObject:viewController];
+                [self endUIViewController:viewController];
+                [viewController release];
             }
-
+            
         }
     }
 }
@@ -130,47 +134,47 @@
 	UIButton *numb=(UIButton *)sender;
 	
 	if (numb.tag==MATSOLLinearEquationButton) {
-		#ifdef DEBUG
+#ifdef DEBUG
 		NSLog(@"LES");
-		#endif
-        GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
+#endif
+        GIDAAlertView *gsa = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
         [gsa show];
         [gsa release];
         return ;
 	}
 	if (numb.tag==MATSOLDeterminantButton) {
-		#ifdef DEBUG
+#ifdef DEBUG
 		NSLog(@"DET");
-		#endif
-        GIDASearchAlert *gsa = [[GIDASearchAlert alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
+#endif
+        GIDAAlertView *gsa = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
         [gsa show];
         [gsa release];
 		return;
 	}
 	if (numb.tag==MATSOLResistorButton) {
-		#ifdef DEBUG
+#ifdef DEBUG
 		NSLog(@"RES");
-		#endif	
+#endif
 		viewController=[[[InputResistorViewController alloc] initWithNibName:@"InputResistor" bundle:nil] autorelease];
 	}
 	if (numb.tag==MATSOLDecoderButton) {
-		#ifdef DEBUG
+#ifdef DEBUG
 		NSLog(@"DEC");
-		#endif	
+#endif
 		viewController=[[[DecoderViewController alloc] initWithNibName:@"Decoder" bundle:nil] autorelease];
 	}
 	
 	if(numb.tag==MATSOLBaseConverterButton){
-		#ifdef DEBUG
+#ifdef DEBUG
 		NSLog(@"BC");
-		#endif
+#endif
 		viewController=[[[BaseConverterViewController alloc] initWithNibName:@"BaseConverter" bundle:nil] autorelease];
 	}
     [self performSelector:@selector(endUIViewController:) withObject:viewController];
     [pool release];
 }
 -(void)endUIViewController:(id)viewController{
-	[fatherNavigationController pushViewController:viewController animated:YES];
+	[fatherNavigationController pushViewController:[viewController retain] animated:YES];
 }
 
 #pragma mark MemoryManagement
