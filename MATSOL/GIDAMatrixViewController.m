@@ -119,8 +119,8 @@
         }
     }
     
-    [_scroll release];
     [_table release];
+    [_scroll release];
     
     [super dealloc];
 }
@@ -130,17 +130,18 @@
 {
     [super viewDidLoad];
     
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BrushedMetalBackground.png"]]];
+    
     _scroll = [[UIScrollView alloc] init];
     [_scroll setPagingEnabled:YES];
     [_scroll setBackgroundColor:[UIColor clearColor]];
+    
     _table = [[UITableView alloc] init];
     [_table setDataSource:self];
     [_table setDelegate:self];
     [_table setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [_table setBackgroundColor:[UIColor clearColor]];
     [_scroll addSubview:_table];
-    
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BrushedMetalBackground.png"]]];
     
     [self setViewsDimensionsFullScreen:YES];
     
