@@ -207,42 +207,75 @@
     }
 }
 
+- (void)scrollToPosition {
+    NSLog(@"%d",textFieldTag);
+    NSInteger tag = textFieldTag;
+    NSInteger row = ((int)(textFieldTag/100));
+    NSInteger pos = (tag - (row)*100);
+    if(pos == 0){
+        [_scroll setContentOffset:CGPointMake(0, 0)];
+    } else {
+        if (pos == matrixSize || pos == matrixSize - 1) {
+            [_scroll setContentOffset:CGPointMake((pos-2)*70 + 15, 0)];
+        } else {
+            [_scroll setContentOffset:CGPointMake((pos-1)*70 + 15, 0)];
+        }
+    }
+}
 - (void)previousSomething:(id)sender {
     NSInteger tag = textFieldTag-1;
     NSInteger row = ((int)(textFieldTag/100))-1;
     NSInteger dif = tag - ((row+1)*100);
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+   
     if (dif < 0) {
         if (row == 0) {
             row = matrixSize-1;
+            [_table scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionBottom animated:YES];
         } else {
             row--;
         }
-        indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-        tag = matrixSize + (row+1)*100;
+              tag = matrixSize + (row+1)*100;
+        if (solver == GIDADeterminant) {
+            tag--;
+        }
     }
+    
+     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    NSLog(@"%d\t%@",tag,indexPath);
     [_table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-    [_scroll setContentOffset:CGPointMake((tag - (row+1)*100)*60, 0)];
-    [[[(GIDAMatrixCell *)[_table cellForRowAtIndexPath:indexPath] contentView] viewWithTag:tag] becomeFirstResponder];
+    
+    double delayInSeconds = 0.3;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [[[(GIDAMatrixCell *)[_table cellForRowAtIndexPath:indexPath] contentView] viewWithTag:tag] becomeFirstResponder];
+        [self scrollToPosition];
+    });
+    
 }
 
 - (void)nextSomething:(id)sender {
     NSInteger tag = textFieldTag+1;
     NSInteger row = ((int)(tag/100))-1;
     NSInteger dif = tag - ((row+1)*100);
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    
     if (dif > matrixSize) {
         row ++;
         if (row >= matrixSize) {
             row = 0;
+            [_table scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionTop animated:YES];
         }
-        indexPath = [NSIndexPath indexPathForRow:row inSection:0];
         tag = (row+1)*100;
     }
-    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
     [_table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-    [_scroll setContentOffset:CGPointMake((tag - (row+1)*100)*60, 0)];
-    [[[(GIDAMatrixCell *)[_table cellForRowAtIndexPath:indexPath] contentView] viewWithTag:tag] becomeFirstResponder];
+
+    double delayInSeconds = 0.3;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [[[(GIDAMatrixCell *)[_table cellForRowAtIndexPath:indexPath] contentView] viewWithTag:tag] becomeFirstResponder];
+        [self scrollToPosition];
+    });
+
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
