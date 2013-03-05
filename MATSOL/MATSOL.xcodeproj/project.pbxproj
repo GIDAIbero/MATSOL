@@ -86,7 +86,7 @@
 		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
 		BE743A7B16E526E200C00ACF /* GIDAMatrixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */; };
 		BE743A7E16E526F600C00ACF /* GIDAMatrixCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */; };
-		BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA189D81512393B00197347 /* GIDASearchAlert.m */; };
+		BE8E098A16E65AFC0050FFC6 /* GIDAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E098916E65AFC0050FFC6 /* GIDAAlertView.m */; };
 		BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */; };
 		BEC85C1A1629C77D0024528C /* BaseConverterBackground-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */; };
 		BEC8D1BE16CE968D00D7C442 /* GIDACalculateString.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC8D1BD16CE968D00D7C442 /* GIDACalculateString.m */; };
@@ -196,12 +196,12 @@
 		9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "presistor@2x.png"; path = "Images/presistor@2x.png"; sourceTree = "<group>"; };
 		9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Resistor@2x.png"; path = "Images/Resistor@2x.png"; sourceTree = "<group>"; };
 		9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sresistor@2x.png"; path = "Images/sresistor@2x.png"; sourceTree = "<group>"; };
-		BE743A7916E526E200C00ACF /* GIDAMatrixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDAMatrixViewController.h; sourceTree = "<group>"; };
-		BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDAMatrixViewController.m; sourceTree = "<group>"; };
-		BE743A7C16E526F600C00ACF /* GIDAMatrixCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDAMatrixCell.h; sourceTree = "<group>"; };
-		BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDAMatrixCell.m; sourceTree = "<group>"; };
-		BEA189D71512393B00197347 /* GIDASearchAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDASearchAlert.h; path = GIDAUtilities/GIDASearchAlert.h; sourceTree = "<group>"; };
-		BEA189D81512393B00197347 /* GIDASearchAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDASearchAlert.m; path = GIDAUtilities/GIDASearchAlert.m; sourceTree = "<group>"; };
+		BE743A7916E526E200C00ACF /* GIDAMatrixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDAMatrixViewController.h; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAMatrixViewController.h"; sourceTree = "<absolute>"; };
+		BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAMatrixViewController.m; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAMatrixViewController.m"; sourceTree = "<absolute>"; };
+		BE743A7C16E526F600C00ACF /* GIDAMatrixCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDAMatrixCell.h; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAMatrixCell.h"; sourceTree = "<absolute>"; };
+		BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAMatrixCell.m; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAMatrixCell.m"; sourceTree = "<absolute>"; };
+		BE8E098816E65AFC0050FFC6 /* GIDAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDAAlertView.h; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAAlertView.h"; sourceTree = "<absolute>"; };
+		BE8E098916E65AFC0050FFC6 /* GIDAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAAlertView.m; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAAlertView.m"; sourceTree = "<absolute>"; };
 		BEA18BFD151A7C7300B48EB7 /* Parenthesis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Parenthesis.h; path = Classes/Parenthesis.h; sourceTree = "<group>"; };
 		BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Parenthesis.m; path = Classes/Parenthesis.m; sourceTree = "<group>"; };
 		BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BaseConverterBackground-568h@2x.png"; path = "Images/BaseConverterBackground-568h@2x.png"; sourceTree = "<group>"; };
@@ -289,10 +289,6 @@
 		50020DDF11D576BC00C61974 /* MainViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BE743A7C16E526F600C00ACF /* GIDAMatrixCell.h */,
-				BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */,
-				BE743A7916E526E200C00ACF /* GIDAMatrixViewController.h */,
-				BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */,
 				50020DE011D576BC00C61974 /* ScrollViewController.h */,
 				50020DE111D576BC00C61974 /* ScrollViewController.m */,
 				9C7D4E061277B5CC000EBAC0 /* BaseConverterViewController.h */,
@@ -446,8 +442,12 @@
 			children = (
 				BEC8D1BC16CE968D00D7C442 /* GIDACalculateString.h */,
 				BEC8D1BD16CE968D00D7C442 /* GIDACalculateString.m */,
-				BEA189D71512393B00197347 /* GIDASearchAlert.h */,
-				BEA189D81512393B00197347 /* GIDASearchAlert.m */,
+				BE8E098816E65AFC0050FFC6 /* GIDAAlertView.h */,
+				BE8E098916E65AFC0050FFC6 /* GIDAAlertView.m */,
+				BE743A7C16E526F600C00ACF /* GIDAMatrixCell.h */,
+				BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */,
+				BE743A7916E526E200C00ACF /* GIDAMatrixViewController.h */,
+				BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */,
 			);
 			name = GIDA;
 			sourceTree = "<group>";
@@ -591,11 +591,11 @@
 				9C1CF857125EA1E50060A1B2 /* DecoderViewController.m in Sources */,
 				9C7D4E091277B5CC000EBAC0 /* BaseConverterViewController.m in Sources */,
 				9CB5F13F128C9351003117AD /* Conversor.m in Sources */,
-				BEA189D91512393B00197347 /* GIDASearchAlert.m in Sources */,
 				BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */,
 				BEC8D1BE16CE968D00D7C442 /* GIDACalculateString.m in Sources */,
 				BE743A7B16E526E200C00ACF /* GIDAMatrixViewController.m in Sources */,
 				BE743A7E16E526F600C00ACF /* GIDAMatrixCell.m in Sources */,
+				BE8E098A16E65AFC0050FFC6 /* GIDAAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,7 +679,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -688,6 +688,7 @@
 				INFOPLIST_FILE = "MATSOL-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = MATSOL;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
 			name = Debug;
 		};
@@ -709,15 +710,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -740,14 +741,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -756,15 +757,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
