@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SelectionViewController.h"
 #import "InputResistorViewController.h"
 #import "DecoderViewController.h"
 #import "BaseConverterViewController.h"
+#import "GIDAMatrixViewController.h"
 
 typedef enum{
 	MATSOLLinearEquationButton=1,
