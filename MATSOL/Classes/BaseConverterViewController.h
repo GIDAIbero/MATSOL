@@ -32,13 +32,13 @@ typedef enum{
     BOOL ip5;
 }
 
-@property (retain, nonatomic) IBOutlet UIImageView *backgroundImage;
-@property (nonatomic, retain) IBOutlet UILabel *fromLabel;
-@property (nonatomic, retain) IBOutlet UILabel *toLabel;
-@property (nonatomic, retain) IBOutlet UILabel *fromIndicator;
-@property (nonatomic, retain) IBOutlet UILabel *toIndicator;
-@property (nonatomic, retain) NSMutableArray *buttonsConverter;
-@property (nonatomic, retain) Conversor *mainConverter;
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (nonatomic, strong) IBOutlet UILabel *fromLabel;
+@property (nonatomic, strong) IBOutlet UILabel *toLabel;
+@property (nonatomic, strong) IBOutlet UILabel *fromIndicator;
+@property (nonatomic, strong) IBOutlet UILabel *toIndicator;
+@property (nonatomic, strong) NSMutableArray *buttonsConverter;
+@property (nonatomic, strong) Conversor *mainConverter;
 
 -(void)typeStuff:(id)sender;
 -(IBAction)fromOrTo:(id)sender;

@@ -76,10 +76,10 @@ typedef enum{
 @property (readwrite) float targetResistor;
 @property (readwrite) float tolerance;
 @property (readwrite) RESIST *network;
-@property (nonatomic, retain) UIButton *sign;
-@property (nonatomic, retain) NSMutableArray *bandArray;
-@property (nonatomic, retain) IBOutlet UILabel *reminder;
-@property (nonatomic, retain) IBOutlet UILabel *achieved;
+@property (nonatomic, strong) UIButton *sign;
+@property (nonatomic, strong) NSMutableArray *bandArray;
+@property (nonatomic, strong) IBOutlet UILabel *reminder;
+@property (nonatomic, strong) IBOutlet UILabel *achieved;
 
 - (void)placeNetworkWithNetworkSize:(int)networkSize;
 - (void)buttonPressed:(id)sender;

@@ -25,13 +25,13 @@ typedef enum{
 	SecondPage
 }MATSOLPageName;
 
-@interface SlaveViewController : UIViewController <UIAlertViewDelegate> {
+@interface SlaveViewController : UIViewController <GIDAAlertViewDelegate> {
     int pageNumber;
 	int size;
 	UINavigationController *fatherNavigationController;
 }
 
-@property (retain, nonatomic) UINavigationController *fatherNavigationController;
+@property (strong, nonatomic) UINavigationController *fatherNavigationController;
 @property (readwrite) int size;
 
 - (id)initWithPageNumber:(int)page;

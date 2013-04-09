@@ -21,7 +21,7 @@ typedef enum{
 	IBOutlet UITextField *tolerance;
 }
 
-@property (retain, nonatomic) IBOutlet UITextField *targetResistance;
-@property (retain, nonatomic) IBOutlet UITextField *tolerance;
+@property (strong, nonatomic) IBOutlet UITextField *targetResistance;
+@property (strong, nonatomic) IBOutlet UITextField *tolerance;
 
 @end

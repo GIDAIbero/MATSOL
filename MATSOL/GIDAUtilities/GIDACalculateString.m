@@ -476,7 +476,6 @@ typedef NSUInteger GIDAOperator;
         }
     }
     
-    [formatter release];
     //Return the number. It could be an NSNumber or nil.
     return number;
 }

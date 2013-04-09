@@ -52,20 +52,11 @@
             UIBarButtonItem *betweenSignAndArrowSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
             [betweenSignAndArrowSpace setWidth:25];
             
-            UIToolbar *kbtb = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 30)] autorelease];
+            UIToolbar *kbtb = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
             [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, space, fraction, space, openPar, space, closePar, space, back, betweenSignAndArrowSpace,ubbi,nil]];
             
-            [ubbi release];
-            [lesskey release];
-            [space release];
-            [sign release];
-            [back release];
-            [openPar release];
-            [closePar release];
             
-            [betweenArrowsSpace release];
-            [betweenSignAndArrowSpace release];
             
             tf.inputAccessoryView = kbtb;
             tf.keyboardAppearance = UIKeyboardAppearanceAlert;

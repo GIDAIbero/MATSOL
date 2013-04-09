@@ -56,9 +56,6 @@
     [tolerance setKeyboardAppearance:UIKeyboardAppearanceAlert];
     
 	[targetResistance becomeFirstResponder];
-    [bbi release];
-    [spa release];
-    [tool release];
     
 }
 
@@ -69,11 +66,6 @@
 	tolerance=nil;
 }
 
-- (void)dealloc {
-	[targetResistance release];
-	[tolerance release];
-    [super dealloc];
-}
 
 #pragma mark TextFieldDelegateMethods
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
@@ -137,7 +129,6 @@
                                                         otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
-		[sizeAlert release];
 		
 		return NO;
 	}
@@ -151,7 +142,6 @@
                                                         otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
-		[sizeAlert release];
 		
 		return NO;
 	}
@@ -164,7 +154,6 @@
 												otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
-		[sizeAlert release];
 		return NO;
 	}
 	[targetResistance resignFirstResponder];
@@ -174,7 +163,6 @@
 	[viewController setTargetResistor:resistorValue];
 	[viewController setTolerance:toleranceValue];
 	[[self navigationController] pushViewController:viewController animated:YES];
-	[viewController release];
 	
 	return YES;
 }
@@ -197,7 +185,6 @@
                                                         otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
-		[sizeAlert release];
 		
 		return;
 	}
@@ -211,7 +198,6 @@
                                                         otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
-		[sizeAlert release];
 		
 		return;
 	}
@@ -224,7 +210,6 @@
                                                         otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
-		[sizeAlert release];
 		return;
 	}
 	[targetResistance resignFirstResponder];
@@ -234,7 +219,6 @@
 	[viewController setTargetResistor:resistorValue];
 	[viewController setTolerance:toleranceValue];
 	[[self navigationController] pushViewController:viewController animated:YES];
-	[viewController release];
 }
 
 @end

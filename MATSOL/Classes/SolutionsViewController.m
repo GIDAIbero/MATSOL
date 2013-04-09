@@ -104,26 +104,19 @@
     [help addSubview:rcir];
     [help addSubview:rlab];
     
-    [wlab release];
-    [wcir release];
-    [rcir release];
-    [rlab release];
 	//Place the help right at the top of the view
 	
 	[self.view addSubview:help];
-	[help release];
     Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0, 2, (size*70)+27, (size*45)+16) rounded:YES];
     [container addSubview:par];
-    [par release];
     par = [[Parenthesis alloc] initWithFrame:CGRectMake((size*70)+20, 2, 125, (size*45)+16) rounded:YES color:[UIColor redColor]];
     [container addSubview:par];
-    [par release];
     
 	//Assign as many text fields as needed.
 	for (height=0; height<size+1; height++) {
-		[labelsArray insertObject:[[[NSMutableArray alloc] init] autorelease] atIndex:height];
+		[labelsArray insertObject:[[NSMutableArray alloc] init] atIndex:height];
 		for (width=0; width<size; width++) { 
-			[[labelsArray objectAtIndex:height] insertObject:[[[UILabel alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)] autorelease] atIndex:width];
+			[[labelsArray objectAtIndex:height] insertObject:[[UILabel alloc] initWithFrame:CGRectMake(((height+1)*70)-55,((width+1)*45)-30, 65, 30)] atIndex:width];
 			temp=[[labelsArray objectAtIndex:height] objectAtIndex:width];
 			
 			//Attributes for textfields that are not the solution column
@@ -194,11 +187,7 @@
 	free(a);
 	free(b);
 	
-	[labelsArray release];
-	[container release];
-	[layoutView release];
 	
-	[super dealloc];
 }
 
 

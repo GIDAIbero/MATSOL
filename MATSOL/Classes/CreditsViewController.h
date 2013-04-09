@@ -12,12 +12,12 @@
 @protocol ShowCreditsViewControllerDelegate;
 
 @interface CreditsViewController : UIViewController {
-	id<ShowCreditsViewControllerDelegate> delegate;
+	id<ShowCreditsViewControllerDelegate> __weak delegate;
     IBOutlet UILabel *versionLabel;
 }
 
-@property(assign) id<ShowCreditsViewControllerDelegate> delegate;
-@property(nonatomic, retain) IBOutlet UILabel *versionLabel;
+@property(weak) id<ShowCreditsViewControllerDelegate> delegate;
+@property(nonatomic, strong) IBOutlet UILabel *versionLabel;
 
 -(IBAction)presionaBotonOcultaCreditos:(id)sender;
 

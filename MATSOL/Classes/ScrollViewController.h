@@ -20,10 +20,10 @@
     BOOL pageControlUsed;
 }
 
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) IBOutlet UIPageControl *pageControl;
-@property (nonatomic, retain) NSMutableArray *viewControllers;
-@property (retain, nonatomic) UIBarButtonItem *creditsButton;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, strong) NSMutableArray *viewControllers;
+@property (strong, nonatomic) UIBarButtonItem *creditsButton;
 
 - (void)credits;
 - (IBAction)changePage:(id)sender;

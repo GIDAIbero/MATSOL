@@ -94,31 +94,25 @@
     [self performSelector:@selector(creatingUIViewController:) withObject:sender];
 }
 
-
--(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        
-        GIDAAlertView *gsa = (GIDAAlertView *)alertView;
-        int matrixSize = [[gsa enteredText] intValue];
-        if ([[gsa title] isEqualToString:NSLocalizedString(@"LinearSize",@"Linear Equation Matrix Size")]) {
-            if (matrixSize > 26 || matrixSize <= 0 || [[gsa enteredText] isEqualToString:@""]) {
-                GIDAAlertView *gsaExtra = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
+-(void)alertOnClicked:(GIDAAlertView *)alertView {
+    if ([alertView accepted]) {
+        int matrixSize = [[alertView enteredText] intValue];
+        if ([[alertView title] isEqualToString:NSLocalizedString(@"LinearSize",@"Linear Equation Matrix Size")]) {
+            if (matrixSize > 26 || matrixSize <= 0 || [[alertView enteredText] isEqualToString:@""]) {
+                GIDAAlertView *gsaExtra = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept")];
+                [gsaExtra setDelegate:self];
                 [gsaExtra show];
-                [gsaExtra release];
             } else {
                 GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDALinearEquations];
                 [self endUIViewController:viewController];
-                [viewController release];
             }
         } else {
-            if (matrixSize > 26 || matrixSize <= 0 || [[gsa enteredText] isEqualToString:@""]) {
-                GIDAAlertView *gsaExtra = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
+            if (matrixSize > 26 || matrixSize <= 0 || [[alertView enteredText] isEqualToString:@""]) {
+                GIDAAlertView *gsaExtra = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoard:UIKeyboardTypeNumberPad];
                 [gsaExtra show];
-                [gsaExtra release];
             } else {
                 GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDADeterminant];
                 [self endUIViewController:viewController];
-                [viewController release];
             }
             
         }
@@ -126,61 +120,57 @@
 }
 
 -(void)creatingUIViewController:(id)sender{
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
-	//INSERT THE CODE FOR THE NEW THREAD RIGHT HERE
-    id viewController = nil;
-	
-	UIButton *numb=(UIButton *)sender;
-	
-	if (numb.tag==MATSOLLinearEquationButton) {
+	@autoreleasepool {
+        
+        //INSERT THE CODE FOR THE NEW THREAD RIGHT HERE
+        id viewController = nil;
+        
+        UIButton *numb=(UIButton *)sender;
+        
+        if (numb.tag==MATSOLLinearEquationButton) {
 #ifdef DEBUG
-		NSLog(@"LES");
+            NSLog(@"LES");
 #endif
-        GIDAAlertView *gsa = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
-        [gsa show];
-        [gsa release];
-        return ;
-	}
-	if (numb.tag==MATSOLDeterminantButton) {
+            GIDAAlertView *gsa = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoard:UIKeyboardTypeNumberPad];
+            [gsa setDelegate:self];
+            [gsa show];
+            return ;
+        }
+        if (numb.tag==MATSOLDeterminantButton) {
 #ifdef DEBUG
-		NSLog(@"DET");
+            NSLog(@"DET");
 #endif
-        GIDAAlertView *gsa = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoardType:UIKeyboardTypeNumberPad];
-        [gsa show];
-        [gsa release];
-		return;
-	}
-	if (numb.tag==MATSOLResistorButton) {
+            GIDAAlertView *gsa = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoard:UIKeyboardTypeNumberPad];
+            [gsa setDelegate:self];
+            [gsa show];
+            return;
+        }
+        if (numb.tag==MATSOLResistorButton) {
 #ifdef DEBUG
-		NSLog(@"RES");
+            NSLog(@"RES");
 #endif
-		viewController=[[[InputResistorViewController alloc] initWithNibName:@"InputResistor" bundle:nil] autorelease];
-	}
-	if (numb.tag==MATSOLDecoderButton) {
+            viewController=[[InputResistorViewController alloc] initWithNibName:@"InputResistor" bundle:nil];
+        }
+        if (numb.tag==MATSOLDecoderButton) {
 #ifdef DEBUG
-		NSLog(@"DEC");
+            NSLog(@"DEC");
 #endif
-		viewController=[[[DecoderViewController alloc] initWithNibName:@"Decoder" bundle:nil] autorelease];
-	}
-	
-	if(numb.tag==MATSOLBaseConverterButton){
+            viewController=[[DecoderViewController alloc] initWithNibName:@"Decoder" bundle:nil];
+        }
+        
+        if(numb.tag==MATSOLBaseConverterButton){
 #ifdef DEBUG
-		NSLog(@"BC");
+            NSLog(@"BC");
 #endif
-		viewController=[[[BaseConverterViewController alloc] initWithNibName:@"BaseConverter" bundle:nil] autorelease];
-	}
-    [self performSelector:@selector(endUIViewController:) withObject:viewController];
-    [pool release];
+            viewController=[[BaseConverterViewController alloc] initWithNibName:@"BaseConverter" bundle:nil];
+        }
+        [self performSelector:@selector(endUIViewController:) withObject:viewController];
+    }
 }
 -(void)endUIViewController:(id)viewController{
-	[fatherNavigationController pushViewController:[viewController retain] animated:YES];
+	[fatherNavigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark MemoryManagement
-- (void)dealloc {
-	[fatherNavigationController release];
-    [super dealloc];
-}
 
 @end

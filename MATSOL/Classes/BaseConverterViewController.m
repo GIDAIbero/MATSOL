@@ -240,7 +240,6 @@
 	
 	//Add the date picker and show the action sheet
 	[actionSheet addSubview:basePicker];
-	[basePicker release];
 	
 	//Set the indicator to update the values
 	_currentActionSheet=whoAmI.tag;
@@ -361,18 +360,6 @@
 	self.toIndicator=nil;
 }
 
-- (void)dealloc {	
-	[buttonsConverter release];
-	[mainConverter release];
-	[fromLabel release];
-	[toLabel release];
-	[fromIndicator release];
-	[toIndicator release];
-    [_basesArray release];
-    
-    [backgroundImage release];
-    [super dealloc];
-}
 
 
 @end

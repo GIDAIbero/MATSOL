@@ -14,19 +14,61 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface GIDAAlertView : UIAlertView
+typedef enum {
+    GIDAAlertViewMessageImage   = 0,
+    GIDAAlertViewSpinner        = 1,
+    GIDAAlertViewPrompt         = 2,
+    GIDAAlertViewNoPrompt       = 3,
+    GIDAAlertViewProgressTime   = 4,
+    GIDAAlertViewProgressURL    = 5,
+    GIDAAlertViewCheck          = 6,
+    GIDAAlertViewXMark          = 7
+}GIDAAlertViewType;
+
+@interface ProgressBar : UIView
+-(id)initWithFrame:(CGRect)frame andProgressBarColor:(UIColor *)pcolor;
+-(void)moveBar:(CGFloat)progress;
+-(void)setProgressBarColor:(UIColor *)color;
+@end
+
+@class GIDAAlertView;
+@protocol GIDAAlertViewDelegate <NSObject>
+@optional
+-(void)alertOnClicked:(GIDAAlertView *)alertView;
+-(void)alertOnDismiss:(GIDAAlertView *)alertView;
+-(void)alertFinished:(GIDAAlertView *)alertView;
+@end
+
+@interface GIDAAlertView : UIAlertView <NSURLConnectionDataDelegate, UIAlertViewDelegate>
+@property (nonatomic, strong) NSString *identifier;
+@property (readonly) GIDAAlertViewType type;
+@property (readonly) BOOL accepted;
+@property (nonatomic, strong) id <GIDAAlertViewDelegate> gavdelegate;
 
 - (id)initWithMessage:(NSString *)someMessage andAlertImage:(UIImage *)someImage;
-- (id)initWithSpinnerAndMessage:(NSString *)message;
-- (id)initWithPrompt:(NSString *)prompt delegate:(id)delegate cancelButtonTitle:(NSString *)cancelTitle acceptButtonTitle:(NSString *)acceptTitle;
-- (id)initWithOutTextAreaPrompt:(NSString *)prompt delegate:(id)delegate cancelButtonTitle:(NSString *)cancelTitle acceptButtonTitle:(NSString *)acceptTitle andTextMessage:(NSString *)textMessage;
-- (id)initWithPrompt:(NSString *)prompt delegate:(id)delegate cancelButtonTitle:(NSString *)cancelTitle acceptButtonTitle:(NSString *)acceptTitle andKeyBoardType:(UIKeyboardType) uikt ;
-
-- (void)presentAlertFor:(float)seconds;
-- (void)presentAlertWithSpinnerAndHideAfterSelector:(SEL)selector from:(id)sender withObject:(id)object;
+- (id) initWithSpinnerAndMessage:(NSString *)message;
+-(id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...;
+- (id)initWithImage:(UIImage *)image andPrompt:(NSString *)prompt cancelButtonTitle:(NSString *)cancelTitle acceptButtonTitle:(NSString *)acceptTitle;
+- (id)initWithPrompt:(NSString *)prompt cancelButtonTitle:(NSString *)cancelTitle acceptButtonTitle:(NSString *)acceptTitle;
+- (id)initWithPrompt:(NSString *)prompt cancelButtonTitle:(NSString *)cancelTitle acceptButtonTitle:(NSString *)acceptTitle andKeyBoard:(UIKeyboardType)keyboard;
+- (id)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelTitle acceptButtonTitle:(NSString *)acceptTitle andMessage:(NSString *)message;
+- (id)initWithProgressBarAndMessage:(NSString *)message andTime:(NSInteger)seconds;
+- (id)initWithProgressBarAndMessage:(NSString *)message andURL:(NSURL *)url;
+- (id)initWithProgressBarAndMessage:(NSString *)message andURL:(NSURL *)url andProgressBarColor:(UIColor *)pcolor;
+- (id)initWithCheckMarkAndMessage:(NSString *)message;
+-(id)initWithXMarkAndMessage:(NSString *)message;
+-(id)initWithExclamationMarkAndMessage:(NSString *)message;
 
 - (void)setColor:(UIColor *)color;
-- (NSString *)enteredText;
-- (NSString *)getTheMessage;
+- (NSString *) enteredText;
+- (NSString *) message;
+- (void)presentProgressBar;
+- (void)presentAlertFor:(float)seconds;
+- (void)presentAlertWithSpinnerAndHideAfterSelector:(SEL)selector from:(id)sender withObject:(id)object;
+- (void)progresBarStartDownload;
+
+-(NSDictionary *)getDownloadedData;
+-(void)setProgressBarColor:(UIColor *)color;
 @end
