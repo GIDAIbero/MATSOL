@@ -42,6 +42,9 @@
 		504C6FAD12BF4DCC00CC815E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */; };
 		507B26A21512F4FD000EB93F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507B26A41512F4FD000EB93F /* Localizable.strings */; };
 		507B26AE15130804000EB93F /* MATSOLLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 507B26AD15130804000EB93F /* MATSOLLogo.png */; };
+		507BBC32171B1AB9001B9079 /* GIDAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 507BBC2D171B1AB9001B9079 /* GIDAAlertView.m */; };
+		507BBC33171B1AB9001B9079 /* GIDAMatrixCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 507BBC2F171B1AB9001B9079 /* GIDAMatrixCell.m */; };
+		507BBC34171B1AB9001B9079 /* GIDAMatrixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507BBC31171B1AB9001B9079 /* GIDAMatrixViewController.m */; };
 		50B25D8C151FF764000CDBA9 /* Scroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B25D8E151FF764000CDBA9 /* Scroll.xib */; };
 		50C7F04511D73B53001EB7C9 /* presistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04311D73B53001EB7C9 /* presistor.png */; };
 		50C7F04611D73B53001EB7C9 /* sresistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C7F04411D73B53001EB7C9 /* sresistor.png */; };
@@ -84,9 +87,6 @@
 		9CF125E8126F3BFF00CC1D45 /* presistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */; };
 		9CF125E9126F3BFF00CC1D45 /* Resistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */; };
 		9CF125EB126F3BFF00CC1D45 /* sresistor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */; };
-		BE743A7B16E526E200C00ACF /* GIDAMatrixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */; };
-		BE743A7E16E526F600C00ACF /* GIDAMatrixCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */; };
-		BE8E098A16E65AFC0050FFC6 /* GIDAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E098916E65AFC0050FFC6 /* GIDAAlertView.m */; };
 		BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */; };
 		BEC85C1A1629C77D0024528C /* BaseConverterBackground-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */; };
 		BEC8D1BE16CE968D00D7C442 /* GIDACalculateString.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC8D1BD16CE968D00D7C442 /* GIDACalculateString.m */; };
@@ -147,6 +147,12 @@
 		507B26A31512F4FD000EB93F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		507B26A51512F503000EB93F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		507B26AD15130804000EB93F /* MATSOLLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MATSOLLogo.png; path = Images/MATSOLLogo.png; sourceTree = "<group>"; };
+		507BBC2C171B1AB9001B9079 /* GIDAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDAAlertView.h; path = GIDAUtilities/GIDAAlertView.h; sourceTree = "<group>"; };
+		507BBC2D171B1AB9001B9079 /* GIDAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAAlertView.m; path = GIDAUtilities/GIDAAlertView.m; sourceTree = "<group>"; };
+		507BBC2E171B1AB9001B9079 /* GIDAMatrixCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDAMatrixCell.h; path = GIDAUtilities/GIDAMatrixCell.h; sourceTree = "<group>"; };
+		507BBC2F171B1AB9001B9079 /* GIDAMatrixCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAMatrixCell.m; path = GIDAUtilities/GIDAMatrixCell.m; sourceTree = "<group>"; };
+		507BBC30171B1AB9001B9079 /* GIDAMatrixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDAMatrixViewController.h; path = GIDAUtilities/GIDAMatrixViewController.h; sourceTree = "<group>"; };
+		507BBC31171B1AB9001B9079 /* GIDAMatrixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAMatrixViewController.m; path = GIDAUtilities/GIDAMatrixViewController.m; sourceTree = "<group>"; };
 		50B25D8D151FF764000CDBA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Scroll.xib; sourceTree = "<group>"; };
 		50B25D8F151FF76B000CDBA9 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/Scroll.xib; sourceTree = "<group>"; };
 		50C7F04311D73B53001EB7C9 /* presistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = presistor.png; path = Images/presistor.png; sourceTree = "<group>"; };
@@ -196,12 +202,6 @@
 		9CF125D8126F3BFF00CC1D45 /* presistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "presistor@2x.png"; path = "Images/presistor@2x.png"; sourceTree = "<group>"; };
 		9CF125D9126F3BFF00CC1D45 /* Resistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Resistor@2x.png"; path = "Images/Resistor@2x.png"; sourceTree = "<group>"; };
 		9CF125DB126F3BFF00CC1D45 /* sresistor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sresistor@2x.png"; path = "Images/sresistor@2x.png"; sourceTree = "<group>"; };
-		BE743A7916E526E200C00ACF /* GIDAMatrixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDAMatrixViewController.h; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAMatrixViewController.h"; sourceTree = "<absolute>"; };
-		BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAMatrixViewController.m; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAMatrixViewController.m"; sourceTree = "<absolute>"; };
-		BE743A7C16E526F600C00ACF /* GIDAMatrixCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDAMatrixCell.h; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAMatrixCell.h"; sourceTree = "<absolute>"; };
-		BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAMatrixCell.m; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAMatrixCell.m"; sourceTree = "<absolute>"; };
-		BE8E098816E65AFC0050FFC6 /* GIDAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDAAlertView.h; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAAlertView.h"; sourceTree = "<absolute>"; };
-		BE8E098916E65AFC0050FFC6 /* GIDAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAAlertView.m; path = "/Users/aparedes/Documents/MATSOL-aparedes/MATSOL/GIDAUtilities/GIDAAlertView.m"; sourceTree = "<absolute>"; };
 		BEA18BFD151A7C7300B48EB7 /* Parenthesis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Parenthesis.h; path = Classes/Parenthesis.h; sourceTree = "<group>"; };
 		BEA18BFE151A7C7300B48EB7 /* Parenthesis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Parenthesis.m; path = Classes/Parenthesis.m; sourceTree = "<group>"; };
 		BEC85C191629C77D0024528C /* BaseConverterBackground-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BaseConverterBackground-568h@2x.png"; path = "Images/BaseConverterBackground-568h@2x.png"; sourceTree = "<group>"; };
@@ -442,12 +442,12 @@
 			children = (
 				BEC8D1BC16CE968D00D7C442 /* GIDACalculateString.h */,
 				BEC8D1BD16CE968D00D7C442 /* GIDACalculateString.m */,
-				BE8E098816E65AFC0050FFC6 /* GIDAAlertView.h */,
-				BE8E098916E65AFC0050FFC6 /* GIDAAlertView.m */,
-				BE743A7C16E526F600C00ACF /* GIDAMatrixCell.h */,
-				BE743A7D16E526F600C00ACF /* GIDAMatrixCell.m */,
-				BE743A7916E526E200C00ACF /* GIDAMatrixViewController.h */,
-				BE743A7A16E526E200C00ACF /* GIDAMatrixViewController.m */,
+				507BBC2C171B1AB9001B9079 /* GIDAAlertView.h */,
+				507BBC2D171B1AB9001B9079 /* GIDAAlertView.m */,
+				507BBC2E171B1AB9001B9079 /* GIDAMatrixCell.h */,
+				507BBC2F171B1AB9001B9079 /* GIDAMatrixCell.m */,
+				507BBC30171B1AB9001B9079 /* GIDAMatrixViewController.h */,
+				507BBC31171B1AB9001B9079 /* GIDAMatrixViewController.m */,
 			);
 			name = GIDA;
 			sourceTree = "<group>";
@@ -610,9 +610,9 @@
 				9CB5F13F128C9351003117AD /* Conversor.m in Sources */,
 				BEA18BFF151A7C7300B48EB7 /* Parenthesis.m in Sources */,
 				BEC8D1BE16CE968D00D7C442 /* GIDACalculateString.m in Sources */,
-				BE743A7B16E526E200C00ACF /* GIDAMatrixViewController.m in Sources */,
-				BE743A7E16E526F600C00ACF /* GIDAMatrixCell.m in Sources */,
-				BE8E098A16E65AFC0050FFC6 /* GIDAAlertView.m in Sources */,
+				507BBC32171B1AB9001B9079 /* GIDAAlertView.m in Sources */,
+				507BBC33171B1AB9001B9079 /* GIDAMatrixCell.m in Sources */,
+				507BBC34171B1AB9001B9079 /* GIDAMatrixViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
