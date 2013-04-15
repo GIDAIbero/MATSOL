@@ -399,7 +399,6 @@ static float kAnimationDuration=0.35;
         
         if (touched.tag == 2) {
             transform = CGAffineTransformRotate(transform, M_PI);
-            //sign.transform = transform;
             rotated = YES;
         } else {
             rotated = NO;
