@@ -545,7 +545,10 @@
     [self show];
     if ([sender canPerformAction:selector withSender:object]) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             [sender performSelector:selector withObject:object];
+#pragma clang diagnostic pop
             dispatch_async(dispatch_get_main_queue(), ^
                            {
                                [self dismissWithClickedButtonIndex:0 animated:YES];
