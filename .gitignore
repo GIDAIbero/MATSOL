@@ -1,7 +1,6 @@
 # Xcode
 .DS_Store
 build/
-<<<<<<< HEAD
 .pbxuser
 !default.pbxuser
 .mode1v3
@@ -17,3 +16,4 @@ profile
 .moved-aside
 DerivedData
 .idea/
+.xcworkspacedata
