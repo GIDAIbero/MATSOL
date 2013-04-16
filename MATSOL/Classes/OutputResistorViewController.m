@@ -12,6 +12,12 @@
 static NSArray *colorsArray = nil;
 static float kAnimationDuration=0.35;
 
+@interface OutputResistorViewController() {
+    BOOL rotated;
+    BOOL lRotated;
+}
+@property (nonatomic, retain) UIView *colorArray;
+@end
 @implementation OutputResistorViewController
 
 @synthesize targetResistor;
@@ -56,24 +62,25 @@ static float kAnimationDuration=0.35;
 	
 	//Create and init the resistor bands
 	bandArray=[[NSMutableArray alloc] init];
+    _colorArray = [[UIView alloc] initWithFrame:CGRectMake(33, 21, 81, kFirstBandHeight)];
 	for (i=0; i<4; i++) {
-		[bandArray insertObject:[[UIView alloc] initWithFrame:CGRectMake(kBandX+(i*kBandOffsetX), kBandY, kBandWidth, kBandHeight)] atIndex:i];
+		[bandArray insertObject:[[UIView alloc] initWithFrame:CGRectMake(4+(i*kBandOffsetX), 3, kBandWidth, kBandHeight)] atIndex:i];
 		[[bandArray objectAtIndex:i] setBackgroundColor:[UIColor clearColor]];
-		[sign addSubview:[bandArray objectAtIndex:i]];
+		[_colorArray addSubview:[bandArray objectAtIndex:i]];
 	}
-	
+	[sign addSubview:_colorArray];
 	//Custom for the bands settings
-	[[bandArray objectAtIndex:0] setFrame:CGRectMake(kFirstBandX, kFirstBandY, kBandWidth, kFirstBandHeight)];
-	[[bandArray objectAtIndex:3] setFrame:CGRectMake(kLastBandX, kLastBandY, kBandWidth, kLastBandHeight)];
+	[[bandArray objectAtIndex:0] setFrame:CGRectMake(0, 0, kBandWidth, kFirstBandHeight)];
+	[[bandArray objectAtIndex:3] setFrame:CGRectMake(54, 0, kBandWidth, kLastBandHeight)];
 	[[bandArray objectAtIndex:3] setBackgroundColor:[UIColor colorWithRed:0.85 green:0.77 blue:0.2 alpha:0.8]];
 	
 	//Now let's create the label
-	[bandArray insertObject:[[UILabel alloc] initWithFrame:CGRectMake(kResistorLabelX, kResistorLabelY, kResistorLabelWidth, kResistorLabelHeight)] atIndex:kResistorLabelPositionInArray];
+	[bandArray insertObject:[[UILabel alloc] initWithFrame:CGRectMake(0, kResistorLabelY, kSignImageWidth, kResistorLabelHeight)] atIndex:kResistorLabelPositionInArray];
 	[[bandArray objectAtIndex:kResistorLabelPositionInArray] setBackgroundColor:[UIColor clearColor]];
 	[[bandArray objectAtIndex:kResistorLabelPositionInArray] setTextColor:[UIColor whiteColor]];
 	[[bandArray objectAtIndex:kResistorLabelPositionInArray] setAdjustsFontSizeToFitWidth:YES];
 	[[bandArray objectAtIndex:kResistorLabelPositionInArray] setText:@"1000000"];
-	[[bandArray objectAtIndex:kResistorLabelPositionInArray] setTextAlignment:UITextAlignmentRight];
+	[[bandArray objectAtIndex:kResistorLabelPositionInArray] setTextAlignment:UITextAlignmentCenter];
 	[sign addSubview:[bandArray objectAtIndex:kResistorLabelPositionInArray]];
 	
 	//Compute Values
@@ -120,6 +127,8 @@ static float kAnimationDuration=0.35;
 	
 	//Let's add it @ the end to guarantee it will be on top
 	[self.view addSubview:sign];
+    rotated  = NO;
+    lRotated = NO;
 }
 
 #pragma mark NetworkDrawing
@@ -178,6 +187,7 @@ static float kAnimationDuration=0.35;
 			[buttonLabel setShowsTouchWhenHighlighted:YES];
 			[[buttonLabel titleLabel] setTextColor:[UIColor whiteColor]];
 			[buttonLabel addTarget:self action:@selector(buttonPressed:)  forControlEvents:UIControlEventTouchUpInside];
+            buttonLabel.tag = i+1;
 			//Get the pointer of the label (read-only)
 			temp=[buttonLabel titleLabel];
 			//modify the before (read-only) property
@@ -197,6 +207,7 @@ static float kAnimationDuration=0.35;
 			[buttonLabel addTarget:self action:@selector(buttonPressed:)  forControlEvents:UIControlEventTouchUpInside];
 			//Get the pointer of the label (read-only)
 			temp=[buttonLabel titleLabel];
+            buttonLabel.tag = 2;
 			//modify the before (read-only) property
 			[temp setAdjustsFontSizeToFitWidth:YES];
 			[self.view addSubview:buttonLabel];
@@ -233,6 +244,7 @@ static float kAnimationDuration=0.35;
 			temp=[buttonLabel titleLabel];
 			//modify the before (read-only) property
 			[temp setAdjustsFontSizeToFitWidth:YES];
+                buttonLabel.tag = 1;
 			[self.view addSubview:buttonLabel];
 			
 			free(pointer);
@@ -382,9 +394,19 @@ static float kAnimationDuration=0.35;
 		
 		//Place the view at the center of the resistor label
 		[sign setCenter:CGPointMake(touched.center.x, touched.center.y)];
+        
+        CGAffineTransform transform = CGAffineTransformMakeScale(0.1, 0.1);
+        
+        if (touched.tag == 2) {
+            transform = CGAffineTransformRotate(transform, M_PI);
+            rotated = YES;
+        } else {
+            rotated = NO;
+        }
 		//Make the view 10 times smaller
-		[sign setTransform:CGAffineTransformScale(sign.transform, .1, .1)];
-		
+		[sign setTransform:transform];
+  
+
         //Anitmations for iOS 4
         if ([[[UIDevice currentDevice] systemVersion] floatValue] < 5) {
             [UIView beginAnimations:@"Animated Sign showing" context:nil];
@@ -404,15 +426,20 @@ static float kAnimationDuration=0.35;
                 //Make it ten times bigger and add the offset to the 'y' coordinate
                 [sign setTransform:CGAffineTransformScale(sign.transform, 10, 10)];
                 [sign setCenter:CGPointMake(touched.center.x, touched.center.y+kSignOffsetY)];
-                
+     
                 //Hide the label/button
                 [_backup setHidden:YES];
+                
             }];
+        }
+        if (touched.tag == 2) {
+            CGRect frame = sign.frame;
+            frame.origin.y += 80;
+            sign.frame = frame;
         }
 		
 		//Coloring the bands and setting the label
 		[self bandColorsForLabel:[[touched titleLabel] text]];
-
 	}	
 }
 
@@ -422,6 +449,7 @@ static float kAnimationDuration=0.35;
 	[_backup setHidden:NO];
 	[sign setHidden:YES];
 	[sign setCenter:CGPointMake(0,0)];
+
 }
 
 - (void)bandColorsForLabel:(NSString *)theValue{
@@ -433,7 +461,7 @@ static float kAnimationDuration=0.35;
 	int counter=-1;
 	
 	format=[medium cStringUsingEncoding:NSASCIIStringEncoding];
-	
+	medium = [medium stringByAppendingString:@"Ω"];
 	if (format[strlen(format)-1]==' ') {
 		temp=[theValue stringByReplacingOccurrencesOfString:@" " withString:@""];
 		
@@ -518,7 +546,23 @@ static float kAnimationDuration=0.35;
 			return;
 		}		
 	}
-
+    if ((rotated && !lRotated) || (!rotated && lRotated)) {
+        UILabel *lab = ((UILabel *)[bandArray objectAtIndex:kResistorLabelPositionInArray]);
+        lab.transform = CGAffineTransformRotate(lab.transform,M_PI);
+        CGRect frame = _colorArray.frame;
+        if (!rotated) {
+        frame.origin.x = 33;
+        } else {
+            frame.origin.x = 13;
+        }
+        _colorArray.transform = CGAffineTransformRotate(_colorArray.transform,M_PI);
+        _colorArray.frame = frame;
+         if (!lRotated) {
+            lRotated = YES;
+        } else {
+            lRotated = NO;
+        }
+    }
 
 	//Divide, until you get a value that is less than 10 so that we can know the
 	//value for the third band
