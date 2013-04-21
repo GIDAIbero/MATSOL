@@ -57,7 +57,6 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
         [controllers addObject:[NSNull null]];
     }
     self.viewControllers = controllers;
-	[controllers release];
 	
     // a page is the width of the scroll view
     [scrollView setPagingEnabled:YES];
@@ -86,7 +85,6 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
 	creditsViewController.title=NSLocalizedString(@"About", @"About string");
 	creditsViewController.delegate=self;
 	[self presentModalViewController:creditsViewController animated:YES];
-	[creditsViewController release];
 }
 
 //CREDITS -> HIDE CREDITS
@@ -104,13 +102,6 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
 	creditsButton=nil;
 }
 
-- (void)dealloc {
-    [viewControllers release];
-    [scrollView release];
-    [pageControl release];
-	[creditsButton release];
-    [super dealloc];
-}
 
 #pragma mark ScrollViewDelegateMethods
 - (void)loadScrollViewWithPage:(int)page {
@@ -123,7 +114,6 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
         controller = [[SlaveViewController alloc] initWithPageNumber:page];
 		[controller setFatherNavigationController:self.navigationController];
         [viewControllers replaceObjectAtIndex:page withObject:controller];
-        [controller release];
     }
 	
     // add the controller's view to the scroll view

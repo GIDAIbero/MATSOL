@@ -45,9 +45,5 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)dealloc {
-    [versionLabel release];
-    [super dealloc];
-}
 
 @end

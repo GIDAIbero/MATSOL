@@ -28,7 +28,7 @@
 		regreso = number;
 	}else if(fromBase == 10){
 		NSMutableArray *num = [[NSMutableArray alloc] init];
-		[num autorelease];
+		
 		unsigned long long numberLong = strtoull([number UTF8String], NULL, 0);
 		int max =  floor(log(numberLong)/log(toBase));
 		for(i = 0; i<= max; i++){  
@@ -41,7 +41,7 @@
 			numberLong = numberLong-pow(toBase,where);
 		}
 		NSMutableString *arreglo = [[NSMutableString alloc] initWithCapacity:max];
-		[arreglo autorelease];
+		
 		NSString *x;
 		for(i=max; i>=0; i--)
 		{
@@ -91,10 +91,5 @@
 	return regreso;
 }
 
-- (void)dealloc{
-    //Nothing to release, the only object 
-    //is usually an autoreleased object
-	[super dealloc];
-}
 
 @end

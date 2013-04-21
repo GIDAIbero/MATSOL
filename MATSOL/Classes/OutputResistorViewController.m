@@ -177,7 +177,6 @@ static float kAnimationDuration=0.35;
 			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"presistor"]];
 			[resistorImage setFrame:resistorPlacement];
 			[self.view addSubview:resistorImage];
-			[resistorImage release];
 			
 			//The top label comes with every resistors arrangement			
 			buttonLabel=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -229,7 +228,6 @@ static float kAnimationDuration=0.35;
 			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sresistor"]];
 			[resistorImage setFrame:resistorPlacement];
 			[self.view addSubview:resistorImage];
-			[resistorImage release];
 			
 			//The top label comes with every resistors arrangement
 			buttonLabel=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -318,7 +316,6 @@ static float kAnimationDuration=0.35;
 			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wire.png"]];
 			[resistorImage setFrame:CGRectMake(kWireXRight, currentWireY, kWireWidth, kWireHeight)];
 			[self.view addSubview:resistorImage];
-			[resistorImage release];
 			
 		}
 		if ( ((totalResistors % 6)) == 0 && (totalResistors!=0)) {
@@ -330,7 +327,6 @@ static float kAnimationDuration=0.35;
 			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wire.png"]];
 			[resistorImage setFrame:CGRectMake(kWireXLeft, currentWireY, kWireWidth, kWireHeight)];
 			[self.view addSubview:resistorImage];
-			[resistorImage release];
 		}
 		
 		//All values should be updated, this will be helpful, the values
@@ -362,11 +358,7 @@ static float kAnimationDuration=0.35;
 } 
 
 - (void)dealloc {
-	[achieved release];
-	[reminder release];
-	[bandArray release];
 	free(network);
-    [super dealloc];
 }
 
 #pragma mark ButtonMethodsAndColorCodeDrawing

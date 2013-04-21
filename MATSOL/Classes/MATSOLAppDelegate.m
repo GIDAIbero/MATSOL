@@ -32,7 +32,6 @@
 	navigationController=[[UINavigationController alloc] initWithRootViewController:firstViewController];
     [[navigationController navigationBar] setTintColor:[UIColor darkGrayMATSOL]];
     
-	[firstViewController release];
 	//The homeButton must be added after the navigationController
 	//in order to make it work 
 	//[window addSubview:navigationController.view];
@@ -48,13 +47,6 @@
 }
 
 #pragma mark MemoryManagement
-- (void)dealloc {
-    navigationController = nil;
-	[navigationController release];
-    [window release];
-	
-    [super dealloc];
-}
 
 
 @end

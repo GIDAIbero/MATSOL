@@ -25,14 +25,14 @@
 }
 
 //Matrix of place holder for the UITextFields (a1, a2, ..., b1, b2, ..., s.a, s.b, ...). Never changes
-@property (retain, nonatomic) NSMutableArray *matrixPlaceHolder;
+@property (strong, nonatomic) NSMutableArray *matrixPlaceHolder;
 //Matrix values, user input values to process. Changes when user makes a change to the matrix
-@property (retain, nonatomic) NSMutableArray *matrix;
+@property (strong, nonatomic) NSMutableArray *matrix;
 //The UITableView to display all the UITextField rows. Also to scroll vertically.
-@property (retain, nonatomic) UITableView *table;
+@property (strong, nonatomic) UITableView *table;
 //The UIScrollView to scroll horizontally
-@property (retain, nonatomic) UIScrollView *scroll;
-@property (retain, nonatomic) UIView *waitingView;
+@property (strong, nonatomic) UIScrollView *scroll;
+@property (strong, nonatomic) UIView *waitingView;
 
 //Method to initialize the arrays (_matrixPlaceHolder, _matrix)
 - (void)initializeArrays;
@@ -94,8 +94,8 @@
     
     //Go through each row and put a new array with max capacity of jMax
     for (int i = 0; i < matrixSize; i++) {
-        [_matrix insertObject:[[[NSMutableArray alloc] initWithCapacity:jMax] autorelease] atIndex:i];
-        [_matrixPlaceHolder insertObject:[[[NSMutableArray alloc] initWithCapacity:jMax] autorelease] atIndex:i];
+        [_matrix insertObject:[[NSMutableArray alloc] initWithCapacity:jMax] atIndex:i];
+        [_matrixPlaceHolder insertObject:[[NSMutableArray alloc] initWithCapacity:jMax] atIndex:i];
         
         //Place the initial value of the array.
         for (int j = 0; j < jMax; j++) {
@@ -112,21 +112,15 @@
 //Release all objects
 - (void)dealloc {
     [_matrixPlaceHolder removeAllObjects];
-    [_matrixPlaceHolder release];
     [_matrix removeAllObjects];
-    [_matrix release];
     
     for (id view in [_scroll subviews]) {
         if ([view isKindOfClass:[Parenthesis class]]) {
             [view removeFromSuperview];
-            [view release];
         }
     }
     
-    [_table release];
-    [_scroll release];
     
-    [super dealloc];
 }
 
 //View has appeared, load the table and scroll, when they are added remove the waiting view
@@ -215,16 +209,13 @@
             Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:YES];
             [_scroll addSubview:par];
             [_scroll sendSubviewToBack:par];
-            [par release];
             par = [[Parenthesis alloc] initWithFrame:CGRectMake(width+28.5, -5, 110, height+10) rounded:YES color:[UIColor redColor]];
             [_scroll addSubview:par];
             [_scroll sendSubviewToBack:par];
-            [par release];
         } else {
             Parenthesis *par = [[Parenthesis alloc] initWithFrame:CGRectMake(0,-5,width+32.5,height+10) rounded:NO];
             [_scroll addSubview:par];
             [_scroll sendSubviewToBack:par];
-            [par release];
         }
     }
 }
@@ -375,7 +366,6 @@
     for (id view in [_scroll subviews]) {
         if ([view isKindOfClass:[Parenthesis class]]) {
             [view removeFromSuperview];
-            [view release];
         }
     }
 }
@@ -404,7 +394,7 @@
     
     //There's not a cell in the queue of reusable cells, create one
     if (cell == nil){
-		cell = [[[GIDAMatrixCell alloc] initWithRowFields:[_matrixPlaceHolder objectAtIndex:indexPath.row] reuseIdentifier:kCellID andDelegate:self andRowTag:indexPath.row+1 andMatrixSize:matrixSize] autorelease];
+		cell = [[GIDAMatrixCell alloc] initWithRowFields:[_matrixPlaceHolder objectAtIndex:indexPath.row] reuseIdentifier:kCellID andDelegate:self andRowTag:indexPath.row+1 andMatrixSize:matrixSize];
 	} else {
         //If there is a cell we can use, we must update the place holders.
         [cell setPlaceholders:[_matrixPlaceHolder objectAtIndex:indexPath.row] andRowTag:indexPath.row+1];
@@ -505,7 +495,6 @@
 	}
     //Display the alert dialog
     [determinantValue show];
-    [determinantValue release];
 }
 
 - (void)solveLinear {
@@ -578,7 +567,7 @@
 #endif
 		
 		//Time to push the next view
-		SolutionsViewController *theSolutions=[[[SolutionsViewController alloc] initWithNibName:@"Solutions" bundle:nil] autorelease];
+		SolutionsViewController *theSolutions=[[SolutionsViewController alloc] initWithNibName:@"Solutions" bundle:nil];
 		
 		//Set the attributes for the viewcontroller, it will take charge of the memory management
 		theSolutions.a=a;
@@ -600,12 +589,11 @@
                                                         otherButtonTitles:nil];
         
 		[matrixAlert show];
-		[matrixAlert release];
 	}
 }
 
 + (UIView *)createWaitingView {
-	UIView *backgroundView=[[[UIView alloc] initWithFrame:CGRectMake(60, 90, 200, 200)] autorelease];
+	UIView *backgroundView=[[UIView alloc] initWithFrame:CGRectMake(60, 90, 200, 200)];
 	UIActivityIndicatorView *spinner=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	UILabel *message=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     
@@ -624,12 +612,10 @@
 	[backgroundView addSubview:spinner];
 	[spinner setCenter:CGPointMake(100, 80)];
 	[spinner startAnimating];
-	[spinner release];
     
 	//Now add the message to the background view
 	[backgroundView addSubview:message];
 	[message setCenter:CGPointMake(100, 140)];
-	[message release];
     
 	//The view is returned as a retained object
 	return backgroundView;

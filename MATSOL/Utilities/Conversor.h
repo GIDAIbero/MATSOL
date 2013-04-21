@@ -17,6 +17,6 @@
 
 @property int fromBase;
 @property int toBase;
-@property (nonatomic, retain) NSString *number;
+@property (nonatomic, strong) NSString *number;
 
 @end
