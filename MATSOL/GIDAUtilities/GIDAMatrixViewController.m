@@ -405,6 +405,10 @@
     
     //Do not let the user select the cell
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        [cell setBackgroundColor:[UIColor clearColor]];
+    }
     return cell;
 }
 

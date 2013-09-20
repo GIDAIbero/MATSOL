@@ -25,6 +25,7 @@
 
 // Set the label and background color when the view has finished loading.
 - (void)viewDidLoad {
+    [super viewDidLoad];
 	self.view.backgroundColor = [UIColor clearColor];
 	[self placeButtonsAndSetBackgroundForIndex:pageNumber];
 }
@@ -108,7 +109,9 @@
             }
         } else {
             if (matrixSize > 26 || matrixSize <= 0 || [[alertView enteredText] isEqualToString:@""]) {
-                GIDAAlertView *gsaExtra = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoard:UIKeyboardTypeNumberPad];
+                GIDAAlertView *gsaExtra = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") ];
+                
+                [gsaExtra setKeyboard:UIKeyboardTypeNumberPad];
                 [gsaExtra show];
             } else {
                 GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDADeterminant];
@@ -131,7 +134,8 @@
 #ifdef DEBUG
             NSLog(@"LES");
 #endif
-            GIDAAlertView *gsa = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoard:UIKeyboardTypeNumberPad];
+            GIDAAlertView *gsa = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept")];
+                [gsa setKeyboard:UIKeyboardTypeNumberPad];
             [gsa setDelegate:self];
             [gsa show];
             return ;
@@ -140,7 +144,10 @@
 #ifdef DEBUG
             NSLog(@"DET");
 #endif
-            GIDAAlertView *gsa = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") andKeyBoard:UIKeyboardTypeNumberPad];
+            GIDAAlertView *gsa = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size")
+                                                     cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel")
+                                                     acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept")];
+            [gsa setKeyboard:UIKeyboardTypeNumberPad];
             [gsa setDelegate:self];
             [gsa show];
             return;

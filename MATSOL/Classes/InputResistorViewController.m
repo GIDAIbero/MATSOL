@@ -45,6 +45,9 @@
     UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(goNext:)];
     UIBarButtonItem *spa = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIToolbar *tool      = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width,30)];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        [tool setTintColor:[UIColor whiteColor]];
+    }
     [tool setItems:[NSArray arrayWithObjects:spa,bbi, nil]];
     [tool setBarStyle:UIBarStyleBlackTranslucent];
     [targetResistance setInputAccessoryView:tool];
@@ -136,10 +139,10 @@
 	if (resistorValue>=6800000.0) {
 		//Show an alert view the size is not valid : O
 		GIDAAlertView *sizeAlert=[[GIDAAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error string")
-                                                                  message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
-                                                                 delegate:self 
-                                                        cancelButtonTitle:@"Ok" 
-                                                        otherButtonTitles:nil];
+                                                              message:NSLocalizedString(@"The resistor value should be less than 6800000.", @"Resistor label for error 68000000")
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Ok"
+                                                    otherButtonTitles:nil];
 		//Display the alert dialog
 		[sizeAlert show];
 		

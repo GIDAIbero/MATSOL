@@ -56,7 +56,9 @@
             [kbtb setBarStyle:UIBarStyleBlackTranslucent];
             [kbtb setItems:[NSArray arrayWithObjects:lesskey,space,sign, space, fraction, space, openPar, space, closePar, space, back, betweenSignAndArrowSpace,ubbi,nil]];
             
-            
+            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+                [kbtb setTintColor:[UIColor whiteColor]];
+            }
             
             tf.inputAccessoryView = kbtb;
             tf.keyboardAppearance = UIKeyboardAppearanceAlert;

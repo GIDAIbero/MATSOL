@@ -20,24 +20,24 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
 
 @implementation ScrollViewController
 
-@synthesize scrollView; 
+@synthesize scrollView;
 @synthesize pageControl;
 @synthesize viewControllers;
 @synthesize creditsButton;
 
 #pragma mark Initialization
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
 		[self setTitle:@"MATSOL"];
 		
-        #ifdef	DEBUG_INTERFACE
+#ifdef	DEBUG_INTERFACE
 		[self setTitle:@"MATSOL_MENU"];
-		#endif
+#endif
 		
         creditsButton=[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"About", @"About string") style:UIBarButtonItemStyleBordered target:self action:@selector(credits)];
-		[[self navigationItem] setLeftBarButtonItem:creditsButton];        
+		[[self navigationItem] setLeftBarButtonItem:creditsButton];
     }
     return self;
 }
@@ -45,10 +45,13 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+	if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        [self.navigationController.navigationBar setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor whiteColor] }];
+    }
+    
 	//Set some colors
-	[scrollView setBackgroundColor:[UIColor clearColor]];
-	[pageControl setBackgroundColor:[UIColor colorWithRed:.161 green:.161 blue:0.161 alpha:0.6]];	
+    [scrollView setBackgroundColor:[UIColor clearColor]];
+	[pageControl setBackgroundColor:[UIColor colorWithRed:.161 green:.161 blue:0.161 alpha:0.6]];
 	
 	// view controllers are created lazily
     // in the meantime, load the array with placeholders which will be replaced on demand
@@ -69,13 +72,13 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
     [[self pageControl] setNumberOfPages:kNumberOfPages];
     [[self pageControl] setCurrentPage:0];
     [[self pageControl] setHidesForSinglePage:YES];
-
-
+    
+    
     // pages are created on demand
     // load the visible page
     // load the page on either side to avoid flashes when the user starts scrolling
     [self loadScrollViewWithPage:0];
-    [self loadScrollViewWithPage:1];    
+    [self loadScrollViewWithPage:1];
 }
 
 
