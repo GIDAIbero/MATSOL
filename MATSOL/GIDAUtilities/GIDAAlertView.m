@@ -921,7 +921,11 @@
     if (buttonIndex == 1) {
         acceptedAlert = YES;
         if (alertType == GIDAAlertViewPrompt) {
+            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
             _entered = [[alertView textFieldAtIndex:0] text];
+            } else {
+                _entered = [[(GIDAAlertView *)alertView textField] text];
+            }
         }
     } else {
         acceptedAlert = NO;
@@ -954,6 +958,10 @@
 }
 
 -(void)setKeyboard:(UIKeyboardType)keyboard {
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
     [[self textFieldAtIndex:0] setKeyboardType:keyboard];
+    } else {
+        [_textField setKeyboardType:keyboard];
+    }
 }
 @end
