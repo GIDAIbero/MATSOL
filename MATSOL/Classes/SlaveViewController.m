@@ -99,16 +99,17 @@
     if ([alertView accepted]) {
         int matrixSize = [[alertView enteredText] intValue];
         if ([[alertView title] isEqualToString:NSLocalizedString(@"LinearSize",@"Linear Equation Matrix Size")]) {
-            if (matrixSize > 26 || matrixSize <= 0 || [[alertView enteredText] isEqualToString:@""]) {
+            if (matrixSize > 26 || matrixSize <= 1 || [[alertView enteredText] isEqualToString:@""]) {
                 GIDAAlertView *gsaExtra = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"LinearSize" ,@"Linear Equation Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept")];
                 [gsaExtra setDelegate:self];
+                [gsaExtra setKeyboard:UIKeyboardTypeNumberPad];
                 [gsaExtra show];
             } else {
                 GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDALinearEquations];
                 [self endUIViewController:viewController];
             }
         } else {
-            if (matrixSize > 26 || matrixSize <= 0 || [[alertView enteredText] isEqualToString:@""]) {
+            if (matrixSize > 26 || matrixSize <= 1 || [[alertView enteredText] isEqualToString:@""]) {
                 GIDAAlertView *gsaExtra = [[GIDAAlertView alloc] initWithPrompt:NSLocalizedString(@"DeterminantSize" ,@"Determinant Matrix Size") cancelButtonTitle:NSLocalizedString(@"Cancel",@"Cancel") acceptButtonTitle:NSLocalizedString(@"Accept", @"Accept") ];
                 
                 [gsaExtra setKeyboard:UIKeyboardTypeNumberPad];
