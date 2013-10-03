@@ -30,8 +30,15 @@
 	[homeButton addTarget:self action:@selector(goToRootViewController:)  forControlEvents:UIControlEventTouchUpInside];
 	
 	navigationController=[[UINavigationController alloc] initWithRootViewController:firstViewController];
-    [[navigationController navigationBar] setTintColor:[UIColor darkGrayMATSOL]];
-    
+    [navigationController.navigationBar setTranslucent:NO];
+    [navigationController.navigationBar setOpaque:YES];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        [navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+        [navigationController.navigationBar setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BrushedMetalBackground"]]];
+    } else {
+        [[navigationController navigationBar] setTintColor:[UIColor darkGrayMATSOL]];
+    }
+
 	//The homeButton must be added after the navigationController
 	//in order to make it work 
 	//[window addSubview:navigationController.view];

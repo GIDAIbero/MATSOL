@@ -22,6 +22,7 @@
     //Variable used for >=iPhone 5 Layout
     BOOL ip5;
     BOOL flag;
+    BOOL appeared;
 }
 
 //Matrix of place holder for the UITextFields (a1, a2, ..., b1, b2, ..., s.a, s.b, ...). Never changes
@@ -69,6 +70,7 @@
             self.navigationItem.rightBarButtonItem=solveButton;
             
             [self initializeArrays];
+            appeared = NO;
         }
         return self;
     } else {
@@ -125,6 +127,7 @@
 
 //View has appeared, load the table and scroll, when they are added remove the waiting view
 - (void)viewDidAppear:(BOOL)animated {
+    if (!appeared) {
     [self addViews];
     
     while (flag) {
@@ -134,6 +137,8 @@
                 flag = NO;
             }
         }
+    }
+        appeared = YES;
     }
 }
 
@@ -405,6 +410,10 @@
     
     //Do not let the user select the cell
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        [cell setBackgroundColor:[UIColor clearColor]];
+    }
     return cell;
 }
 
