@@ -702,8 +702,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Edgar Ortiz Loyola (TDN35F8J8E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Edgar Ortiz Loyola (TDN35F8J8E)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -712,7 +712,7 @@
 				INFOPLIST_FILE = "MATSOL-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = MATSOL;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "863E9EFF-2C98-478D-9747-F8E7E69C336E";
 			};
 			name = Debug;
 		};
@@ -721,15 +721,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MATSOL_Prefix.pch;
 				INFOPLIST_FILE = "MATSOL-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = MATSOL;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "7F8D9725-D86D-4C3B-9665-EFAF0A1EC7A9";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -745,8 +745,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "7F8D9725-D86D-4C3B-9665-EFAF0A1EC7A9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7F8D9725-D86D-4C3B-9665-EFAF0A1EC7A9";
+				PROVISIONING_PROFILE = "AE7F6375-39E8-4A66-A14B-DCE585898EAF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AE7F6375-39E8-4A66-A14B-DCE585898EAF";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -756,15 +756,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MATSOL_Prefix.pch;
 				INFOPLIST_FILE = "MATSOL-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = MATSOL;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "AE7F6375-39E8-4A66-A14B-DCE585898EAF";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Distribution;
