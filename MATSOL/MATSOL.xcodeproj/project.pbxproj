@@ -40,6 +40,10 @@
 		50386A4B12B5DA490071A656 /* deleteBlackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */; };
 		50386A4D12B5DA5B0071A656 /* deleteBlackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */; };
 		504C6FAD12BF4DCC00CC815E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */; };
+		50634E441800BB5400232696 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = 50634E401800BB5400232696 /* icon29.png */; };
+		50634E451800BB5400232696 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 50634E411800BB5400232696 /* icon120.png */; };
+		50634E461800BB5400232696 /* icon80.png in Resources */ = {isa = PBXBuildFile; fileRef = 50634E421800BB5400232696 /* icon80.png */; };
+		50634E471800BB5400232696 /* icon58.png in Resources */ = {isa = PBXBuildFile; fileRef = 50634E431800BB5400232696 /* icon58.png */; };
 		507B26A21512F4FD000EB93F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507B26A41512F4FD000EB93F /* Localizable.strings */; };
 		507B26AE15130804000EB93F /* MATSOLLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 507B26AD15130804000EB93F /* MATSOLLogo.png */; };
 		507BBC32171B1AB9001B9079 /* GIDAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 507BBC2D171B1AB9001B9079 /* GIDAAlertView.m */; };
@@ -143,6 +147,10 @@
 		50386A4912B5DA490071A656 /* deleteBlackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "deleteBlackButton@2x.png"; path = "Images/deleteBlackButton@2x.png"; sourceTree = "<group>"; };
 		50386A4C12B5DA5B0071A656 /* deleteBlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = deleteBlackButton.png; path = Images/deleteBlackButton.png; sourceTree = "<group>"; };
 		504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Images/iTunesArtwork.png; sourceTree = "<group>"; };
+		50634E401800BB5400232696 /* icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon29.png; path = Images/icon29.png; sourceTree = "<group>"; };
+		50634E411800BB5400232696 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon120.png; path = Images/icon120.png; sourceTree = "<group>"; };
+		50634E421800BB5400232696 /* icon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon80.png; path = Images/icon80.png; sourceTree = "<group>"; };
+		50634E431800BB5400232696 /* icon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon58.png; path = Images/icon58.png; sourceTree = "<group>"; };
 		5068F7321230978300BAFDBF /* MATSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MATSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507B26A31512F4FD000EB93F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		507B26A51512F503000EB93F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -365,6 +373,10 @@
 				50020FF211D598BE00C61974 /* Icon.png */,
 				9CF125D6126F3BFF00CC1D45 /* Icon@2x.png */,
 				504C6FAC12BF4DCC00CC815E /* iTunesArtwork.png */,
+				50634E401800BB5400232696 /* icon29.png */,
+				50634E411800BB5400232696 /* icon120.png */,
+				50634E421800BB5400232696 /* icon80.png */,
+				50634E431800BB5400232696 /* icon58.png */,
 				50020E1A11D576DA00C61974 /* Buttons */,
 				50020E1411D576DA00C61974 /* Backgrounds */,
 				50D0075111DC2455006A076B /* Other */,
@@ -520,6 +532,7 @@
 				50020E2811D576DA00C61974 /* Solutions.xib in Resources */,
 				50020E2911D576DA00C61974 /* Slave.xib in Resources */,
 				50E4CA6F151D4AE400B98AE5 /* CreditsViewController.xib in Resources */,
+				50634E471800BB5400232696 /* icon58.png in Resources */,
 				50020E3611D576DA00C61974 /* button.png in Resources */,
 				50020E3911D576DA00C61974 /* resistorcalculator.png in Resources */,
 				50020FD511D58FBB00C61974 /* Default.png in Resources */,
@@ -546,9 +559,11 @@
 				50DF4C0F151050FE00F296A8 /* BaseConverter.xib in Resources */,
 				9C8FD2051279DF9E00A389B6 /* blackButton@2x.png in Resources */,
 				9C8FD2061279DF9E00A389B6 /* blackButton.png in Resources */,
+				50634E441800BB5400232696 /* icon29.png in Resources */,
 				9C8FD21E1279E1DF00A389B6 /* zeroButton@2x.png in Resources */,
 				9C8FD21F1279E1DF00A389B6 /* zeroButton.png in Resources */,
 				9C8FD2261279E38300A389B6 /* brownButton.png in Resources */,
+				50634E461800BB5400232696 /* icon80.png in Resources */,
 				9C8FD2271279E38300A389B6 /* brownButton@2x.png in Resources */,
 				50260BC612B4C9D700A1CF4D /* crossedBlackButton.png in Resources */,
 				50260BC712B4C9D700A1CF4D /* crossedBlackButton@2x.png in Resources */,
@@ -568,6 +583,7 @@
 				50EFEB2E1522C0A500DF55F9 /* RightIcon.png in Resources */,
 				50EFEB2F1522C0A500DF55F9 /* RightIcon@2x.png in Resources */,
 				50EFEB301522C0A500DF55F9 /* LeftIcon@2x.png in Resources */,
+				50634E451800BB5400232696 /* icon120.png in Resources */,
 				50EFEB311522C0A500DF55F9 /* LeftIcon.png in Resources */,
 				50EFEB321522C0A500DF55F9 /* DwonIcon.png in Resources */,
 				50EFEB331522C0A500DF55F9 /* DownIcon@2x.png in Resources */,
@@ -702,8 +718,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Edgar Ortiz Loyola (TDN35F8J8E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Edgar Ortiz Loyola (TDN35F8J8E)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -712,7 +728,7 @@
 				INFOPLIST_FILE = "MATSOL-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = MATSOL;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "863E9EFF-2C98-478D-9747-F8E7E69C336E";
 			};
 			name = Debug;
 		};
@@ -721,15 +737,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MATSOL_Prefix.pch;
 				INFOPLIST_FILE = "MATSOL-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = MATSOL;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "7F8D9725-D86D-4C3B-9665-EFAF0A1EC7A9";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -737,15 +753,16 @@
 		9CF1259B126E8C6600CC1D45 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
+				PROVISIONING_PROFILE = "AE7F6375-39E8-4A66-A14B-DCE585898EAF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AE7F6375-39E8-4A66-A14B-DCE585898EAF";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -755,15 +772,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MATSOL_Prefix.pch;
 				INFOPLIST_FILE = "MATSOL-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = MATSOL;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "AE7F6375-39E8-4A66-A14B-DCE585898EAF";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Distribution;
@@ -771,15 +788,15 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Edgar Ortiz Loyola (TDN35F8J8E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Edgar Ortiz Loyola (TDN35F8J8E)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "863E9EFF-2C98-478D-9747-F8E7E69C336E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "863E9EFF-2C98-478D-9747-F8E7E69C336E";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -787,15 +804,16 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
+				PROVISIONING_PROFILE = "7F8D9725-D86D-4C3B-9665-EFAF0A1EC7A9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7F8D9725-D86D-4C3B-9665-EFAF0A1EC7A9";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
