@@ -737,15 +737,16 @@
 		9CF1259B126E8C6600CC1D45 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
+				PROVISIONING_PROFILE = "7F8D9725-D86D-4C3B-9665-EFAF0A1EC7A9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7F8D9725-D86D-4C3B-9665-EFAF0A1EC7A9";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -771,15 +772,15 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Edgar Ortiz Loyola (TDN35F8J8E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Edgar Ortiz Loyola (TDN35F8J8E)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "863E9EFF-2C98-478D-9747-F8E7E69C336E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "863E9EFF-2C98-478D-9747-F8E7E69C336E";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -787,15 +788,16 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edgar Ortiz Loyola (6976FTX6A2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "470A9DB4-991D-4A7D-A7AC-2F08A8559AB4";
+				PROVISIONING_PROFILE = "7F8D9725-D86D-4C3B-9665-EFAF0A1EC7A9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7F8D9725-D86D-4C3B-9665-EFAF0A1EC7A9";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
