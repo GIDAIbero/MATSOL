@@ -17,19 +17,31 @@
 @implementation CreditsViewController
 
 @synthesize delegate, versionLabel;
+@synthesize resourcesLocation;
 
 #pragma mark Actions
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        // Custom initialization
+        self.resourcesLocation = nibBundleOrNil;
+        NSLog(@"%@",self.resourcesLocation.bundlePath);
+
+    }
+    return self;
+    
+}
+
 -(void)viewDidLoad{
     [super viewDidLoad];
-
+    NSLog(@"%@",self.resourcesLocation.bundlePath);
 	//Get the information from the plist
 	NSDictionary *dictionary = [[NSBundle mainBundle] infoDictionary];;
 	NSString *hash = [dictionary objectForKey:@"GitSHA"];
 	NSString *status = [dictionary objectForKey:@"GitStatus"];
 	NSString *branch = [dictionary objectForKey:@"GitBranch"];
 	NSString *version = [dictionary objectForKey:@"CFBundleShortVersionString"];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BrushedMetalBackground"]]];
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MATSOLLogo"]];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BrushedMetalBackground" ofType:@"png"]]]];
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"MATSOLLogo" ofType:@"png"]]];
     [logo setFrame:CGRectMake(60, 30, 200, 200)];
     [self.view addSubview:logo];
 	// If the current branch is master do not output any extra information but
@@ -46,7 +58,7 @@
         frame.size.height += 20;
         [_bar setFrame:frame];
         [_bar setTintColor:[UIColor whiteColor]];
-        [_bar setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BrushedMetalBackground"]]];
+        [_bar setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BrushedMetalBackground" ofType:@"png"]]]];
         [_bar setTranslucent:NO];
     } else {
         [_bar setBackgroundColor:[UIColor darkGrayColor]];

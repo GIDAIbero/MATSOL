@@ -13,11 +13,22 @@
 
 @synthesize size;
 @synthesize fatherNavigationController;
+@synthesize resourcesLocation;
 
 #pragma mark ViewControllerMethods
 // Load the view nib and initialize the pageNumber ivar.
 - (id)initWithPageNumber:(int)page {
-    if (self = [super initWithNibName:@"Slave" bundle:nil]) {
+    float systemVersion;
+
+    //this small blocks controls the bundle loading
+    systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (systemVersion >=7.0){
+        resourcesLocation = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"Current" withExtension:@"bundle" ]];
+    }else{
+        resourcesLocation = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"Default" withExtension:@"bundle" ]];
+        
+    }
+    if (self = [super initWithNibName:@"Slave" bundle:resourcesLocation]) {
         pageNumber = page;
     }
     return self;
@@ -157,20 +168,20 @@
 #ifdef DEBUG
             NSLog(@"RES");
 #endif
-            viewController=[[InputResistorViewController alloc] initWithNibName:@"InputResistor" bundle:nil];
+            viewController=[[InputResistorViewController alloc] initWithNibName:@"InputResistor" bundle:resourcesLocation];
         }
         if (numb.tag==MATSOLDecoderButton) {
 #ifdef DEBUG
             NSLog(@"DEC");
 #endif
-            viewController=[[DecoderViewController alloc] initWithNibName:@"Decoder" bundle:nil];
+            viewController=[[DecoderViewController alloc] initWithNibName:@"Decoder" bundle:resourcesLocation];
         }
         
         if(numb.tag==MATSOLBaseConverterButton){
 #ifdef DEBUG
             NSLog(@"BC");
 #endif
-            viewController=[[BaseConverterViewController alloc] initWithNibName:@"BaseConverter" bundle:nil];
+            viewController=[[BaseConverterViewController alloc] initWithNibName:@"BaseConverter" bundle:resourcesLocation];
         }
         [self performSelector:@selector(endUIViewController:) withObject:viewController];
     }

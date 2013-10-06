@@ -29,10 +29,12 @@ typedef enum{
     int pageNumber;
 	int size;
 	UINavigationController *fatherNavigationController;
+    NSBundle *resourcesLocation;
 }
 
 @property (strong, nonatomic) UINavigationController *fatherNavigationController;
 @property (readwrite) int size;
+@property (nonatomic, strong) NSBundle *resourcesLocation;
 
 - (id)initWithPageNumber:(int)page;
 - (void)placeButtonsAndSetBackgroundForIndex:(NSUInteger)index;

@@ -17,6 +17,7 @@
     NSMutableArray *viewControllers;
 	UIBarButtonItem *creditsButton;
 	
+    NSBundle *resourcesLocation;
     BOOL pageControlUsed;
 }
 
@@ -24,6 +25,7 @@
 @property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, strong) NSMutableArray *viewControllers;
 @property (strong, nonatomic) UIBarButtonItem *creditsButton;
+@property (nonatomic, strong) NSBundle *resourcesLocation;
 
 - (void)credits;
 - (IBAction)changePage:(id)sender;
