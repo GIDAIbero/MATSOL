@@ -27,12 +27,13 @@
     systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (systemVersion >=7.0){
         self.resourcesLocation = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"Current" withExtension:@"bundle" ]];
+        NSLog(@"loading current bundle");
     }else{
         self.resourcesLocation = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"Default" withExtension:@"bundle" ]];
 
     }
     
-    NSLog(@"%@",[self.resourcesLocation URLsForResourcesWithExtension:@"nib" subdirectory:@"/"]);
+    NSLog(@"%@",[[NSBundle mainBundle] pathsForResourcesOfType:@"bundle" inDirectory:@"/" ]);
 	ScrollViewController *firstViewController=[[ScrollViewController alloc] initWithNibName:@"Scroll" bundle:self.resourcesLocation];
 	
 	//This button allows the home navigation when the bar is touched
@@ -48,7 +49,7 @@
     [navigationController.navigationBar setOpaque:YES];
     if (systemVersion >= 7.0) {
         [navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-        [navigationController.navigationBar setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BrushedMetalBackground" ofType:@"png"]]]];
+        [navigationController.navigationBar setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BrushedMetalBackground" ofType:@"tiff"]]]];
     } else {
         [[navigationController navigationBar] setTintColor:[UIColor darkGrayMATSOL]];
     }

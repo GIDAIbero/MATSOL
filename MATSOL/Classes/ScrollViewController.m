@@ -33,8 +33,6 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
         // Custom initialization
 		[self setTitle:@"MATSOL"];
 		self.resourcesLocation = nibBundleOrNil;
-        NSLog(@"%@",self.resourcesLocation.bundlePath);
-
 #ifdef	DEBUG_INTERFACE
 		[self setTitle:@"MATSOL_MENU"];
 #endif

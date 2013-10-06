@@ -24,7 +24,6 @@
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
         self.resourcesLocation = nibBundleOrNil;
-        NSLog(@"%@",self.resourcesLocation.bundlePath);
 
     }
     return self;
@@ -33,7 +32,6 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    NSLog(@"%@",self.resourcesLocation.bundlePath);
 	//Get the information from the plist
 	NSDictionary *dictionary = [[NSBundle mainBundle] infoDictionary];;
 	NSString *hash = [dictionary objectForKey:@"GitSHA"];

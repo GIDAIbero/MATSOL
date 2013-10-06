@@ -17,12 +17,13 @@
 @synthesize buttonsConverter;
 @synthesize mainConverter;
 @synthesize backgroundImage;
-
+@synthesize resourcesLocation;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
+        self.resourcesLocation = nibBundleOrNil;
         [self setTitle:NSLocalizedString(@"Base Converter", @"Base converter title")];
         
     }
@@ -44,7 +45,7 @@
             ip5 = YES;
             [backgroundImage setImage:[UIImage imageNamed:@"BaseConverterBackground-568h@2x.png"]];
         } else {
-            [backgroundImage setImage:[UIImage imageNamed:@"BaseConverterBackground.png"]];
+            [backgroundImage setImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BaseConverterBackground" ofType:@"png"]]];
         }
     }
     
@@ -75,9 +76,9 @@
             } else {
                 [[buttonsConverter objectAtIndex:i+(j*4)] setTitle:[NSString stringWithFormat:@"%X",k] forState:UIControlStateNormal];
             }
-			[[buttonsConverter objectAtIndex:i+(j*4)] setBackgroundImage:[UIImage imageNamed:@"blackButton.png"] forState:UIControlStateNormal];
+			[[buttonsConverter objectAtIndex:i+(j*4)] setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"blackButton" ofType:@"png"] ] forState:UIControlStateNormal];
 
-			[[buttonsConverter objectAtIndex:i+(j*4)] setBackgroundImage:[UIImage imageNamed:@"crossedBlackButton.png"] forState:UIControlStateDisabled];
+			[[buttonsConverter objectAtIndex:i+(j*4)] setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"crossedBlackButton" ofType:@"png"] ] forState:UIControlStateDisabled];
 			[[buttonsConverter objectAtIndex:i+(j*4)] setTitle:@"" forState:UIControlStateDisabled];
 			[self.view addSubview:[buttonsConverter objectAtIndex:i+(j*4)]];
         }

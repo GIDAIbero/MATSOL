@@ -24,9 +24,8 @@
 		6C0298D11801298F00139D70 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27BB71801127600FCE783 /* Default-568h@2x.png */; };
 		6C0298D21801299300139D70 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27B0F1801111600FCE783 /* Default@2x.png */; };
 		6C0298D31801299600139D70 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27B0E1801111600FCE783 /* Default.png */; };
-		6C0298D7180129C400139D70 /* BrushedMetalBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27B061801111600FCE783 /* BrushedMetalBackground@2x.png */; };
 		6C0298D8180129C600139D70 /* BrushedMetalBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27B061801111600FCE783 /* BrushedMetalBackground@2x.png */; };
-		6C0298D9180129D000139D70 /* BrushedMetalBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27B051801111600FCE783 /* BrushedMetalBackground.png */; };
+		6C0298DE18012A0D00139D70 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C0298DA180129FA00139D70 /* CreditsViewController.xib */; };
 		6C9CE3BE180107CD00E2ED38 /* Default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEF97F1801005900F74804 /* Default.bundle */; };
 		6CD27B4F1801111700FCE783 /* baseConverter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27AFC1801111600FCE783 /* baseConverter.png */; };
 		6CD27B501801111700FCE783 /* baseConverter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27AFD1801111600FCE783 /* baseConverter@2x.png */; };
@@ -149,7 +148,6 @@
 		6CD27C361801127600FCE783 /* Scroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27BE81801127600FCE783 /* Scroll.xib */; };
 		6CD27C371801127600FCE783 /* Selection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27BEA1801127600FCE783 /* Selection.xib */; };
 		6CD27C381801127600FCE783 /* Decoder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27BF41801127600FCE783 /* Decoder.xib */; };
-		6CD27C391801127600FCE783 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27BF51801127600FCE783 /* MainWindow.xib */; };
 		6CD27C3A1801127600FCE783 /* MatrixSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27BF61801127600FCE783 /* MatrixSheet.xib */; };
 		6CD27C3B1801127600FCE783 /* Slave.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27BF71801127600FCE783 /* Slave.xib */; };
 		6CD27C3C1801127600FCE783 /* Solutions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD27BF81801127600FCE783 /* Solutions.xib */; };
@@ -215,6 +213,8 @@
 		507BBC2F171B1AB9001B9079 /* GIDAMatrixCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAMatrixCell.m; path = GIDAUtilities/GIDAMatrixCell.m; sourceTree = "<group>"; };
 		507BBC30171B1AB9001B9079 /* GIDAMatrixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDAMatrixViewController.h; path = GIDAUtilities/GIDAMatrixViewController.h; sourceTree = "<group>"; };
 		507BBC31171B1AB9001B9079 /* GIDAMatrixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GIDAMatrixViewController.m; path = GIDAUtilities/GIDAMatrixViewController.m; sourceTree = "<group>"; };
+		6C0298DB180129FA00139D70 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Default/Localization/en.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
+		6C0298DD18012A0800139D70 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = Default/Localization/es.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
 		6CCEF97F1801005900F74804 /* Default.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Default.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCEF9801801005900F74804 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		6CCEF9841801005900F74804 /* Default-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Default-Info.plist"; path = "Default/Default-Info.plist"; sourceTree = "<group>"; };
@@ -359,7 +359,6 @@
 		6CD27BF11801127600FCE783 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/Scroll.xib; sourceTree = "<group>"; };
 		6CD27BF21801127600FCE783 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/Selection.xib; sourceTree = "<group>"; };
 		6CD27BF41801127600FCE783 /* Decoder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Decoder.xib; sourceTree = "<group>"; };
-		6CD27BF51801127600FCE783 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		6CD27BF61801127600FCE783 /* MatrixSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatrixSheet.xib; sourceTree = "<group>"; };
 		6CD27BF71801127600FCE783 /* Slave.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slave.xib; sourceTree = "<group>"; };
 		6CD27BF81801127600FCE783 /* Solutions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Solutions.xib; sourceTree = "<group>"; };
@@ -601,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				6CD27B341801111700FCE783 /* BaseConverter.xib */,
+				6C0298DA180129FA00139D70 /* CreditsViewController.xib */,
 				6CD27B381801111700FCE783 /* InputResistor.xib */,
 				6CD27B3A1801111700FCE783 /* Localizable.strings */,
 				6CD27B3C1801111700FCE783 /* OutputResistor.xib */,
@@ -719,7 +719,6 @@
 			isa = PBXGroup;
 			children = (
 				6CD27BF41801127600FCE783 /* Decoder.xib */,
-				6CD27BF51801127600FCE783 /* MainWindow.xib */,
 				6CD27BF61801127600FCE783 /* MatrixSheet.xib */,
 				6CD27BF71801127600FCE783 /* Slave.xib */,
 				6CD27BF81801127600FCE783 /* Solutions.xib */,
@@ -843,9 +842,7 @@
 				6CD27C3D180112BF00FCE783 /* Current.bundle in Resources */,
 				6C0298D31801299600139D70 /* Default.png in Resources */,
 				6C0298D11801298F00139D70 /* Default-568h@2x.png in Resources */,
-				6C0298D7180129C400139D70 /* BrushedMetalBackground@2x.png in Resources */,
 				6C0298D21801299300139D70 /* Default@2x.png in Resources */,
-				6C0298D9180129D000139D70 /* BrushedMetalBackground.png in Resources */,
 				6C9CE3BE180107CD00E2ED38 /* Default.bundle in Resources */,
 				6CD27C401801202700FCE783 /* MainWindow.xib in Resources */,
 			);
@@ -907,6 +904,7 @@
 				6CD27B861801111700FCE783 /* BaseConverter.xib in Resources */,
 				6CD27B631801111700FCE783 /* deleteBlackButton.png in Resources */,
 				6CD27B651801111700FCE783 /* determinant.png in Resources */,
+				6C0298DE18012A0D00139D70 /* CreditsViewController.xib in Resources */,
 				6CD27B511801111700FCE783 /* BaseConverterBackground-568h@2x.png in Resources */,
 				6CD27B741801111700FCE783 /* linearequationsystem.png in Resources */,
 				6CD27B821801111700FCE783 /* sresistor@2x.png in Resources */,
@@ -956,7 +954,6 @@
 				6CD27BFA1801127600FCE783 /* baseConverter.png in Resources */,
 				6CD27C141801127600FCE783 /* Icon.png in Resources */,
 				6CD27C181801127600FCE783 /* icon80.png in Resources */,
-				6CD27C391801127600FCE783 /* MainWindow.xib in Resources */,
 				6CD27C241801127600FCE783 /* rect3113.png in Resources */,
 				6CD27C0A1801127600FCE783 /* decoder@2x.png in Resources */,
 				6CD27C191801127600FCE783 /* Icon@2x.png in Resources */,
@@ -1066,6 +1063,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6C0298DA180129FA00139D70 /* CreditsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C0298DB180129FA00139D70 /* en */,
+				6C0298DD18012A0800139D70 /* es */,
+			);
+			name = CreditsViewController.xib;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		6CD27B341801111700FCE783 /* BaseConverter.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1238,7 +1245,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1280,7 +1286,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1317,7 +1322,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1354,7 +1358,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
+				COMBINE_HIDPI_IMAGES = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1396,7 +1400,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
+				COMBINE_HIDPI_IMAGES = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1433,7 +1437,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
+				COMBINE_HIDPI_IMAGES = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
