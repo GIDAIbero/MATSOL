@@ -22,7 +22,8 @@
 	
 	IBOutlet UILabel *reminder;
 	IBOutlet UILabel *achieved;
-
+    
+    NSBundle *resourcesLocation;
 }
 
 //Resistor User Interface Placement Point
@@ -80,6 +81,7 @@ typedef enum{
 @property (nonatomic, strong) NSMutableArray *bandArray;
 @property (nonatomic, strong) IBOutlet UILabel *reminder;
 @property (nonatomic, strong) IBOutlet UILabel *achieved;
+@property (nonatomic, strong) NSBundle *resourcesLocation;
 
 - (void)placeNetworkWithNetworkSize:(int)networkSize;
 - (void)buttonPressed:(id)sender;

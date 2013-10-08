@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Current.bundle/BrushedMetalBackground.png" id="18">
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="18">
                     <rect key="frame" x="-505" y="769" width="0.0" height="0.0"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.010948905110000001" alpha="1" colorSpace="deviceRGB"/>
@@ -124,7 +124,6 @@ polarbears.devteam@gmail.com</string>
         </view>
     </objects>
     <resources>
-        <image name="Current.bundle/BrushedMetalBackground.png" width="320" height="416"/>
         <image name="MATSOLLogo.png" width="512" height="512"/>
     </resources>
 </document>

@@ -91,25 +91,25 @@
     } else {
         [[buttonsConverter objectAtIndex:i] setFrame:CGRectMake(12,350+offset,145,50)];
     }
-	[[buttonsConverter objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:@"zeroButton.png"] forState:UIControlStateNormal];
+	[[buttonsConverter objectAtIndex:i] setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"zeroButton" ofType:@"png"]] forState:UIControlStateNormal];
 	[[buttonsConverter objectAtIndex:i] setTag:0];
 	[[buttonsConverter objectAtIndex:i] setTitle:@"0" forState:UIControlStateNormal ];
 	
 	[[buttonsConverter objectAtIndex:i+2] setTag:MBaseConverterButtonFrom];
     [[buttonsConverter objectAtIndex:i+2] setTitle:NSLocalizedString(@"From", @"From string") forState:UIControlStateNormal ];
-	[[buttonsConverter objectAtIndex:i+2] setBackgroundImage:[UIImage imageNamed:@"brownButton.png"] forState:UIControlStateNormal];
+	[[buttonsConverter objectAtIndex:i+2] setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"brownButton" ofType:@"png"]]forState:UIControlStateNormal];
 	[[buttonsConverter objectAtIndex:i+2] removeTarget:self action:@selector(typeStuff:) forControlEvents:UIControlEventTouchUpInside];
 	[[buttonsConverter objectAtIndex:i+2] addTarget:self action:@selector(fromOrTo:) forControlEvents:UIControlEventTouchUpInside];
 	
 	[[buttonsConverter objectAtIndex:i+3] setTag:MBaseConverterButtonTo];
 	[[buttonsConverter objectAtIndex:i+3] setTitle:NSLocalizedString(@"To", @"To string") forState:UIControlStateNormal ];
-	[[buttonsConverter objectAtIndex:i+3] setBackgroundImage:[UIImage imageNamed:@"brownButton.png"] forState:UIControlStateNormal];
+	[[buttonsConverter objectAtIndex:i+3] setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"brownButton" ofType:@"png"]] forState:UIControlStateNormal];
 	[[buttonsConverter objectAtIndex:i+3] removeTarget:self action:@selector(typeStuff:) forControlEvents:UIControlEventTouchUpInside];
 	[[buttonsConverter objectAtIndex:i+3] addTarget:self action:@selector(fromOrTo:) forControlEvents:UIControlEventTouchUpInside];
 	
 	[[buttonsConverter objectAtIndex:3] setTag:MBaseConverterButtonDelete];
 	[[buttonsConverter objectAtIndex:3] setTitle:@" " forState:UIControlStateNormal];
-	[[buttonsConverter objectAtIndex:3] setBackgroundImage:[UIImage imageNamed:@"deleteBlackButton.png"] forState:UIControlStateNormal];
+	[[buttonsConverter objectAtIndex:3] setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"deleteBlackButton" ofType:@"png"]] forState:UIControlStateNormal];
 	[[buttonsConverter objectAtIndex:i+1] removeFromSuperview]; //destroying an unnecesary button
 	
 	//Initialize the main indicators, to change from base 10 to base 2

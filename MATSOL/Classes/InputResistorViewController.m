@@ -13,12 +13,13 @@
 
 @synthesize targetResistance;
 @synthesize tolerance;
-
+@synthesize resourcesLocation;
 #pragma mark Initialization
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
+        self.resourcesLocation = nibBundleOrNil;
     }
     return self;
 }
@@ -42,6 +43,8 @@
 	[targetResistance setText:@"672"];
 	[tolerance setText:@"1"];
 	
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BrushedMetalBackground" ofType:@"png"]]]];
+    
     UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(goNext:)];
     UIBarButtonItem *spa = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIToolbar *tool      = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width,30)];
@@ -218,7 +221,7 @@
 	[targetResistance resignFirstResponder];
 	[tolerance resignFirstResponder];
 	
-	OutputResistorViewController *viewController=[[OutputResistorViewController alloc] initWithNibName:@"OutputResistor" bundle:nil];
+	OutputResistorViewController *viewController=[[OutputResistorViewController alloc] initWithNibName:@"OutputResistor" bundle:self.resourcesLocation];
 	[viewController setTargetResistor:resistorValue];
 	[viewController setTolerance:toleranceValue];
 	[[self navigationController] pushViewController:viewController animated:YES];

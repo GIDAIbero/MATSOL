@@ -48,7 +48,7 @@
 		//Create every button for the first page
 		UIButton *matrixSolution=[UIButton buttonWithType:UIButtonTypeCustom];
 		[matrixSolution setBackgroundColor:[UIColor clearColor]];
-		[matrixSolution setBackgroundImage:[UIImage imageNamed:@"linearequationsystem.png"] forState:UIControlStateNormal];
+		[matrixSolution setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"linearequationsystem" ofType:@"png"]] forState:UIControlStateNormal];
 		[matrixSolution setFrame:CGRectMake(10, 20, 80, 80)];
 		[matrixSolution addTarget:self action:@selector(beginUIViewController:)  forControlEvents:UIControlEventTouchUpInside];
 		[matrixSolution setTag:MATSOLLinearEquationButton];
@@ -57,7 +57,7 @@
 		
 		UIButton *determinant=[UIButton buttonWithType:UIButtonTypeCustom];
 		[determinant setBackgroundColor:[UIColor clearColor]];
-		[determinant setBackgroundImage:[UIImage imageNamed:@"determinant.png"] forState:UIControlStateNormal];
+		[determinant setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"determinant" ofType:@"png"]]forState:UIControlStateNormal];
 		[determinant setFrame:CGRectMake(120, 20, 80, 80)];
 		[determinant addTarget:self action:@selector(beginUIViewController:)  forControlEvents:UIControlEventTouchUpInside];
 		[determinant setTag:MATSOLDeterminantButton];
@@ -66,7 +66,7 @@
 		
 		UIButton *resistorCalculator=[UIButton buttonWithType:UIButtonTypeCustom];
 		[resistorCalculator setBackgroundColor:[UIColor clearColor]];
-		[resistorCalculator setBackgroundImage:[UIImage imageNamed:@"resistorcalculator.png"] forState:UIControlStateNormal];
+		[resistorCalculator setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"resistorcalculator" ofType:@"png"]] forState:UIControlStateNormal];
 		[resistorCalculator setFrame:CGRectMake(230, 20, 80, 80)];
 		[resistorCalculator addTarget:self action:@selector(beginUIViewController:)  forControlEvents:UIControlEventTouchUpInside];
 		[resistorCalculator setTag:MATSOLResistorButton];
@@ -75,7 +75,7 @@
 		
 		UIButton *decoder=[UIButton buttonWithType:UIButtonTypeCustom];
 		[decoder setBackgroundColor:[UIColor clearColor]];
-		[decoder setBackgroundImage:[UIImage imageNamed:@"decoder.png"] forState:UIControlStateNormal];
+		[decoder setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"decoder" ofType:@"png"]] forState:UIControlStateNormal];
 		[decoder setFrame:CGRectMake(10, 120, 80, 80)];
 		[decoder addTarget:self action:@selector(beginUIViewController:)  forControlEvents:UIControlEventTouchUpInside];
 		[decoder setTag:MATSOLDecoderButton];
@@ -84,7 +84,7 @@
 		
 		UIButton *baseConversion=[UIButton buttonWithType:UIButtonTypeCustom];
 		[baseConversion setBackgroundColor:[UIColor clearColor]];
-		[baseConversion setBackgroundImage:[UIImage imageNamed:@"baseConverter.png"] forState:UIControlStateNormal];
+		[baseConversion setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"baseConverter" ofType:@"png"]]forState:UIControlStateNormal];
 		[baseConversion setFrame:CGRectMake(120, 120, 80, 80)];
 		[baseConversion addTarget:self action:@selector(beginUIViewController:)  forControlEvents:UIControlEventTouchUpInside];
 		[baseConversion setTag:MATSOLBaseConverterButton];
@@ -116,7 +116,7 @@
                 [gsaExtra setKeyboard:UIKeyboardTypeNumberPad];
                 [gsaExtra show];
             } else {
-                GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDALinearEquations];
+                GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDALinearEquations andBundle:self.resourcesLocation];
                 [self endUIViewController:viewController];
             }
         } else {
@@ -126,7 +126,7 @@
                 [gsaExtra setKeyboard:UIKeyboardTypeNumberPad];
                 [gsaExtra show];
             } else {
-                GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDADeterminant];
+                GIDAMatrixViewController *viewController = [[GIDAMatrixViewController alloc] initWithMatrixSize:matrixSize andSolver:GIDADeterminant andBundle:self.resourcesLocation];
                 [self endUIViewController:viewController];
             }
             

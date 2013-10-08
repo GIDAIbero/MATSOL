@@ -50,10 +50,13 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
         [self.navigationController.navigationBar setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor whiteColor] }];
     }
     
+    
+    
 	//Set some colors
     [scrollView setBackgroundColor:[UIColor clearColor]];
 	[pageControl setBackgroundColor:[UIColor colorWithRed:.161 green:.161 blue:0.161 alpha:0.6]];
-	
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BrushedMetalBackground" ofType:@"png"]]]];
+    
 	// view controllers are created lazily
     // in the meantime, load the array with placeholders which will be replaced on demand
     NSMutableArray *controllers = [[NSMutableArray alloc] init];

@@ -27,6 +27,7 @@ static float kAnimationDuration=0.35;
 @synthesize reminder;
 @synthesize achieved;
 @synthesize	bandArray;
+@synthesize resourcesLocation;
 
 #pragma mark Initialization
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -34,7 +35,7 @@ static float kAnimationDuration=0.35;
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
 		network=malloc(sizeof(RESIST)*5);
-		
+		resourcesLocation = nibBundleOrNil;
 		//We set this to nil to guarantee no crashings
 		//if a object that points to nil calls a method everything is ok :)
 		_backup=nil;
@@ -55,7 +56,7 @@ static float kAnimationDuration=0.35;
 	//Create the sign
 	sign=[UIButton buttonWithType:UIButtonTypeCustom];
 	[sign setBackgroundColor:[UIColor clearColor]];
-	[sign setBackgroundImage:[UIImage imageNamed:@"signW.png"] forState:UIControlStateNormal];
+	[sign setBackgroundImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"signW" ofType:@"png"]] forState:UIControlStateNormal];
 	[sign setFrame:CGRectMake(0, 0, kSignImageWidth, kSignImageHeight)];
 	[sign setHidden:YES];
 	[sign addTarget:self action:@selector(signWasPressed:)  forControlEvents:UIControlEventTouchUpInside];
@@ -174,7 +175,7 @@ static float kAnimationDuration=0.35;
 			accumulation=accumulation+network[i].Req;
 			
 			//Create add and alloc an image with two resistors in parallel
-			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"presistor"]];
+			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"presistor" ofType:@"png"]]];
 			[resistorImage setFrame:resistorPlacement];
 			[self.view addSubview:resistorImage];
 			
@@ -225,7 +226,7 @@ static float kAnimationDuration=0.35;
 			pointer=[OutputResistorViewController formatForResistorValue:network[i].seriesParallel==ResistorArrangeTypeSeriesFirst ? network[i].R1 : network[i].R2];
 			
 			//Create add and alloc an image with one resistor
-			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sresistor"]];
+			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"sresistor" ofType:@"png"]]]; //Señor resistor... classy
 			[resistorImage setFrame:resistorPlacement];
 			[self.view addSubview:resistorImage];
 			
@@ -313,7 +314,7 @@ static float kAnimationDuration=0.35;
 			
 			//Place the wire with the kWireXRight constant since this is going to be
 			//on the right side of the screen
-			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wire.png"]];
+			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"wire" ofType:@"png"]]];
 			[resistorImage setFrame:CGRectMake(kWireXRight, currentWireY, kWireWidth, kWireHeight)];
 			[self.view addSubview:resistorImage];
 			
@@ -324,7 +325,7 @@ static float kAnimationDuration=0.35;
 			
 			//Place the wire with the kWireXLeft constant since this is going to be
 			//on the left side of the screen 
-			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wire.png"]];
+			resistorImage=[[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"wire" ofType:@"png"]]];
 			[resistorImage setFrame:CGRectMake(kWireXLeft, currentWireY, kWireWidth, kWireHeight)];
 			[self.view addSubview:resistorImage];
 		}

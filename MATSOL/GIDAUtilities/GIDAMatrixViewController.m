@@ -42,17 +42,23 @@
 
 @implementation GIDAMatrixViewController
 
-- (id)initWithMatrixSize:(NSInteger)size andSolver:(GIDASolver)gidasolver {
+@synthesize resourcesLocation;
+- (id)initWithMatrixSize:(NSInteger)size andSolver:(GIDASolver)gidasolver andBundle:(NSBundle*)bundle {
     if (gidasolver == GIDADeterminant || gidasolver == GIDALinearEquations) {
-        self = [super initWithNibName:nil bundle:nil];
+        self = [super initWithNibName:nil bundle:bundle];
         if (self) {
             self.title=@"MATSOL";
+            
+            self.resourcesLocation =bundle;
             
             //Set the type of Matrix Solver the user wants to use
             solver = gidasolver;
             flag = YES;
             //Set the size of the matrix the user wants
             matrixSize = size;
+            
+            [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BrushedMetalBackground" ofType:@"png"]]]];
+            
             
             //Define if using a 4in or a 3.5in iPhone
             UIScreen *mainScreen = [UIScreen mainScreen];
@@ -576,7 +582,7 @@
 #endif
 		
 		//Time to push the next view
-		SolutionsViewController *theSolutions=[[SolutionsViewController alloc] initWithNibName:@"Solutions" bundle:nil];
+		SolutionsViewController *theSolutions=[[SolutionsViewController alloc] initWithNibName:@"Solutions" bundle:self.resourcesLocation];
 		
 		//Set the attributes for the viewcontroller, it will take charge of the memory management
 		theSolutions.a=a;

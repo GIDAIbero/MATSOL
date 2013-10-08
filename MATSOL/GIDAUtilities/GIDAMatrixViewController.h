@@ -23,7 +23,11 @@ enum {
 };
 typedef NSUInteger GIDASolver;
 
-@interface GIDAMatrixViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface GIDAMatrixViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate> {
+    NSBundle *resourcesLocation;
+}
 
-- (id)initWithMatrixSize:(NSInteger)size andSolver:(GIDASolver)solver;
+@property (nonatomic, strong) NSBundle *resourcesLocation;
+
+- (id)initWithMatrixSize:(NSInteger)size andSolver:(GIDASolver)solver andBundle:(NSBundle*)bundle;
 @end
