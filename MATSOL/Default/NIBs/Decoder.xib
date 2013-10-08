@@ -27,7 +27,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </pickerView>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Resistor.png" id="16">
-                    <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
+                    <rect key="frame" x="50" y="44" width="0.0" height="0.0"/>
                     <autoresizingMask key="autoresizingMask"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="± 5%" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="17">
