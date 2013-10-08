@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Default.bundle/BrushedMetalBackground.png" id="4">
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="BrushedMetalBackground.png" id="4">
                     <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                     <autoresizingMask key="autoresizingMask"/>
                 </imageView>
@@ -52,7 +52,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Default.bundle/BrushedMetalBackground.png" width="320" height="416"/>
+        <image name="BrushedMetalBackground.png" width="320" height="416"/>
         <image name="Resistor.png" width="320" height="127"/>
     </resources>
 </document>
