@@ -17,6 +17,7 @@
 @synthesize labelsArray;
 @synthesize layoutView;
 @synthesize container;
+@synthesize resourcesLocation;
 
 #pragma mark Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
@@ -27,6 +28,8 @@
 		self.title=@"MATSOL_SOLNS";
 		#endif
 		
+        self.resourcesLocation = nibBundleOrNil;
+        
         UIScreen *mainScreen = [UIScreen mainScreen];
         CGFloat scale = ([mainScreen respondsToSelector:@selector(scale)] ? mainScreen.scale : 1.0f);
         CGFloat pixelHeight = (CGRectGetHeight(mainScreen.bounds) * scale);
@@ -58,6 +61,7 @@
 	
 	//UIImageView *shape;
 	//UIImageView *help=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"help.png"]];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BrushedMetalBackground" ofType:@"png"]]]];
     UIView  *help = nil;
     if (ip5) {
         help = [[UIView alloc] initWithFrame:CGRectMake(0, 474, 320, 30)];

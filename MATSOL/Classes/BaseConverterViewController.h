@@ -27,6 +27,8 @@ typedef enum{
 	NSArray *_basesArray;
 	Conversor *mainConverter;
 	
+    NSBundle *resourcesLocation;
+    
 	int _currentActionSheet;
 	int _pickedBase;
     BOOL ip5;
@@ -39,7 +41,7 @@ typedef enum{
 @property (nonatomic, strong) IBOutlet UILabel *toIndicator;
 @property (nonatomic, strong) NSMutableArray *buttonsConverter;
 @property (nonatomic, strong) Conversor *mainConverter;
-
+@property (nonatomic, strong) NSBundle *resourcesLocation;
 -(void)typeStuff:(id)sender;
 -(IBAction)fromOrTo:(id)sender;
 -(void)lockButtons;

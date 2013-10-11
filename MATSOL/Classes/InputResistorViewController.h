@@ -19,9 +19,10 @@ typedef enum{
 @interface InputResistorViewController : UIViewController <UITextFieldDelegate>{
 	IBOutlet UITextField *targetResistance;
 	IBOutlet UITextField *tolerance;
+    NSBundle *resourcesLocation;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *targetResistance;
 @property (strong, nonatomic) IBOutlet UITextField *tolerance;
-
+@property (strong, nonatomic) NSBundle *resourcesLocation;
 @end

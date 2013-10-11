@@ -13,10 +13,12 @@
 @interface MATSOLAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 	UINavigationController *navigationController;
+    NSBundle *resourcesLocation;
 }
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (nonatomic, strong) IBOutlet UINavigationController *navigationController;
+@property (nonatomic, retain) NSBundle *resourcesLocation;
 
 - (void)goToRootViewController:(id)sender;
 

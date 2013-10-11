@@ -15,12 +15,17 @@
 @synthesize valueLabel;
 @synthesize toleranceLabel;
 @synthesize colorViewsArray;
+@synthesize resourcesLocation;
+@synthesize resBackground;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
+
+        self.resourcesLocation = nibBundleOrNil;
 		[self setTitle:NSLocalizedString(@"Color Decoder", @"Color Decoder view controller title")];
+        //[self.resBackground setImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"Resistor" ofType:@"png"]]];
     }
     return self;
 }
@@ -40,7 +45,10 @@
      [colorPickerView setShowsSelectionIndicator:YES];
 	//[self.view addSubview:colorPickerView];
 	
-	
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BrushedMetalBackground" ofType:@"png"]]]];
+    
+
+
 	colorViewsArray=[[NSMutableArray alloc] init];
 	//Color bars for the image;
 	for (i=0; i<4; i++) {

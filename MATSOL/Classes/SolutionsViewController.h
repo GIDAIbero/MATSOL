@@ -20,6 +20,8 @@
 	UIScrollView *layoutView;
 	UIView *container;
     BOOL ip5;
+    
+    NSBundle *resourcesLocation;
 }
 
 @property (readwrite) float **a;
@@ -28,5 +30,5 @@
 @property (strong, nonatomic) NSMutableArray *labelsArray;
 @property (strong, nonatomic) UIScrollView *layoutView;
 @property (strong, nonatomic) UIView *container;
-
+@property (strong, nonatomic) NSBundle *resourcesLocation;
 @end

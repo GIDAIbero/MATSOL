@@ -24,6 +24,7 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
 @synthesize pageControl;
 @synthesize viewControllers;
 @synthesize creditsButton;
+@synthesize resourcesLocation;
 
 #pragma mark Initialization
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -31,7 +32,7 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
 		[self setTitle:@"MATSOL"];
-		
+		self.resourcesLocation = nibBundleOrNil;
 #ifdef	DEBUG_INTERFACE
 		[self setTitle:@"MATSOL_MENU"];
 #endif
@@ -49,10 +50,13 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
         [self.navigationController.navigationBar setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor whiteColor] }];
     }
     
+    
+    
 	//Set some colors
     [scrollView setBackgroundColor:[UIColor clearColor]];
 	[pageControl setBackgroundColor:[UIColor colorWithRed:.161 green:.161 blue:0.161 alpha:0.6]];
-	
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageWithContentsOfFile:[self.resourcesLocation pathForResource:@"BrushedMetalBackground" ofType:@"png"]]]];
+    
 	// view controllers are created lazily
     // in the meantime, load the array with placeholders which will be replaced on demand
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
@@ -84,7 +88,7 @@ static NSUInteger kNumberOfPages = NUMBER_OF_MENU_PAGES;
 
 #pragma mark CreditsViewControllerMethods
 -(void)credits{
-	CreditsViewController *creditsViewController=[[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
+	CreditsViewController *creditsViewController=[[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:self.resourcesLocation];
 	creditsViewController.title=NSLocalizedString(@"About", @"About string");
 	creditsViewController.delegate=self;
 	[self presentModalViewController:creditsViewController animated:YES];
