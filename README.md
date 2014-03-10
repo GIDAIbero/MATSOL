@@ -7,7 +7,7 @@ Your participation is welcome. Feel free to fork, add missing features or report
 
 ## Contents
 
-+ Linear equation solver. Using [Gauss-Jordan](http://en.wikipedia.org/wiki/Gaussian_elimination) method for solving Linear Systems
++ Linear equation solver. Using [Gauss-Jordan](http://en.wikipedia.org/wiki/Gaussian_elimination) method for solving Linear Systems. Based on [Numerical Recipes in C](http://www.nrbook.com/a/bookcpdf.php)
 + Determinant solver. Based on [Numerical Recipes in C](http://www.nrbook.com/a/bookcpdf.php)
 + Resistor calculator
 + Resistor decoder
@@ -18,7 +18,7 @@ The code was developed by students for [Universidad Iberoamericana, in Mexico Ci
 + [Contributors](https://github.com/GIDAIbero/MATSOL/graphs/contributors)
 
 ## Attribution
-MATSOL for iOS uses also this components also:
+MATSOL for iOS uses also this GIDAIbero components:
 
 * [GIDAAlertView](https://github.com/GIDAIbero/GIDAAlertView)
 * [GIDACalculateString](https://github.com/GIDAIbero/GIDACalculateString)
